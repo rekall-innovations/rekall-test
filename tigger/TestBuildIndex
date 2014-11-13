@@ -1,0 +1,40 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/test_data/tigger/output/TestBuildIndex /home/scudette/projects/test_data/tigger/TestBuildIndex
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/test_data/tigger/output/TestBuildIndex /home/scudette/projects/test_data/tigger/TestBuildIndex
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/test_data/tigger/output/TestBuildIndex /home/scudette/projects/test_data/tigger/TestBuildIndex
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' build_index -h
+else
+   less /home/scudette/projects/test_data/tigger/output/TestBuildIndex
+fi
+exit 0
+{
+    "time_used": 0.6630289554595947, 
+    "output": [
+        "usage: rekall [-v] [-q] [--debug] [--pager PAGER] [--paging_limit PAGING_LIMIT] [--nocolors] [--renderer {text,json,wide,test,data}] [--plugin PLUGIN] [-h]", 
+        "              [--profile_path PROFILE_PATH] [-f FILENAME] [--buffer_size BUFFER_SIZE] [--output OUTPUT] [--max_collector_cost MAX_COLLECTOR_COST] [--dtb DTB] [--ept EPT [EPT ...]]", 
+        "              [--timezone TIMEZONE] [--name_resolution_strategies NAME_RESOLUTION_STRATEGIES [NAME_RESOLUTION_STRATEGIES ...]] [--autodetect AUTODETECT [AUTODETECT ...]]", 
+        "              [--autodetect_threshold AUTODETECT_THRESHOLD] [--generate_ballast GENERATE_BALLAST] [-r RUN] [-s SESSION_FILENAME] [--root ROOT]", 
+        "              spec", 
+        "rekall: error: argument spec is required"
+    ], 
+    "errors": {
+        "return_code": 2
+    }, 
+    "return_code": 2, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "build_index -h", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestBuildIndex", 
+        "tempdir": "/tmp/tmp2Jiqlo/TestBuildIndexThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' build_index -h", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

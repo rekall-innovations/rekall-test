@@ -1,0 +1,20 @@
+{
+    "time_used": 2.877285957336426, 
+    "output": [
+        "Range 0x0 - 0x8000000"
+    ], 
+    "hashes": {
+        "output_image.raw": "67d60e6b7ef07d91d1c9c84a1a7c5939"
+    }, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "imagecopy -O %(tempdir)s/output_image.raw", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestImageCopy", 
+        "tempdir": "/tmp/tmpjCWx0x/TestImageCopyThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' imagecopy -O /tmp/tmpjCWx0x/TestImageCopyThread-1/output_image.raw", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

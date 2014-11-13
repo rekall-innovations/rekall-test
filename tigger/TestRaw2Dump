@@ -1,0 +1,17 @@
+{
+    "time_used": 1.936007022857666, 
+    "output": [
+        "ERROR:root:A destination filename must be provided."
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "raw2dmp", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestRaw2Dump", 
+        "tempdir": "/tmp/tmpjCWx0x/TestRaw2DumpThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' raw2dmp", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

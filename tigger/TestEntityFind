@@ -1,0 +1,36 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/test_data/tigger/output/TestEntityFind /home/scudette/projects/test_data/tigger/TestEntityFind
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/test_data/tigger/output/TestEntityFind /home/scudette/projects/test_data/tigger/TestEntityFind
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/test_data/tigger/output/TestEntityFind /home/scudette/projects/test_data/tigger/TestEntityFind
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - find "Process/command =~ lsass"
+else
+   less /home/scudette/projects/test_data/tigger/output/TestEntityFind
+fi
+exit 0
+{
+    "time_used": 11.095569849014282, 
+    "output": [
+        "                                                         Entity                                                         ", 
+        "------------------------------------------------------------------------------------------------------------------------", 
+        "Process: lsass.exe                                                                                                      "
+    ], 
+    "errors": {}, 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "process": "lsass", 
+        "commandline": "find \"Process/command =~ %(process)s\"", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestEntityFind", 
+        "tempdir": "/tmp/tmp3wcVdh/TestEntityFindThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - find \"Process/command =~ lsass\"", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

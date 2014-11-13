@@ -1,0 +1,22 @@
+{
+    "time_used": 2.483275890350342, 
+    "output": [
+        "  Offset  ||                            Hex                             ||        Data        ||Comment", 
+        "----------||------------------------------------------------------------||--------------------||-------", 
+        "0xff386730||30 67 38 ff 30 67 38 ff 00 00 00 00 00 00 00 00 00 d0 9b fc ||0g8.0g8.............||", 
+        "0xff386744||65 78 70 6c 6f 72 65 72 2e 65 78 65 00 00 00 00 00 00 00 00 ||explorer.exe........||"
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "keyword": "explorer.exe", 
+        "commandline": "grep %(keyword)s --offset %(offset)s", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestGrep", 
+        "offset": "0xff3865d0", 
+        "tempdir": "/tmp/tmpjCWx0x/TestGrepThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' grep explorer.exe --offset 0xff3865d0", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

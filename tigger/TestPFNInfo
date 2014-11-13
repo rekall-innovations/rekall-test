@@ -1,0 +1,17 @@
+{
+    "time_used": 1.795403003692627, 
+    "output": [
+        "ERROR:root:PFN not provided."
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "pfn", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestPFNInfo", 
+        "tempdir": "/tmp/tmpjCWx0x/TestPFNInfoThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' pfn", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

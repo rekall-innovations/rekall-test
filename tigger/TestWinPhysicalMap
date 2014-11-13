@@ -1,0 +1,22 @@
+{
+    "time_used": 2.1355698108673096, 
+    "output": [
+        "Phys Start|| Phys End ||Number of Pages", 
+        "----------||----------||---------------", 
+        "0x00001000||0x0009f000||158            ", 
+        "0x00100000||0x00fff000||3839           ", 
+        "0x01000000||0x07ef0000||28400          ", 
+        "0x07f00000||0x08000000||256            "
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "phys_map", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestWinPhysicalMap", 
+        "tempdir": "/tmp/tmpjCWx0x/TestWinPhysicalMapThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' phys_map", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

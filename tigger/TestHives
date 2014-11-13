@@ -1,0 +1,31 @@
+{
+    "time_used": 2.0187458992004395, 
+    "output": [
+        "  Offset  ||Name", 
+        "----------||----", 
+        "0xe1e158c0||\\Device\\HarddiskVolume1\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\Microsoft\\Windows\\UsrClass.dat @ 0xe1e158c0", 
+        "0xe1da4008||\\Device\\HarddiskVolume1\\Documents and Settings\\Administrator\\NTUSER.DAT @ 0xe1da4008", 
+        "0xe1c49008||\\Device\\HarddiskVolume1\\Documents and Settings\\LocalService\\Local Settings\\Application Data\\Microsoft\\Windows\\UsrClass.dat @ 0xe1c49008", 
+        "0xe1c41b60||\\Device\\HarddiskVolume1\\Documents and Settings\\LocalService\\NTUSER.DAT @ 0xe1c41b60", 
+        "0xe1a39638||\\Device\\HarddiskVolume1\\Documents and Settings\\NetworkService\\Local Settings\\Application Data\\Microsoft\\Windows\\UsrClass.dat @ 0xe1a39638", 
+        "0xe1a33008||\\Device\\HarddiskVolume1\\Documents and Settings\\NetworkService\\NTUSER.DAT @ 0xe1a33008", 
+        "0xe153ab60||\\Device\\HarddiskVolume1\\WINDOWS\\system32\\config\\software @ 0xe153ab60", 
+        "0xe1542008||\\Device\\HarddiskVolume1\\WINDOWS\\system32\\config\\default @ 0xe1542008", 
+        "0xe1537b60||\u0000 @ 0xe1537b60", 
+        "0xe1544008||\\Device\\HarddiskVolume1\\WINDOWS\\system32\\config\\SAM @ 0xe1544008", 
+        "0xe13ae580||[no name] @ 0xe13ae580", 
+        "0xe101b008||\\Device\\HarddiskVolume1\\WINDOWS\\system32\\config\\system @ 0xe101b008", 
+        "0xe1008978||[no name] @ 0xe1008978"
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "hives", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestHives", 
+        "tempdir": "/tmp/tmpjCWx0x/TestHivesThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' hives", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

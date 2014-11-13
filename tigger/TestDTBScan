@@ -1,0 +1,41 @@
+{
+    "time_used": 8.355980157852173, 
+    "output": [
+        "   DTB    ||  VAddr   ||_EPROCESS  Name                   PID||Known", 
+        "----------||----------||---------- -------------------- -----||-----", 
+        "0x0031d000||0xc0603000||0x80551b80 Idle                     0||False", 
+        "0x077b8000||0xc0603000||0xff3865d0 explorer.exe          1724||True ", 
+        "0x07a7a000||0xc0603000||0xff1ec978 winlogon.exe           632||True ", 
+        "0x023d2000||0xc0603000||0x80fbf910 svchost.exe           1028||True ", 
+        "0x01eab000||0xc0603000||0xff374980 VMwareUser.exe         452||True ", 
+        "0x031ac000||0xc0603000||0xff27d4d0 wmiprvse.exe           828||True ", 
+        "0x04911000||0xc0603000||0xff38b5f8 TPAutoConnect.e       1084||True ", 
+        "0x00d0e000||0xc0603000||0xff1d7da0 spoolsv.exe           1432||True ", 
+        "0x06b66000||0xc0603000||0xff1b8b28 vmtoolsd.exe          1668||True ", 
+        "0x0488c000||0xc0603000||0x80f94588 wuauclt.exe            468||True ", 
+        "0x04799000||0xc0603000||0xff3667e8 VMwareTray.exe         432||True ", 
+        "0x01f09000||0xc0603000||0xff217560 svchost.exe            936||True ", 
+        "0x07e4c000||0xc0603000||0xff247020 services.exe           676||True ", 
+        "0x07bef000||0xc0603000||0xff1fdc88 VMUpgradeHelper       1788||True ", 
+        "0x02ddc000||0xc0603000||0xff25a7e0 alg.exe                216||True ", 
+        "0x03011000||0xc0603000||0x80f60da0 wuauclt.exe           1732||True ", 
+        "0x0201b000||0xc0603000||0x80ff88d8 svchost.exe            856||True ", 
+        "0x075b2000||0xc0603000||0xff1ecda0 csrss.exe              608||True ", 
+        "0x022aa000||0xc0603000||0xff22d558 svchost.exe           1088||True ", 
+        "0x07e59000||0xc0603000||0xff255020 lsass.exe              688||True ", 
+        "0x02a3a000||0xc0603000||0xff143b28 TPAutoConnSvc.e       1968||True ", 
+        "0x02fe8000||0xc0603000||0xff364310 wscntfy.exe            888||True ", 
+        "0x03803000||0xc0603000||0xff203b80 svchost.exe           1148||True "
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "dtbscan --limit 10mb", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestDTBScan", 
+        "tempdir": "/tmp/tmpjCWx0x/TestDTBScanThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' dtbscan --limit 10mb", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "time_used": 3.9034030437469482, 
+    "output": [
+        "**************************************************", 
+        "Instantiating KDBG using: Kernel AS@0x319000 Nt (I386)", 
+        "Offset (V)                    : 0x80544ce0", 
+        "Offset (P)                    : 0x544ce0", 
+        "KDBG owner tag check          : False", 
+        "Version64                     : 0x80544cb8 (Major: 15, Minor: 2600)", 
+        "Service Pack (CmNtCSDVersion) : 2", 
+        "Build string (NtBuildLab)     : 2600.xpsp_sp2_rtm.040803-2158", 
+        "PsActiveProcessHead           : 0x80559258 (25 processes)", 
+        "PsLoadedModuleList            : 0x805531a0 (119 modules)", 
+        "KernelBase                    : 0x804d7000 (Matches MZ: True)", 
+        "Major (OptionalHeader)        : 5", 
+        "Minor (OptionalHeader)        : 1", 
+        "KPCR                          : 0xffdff000 (CPU 0)"
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "kdbgscan", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestKDBGScan", 
+        "tempdir": "/tmp/tmpjCWx0x/TestKDBGScanThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' kdbgscan", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

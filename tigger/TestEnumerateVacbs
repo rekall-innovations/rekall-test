@@ -1,0 +1,19 @@
+{
+    "time_used": 1.339885950088501, 
+    "output": [
+        "  _VACB   ||Present||   Base   ||  Offset  ||Filename", 
+        "----------||-------||----------||----------||--------"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "vacbs", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestEnumerateVacbs", 
+        "tempdir": "/tmp/tmp6JxHN4/TestEnumerateVacbsThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' vacbs", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

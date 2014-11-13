@@ -1,0 +1,13 @@
+{
+    "time_used": 1.0013580322265625e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem.E01", 
+        "commandline": "", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "JsonTest", 
+        "tempdir": "/tmp/tmpaI6hHn/JsonTestThread-2", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

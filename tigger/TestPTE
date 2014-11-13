@@ -1,0 +1,52 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/test_data/tigger/output/TestPTE /home/scudette/projects/test_data/tigger/TestPTE
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/test_data/tigger/output/TestPTE /home/scudette/projects/test_data/tigger/TestPTE
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/test_data/tigger/output/TestPTE /home/scudette/projects/test_data/tigger/TestPTE
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - pte 0x3286b8
+else
+   less /home/scudette/projects/test_data/tigger/output/TestPTE
+fi
+exit 0
+{
+    "time_used": 1.2477631568908691, 
+    "output": [
+        "", 
+        "PTE Contains 0x4d7163", 
+        "PTE Type: Valid", 
+        "[_MMPTE_HARDWARE Hard] @ 0x003286B8", 
+        "  0x00 Accessed         [BitField(5-6):Accessed]: 0x00000001", 
+        "  0x00 CacheDisable     [BitField(4-5):CacheDisable]: 0x00000000", 
+        "  0x00 CopyOnWrite      [BitField(9-10):CopyOnWrite]: 0x00000000", 
+        "  0x00 Dirty            [BitField(6-7):Dirty]: 0x00000001", 
+        "  0x00 Global           [BitField(8-9):Global]: 0x00000001", 
+        "  0x00 LargePage        [BitField(7-8):LargePage]: 0x00000000", 
+        "  0x00 Owner            [BitField(2-3):Owner]: 0x00000000", 
+        "  0x00 PageFrameNumber  [BitField(12-38):PageFrameNumber]: 0x000004D7", 
+        "  0x00 Prototype        [BitField(10-11):Prototype]: 0x00000000", 
+        "  0x00 Valid            [BitField(0-1):Valid]: 0x00000001", 
+        "  0x00 Write            [BitField(1-2):Write]: 0x00000001", 
+        "  0x00 WriteThrough     [BitField(3-4):WriteThrough]: 0x00000000", 
+        "  0x00 reserved0        [BitField(11-12):reserved0]: 0x00000000", 
+        "  0x00 reserved1        [BitField(38-64):reserved1]: 0x00000000", 
+        ""
+    ], 
+    "errors": {}, 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "pte": "0x3286b8", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestPTE", 
+        "tempdir": "/tmp/tmp2q9sA5/TestPTEThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - pte 0x3286b8", 
+        "commandline": "pte %(pte)s", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

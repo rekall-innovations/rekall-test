@@ -1,0 +1,19 @@
+{
+    "time_used": 2.3711071014404297, 
+    "output": [
+        "_EPROCESS (P)||   DTB    ||Valid", 
+        "-------------||----------||-----", 
+        "0x00551b80   ||0x00319000||True "
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "find_dtb", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestWinFindDTB", 
+        "tempdir": "/tmp/tmpjCWx0x/TestWinFindDTBThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' find_dtb", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

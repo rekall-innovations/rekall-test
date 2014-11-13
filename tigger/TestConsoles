@@ -1,0 +1,38 @@
+{
+    "time_used": 3.7629849910736084, 
+    "output": [
+        "**************************************************", 
+        "ConsoleProcess: csrss.exe Pid: 608", 
+        "Console: 0x4e23b0 CommandHistorySize: 50", 
+        "HistoryBufferCount: 1 HistoryBufferMax: 4", 
+        "OriginalTitle: C:\\Program Files\\VMware\\VMware Tools\\TPAutoConnSvc.exe", 
+        "Title: C:\\Program Files\\VMware\\VMware Tools\\TPAutoConnSvc.exe", 
+        "AttachedProcess: TPAutoConnect.e Pid: 1084 Handle: 0x448", 
+        "----", 
+        "CommandHistory: 0xf786f8 Application: TPAutoConnect.exe Flags: Allocated", 
+        "CommandCount: 0 LastAdded: -1 LastDisplayed: -1", 
+        "FirstCommand: 0 CommandCountMax: 50", 
+        "ProcessHandle: 0x448", 
+        "----", 
+        "Screen 0x4e2ab0 X:80 Y:25", 
+        "Dump:", 
+        "TPAutoConnect User Agent, Copyright (c) 1999-2009 ThinPrint AG, 7.17.512.1      ", 
+        "**************************************************", 
+        "ConsoleProcess: csrss.exe Pid: 608", 
+        "Console: 0xf78958 CommandHistorySize: 50", 
+        "HistoryBufferCount: 2 HistoryBufferMax: 4", 
+        "OriginalTitle: \u8910\u00f7ystemRoot%\\system32\\cmd.exe", 
+        "Title: "
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "consoles", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestConsoles", 
+        "tempdir": "/tmp/tmpjCWx0x/TestConsolesThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' consoles", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

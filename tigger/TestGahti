@@ -1,0 +1,38 @@
+{
+    "time_used": 10.827653884887695, 
+    "output": [
+        "Session ||        Type        ||  Tag   ||fnDestroy ||Flags", 
+        "--------||--------------------||--------||----------||-----", 
+        "       0||TYPE_FREE           ||        ||0x00000000||", 
+        "       0||TYPE_WINDOW         ||Uswd    ||0xbf8fb404||OCF_DESKTOPHEAP, OCF_THREADOWNED, OCF_USEPOOLIFNODESKTOP, OCF_USEPOOLQUOTA", 
+        "       0||TYPE_MENU           ||        ||0xbf830952||OCF_DESKTOPHEAP, OCF_PROCESSOWNED", 
+        "       0||TYPE_CURSOR         ||Uscu    ||0xbf8fc450||OCF_MARKPROCESS, OCF_PROCESSOWNED, OCF_USEPOOLQUOTA", 
+        "       0||TYPE_SETWINDOWPOS   ||Ussw    ||0xbf81f334||OCF_THREADOWNED, OCF_USEPOOLQUOTA", 
+        "       0||TYPE_HOOK           ||        ||0xbf8dbb5b||OCF_DESKTOPHEAP, OCF_THREADOWNED", 
+        "       0||TYPE_CLIPDATA       ||Uscb    ||0xbf919660||", 
+        "       0||TYPE_CALLPROC       ||        ||0xbf8fcd30||OCF_DESKTOPHEAP, OCF_PROCESSOWNED", 
+        "       0||TYPE_ACCELTABLE     ||Usac    ||0xbf8fcd30||OCF_PROCESSOWNED, OCF_USEPOOLQUOTA", 
+        "       0||TYPE_DDEACCESS      ||Usd9    ||0xbf919660||OCF_THREADOWNED, OCF_USEPOOLQUOTA", 
+        "       0||TYPE_DDECONV        ||UsdA    ||0xbf91f24b||OCF_THREADOWNED, OCF_USEPOOLQUOTA", 
+        "       0||TYPE_DDEXACT        ||UsdB    ||0xbf91f192||OCF_THREADOWNED, OCF_USEPOOLQUOTA", 
+        "       0||TYPE_MONITOR        ||Usdi    ||0xbf92cfa0||OCF_SHAREDHEAP", 
+        "       0||TYPE_KBDLAYOUT      ||Uskb    ||0xbf9101a7||", 
+        "       0||TYPE_KBDFILE        ||Uskf    ||0xbf925eb5||", 
+        "       0||TYPE_WINEVENTHOOK   ||Uswe    ||0xbf8ceca6||OCF_THREADOWNED", 
+        "       0||TYPE_TIMER          ||Ustm    ||0xbf80e53b||", 
+        "       0||TYPE_INPUTCONTEXT   ||Usim    ||0xbf9265c4||OCF_DESKTOPHEAP, OCF_THREADOWNED", 
+        "       0||TYPE_HIDDATA        ||Usha    ||0xbf92daa6||OCF_THREADOWNED", 
+        "       0||TYPE_DEVICEINFO     ||UsDI    ||0xbf8ad9e1||"
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "gahti", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestGahti", 
+        "tempdir": "/tmp/tmpjCWx0x/TestGahtiThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' gahti", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

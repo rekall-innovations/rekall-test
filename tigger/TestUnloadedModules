@@ -1,0 +1,28 @@
+{
+    "time_used": 1.8657619953155518, 
+    "output": [
+        "        Name        ||  Start   ||   End    ||Time", 
+        "--------------------||----------||----------||----", 
+        "Sfloppy.SYS         ||0xfc178000||0xfc17b000||2010-08-11 06:06:17+0000", 
+        "Cdaudio.SYS         ||0xfc7b3000||0xfc7b8000||2010-08-11 06:06:17+0000", 
+        "vmdebug.sys         ||0xfc66b000||0xfc674000||2010-08-11 06:06:47+0000", 
+        "splitter.sys        ||0xfc9cd000||0xfc9cf000||2010-08-11 06:07:39+0000", 
+        "aec.sys             ||0xf3124000||0xf3147000||2010-08-11 06:07:44+0000", 
+        "swmidi.sys          ||0xf377d000||0xf378b000||2010-08-11 06:07:44+0000", 
+        "DMusic.sys          ||0xf323c000||0xf3249000||2010-08-11 06:07:44+0000", 
+        "kmixer.sys          ||0xf30fa000||0xf3124000||2010-08-11 06:07:44+0000", 
+        "drmkaud.sys         ||0xfcab8000||0xfcab9000||2010-08-11 06:07:44+0000", 
+        "kmixer.sys          ||0xf2fe0000||0xf300a000||2010-08-15 19:26:22+0000"
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "unloaded_modules", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestUnloadedModules", 
+        "tempdir": "/tmp/tmpjCWx0x/TestUnloadedModulesThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' unloaded_modules", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

@@ -1,0 +1,47 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/test_data/tigger/output/TestGuessGUID /home/scudette/projects/test_data/tigger/TestGuessGUID
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/test_data/tigger/output/TestGuessGUID /home/scudette/projects/test_data/tigger/TestGuessGUID
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/test_data/tigger/output/TestGuessGUID /home/scudette/projects/test_data/tigger/TestGuessGUID
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' guess_guid win32k
+else
+   less /home/scudette/projects/test_data/tigger/output/TestGuessGUID
+fi
+exit 0
+{
+    "time_used": 6.43795108795166, 
+    "output": [
+        "        PID         ||      Session       ||Profile", 
+        "--------------------||--------------------||-------", 
+        "608                 ||0                   ||win32k/GUID/D48935A134F249CDA985C45051FBF0462", 
+        "608                 ||0                   ||win32k/GUID/FF84AE9473A94DC3944B18A3366DB0672", 
+        "608                 ||0                   ||win32k/GUID/5B12542E197C4B18B34A14C0229B80A62", 
+        "608                 ||0                   ||win32k/GUID/9509CA346604482B953315CE274C97B32", 
+        "608                 ||0                   ||win32k/GUID/5E69D40C6D5143E28432DF63F9EFDE642", 
+        "608                 ||0                   ||win32k/GUID/58A4CD28386B438EB472AAF58791EE072", 
+        "608                 ||0                   ||win32k/GUID/2D647ACE60874BB190928443C9663B8D2", 
+        "608                 ||0                   ||win32k/GUID/0CB72202690148749C06F6B71DB56A952", 
+        "608                 ||0                   ||win32k/GUID/BC9E46EC04C04CDB9C991B9DCE40B7732", 
+        "608                 ||0                   ||win32k/GUID/B73D5FDB757E4CA6A4E3A446A1EBFEA22", 
+        "608                 ||0                   ||win32k/GUID/54FAC8D3E1714990B814C1E866AF35A62", 
+        "608                 ||0                   ||win32k/GUID/4C91F239497447FE9E2940EADACFEDA52", 
+        "608                 ||0                   ||win32k/GUID/347A2D68D0384F859E48208492E454DA2", 
+        "-                   ||-                   ||win32k/GUID/D48935A134F249CDA985C45051FBF0462"
+    ], 
+    "errors": {}, 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "guess_guid win32k", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestGuessGUID", 
+        "tempdir": "/tmp/tmpzO31Rs/TestGuessGUIDThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' guess_guid win32k", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

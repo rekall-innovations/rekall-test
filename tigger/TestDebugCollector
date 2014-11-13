@@ -1,0 +1,28 @@
+{
+    "time_used": 2.0454368591308594, 
+    "output": [
+        "ERROR:root:Traceback (most recent call last):", 
+        "  File \"/home/scudette/rekall/rekall/session.py\", line 569, in _RunPlugin", 
+        "    plugin_obj = self._GetPluginObj(plugin_obj, *pos_args, **kwargs)", 
+        "  File \"/home/scudette/rekall/rekall/session.py\", line 559, in _GetPluginObj", 
+        "    return plugin_cls(*pos_args, **kwargs)", 
+        "  File \"/home/scudette/rekall/rekall/registry.py\", line 56, in __call__", 
+        "    res = super(UniqueObjectIdMetaclass, cls).__call__(*args, **kwargs)", 
+        "  File \"/home/scudette/rekall/rekall/plugins/common/entities.py\", line 45, in __init__", 
+        "    super(DumpCollector, self).__init__(**kwargs)", 
+        "NameError: global name 'DumpCollector' is not defined", 
+        "", 
+        "ERROR:root:global name 'DumpCollector' is not defined. Try --debug for more information."
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "debug_collector", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestDebugCollector", 
+        "tempdir": "/tmp/tmpjCWx0x/TestDebugCollectorThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' debug_collector", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

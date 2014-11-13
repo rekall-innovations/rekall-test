@@ -1,0 +1,20 @@
+{
+    "time_used": 2.163680076599121, 
+    "output": [
+        "Offset(P) ||      Local Address      ||     Remote Address      ||   Pid    ", 
+        "----------||-------------------------||-------------------------||----------", 
+        "0x02214988||172.16.176.143:1034      ||131.107.115.254:80       ||      1260", 
+        "0x06015ab0||172.16.176.143:1037      ||131.107.115.254:443      ||      1260"
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "connscan", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestConnectionScanners", 
+        "tempdir": "/tmp/tmpjCWx0x/TestConnectionScannersThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' connscan", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

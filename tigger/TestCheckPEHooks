@@ -1,0 +1,22 @@
+{
+    "time_used": 2.346959114074707, 
+    "output": [
+        "        Name        ||             Hook             ||                        Disassembly                         ", 
+        "--------------------||------------------------------||------------------------------------------------------------", 
+        "Import                                                      ||   Dest   ||Dest Name                                                   ", 
+        "------------------------------------------------------------||----------||------------------------------------------------------------", 
+        "Export                                                      ||   Dest   ||Dest Name                                                   ", 
+        "------------------------------------------------------------||----------||------------------------------------------------------------"
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "check_pehooks", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestCheckPEHooks", 
+        "tempdir": "/tmp/tmpjCWx0x/TestCheckPEHooksThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' check_pehooks", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

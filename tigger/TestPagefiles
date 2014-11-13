@@ -1,0 +1,19 @@
+{
+    "time_used": 1.9133188724517822, 
+    "output": [
+        "_MMPAGING_FILE||Number|| Size (b) ||      Filename      ", 
+        "--------------||------||----------||--------------------", 
+        "0x80f28928    ||  0   || 805306368||\\??\\C:\\pagefile.sys "
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "pagefiles", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestPagefiles", 
+        "tempdir": "/tmp/tmpCNteUi/TestPagefilesThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' pagefiles", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

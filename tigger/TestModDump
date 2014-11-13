@@ -1,0 +1,21 @@
+{
+    "time_used": 3.3754050731658936, 
+    "output": [
+        "Dumping ntoskrnl.exe, Base: 804d7000 output: driver.804d7000.sys"
+    ], 
+    "hashes": {
+        "driver.804d7000.sys": "04e1727a2daedcd450296a2879bea7d5"
+    }, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "driver": "ntoskrnl.exe", 
+        "commandline": "moddump --regex %(driver)s --dump-dir %(tempdir)s", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestModDump", 
+        "tempdir": "/tmp/tmpjCWx0x/TestModDumpThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' moddump --regex ntoskrnl.exe --dump-dir /tmp/tmpjCWx0x/TestModDumpThread-4", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

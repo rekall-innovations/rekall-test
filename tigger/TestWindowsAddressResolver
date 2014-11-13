@@ -1,0 +1,15 @@
+{
+    "time_used": 2.0144028663635254, 
+    "output": [], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "address_resolver", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestWindowsAddressResolver", 
+        "tempdir": "/tmp/tmpjCWx0x/TestWindowsAddressResolverThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' address_resolver", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

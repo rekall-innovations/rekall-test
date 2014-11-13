@@ -1,0 +1,23 @@
+{
+    "time_used": 4.973793983459473, 
+    "output": [
+        " Pid || Command  || Address  ||Type ||Length||      Filename      ||Description", 
+        "-----||----------||----------||-----||------||--------------------||-----------", 
+        "608  ||csrss.exe ||0x75b48230||X509 ||46201 ||608.X509.75B48230.der||-          "
+    ], 
+    "hashes": {
+        "608.X509.75B48230.der": "9d0ea71474d384115cecc4754829eb02"
+    }, 
+    "options": {
+        "regex": "csrss.exe", 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "cert_vad_scan --proc_regex %(regex)s -D %(tempdir)s ", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestCertVadScan", 
+        "tempdir": "/tmp/tmpjCWx0x/TestCertVadScanThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' cert_vad_scan --proc_regex csrss.exe -D /tmp/tmpjCWx0x/TestCertVadScanThread-1 ", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

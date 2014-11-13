@@ -1,0 +1,34 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/test_data/tigger/output/TestVmScan /home/scudette/projects/test_data/tigger/TestVmScan
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/test_data/tigger/output/TestVmScan /home/scudette/projects/test_data/tigger/TestVmScan
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/test_data/tigger/output/TestVmScan /home/scudette/projects/test_data/tigger/TestVmScan
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - vmscan
+else
+   less /home/scudette/projects/test_data/tigger/output/TestVmScan
+fi
+exit 0
+{
+    "time_used": 2.3653180599212646, 
+    "output": [
+        "              Description                     ||        Type        || Valid  ||EPT", 
+        "----------------------------------------      ||--------------------||--------||---"
+    ], 
+    "errors": {}, 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "vmscan", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestVmScan", 
+        "tempdir": "/tmp/tmpt6DtO6/TestVmScanThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - vmscan", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

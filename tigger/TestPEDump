@@ -1,0 +1,38 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/test_data/tigger/output/TestPEDump /home/scudette/projects/test_data/tigger/TestPEDump
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/test_data/tigger/output/TestPEDump /home/scudette/projects/test_data/tigger/TestPEDump
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/test_data/tigger/output/TestPEDump /home/scudette/projects/test_data/tigger/TestPEDump
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - pedump --out_file /tmp/tmpvMnKhz/TestPEDumpThread-1/out_file.exe --image_base 0x810dbe68
+else
+   less /home/scudette/projects/test_data/tigger/output/TestPEDump
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 1.6666219234466553, 
+    "return_code": 0, 
+    "output": [
+        "Dumping PE File at image_base 0x810dbe68 to /tmp/tmpvMnKhz/TestPEDumpThread-1/out_file.exe", 
+        "Done!"
+    ], 
+    "hashes": {
+        "out_file.exe": "81217c24b75b6570e32f8803ba67785a"
+    }, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "image_base": "0x810dbe68", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "pedump --out_file %(tempdir)s/out_file.exe --image_base %(image_base)s", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestPEDump", 
+        "tempdir": "/tmp/tmpvMnKhz/TestPEDumpThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - pedump --out_file /tmp/tmpvMnKhz/TestPEDumpThread-1/out_file.exe --image_base 0x810dbe68", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

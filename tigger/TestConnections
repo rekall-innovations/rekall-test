@@ -1,0 +1,18 @@
+{
+    "time_used": 1.9578890800476074, 
+    "output": [
+        "Offset (V)||      Local Address      ||     Remote Address      || Pid  ", 
+        "----------||-------------------------||-------------------------||------"
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "connections", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestConnections", 
+        "tempdir": "/tmp/tmpjCWx0x/TestConnectionsThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' connections", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}

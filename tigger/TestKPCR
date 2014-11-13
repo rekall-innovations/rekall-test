@@ -1,0 +1,42 @@
+{
+    "time_used": 0.5982799530029297, 
+    "output": [
+        "**************************************************", 
+        "           Property           ||Value", 
+        "------------------------------||-----", 
+        "Offset (V)                    ||0xffdff000", 
+        "KdVersionBlock                ||Pointer to [_DBGKD_GET_VERSION64 KdVersionBlock] @ 0x80544CB8                         ", 
+        "                              ||  0x00 MajorVersion        [unsigned short:MajorVersion]: 0x0000000F                  ", 
+        "                              ||  0x02 MinorVersion        [unsigned short:MinorVersion]: 0x00000A28                  ", 
+        "                              ||  0x04 ProtocolVersion     [unsigned short:ProtocolVersion]: 0x00000006               ", 
+        "                              ||  0x06 Flags               [unsigned short:Flags]: 0x00000002                         ", 
+        "                              ||  0x08 MachineType         [unsigned short:MachineType]: 0x0000014C                   ", 
+        "                              ||  0x0A MaxPacketType       [unsigned char:MaxPacketType]: 0x0000000C                  ", 
+        "                              ||  0x0B MaxStateChange      [unsigned char:MaxStateChange]: 0x00000003                 ", 
+        "                              ||  0x0C MaxManipulate       [unsigned char:MaxManipulate]: 0x0000002D                  ", 
+        "                              ||  0x0D Simulation          [unsigned char:Simulation]: 0x00000000                     ", 
+        "                              ||  0x0E Unused             <Array 1 x unsigned short @ 0x80544CC6>                     ", 
+        "                              ||  0x10 KernBase            [unsigned long long:KernBase]: 0xFFFFFFFF804D7000          ", 
+        "                              ||  0x18 PsLoadedModuleList  [unsigned long long:PsLoadedModuleList]: 0xFFFFFFFF805531A0", 
+        "                              ||  0x20 DebuggerDataList   <unsigned long Pointer to [0x80675DF4] (DebuggerDataList)>  ", 
+        "IDT                           ||0x8003f400", 
+        "GDT                           ||0x8003f000", 
+        "CurrentThread                 : 0xff13c360 TID 792 (svchost.exe:1028)", 
+        "IdleThread                    : 0x80551920 TID 0 (Idle:0)", 
+        "Details                       : CPU 0 (GenuineIntel @ 3051 MHz)", 
+        "CR3/DTB                       : 0x319000"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "commandline": "kpcr", 
+        "pid": "1724", 
+        "--renderer": "test", 
+        "test_class": "TestKPCR", 
+        "tempdir": "/tmp/tmpy3Jbu3/TestKPCRThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - kpcr", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
+    }
+}
