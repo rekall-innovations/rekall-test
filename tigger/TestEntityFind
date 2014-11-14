@@ -1,36 +1,36 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/test_data/tigger/output/TestEntityFind /home/scudette/projects/test_data/tigger/TestEntityFind
+   cp /home/scudette/projects/rekall-test/tigger/output/TestEntityFind /home/scudette/projects/rekall-test/tigger/TestEntityFind
 elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/test_data/tigger/output/TestEntityFind /home/scudette/projects/test_data/tigger/TestEntityFind
+   meld /home/scudette/projects/rekall-test/tigger/output/TestEntityFind /home/scudette/projects/rekall-test/tigger/TestEntityFind
 elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/test_data/tigger/output/TestEntityFind /home/scudette/projects/test_data/tigger/TestEntityFind
+   diff /home/scudette/projects/rekall-test/tigger/output/TestEntityFind /home/scudette/projects/rekall-test/tigger/TestEntityFind
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - find "Process/command =~ lsass"
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - find "Process/command =~ lsass"
 else
-   less /home/scudette/projects/test_data/tigger/output/TestEntityFind
+   less /home/scudette/projects/rekall-test/tigger/output/TestEntityFind
 fi
 exit 0
 {
-    "time_used": 11.095569849014282, 
+    "time_used": 24.29048800468445, 
     "output": [
-        "                                                         Entity                                                         ", 
-        "------------------------------------------------------------------------------------------------------------------------", 
-        "Process: lsass.exe                                                                                                      "
+        "pid    parent               user                 command                        is_64bit   session             ", 
+        "------ -------------------- -------------------- ------------------------------ ---------- --------------------", 
+        "688    winlogon.exe         -                    lsass.exe                      False      -                   "
     ], 
     "errors": {}, 
     "return_code": 0, 
     "options": {
         "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "process": "lsass", 
         "commandline": "find \"Process/command =~ %(process)s\"", 
         "pid": "1724", 
         "--renderer": "test", 
         "test_class": "TestEntityFind", 
-        "tempdir": "/tmp/tmp3wcVdh/TestEntityFindThread-3", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - find \"Process/command =~ lsass\"", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmpKOly3v/TestEntityFindThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - find \"Process/command =~ lsass\"", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }
