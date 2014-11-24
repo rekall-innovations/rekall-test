@@ -1,0 +1,43 @@
+{
+    "time_used": 0.8668680191040039, 
+    "output": [
+        "MFT Entry Header Values:", 
+        "Entry: 42        Sequence: 1", 
+        "$LogFile Sequence Number: 3170835", 
+        "Links: 2", 
+        "", 
+        "$STANDARD_INFORMATION Attribute Values:", 
+        "Flags                         ||ARCHIVE                       ", 
+        "Owner ID                      ||0                             ", 
+        "SID                           ||260                           ", 
+        "Created                       ||2008-12-31 23:16:29+0000      ", 
+        "File Modified                 ||2008-12-31 23:15:30+0000      ", 
+        "MFT Modified                  ||2008-12-31 23:15:36+0000      ", 
+        "Accessed                      ||2008-12-31 23:16:29+0000      ", 
+        "", 
+        "Attributes:", 
+        "  Inode   ||             Type             ||   Name   || Res ||   Size   ||Comment", 
+        "----------||------------------------------||----------||-----||----------||-------", 
+        "   42-16-0||$STANDARD_INFORMATION         ||          ||True ||        72||", 
+        "   42-48-3||$FILE_NAME                    ||          ||True ||        90||200765~1.PDF", 
+        "   42-48-2||$FILE_NAME                    ||          ||True ||       102||20076517123273.pdf", 
+        "  42-128-1||$DATA                         ||          ||False||   1001647||VCN: 0-1956", 
+        "", 
+        "Clusters (128-1):", 
+        "478465-480422(1957)"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "commandline": "fstat %(path)s", 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpwOSw2e/TestFStatThread-3", 
+        "mfts": "42 40", 
+        "test_class": "TestFStat", 
+        "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - fstat RAW/20076517123273.pdf", 
+        "--profile": "ntfs", 
+        "path": "RAW/20076517123273.pdf", 
+        "testdir": "/home/scudette/projects/rekall-test/ntfs"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "time_used": 8.57679009437561, 
+    "output": [
+        "ERROR:root:No profiles match this image. Try specifying manually."
+    ], 
+    "hashes": {
+        "output_image.e01": "eae969aa802edd6069003107a0b3097b"
+    }, 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "commandline": "ewfacquire %(tempdir)s/output_image.e01", 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpwOSw2e/TestEWFAcquireThread-2", 
+        "mfts": "42 40", 
+        "test_class": "TestEWFAcquire", 
+        "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - ewfacquire /tmp/tmpwOSw2e/TestEWFAcquireThread-2/output_image.e01", 
+        "--profile": "ntfs", 
+        "path": "RAW/20076517123273.pdf", 
+        "testdir": "/home/scudette/projects/rekall-test/ntfs"
+    }
+}

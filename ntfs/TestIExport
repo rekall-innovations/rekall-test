@@ -1,0 +1,25 @@
+{
+    "time_used": 0.9136450290679932, 
+    "output": [
+        "Writing MFT Entry 42 as RAW/20076517123273.pdf", 
+        "Writing MFT Entry 40 as Compressed/20076517123273.pdf"
+    ], 
+    "hashes": {
+        "Compressed%2f20076517123273.pdf": "2e167810afd3e5398b3fc439a99a4ef2", 
+        "RAW%2f20076517123273.pdf": "2e167810afd3e5398b3fc439a99a4ef2"
+    }, 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "commandline": "iexport %(mfts)s --dump_dir %(tempdir)s", 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpwOSw2e/TestIExportThread-1", 
+        "mfts": "42 40", 
+        "test_class": "TestIExport", 
+        "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - iexport 42 40 --dump_dir /tmp/tmpwOSw2e/TestIExportThread-1", 
+        "--profile": "ntfs", 
+        "path": "RAW/20076517123273.pdf", 
+        "testdir": "/home/scudette/projects/rekall-test/ntfs"
+    }
+}

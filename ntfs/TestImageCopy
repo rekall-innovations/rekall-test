@@ -1,0 +1,24 @@
+{
+    "time_used": 8.515568017959595, 
+    "output": [
+        "ERROR:root:No profiles match this image. Try specifying manually.", 
+        "Range 0x0 - 0x1eca0000"
+    ], 
+    "hashes": {
+        "output_image.raw": "b1378f1f273add14411b32d5de7c5d5c"
+    }, 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "commandline": "imagecopy -O %(tempdir)s/output_image.raw", 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpwOSw2e/TestImageCopyThread-4", 
+        "mfts": "42 40", 
+        "test_class": "TestImageCopy", 
+        "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - imagecopy -O /tmp/tmpwOSw2e/TestImageCopyThread-4/output_image.raw", 
+        "--profile": "ntfs", 
+        "path": "RAW/20076517123273.pdf", 
+        "testdir": "/home/scudette/projects/rekall-test/ntfs"
+    }
+}
