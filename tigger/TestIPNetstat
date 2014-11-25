@@ -1,0 +1,20 @@
+{
+    "time_used": 1.743962049484253, 
+    "output": [
+        "protocol             protocol             src_addr             src_port             dst_addr             dst_port             state                process                                 ", 
+        "-------------------- -------------------- -------------------- -------------------- -------------------- -------------------- -------------------- ----------------------------------------"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "commandline": "ipnetstat", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestIPNetstat", 
+        "tempdir": "/tmp/tmpOOpYzM/TestIPNetstatThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - ipnetstat", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}

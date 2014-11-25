@@ -1,0 +1,20 @@
+{
+    "time_used": 1.7564489841461182, 
+    "output": [
+        "name                 count_active         count_free           element_size         tracks_pages         allows_foreign      ", 
+        "-------------------- -------------------- -------------------- -------------------- -------------------- --------------------"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "commandline": "zones", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestListZones", 
+        "tempdir": "/tmp/tmpOOpYzM/TestListZonesThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - zones", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}
