@@ -1,5 +1,23 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestUserAssist /home/scudette/projects/rekall-test/tigger/TestUserAssist
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestUserAssist /home/scudette/projects/rekall-test/tigger/TestUserAssist
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestUserAssist /home/scudette/projects/rekall-test/tigger/TestUserAssist
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - userassist
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestUserAssist
+fi
+exit 0
 {
-    "time_used": 2.66524600982666, 
+    "errors": {}, 
+    "time_used": 3.0885329246520996, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestUserAssist)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0x00000000||00 00 00 00 00 00 00 00                         ||........         [truncated]... != u'       0x0||00 00 00 00 00 00 00 00                         ||........         [truncated]...\n- 0x00000000||00 00 00 00 00 00 00 00                         ||........        \n?   -------\n+        0x0||00 00 00 00 00 00 00 00                         ||........        \n? +++++++\n\n"
+    }, 
     "output": [
         "----------------------------", 
         "Registry: \\Device\\HarddiskVolume1\\Documents and Settings\\Administrator\\NTUSER.DAT @ 0xe1da4008", 
@@ -13,7 +31,7 @@
         "REG_BINARY    UEME_CTLSESSION :", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||            00 00 00 00 00 00 00 00             ||    ........    ", 
+        "       0x0||00 00 00 00 00 00 00 00                         ||........        ", 
         "----------------------------", 
         "Registry: \\Device\\HarddiskVolume1\\Documents and Settings\\Administrator\\NTUSER.DAT @ 0xe1da4008", 
         "Key path: $$$PROTO.HIV/Software/Microsoft/Windows/CurrentVersion/Explorer/UserAssist/{75048700-EF1F-11D0-9888-006097DEACF9}/Count", 
@@ -26,7 +44,7 @@
         "REG_BINARY    UEME_CTLSESSION :", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||            d7 c8 59 0e 02 00 00 00             ||    ..Y.....    ", 
+        "       0x0||d7 c8 59 0e 02 00 00 00                         ||..Y.....        ", 
         "", 
         "REG_BINARY    UEME_RUNPIDL:%csidl2%\\MSN.lnk :", 
         "ID:             1", 
@@ -34,7 +52,7 @@
         "Last updated:   2010-06-10 16:10:27+0000", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||01 00 00 00 13 00 00 00 56 24 cf 70 b7 08 cb 01 ||........V$.p....", 
+        "       0x0||01 00 00 00 13 00 00 00 56 24 cf 70 b7 08 cb 01 ||........V$.p....", 
         "", 
         "REG_BINARY    UEME_RUNPIDL:%csidl2%\\Windows Media Player.lnk :", 
         "ID:             1", 
@@ -42,7 +60,7 @@
         "Last updated:   2010-06-10 16:10:27+0000", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||01 00 00 00 12 00 00 00 56 24 cf 70 b7 08 cb 01 ||........V$.p....", 
+        "       0x0||01 00 00 00 12 00 00 00 56 24 cf 70 b7 08 cb 01 ||........V$.p....", 
         "", 
         "REG_BINARY    UEME_RUNPIDL:%csidl2%\\Windows Messenger.lnk :", 
         "ID:             1", 
@@ -50,7 +68,7 @@
         "Last updated:   2010-06-10 16:10:27+0000", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||01 00 00 00 11 00 00 00 56 24 cf 70 b7 08 cb 01 ||........V$.p....", 
+        "       0x0||01 00 00 00 11 00 00 00 56 24 cf 70 b7 08 cb 01 ||........V$.p....", 
         "", 
         "REG_BINARY    UEME_RUNPIDL:%csidl2%\\Accessories\\Tour Windows XP.lnk :", 
         "ID:             1", 
@@ -58,7 +76,7 @@
         "Last updated:   2010-06-10 16:10:27+0000", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||01 00 00 00 10 00 00 00 56 24 cf 70 b7 08 cb 01 ||........V$.p....", 
+        "       0x0||01 00 00 00 10 00 00 00 56 24 cf 70 b7 08 cb 01 ||........V$.p....", 
         "", 
         "REG_BINARY    UEME_RUNPIDL:%csidl2%\\Accessories\\System Tools\\Files and Settings Transfer Wizard.lnk :", 
         "ID:             1", 
@@ -66,7 +84,7 @@
         "Last updated:   2010-06-10 16:10:27+0000", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||01 00 00 00 0f 00 00 00 56 24 cf 70 b7 08 cb 01 ||........V$.p....", 
+        "       0x0||01 00 00 00 0f 00 00 00 56 24 cf 70 b7 08 cb 01 ||........V$.p....", 
         "", 
         "REG_BINARY    UEME_CTLCUACount:ctor :", 
         "ID:             1", 
@@ -74,7 +92,7 @@
         "Last updated:   -", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||01 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 ||................", 
+        "       0x0||01 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 ||................", 
         "", 
         "REG_BINARY    UEME_RUNCPL     :", 
         "ID:             1", 
@@ -82,7 +100,7 @@
         "Last updated:   2010-06-10 16:16:57+0000", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||01 00 00 00 06 00 00 00 e0 30 53 59 b8 08 cb 01 ||.........0SY....", 
+        "       0x0||01 00 00 00 06 00 00 00 e0 30 53 59 b8 08 cb 01 ||.........0SY....", 
         "", 
         "REG_BINARY    UEME_RUNCPL:desk.cpl :", 
         "ID:             1", 
@@ -90,7 +108,7 @@
         "Last updated:   2010-06-10 16:16:57+0000", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||01 00 00 00 06 00 00 00 e0 30 53 59 b8 08 cb 01 ||.........0SY....", 
+        "       0x0||01 00 00 00 06 00 00 00 e0 30 53 59 b8 08 cb 01 ||.........0SY....", 
         "", 
         "REG_BINARY    UEME_UISCUT     :", 
         "ID:             2", 
@@ -98,7 +116,7 @@
         "Last updated:   2010-08-15 19:25:51+0000", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||02 00 00 00 06 00 00 00 c0 21 68 ac af 3c cb 01 ||.........!h..<..", 
+        "       0x0||02 00 00 00 06 00 00 00 c0 21 68 ac af 3c cb 01 ||.........!h..<..", 
         "", 
         "REG_BINARY    UEME_RUNPATH    :", 
         "ID:             2", 
@@ -106,7 +124,7 @@
         "Last updated:   2010-08-15 19:25:52+0000", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||02 00 00 00 06 00 00 00 a0 97 71 ac af 3c cb 01 ||..........q..<..", 
+        "       0x0||02 00 00 00 06 00 00 00 a0 97 71 ac af 3c cb 01 ||..........q..<..", 
         "", 
         "REG_BINARY    UEME_RUNPATH:C:\\Documents and Settings\\Administrator\\Desktop\\tigger.exe :", 
         "ID:             2", 
@@ -114,17 +132,18 @@
         "Last updated:   2010-08-15 19:25:52+0000", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||02 00 00 00 06 00 00 00 a0 97 71 ac af 3c cb 01 ||..........q..<.."
+        "       0x0||02 00 00 00 06 00 00 00 a0 97 71 ac af 3c cb 01 ||..........q..<.."
     ], 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "userassist", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestUserAssist", 
-        "tempdir": "/tmp/tmpjCWx0x/TestUserAssistThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' userassist", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmpblovS9/TestUserAssistThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - userassist", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

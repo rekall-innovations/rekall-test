@@ -1,8 +1,26 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestSymLinkScan /home/scudette/projects/rekall-test/tigger/TestSymLinkScan
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestSymLinkScan /home/scudette/projects/rekall-test/tigger/TestSymLinkScan
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestSymLinkScan /home/scudette/projects/rekall-test/tigger/TestSymLinkScan
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - symlinkscan
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestSymLinkScan
+fi
+exit 0
 {
-    "time_used": 3.6381609439849854, 
+    "errors": {}, 
+    "time_used": 4.012928009033203, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestSymLinkScan)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u' ||Offset(P) || #Ptr || #Hnd ||     Creation time      ||From||                [truncated]... != u'-||Offset(P) || #Ptr || #Hnd ||     Creation time      ||From||                [truncated]...\n-  ||Offset(P) || #Ptr || #Hnd ||     Creation time      ||From||                             To                             \n? ^\n+ -||Offset(P) || #Ptr || #Hnd ||     Creation time      ||From||                             To                             \n? ^\n\n"
+    }, 
     "output": [
-        " ||Offset(P) || #Ptr || #Hnd ||     Creation time      ||From||                             To                             ", 
-        "-||----------||------||------||------------------------||----||------------------------------------------------------------", 
+        "-||Offset(P) || #Ptr || #Hnd ||     Creation time      ||From||                             To                             ", 
+        " ||----------||------||------||------------------------||----||------------------------------------------------------------", 
         " ||0x00941fe0||     1||     0||2010-08-11 06:06:50+0000||SW#{a7c7a5b0-5af3-11d1-9ced-00a024bf0407}#{9B365890-165F-11D0-A195-0020AFD156E4}#{d6c50671-72c1-11d2-9755-0000f8004788}||\\Device\\KSENUM#00000002                                     ", 
         " ||0x018175c0||     1||     0||2010-08-11 06:06:17+0000||SystemRoot||\\Device\\Harddisk0\\Partition1\\WINDOWS                        ", 
         " ||0x018175c0||     1||     0||2010-08-11 06:06:17+0000||SystemRoot||\\Device\\Harddisk0\\Partition1\\WINDOWS                        ", 
@@ -159,7 +177,6 @@
         " ||0x06a11620||     2||     1||2010-08-11 06:06:21+0000||KnownDllPath||C:\\WINDOWS\\system32                                         ", 
         " ||0x07c77a00||     1||     0||2010-08-11 06:06:46+0000||Global||\\Global??                                                   "
     ], 
-    "return_code": 0, 
     "options": {
         "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
@@ -168,7 +185,7 @@
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestSymLinkScan", 
-        "tempdir": "/tmp/tmpUlCiFj/TestSymLinkScanThread-4", 
+        "tempdir": "/tmp/tmpblovS9/TestSymLinkScanThread-4", 
         "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - symlinkscan", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }

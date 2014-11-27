@@ -1,14 +1,33 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestDriverScan /home/scudette/projects/rekall-test/tigger/TestDriverScan
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestDriverScan /home/scudette/projects/rekall-test/tigger/TestDriverScan
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestDriverScan /home/scudette/projects/rekall-test/tigger/TestDriverScan
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - driverscan
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestDriverScan
+fi
+exit 0
 {
-    "time_used": 3.111901044845581, 
+    "errors": {}, 
+    "time_used": 3.748081922531128, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestDriverScan)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u' ||0x01058388||4   ||0   ||0xfc76b000||    0x6b00||Fdc                 ||Fdc   [truncated]... != u' ||0x01058388||   4||   0||0xfc76b000||    0x6b00||Fdc                 ||Fdc   [truncated]...\n-  ||0x01058388||4   ||0   ||0xfc76b000||    0x6b00||Fdc                 ||Fdc         ||\\Driver\\Fdc\n?                 ---   ---\n+  ||0x01058388||   4||   0||0xfc76b000||    0x6b00||Fdc                 ||Fdc         ||\\Driver\\Fdc\n?                +++   +++\n\n"
+    }, 
     "output": [
-        " ||Offset(P) ||#Ptr||#Hnd||  Start   ||   Size   ||    Service Key     ||    Name    ||Driver Name", 
-        "-||----------||----||----||----------||----------||--------------------||------------||-----------", 
+        "-||Offset(P) ||#Ptr||#Hnd||  Start   ||   Size   ||    Service Key     ||    Name    ||Driver Name", 
+        " ||----------||----||----||----------||----------||--------------------||------------||-----------", 
         " ||0x01058388||   4||   0||0xfc76b000||    0x6b00||Fdc                 ||Fdc         ||\\Driver\\Fdc", 
         " ||0x01058e28||   4||   0||0xfc93b000||    0x3c80||serenum             ||serenum     ||\\Driver\\serenum", 
         " ||0x01059258||   4||   0||0xfc54b000||    0xfd80||Serial              ||Serial      ||\\Driver\\Serial", 
         " ||0x010593e8||   4||   0||0xfc121000||   0x13900||Parport             ||Parport     ||\\Driver\\Parport", 
         " ||0x0106fca0||   3||   0||0xf3a85000||   0x20f00||IpNat               ||IpNat       ||\\Driver\\IpNat", 
-        " ||0x0108ef38||   2||   0||0x00000000||       0x0||tmryqyrznr2.sys     ||tmryqyrznr2.sys||", 
+        " ||0x0108ef38||   2||   0||0x00000000||       0x0||tmryqyrznr2.sys     ||tmryqyrznr2.||           ", 
+        " ||          ||    ||    ||          ||          ||                    ||sys         ||           ", 
         " ||0x010ac3b0||   3||   0||0xfc4eb000||    0xa580||agp440              ||agp440      ||\\Driver\\agp440", 
         " ||0x010adf38||   5||   0||0xfbf82000||   0x30100||rdpdr               ||rdpdr       ||\\Driver\\rdpdr", 
         " ||0x010aee28||   3||   0||0xfbf4e000||   0x33200||Update              ||Update      ||\\Driver\\Update", 
@@ -104,14 +123,15 @@
         " ||0x069d4f38||   3||   0||0xfc68b000||    0x8700||Wanarp              ||Wanarp      ||\\Driver\\Wanarp"
     ], 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "driverscan", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestDriverScan", 
-        "tempdir": "/tmp/tmpjCWx0x/TestDriverScanThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' driverscan", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmpblovS9/TestDriverScanThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - driverscan", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

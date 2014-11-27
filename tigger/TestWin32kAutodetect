@@ -1,5 +1,23 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestWin32kAutodetect /home/scudette/projects/rekall-test/tigger/TestWin32kAutodetect
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestWin32kAutodetect /home/scudette/projects/rekall-test/tigger/TestWin32kAutodetect
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestWin32kAutodetect /home/scudette/projects/rekall-test/tigger/TestWin32kAutodetect
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - win32k_autodetect
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestWin32kAutodetect
+fi
+exit 0
 {
-    "time_used": 11.87491512298584, 
+    "errors": {}, 
+    "time_used": 22.54390597343445, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestWin32kAutodetect)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u\"rpwinstaNext        ||0x00000004||['Pointer', {'target': 'tagWINDOWSTATION'}]\" [truncated]... != u\"rpwinstaNext        ||       0x4||['Pointer', {'target': 'tagWINDOWSTATION'}]\" [truncated]...\n- rpwinstaNext        ||0x00000004||['Pointer', {'target': 'tagWINDOWSTATION'}]\n?                         -------\n+ rpwinstaNext        ||       0x4||['Pointer', {'target': 'tagWINDOWSTATION'}]\n?                       +++++++\n\n"
+    }, 
     "output": [
         "", 
         "************ Struct tagWINDOWSTATION ************", 
@@ -28,14 +46,15 @@
         "hsectionDesktop     ||      0x40||['Pointer', {'target': '_SECTION_OBJECT'}]"
     ], 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "win32k_autodetect", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestWin32kAutodetect", 
-        "tempdir": "/tmp/tmpjCWx0x/TestWin32kAutodetectThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' win32k_autodetect", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmpblovS9/TestWin32kAutodetectThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - win32k_autodetect", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

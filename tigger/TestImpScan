@@ -1,11 +1,29 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestImpScan /home/scudette/projects/rekall-test/tigger/TestImpScan
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestImpScan /home/scudette/projects/rekall-test/tigger/TestImpScan
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestImpScan /home/scudette/projects/rekall-test/tigger/TestImpScan
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - impscan --pid 1724
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestImpScan
+fi
+exit 0
 {
-    "time_used": 49.633208990097046, 
+    "errors": {}, 
+    "time_used": 30.368730068206787, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.windows.malware.impscan.TestImpScan)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 216, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 266, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0x000000b0||0x00000000||ntlanman.dll        ||39      ' != u'0x000000b0||0x00000000||NETUI1.dll          ||1974    '\n- 0x000000b0||0x00000000||ntlanman.dll        ||39      \n?                         ^^^^^^^^              ^ ^^\n+ 0x000000b0||0x00000000||NETUI1.dll          ||1974    \n?                         ^^^^^^            ++  ^ ^^\n\n"
+    }, 
     "output": [
         "**************************************************", 
         "Process explorer.exe PID 1724", 
         "   IAT    ||   Call   ||       Module       ||Function", 
         "----------||----------||--------------------||--------", 
-        "0x000000b0||0x00000000||ntlanman.dll        ||39      ", 
+        "0x000000b0||0x00000000||NETUI1.dll          ||1974    ", 
         "0x01001004||0x77c2c21b||msvcrt.dll          ||free    ", 
         "0x01001008||0x77c472b0||msvcrt.dll          ||memmove ", 
         "0x01001010||0x77c35c94||msvcrt.dll          ||_except_handler3", 
@@ -496,20 +514,21 @@
         "0x01046044||0x763639ab||WINSTA.dll          ||WinStationRegisterConsoleNotification", 
         "0x0104605c||0x769c8f41||USERENV.dll         ||GetProfileType", 
         "0x010474c8||0x7c812de0||kernel32.dll        ||GetUserDefaultUILanguage", 
-        "0x01047d70||0x00000000||ntlanman.dll        ||39      ", 
-        "0x01047d74||0x00000000||ntlanman.dll        ||39      ", 
-        "0x01047d78||0x00000000||ntlanman.dll        ||39      ", 
-        "0x09fffa6a||0x00000000||ntlanman.dll        ||39      "
+        "0x01047d70||0x00000000||NETUI1.dll          ||1974    ", 
+        "0x01047d74||0x00000000||NETUI1.dll          ||1974    ", 
+        "0x01047d78||0x00000000||NETUI1.dll          ||1974    ", 
+        "0x09fffa6a||0x00000000||NETUI1.dll          ||1974    "
     ], 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "impscan --pid %(pid)s", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestImpScan", 
-        "tempdir": "/tmp/tmpjCWx0x/TestImpScanThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' impscan --pid 1724", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmprrMyIr/TestImpScanThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - impscan --pid 1724", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

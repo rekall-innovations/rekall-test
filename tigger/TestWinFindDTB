@@ -1,19 +1,35 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestWinFindDTB /Users/adamsh/Projects/rekall-test/tigger/TestWinFindDTB
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestWinFindDTB /Users/adamsh/Projects/rekall-test/tigger/TestWinFindDTB
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestWinFindDTB /Users/adamsh/Projects/rekall-test/tigger/TestWinFindDTB
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - find_dtb
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestWinFindDTB
+fi
+exit 0
 {
-    "time_used": 2.3711071014404297, 
+    "time_used": 4.751132965087891, 
     "output": [
-        "_EPROCESS (P)||   DTB    ||Valid", 
-        "-------------||----------||-----", 
-        "0x00551b80   ||0x00319000||True "
+        "_EPROCESS (P)||   DTB    ||  Valid   ", 
+        "-------------||----------||----------", 
+        "0x00551b80   ||0x00319000||True      "
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "find_dtb", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestWinFindDTB", 
-        "tempdir": "/tmp/tmpjCWx0x/TestWinFindDTBThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' find_dtb", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpDXMRsH/TestWinFindDTBThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - find_dtb", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

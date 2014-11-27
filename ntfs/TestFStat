@@ -1,5 +1,23 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/ntfs/output/TestFStat /home/scudette/projects/rekall-test/ntfs/TestFStat
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/ntfs/output/TestFStat /home/scudette/projects/rekall-test/ntfs/TestFStat
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/ntfs/output/TestFStat /home/scudette/projects/rekall-test/ntfs/TestFStat
+elif [ "$1" == "run" ]; then
+   rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - fstat RAW/20076517123273.pdf
+else
+   less /home/scudette/projects/rekall-test/ntfs/output/TestFStat
+fi
+exit 0
 {
-    "time_used": 0.8668680191040039, 
+    "errors": {}, 
+    "time_used": 0.8423318862915039, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.filesystems.ntfs.TestFStat)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 24 != 26\n"
+    }, 
     "output": [
         "MFT Entry Header Values:", 
         "Entry: 42        Sequence: 1", 
@@ -18,21 +36,22 @@
         "Attributes:", 
         "  Inode   ||             Type             ||   Name   || Res ||   Size   ||Comment", 
         "----------||------------------------------||----------||-----||----------||-------", 
-        "   42-16-0||$STANDARD_INFORMATION         ||          ||True ||        72||", 
+        "   42-16-0||$STANDARD_INFORMATION         ||          ||True ||        72||       ", 
         "   42-48-3||$FILE_NAME                    ||          ||True ||        90||200765~1.PDF", 
         "   42-48-2||$FILE_NAME                    ||          ||True ||       102||20076517123273.pdf", 
         "  42-128-1||$DATA                         ||          ||False||   1001647||VCN: 0-1956", 
         "", 
         "Clusters (128-1):", 
-        "478465-480422(1957)"
+        "478465-4", 
+        "80422(19", 
+        "57)     "
     ], 
-    "return_code": 0, 
     "options": {
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
         "commandline": "fstat %(path)s", 
         "--renderer": "test", 
-        "tempdir": "/tmp/tmpwOSw2e/TestFStatThread-3", 
+        "tempdir": "/tmp/tmpz0Nt8i/TestFStatThread-4", 
         "mfts": "42 40", 
         "test_class": "TestFStat", 
         "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - fstat RAW/20076517123273.pdf", 

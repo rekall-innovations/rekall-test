@@ -1,18 +1,18 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/test_data/tigger/output/TestGuessGUID /home/scudette/projects/test_data/tigger/TestGuessGUID
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestGuessGUID /Users/adamsh/Projects/rekall-test/tigger/TestGuessGUID
 elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/test_data/tigger/output/TestGuessGUID /home/scudette/projects/test_data/tigger/TestGuessGUID
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestGuessGUID /Users/adamsh/Projects/rekall-test/tigger/TestGuessGUID
 elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/test_data/tigger/output/TestGuessGUID /home/scudette/projects/test_data/tigger/TestGuessGUID
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestGuessGUID /Users/adamsh/Projects/rekall-test/tigger/TestGuessGUID
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' guess_guid win32k
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - guess_guid win32k
 else
-   less /home/scudette/projects/test_data/tigger/output/TestGuessGUID
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestGuessGUID
 fi
 exit 0
 {
-    "time_used": 6.43795108795166, 
+    "time_used": 8.50044298171997, 
     "output": [
         "        PID         ||      Session       ||Profile", 
         "--------------------||--------------------||-------", 
@@ -34,14 +34,15 @@ exit 0
     "errors": {}, 
     "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "guess_guid win32k", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestGuessGUID", 
-        "tempdir": "/tmp/tmpzO31Rs/TestGuessGUIDThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' guess_guid win32k", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpMn5Sf6/TestGuessGUIDThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - guess_guid win32k", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

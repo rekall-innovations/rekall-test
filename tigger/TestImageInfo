@@ -1,16 +1,29 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestImageInfo /Users/adamsh/Projects/rekall-test/tigger/TestImageInfo
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestImageInfo /Users/adamsh/Projects/rekall-test/tigger/TestImageInfo
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestImageInfo /Users/adamsh/Projects/rekall-test/tigger/TestImageInfo
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - imageinfo
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestImageInfo
+fi
+exit 0
 {
-    "time_used": 1.9988069534301758, 
+    "time_used": 4.4558939933776855, 
     "output": [
-        "        Fact        ||Value", 
-        "--------------------||-----", 
-        "Kernel DTB          ||0x319000", 
-        "NT Build            ||2600.xpsp_sp2_rtm.040803-2158", 
-        "NT Build Ex         ||-    ", 
-        "Signed Drivers      ||-    ", 
-        "Time (UTC)          ||2010-08-15 19:26:50+0000", 
-        "Time (Local)        ||2010-08-15 23:26:50+0000", 
-        "Sec Since Boot      ||371.90625", 
-        "NtSystemRoot        ||C:\\WINDOWS", 
+        "        Fact        ||            Value             ", 
+        "--------------------||------------------------------", 
+        "Kernel DTB          ||0x319000                      ", 
+        "NT Build            ||2600.xpsp_sp2_rtm.040803-2158 ", 
+        "NT Build Ex         ||-                             ", 
+        "Signed Drivers      ||-                             ", 
+        "Time (UTC)          ||2010-08-15 19:26:50+0000      ", 
+        "Time (Local)        ||2010-08-15 23:26:50+0000      ", 
+        "Sec Since Boot      ||371.90625                     ", 
+        "NtSystemRoot        ||C:\\WINDOWS                    ", 
         "", 
         "**************** Physical Layout ****************", 
         "Phys Start|| Phys End ||Number of Pages", 
@@ -20,15 +33,18 @@
         "0x01000000||0x07ef0000||28400          ", 
         "0x07f00000||0x08000000||256            "
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "imageinfo", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestImageInfo", 
-        "tempdir": "/tmp/tmpjCWx0x/TestImageInfoThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' imageinfo", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpYULHcC/TestImageInfoThread-5", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - imageinfo", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

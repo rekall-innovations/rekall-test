@@ -1,5 +1,23 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestWinSSDT /home/scudette/projects/rekall-test/tigger/TestWinSSDT
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestWinSSDT /home/scudette/projects/rekall-test/tigger/TestWinSSDT
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestWinSSDT /home/scudette/projects/rekall-test/tigger/TestWinSSDT
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - ssdt
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestWinSSDT
+fi
+exit 0
 {
-    "time_used": 5.3873748779296875, 
+    "errors": {}, 
+    "time_used": 6.023187875747681, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestWinSSDT)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0x00000000||0x8059849a||nt!NtAcceptConnectPort' != u'       0x0||0x8059849a||nt!NtAcceptConnectPort'\n- 0x00000000||0x8059849a||nt!NtAcceptConnectPort\n?   -------\n+        0x0||0x8059849a||nt!NtAcceptConnectPort\n? +++++++\n\n"
+    }, 
     "output": [
         "", 
         "************** Table 0 @ 0x80501030 **************", 
@@ -962,14 +980,15 @@
         "     0x29a||0xbf817dc4||win32k!NtGdiDrawStream"
     ], 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "ssdt", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestWinSSDT", 
-        "tempdir": "/tmp/tmpjCWx0x/TestWinSSDTThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' ssdt", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmpblovS9/TestWinSSDTThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - ssdt", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

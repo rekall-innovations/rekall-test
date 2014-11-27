@@ -1,11 +1,24 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestKPCR /Users/adamsh/Projects/rekall-test/tigger/TestKPCR
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestKPCR /Users/adamsh/Projects/rekall-test/tigger/TestKPCR
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestKPCR /Users/adamsh/Projects/rekall-test/tigger/TestKPCR
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - kpcr
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestKPCR
+fi
+exit 0
 {
-    "time_used": 0.5982799530029297, 
+    "time_used": 2.8652939796447754, 
     "output": [
         "**************************************************", 
         "           Property           ||Value", 
         "------------------------------||-----", 
         "Offset (V)                    ||0xffdff000", 
-        "KdVersionBlock                ||Pointer to [_DBGKD_GET_VERSION64 KdVersionBlock] @ 0x80544CB8                         ", 
+        "KdVersionBlock                ||[_DBGKD_GET_VERSION64 KdVersionBlock] @ 0x80544CB8                                    ", 
         "                              ||  0x00 MajorVersion        [unsigned short:MajorVersion]: 0x0000000F                  ", 
         "                              ||  0x02 MinorVersion        [unsigned short:MinorVersion]: 0x00000A28                  ", 
         "                              ||  0x04 ProtocolVersion     [unsigned short:ProtocolVersion]: 0x00000006               ", 
@@ -26,17 +39,18 @@
         "Details                       : CPU 0 (GenuineIntel @ 3051 MHz)", 
         "CR3/DTB                       : 0x319000"
     ], 
+    "errors": {}, 
     "return_code": 0, 
     "options": {
         "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "kpcr", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestKPCR", 
-        "tempdir": "/tmp/tmpy3Jbu3/TestKPCRThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - kpcr", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpHPq5l9/TestKPCRThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - kpcr", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

@@ -1,5 +1,23 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/ntfs/output/TestIStat /home/scudette/projects/rekall-test/ntfs/TestIStat
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/ntfs/output/TestIStat /home/scudette/projects/rekall-test/ntfs/TestIStat
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/ntfs/output/TestIStat /home/scudette/projects/rekall-test/ntfs/TestIStat
+elif [ "$1" == "run" ]; then
+   rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - istat 42 40
+else
+   less /home/scudette/projects/rekall-test/ntfs/output/TestIStat
+fi
+exit 0
 {
-    "time_used": 0.7956571578979492, 
+    "errors": {}, 
+    "time_used": 0.774960994720459, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.filesystems.ntfs.TestIStat)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 50 != 58\n"
+    }, 
     "output": [
         "MFT Entry Header Values:", 
         "Entry: 42        Sequence: 1", 
@@ -18,13 +36,15 @@
         "Attributes:", 
         "  Inode   ||             Type             ||   Name   || Res ||   Size   ||Comment", 
         "----------||------------------------------||----------||-----||----------||-------", 
-        "   42-16-0||$STANDARD_INFORMATION         ||          ||True ||        72||", 
+        "   42-16-0||$STANDARD_INFORMATION         ||          ||True ||        72||       ", 
         "   42-48-3||$FILE_NAME                    ||          ||True ||        90||200765~1.PDF", 
         "   42-48-2||$FILE_NAME                    ||          ||True ||       102||20076517123273.pdf", 
         "  42-128-1||$DATA                         ||          ||False||   1001647||VCN: 0-1956", 
         "", 
         "Clusters (128-1):", 
-        "478465-480422(1957)", 
+        "478465-4", 
+        "80422(19", 
+        "57)     ", 
         "MFT Entry Header Values:", 
         "Entry: 40        Sequence: 1", 
         "$LogFile Sequence Number: 3168732", 
@@ -42,23 +62,28 @@
         "Attributes:", 
         "  Inode   ||             Type             ||   Name   || Res ||   Size   ||Comment", 
         "----------||------------------------------||----------||-----||----------||-------", 
-        "   40-16-0||$STANDARD_INFORMATION         ||          ||True ||        72||", 
+        "   40-16-0||$STANDARD_INFORMATION         ||          ||True ||        72||       ", 
         "   40-48-3||$FILE_NAME                    ||          ||True ||        90||200765~1.PDF", 
         "   40-48-2||$FILE_NAME                    ||          ||True ||       102||20076517123273.pdf", 
         "  40-128-1||$DATA                         ||          ||False||   1001647||VCN: 0-1967", 
         "", 
         "Clusters (128-1):", 
-        "474540-474587(47)||Sparse(1)||474588-475801(1213)||Sparse(3)||475804-475819(15)||Sparse(1)||475820-475865(45)||Sparse(3)", 
-        "475868-475878(10)||Sparse(6)||475884-475894(10)||Sparse(6)||475900-475913(13)||Sparse(3)||475916-476393(477)||Sparse(3)", 
-        "476396-476494(98)||Sparse(14)"
+        "474540-4||Sparse(1||474588-4||Sparse(3||475804-4||Sparse(1||475820-4||Sparse(3", 
+        "74587(47||)       ||75801(12||)       ||75819(15||)       ||75865(45||)       ", 
+        ")       ||        ||13)     ||        ||)       ||        ||)       ||        ", 
+        "475868-4||Sparse(6||475884-4||Sparse(6||475900-4||Sparse(3||475916-4||Sparse(3", 
+        "75878(10||)       ||75894(10||)       ||75913(13||)       ||76393(47||)       ", 
+        ")       ||        ||)       ||        ||)       ||        ||7)      ||        ", 
+        "476396-4||Sparse(1", 
+        "76494(98||4)      ", 
+        ")       ||        "
     ], 
-    "return_code": 0, 
     "options": {
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
         "commandline": "istat %(mfts)s", 
         "--renderer": "test", 
-        "tempdir": "/tmp/tmpwOSw2e/TestIStatThread-3", 
+        "tempdir": "/tmp/tmpz0Nt8i/TestIStatThread-3", 
         "mfts": "42 40", 
         "test_class": "TestIStat", 
         "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - istat 42 40", 

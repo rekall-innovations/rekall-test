@@ -1,23 +1,42 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestPools /home/scudette/projects/rekall-test/tigger/TestPools
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestPools /home/scudette/projects/rekall-test/tigger/TestPools
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestPools /home/scudette/projects/rekall-test/tigger/TestPools
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - pools
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestPools
+fi
+exit 0
 {
-    "time_used": 3.2634029388427734, 
+    "errors": {}, 
+    "time_used": 3.5718398094177246, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestPools)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'NonPagedPool        ||0    ||2588672   ||0x80ee1000||0x840cd000||       ' != u'NonPagedPool        ||0    ||   2588672||0x80ee1000||0x840cd000||       '\n- NonPagedPool        ||0    ||2588672   ||0x80ee1000||0x840cd000||       \n?                                     ---\n+ NonPagedPool        ||0    ||   2588672||0x80ee1000||0x840cd000||       \n?                              +++\n\n"
+    }, 
     "output": [
         "        Type        ||Index||   Size   ||  Start   ||   End    ||Comment", 
         "--------------------||-----||----------||----------||----------||-------", 
-        "NonPagedPool        ||0    ||   2588672||0x80ee1000||0x840cd000||", 
-        "PagedPool           ||0    ||         0||0xe1000000||0xe7400000||", 
-        "PagedPool           ||1    ||   4145152||0xe1000000||0xe7400000||", 
-        "PagedPool           ||2    ||    925696||0xe1000000||0xe7400000||", 
+        "NonPagedPool        ||0    ||   2588672||0x80ee1000||0x840cd000||       ", 
+        "PagedPool           ||0    ||         0||0xe1000000||0xe7400000||       ", 
+        "PagedPool           ||1    ||   4145152||0xe1000000||0xe7400000||       ", 
+        "PagedPool           ||2    ||    925696||0xe1000000||0xe7400000||       ", 
         "PagedPoolSession    ||0    ||         0||0xbc000000||0xbc3fffff||Session ID 0"
     ], 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "pools", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestPools", 
-        "tempdir": "/tmp/tmpjCWx0x/TestPoolsThread-3", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' pools", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmpblovS9/TestPoolsThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - pools", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

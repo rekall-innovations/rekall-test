@@ -1,5 +1,23 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestAnalyzeStruct /home/scudette/projects/rekall-test/tigger/TestAnalyzeStruct
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestAnalyzeStruct /home/scudette/projects/rekall-test/tigger/TestAnalyzeStruct
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestAnalyzeStruct /home/scudette/projects/rekall-test/tigger/TestAnalyzeStruct
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - analyze_struct 0xff3865d0
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestAnalyzeStruct
+fi
+exit 0
 {
-    "time_used": 2.33817195892334, 
+    "errors": {}, 
+    "time_used": 2.7311761379241943, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestAnalyzeStruct)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0x00000000||Data:0x1b0003' != u'       0x0||Data:0x1b0003'\n- 0x00000000||Data:0x1b0003\n+        0x0||Data:0x1b0003\n\n"
+    }, 
     "output": [
         "0xff3865d0 is inside pool allocation with tag 'Pro\\xe3' (0xff3865b0)", 
         "  Offset  ||Content", 
@@ -38,14 +56,15 @@
         "      0x7c||Data:0x0"
     ], 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "analyze_struct 0xff3865d0", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestAnalyzeStruct", 
-        "tempdir": "/tmp/tmpjCWx0x/TestAnalyzeStructThread-4", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' analyze_struct 0xff3865d0", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmpblovS9/TestAnalyzeStructThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - analyze_struct 0xff3865d0", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

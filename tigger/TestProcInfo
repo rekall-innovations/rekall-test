@@ -1,5 +1,18 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestProcInfo /Users/adamsh/Projects/rekall-test/tigger/TestProcInfo
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestProcInfo /Users/adamsh/Projects/rekall-test/tigger/TestProcInfo
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestProcInfo /Users/adamsh/Projects/rekall-test/tigger/TestProcInfo
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - procinfo --pid=1724
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestProcInfo
+fi
+exit 0
 {
-    "time_used": 5.2424561977386475, 
+    "time_used": 6.0778820514678955, 
     "output": [
         "**************************************************", 
         "Pid: 1724 explorer.exe", 
@@ -36,7 +49,7 @@
         "   windir=C:\\WINDOWS", 
         "", 
         "PE Infomation", 
-        "     Attribute      ||Value                                                       ", 
+        "     Attribute      ||                           Value                            ", 
         "--------------------||------------------------------------------------------------", 
         "Machine             ||IMAGE_FILE_MACHINE_I386                                     ", 
         "TimeDateStamp       ||2004-08-04 06:14:38+0000                                    ", 
@@ -45,12 +58,16 @@
         "                    ||IMAGE_FILE_LOCAL_SYMS_STRIPPED                              ", 
         "GUID/Age            ||6FFB289C02224E7985B067F4DCB3EE732                           ", 
         "PDB                 ||explorer.pdb                                                ", 
-        "MajorOperatingSystemVersion||5                                                           ", 
-        "MinorOperatingSystemVersion||1                                                           ", 
+        "MajorOperatingSystem||5                                                           ", 
+        "Version             ||                                                            ", 
+        "MinorOperatingSystem||1                                                           ", 
+        "Version             ||                                                            ", 
         "MajorImageVersion   ||5                                                           ", 
         "MinorImageVersion   ||1                                                           ", 
-        "MajorSubsystemVersion||4                                                           ", 
-        "MinorSubsystemVersion||10                                                          ", 
+        "MajorSubsystemVersio||4                                                           ", 
+        "n                   ||                                                            ", 
+        "MinorSubsystemVersio||10                                                          ", 
+        "n                   ||                                                            ", 
         "", 
         "Sections (Relative to 0x01000000):", 
         "Perm||  Name  ||   VMA    ||   Size   ", 
@@ -61,8 +78,8 @@
         "-r- ||.reloc  ||0x000fb000||0x00003800", 
         "", 
         "Data Directories:", 
-        "                                        ||   VMA    ||   Size   ", 
-        "----------------------------------------||----------||----------", 
+        "----------------------------------------||   VMA    ||   Size   ", 
+        "                                        ||----------||----------", 
         "IMAGE_DIRECTORY_ENTRY_EXPORT            ||0x00000000||0x00000000", 
         "IMAGE_DIRECTORY_ENTRY_IMPORT            ||0x01042ab0||0x00000118", 
         "IMAGE_DIRECTORY_ENTRY_RESOURCE          ||0x01048000||0x000b2278", 
@@ -686,21 +703,24 @@
         "UxTheme.dll!IsAppThemed                           ||                                                            ||40   ", 
         "", 
         "Export Directory:", 
-        "  Entry   ||Stat|| Ord ||                       Name                       ", 
-        "----------||----||-----||--------------------------------------------------", 
+        "  Entry   ||Stat|| Ord ||Name", 
+        "----------||----||-----||----", 
         "Version Information:", 
         "        key         ||value", 
         "--------------------||-----"
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "procinfo --pid=%(pid)s", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestProcInfo", 
-        "tempdir": "/tmp/tmpjCWx0x/TestProcInfoThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' procinfo --pid=1724", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpMn5Sf6/TestProcInfoThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - procinfo --pid=1724", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

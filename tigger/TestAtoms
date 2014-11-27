@@ -1,5 +1,23 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestAtoms /home/scudette/projects/rekall-test/tigger/TestAtoms
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestAtoms /home/scudette/projects/rekall-test/tigger/TestAtoms
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestAtoms /home/scudette/projects/rekall-test/tigger/TestAtoms
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - atoms
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestAtoms
+fi
+exit 0
 {
-    "time_used": 12.17282485961914, 
+    "errors": {}, 
+    "time_used": 23.169556140899658, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestAtoms)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0xe172b348||0         ||WinSta0           ||0x0000c001||1         ||1          [truncated]... != u'0xe172b348||0         ||WinSta0           ||    0xc001||1         ||1          [truncated]...\n- 0xe172b348||0         ||WinSta0           ||0x0000c001||1         ||1         ||True      ||StdExit\n?                                               ----\n+ 0xe172b348||0         ||WinSta0           ||    0xc001||1         ||1         ||True      ||StdExit\n?                                             ++++\n\n"
+    }, 
     "output": [
         "Offset(P) || Session  ||  WindowStation   ||   Atom   || RefCount ||  HIndex  ||  Pinned  ||Name", 
         "----------||----------||------------------||----------||----------||----------||----------||----", 
@@ -417,14 +435,15 @@
         "0xe1570258||0         ||-                 ||    0xc11f||2         ||287       ||False     ||Wmi Provider Host"
     ], 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "atoms", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestAtoms", 
-        "tempdir": "/tmp/tmpjCWx0x/TestAtomsThread-3", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' atoms", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmpblovS9/TestAtomsThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - atoms", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

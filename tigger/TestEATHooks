@@ -1,20 +1,20 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/test_data/tigger/output/TestEATHooks /home/scudette/projects/test_data/tigger/TestEATHooks
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestEATHooks /Users/adamsh/Projects/rekall-test/tigger/TestEATHooks
 elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/test_data/tigger/output/TestEATHooks /home/scudette/projects/test_data/tigger/TestEATHooks
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestEATHooks /Users/adamsh/Projects/rekall-test/tigger/TestEATHooks
 elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/test_data/tigger/output/TestEATHooks /home/scudette/projects/test_data/tigger/TestEATHooks
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestEATHooks /Users/adamsh/Projects/rekall-test/tigger/TestEATHooks
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - hooks_eat --pid 1724
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - hooks_eat --pid 1724
 else
-   less /home/scudette/projects/test_data/tigger/output/TestEATHooks
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestEATHooks
 fi
 exit 0
 {
-    "time_used": 28.041698932647705, 
+    "time_used": 23.725244998931885, 
     "output": [
-        "Pid ||      Proc      ||             Dll              ||Export                                                      ||   Dest   ||Dest Name                                                   ", 
+        "Pid ||      Proc      ||             Dll              ||                           Export                           ||   Dest   ||                         Dest Name                          ", 
         "----||----------------||------------------------------||------------------------------------------------------------||----------||------------------------------------------------------------", 
         "1724||explorer.exe    ||SHDOCVW.dll                   ||shdocvw:- (172)                                             ||0x77b40041||\\WINDOWS\\system32\\apphelp.dll!+0x41                         ", 
         "1724||explorer.exe    ||SHDOCVW.dll                   ||shdocvw:- (175)                                             ||0x77d8005c||\\WINDOWS\\system32\\user32.dll!+0x4005c                       ", 
@@ -59,13 +59,13 @@ exit 0
     "options": {
         "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "hooks_eat --pid %(pid)s", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestEATHooks", 
-        "tempdir": "/tmp/tmpWWGRTR/TestEATHooksThread-3", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - hooks_eat --pid 1724", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpCbrCHX/TestEATHooksThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - hooks_eat --pid 1724", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

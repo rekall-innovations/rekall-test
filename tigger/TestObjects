@@ -1,5 +1,23 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestObjects /home/scudette/projects/rekall-test/tigger/TestObjects
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestObjects /home/scudette/projects/rekall-test/tigger/TestObjects
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestObjects /home/scudette/projects/rekall-test/tigger/TestObjects
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - object_types
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestObjects
+fi
+exit 0
 {
-    "time_used": 2.2227299213409424, 
+    "errors": {}, 
+    "time_used": 2.053473949432373, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestObjects)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'1    ||31             ||NonPagedPool   ||Type' != u'    1||             31||NonPagedPool   ||Type'\n- 1    ||31             ||NonPagedPool   ||Type\n+     1||             31||NonPagedPool   ||Type\n\n"
+    }, 
     "output": [
         "Index||Number Objects ||   PoolType    ||Name", 
         "-----||---------------||---------------||----", 
@@ -36,14 +54,15 @@
         "   31||              0||NonPagedPool   ||FilterCommunicationPort"
     ], 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "object_types", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestObjects", 
-        "tempdir": "/tmp/tmpjCWx0x/TestObjectsThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' object_types", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmpblovS9/TestObjectsThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - object_types", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

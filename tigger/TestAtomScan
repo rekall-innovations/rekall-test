@@ -1,5 +1,23 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestAtomScan /home/scudette/projects/rekall-test/tigger/TestAtomScan
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestAtomScan /home/scudette/projects/rekall-test/tigger/TestAtomScan
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestAtomScan /home/scudette/projects/rekall-test/tigger/TestAtomScan
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - atomscan
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestAtomScan
+fi
+exit 0
 {
-    "time_used": 12.370283126831055, 
+    "errors": {}, 
+    "time_used": 22.9669029712677, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestAtomScan)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0x00dc1da8 ||0xe1634550||0x0000c011||1     ||True  ||True' != u'  0xdc1da8 ||0xe1634550||    0xc011||1     ||True  ||True'\n- 0x00dc1da8 ||0xe1634550||0x0000c011||1     ||True  ||True\n?   --                       ----\n+   0xdc1da8 ||0xe1634550||    0xc011||1     ||True  ||True\n? ++                       ++++\n\n"
+    }, 
     "output": [
         "TableOfs(P)||AtomOfs(V)||   Atom   || Refs ||Pinned||Name", 
         "-----------||----------||----------||------||------||----", 
@@ -417,14 +435,15 @@
         " 0x7e946a8 ||0xe17bbc00||    0xc017||8     ||False ||ThemePropScrollBarCtl"
     ], 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "atomscan", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestAtomScan", 
-        "tempdir": "/tmp/tmpjCWx0x/TestAtomScanThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' atomscan", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmpblovS9/TestAtomScanThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - atomscan", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

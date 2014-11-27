@@ -1,23 +1,36 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestEntityAnalyze /Users/adamsh/Projects/rekall-test/tigger/TestEntityAnalyze
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestEntityAnalyze /Users/adamsh/Projects/rekall-test/tigger/TestEntityAnalyze
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestEntityAnalyze /Users/adamsh/Projects/rekall-test/tigger/TestEntityAnalyze
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - analyze "Process/command =~ lsass"
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestEntityAnalyze
+fi
+exit 0
 {
-    "time_used": 0.7123508453369141, 
+    "time_used": 3.2448580265045166, 
     "output": [
         "", 
         "************************************************************* Query analysis: *************************************************************", 
-        "Expression                              ||Location in query                                                                                   ", 
+        "               Expression               ||                                         Location in query                                          ", 
         "----------------------------------------||----------------------------------------------------------------------------------------------------", 
-        " RegexFilter                            || >>> Process/command =~ lsass <<<                                                                   ", 
-        ". Binding                               || >>> Process/command <<<  =~ lsass                                                                  ", 
-        ".. leaf (str):                          ||", 
-        ". Literal                               ||Process/command =~  >>> lsass <<<                                                                   ", 
-        ".. leaf (str):                          ||", 
+        " ||RegexFilter                           ||Process/command =~ lsass                                                                            ", 
+        ".||Binding                               ||Process/command =~ lsass                                                                            ", 
+        "..||leaf (str):                          ||                                                                                                    ", 
+        ".||Literal                               ||Process/command =~ lsass                                                                            ", 
+        "..||leaf (str):                          ||                                                                                                    ", 
         "", 
         "*********************************************** Expected requirements for matching objects: ***********************************************", 
-        "Dependency                              ||Explanation                                                                                         ", 
+        "               Dependency               ||                                            Explanation                                             ", 
         "----------------------------------------||----------------------------------------------------------------------------------------------------", 
-        "+ Process                               || >>> Process/command <<<  =~ lsass                                                                  ", 
+        "+ Process                               ||Process/command =~ lsass                                                                            ", 
         "", 
         "**************************************************** Expected components in result set: ****************************************************", 
-        "Guaranteed          ||Component           ", 
+        "     Guaranteed     ||     Component      ", 
         "--------------------||--------------------", 
         "True                ||Process             ", 
         "False               ||Timestamps          ", 
@@ -25,24 +38,25 @@
         "False               ||Entity              ", 
         "", 
         "******************************************************* Dependencies on collectors: *******************************************************", 
-        "Collector                               ||Cost to run         ||Needed because of                                                               ", 
+        "               Collector                ||    Cost to run     ||                               Needed because of                                ", 
         "----------------------------------------||--------------------||--------------------------------------------------------------------------------", 
-        "proc                                    ||normal              ||the query                                                                       ", 
-        "handles                                 ||INSANE!             ||proc, handles                                                                   ", 
+        "PspCidTable                             ||normal              ||proc, handles                                                                   ", 
         "PsActiveProcessHead                     ||normal              ||proc, handles                                                                   ", 
-        "PspCidTable                             ||normal              ||proc, handles                                                                   "
+        "proc                                    ||normal              ||the query                                                                       ", 
+        "handles                                 ||INSANE!             ||proc, handles                                                                   "
     ], 
+    "errors": {}, 
     "return_code": 0, 
     "options": {
         "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "analyze \"Process/command =~ lsass\"", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestEntityAnalyze", 
-        "tempdir": "/tmp/tmpO6sv4a/TestEntityAnalyzeThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - analyze \"Process/command =~ lsass\"", 
-        "testdir": "/home/scudette/projects/rekall-test/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpMn5Sf6/TestEntityAnalyzeThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - analyze \"Process/command =~ lsass\"", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

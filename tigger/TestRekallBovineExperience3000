@@ -1,0 +1,58 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestRekallBovineExperience3000 /Users/adamsh/Projects/rekall-test/tigger/TestRekallBovineExperience3000
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestRekallBovineExperience3000 /Users/adamsh/Projects/rekall-test/tigger/TestRekallBovineExperience3000
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestRekallBovineExperience3000 /Users/adamsh/Projects/rekall-test/tigger/TestRekallBovineExperience3000
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - moo
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestRekallBovineExperience3000
+fi
+exit 0
+{
+    "time_used": 3.0514180660247803, 
+    "output": [
+        "               Dogma               ||                              Bessy                              ||                     Pilsner                      ||  Nowrap  ", 
+        "-----------------------------------||-----------------------------------------------------------------||--------------------------------------------------||----------", 
+        "This is a renderer stress-test. The||                                |############                    ||                /\\                                ||This is a fairly long line that shouldn't get wrapped.   ", 
+        "flags should have correct colors,  ||                                |#####  #####                    ||               / |\\                               ||The same row has another line that shouldn't get wrapped.", 
+        "the beer should be yellow and the  ||                                |##        ##                    ||              /  | \\                              ||                                                         ", 
+        "cell on the left should not bleed  ||              _                 |#####  #####                    ||             /   |  \\                             ||                                                         ", 
+        "into the cell on the right.        ||             / \\_               |############                    ||            /____|   \\                            ||                                                         ", 
+        "This is a really long column of    ||            /    \\              |                                ||           / \\    \\   \\                           ||                                                         ", 
+        "text with its own newlines in it!  ||           /\\/\\  /\\  _          |       /;    ;\\                 ||          /   \\    \\  /                           ||                                                         ", 
+        "This bovine experience has been    ||          /    \\/  \\/ \\         |   __  \\____//                  ||         /     \\    \\/                            ||                                                         ", 
+        "brought to you by Rekall.          ||        /\\  .-   `. \\  \\        |  /{_\\_/   `'\\____              ||        /       \\   /                             ||                                                         ", 
+        "                                   ||       /  `-.__ ^   /\\  \\       |  \\___ (o)  (o)   }             ||       /         \\ /                              ||                                                         ", 
+        "                                   ||      / _____________________________/          :--'             ||      /           v                               ||                                                         ", 
+        "                                   ||    ,-,'`@@@@@@@@       @@@@@@         \\_    `__\\                ||     /               ( o )o)                      ||                                                         ", 
+        "                                   ||   ;:(  @@@@@@@@@        @@@             \\___(o'o)               ||    /               ( o )o )o)                    ||                                                         ", 
+        "                                   ||   :: )  @@@@          @@@@@@        ,'@@(  `===='               ||                  (o( ~~~~~~~~o                   ||                                                         ", 
+        "                                   ||   :: : @@@@@:          @@@@         `@@@:                       ||                  ( )' ~~~~~~~' _                 ||                                                         ", 
+        "                                   ||   :: \\  @@@@@:       @@@@@@@)    (  '@@@'                       ||                    o|   o    |-. \\               ||                                                         ", 
+        "                                   ||   :; /\\      /      @@@@@@@@@\\   :@@@@@)                        ||                    o|     o  |  \\ \\              ||                                                         ", 
+        "                                   ||   ::/  )    {_----------------:  :~`,~~;                        ||                     | .      |  | |              ||                                                         ", 
+        "                                   ||  ;; `; :   )                  :  / `; ;                         ||                    o|   .    |  / /              ||                                                         ", 
+        "                                   || ;;;  : :   ;                  :  ;  ; :                         ||                     |  .  .  |._ /               ||                                                         ", 
+        "                                   || `'`  / :  :                   :  :  : :                         ||                     .========.                   ||                                                         ", 
+        "                                   ||     )_ \\__;                   :_ ;  \\_\\                         ||                                                  ||                                                         ", 
+        "                                   ||     :__\\  \\                   \\  \\  :  \\                        ||                                                  ||                                                         ", 
+        "                                   ||         `^'                    `^'  `-^-'                       ||                                                  ||                                                         "
+    ], 
+    "errors": {}, 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
+        "commandline": "moo", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestRekallBovineExperience3000", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmplr9jKT/TestRekallBovineExperience3000Thread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - moo", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
+    }
+}
