@@ -1,5 +1,5 @@
 {
-    "time_used": 3.4043209552764893, 
+    "time_used": 2.3645689487457275, 
     "output": [
         " ||_EPROCESS (P) Name                   PID||Offset(V) || PPID ||   PDB    ||Stat||      Time created      ||      Time exited       ", 
         "-||------------- -------------------- -----||----------||------||----------||----||------------------------||------------------------", 
@@ -38,15 +38,17 @@
         " ||0x06945da0    spoolsv.exe           1432||0xff1d7da0||   676||0x06cc01a0||EP  ||2010-08-11 06:06:26+0000||                        ", 
         " ||0x069d5b28    vmtoolsd.exe          1668||0xff1b8b28||   676||0x06cc01c0||EP  ||2010-08-11 06:06:35+0000||                        "
     ], 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "psscan", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestPSScan", 
-        "tempdir": "/tmp/tmpjCWx0x/TestPSScanThread-3", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' psscan", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmpo2btjJ/TestPSScanThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - psscan", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

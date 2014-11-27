@@ -1,0 +1,17 @@
+{
+    "time_used": 195.9075849056244, 
+    "output": [], 
+    "return_code": -15, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "commandline": "shell", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestInteractiveShell", 
+        "tempdir": "/tmp/tmpUlCiFj/TestInteractiveShellThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - shell", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}

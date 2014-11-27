@@ -1,0 +1,26 @@
+{
+    "time_used": 3.2851719856262207, 
+    "output": [
+        "**************************************************", 
+        "CommandProcess: csrss.exe Pid: 608", 
+        "CommandHistory: 0xf786f8 Application: TPAutoConnect.exe Flags: Allocated", 
+        "CommandCount: 0 LastAdded: -1 LastDisplayed: -1", 
+        "FirstCommand: 0 CommandCountMax: 50", 
+        "ProcessHandle: 0x448", 
+        "Cmd|| Address  ||Text", 
+        "---||----------||----"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "commandline": "cmdscan", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestCmdScan", 
+        "tempdir": "/tmp/tmpUlCiFj/TestCmdScanThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - cmdscan", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}

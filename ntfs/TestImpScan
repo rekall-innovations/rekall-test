@@ -1,0 +1,15 @@
+{
+    "time_used": 0.0003371238708496094, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "commandline": "impscan --pid %(pid)s", 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmp02ZEZz/TestImpScanThread-1", 
+        "mfts": "42 40", 
+        "test_class": "TestImpScan", 
+        "--profile": "ntfs", 
+        "path": "RAW/20076517123273.pdf", 
+        "testdir": "/home/scudette/projects/rekall-test/ntfs"
+    }
+}
