@@ -1,49 +1,65 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestObjects /Users/adamsh/Projects/rekall-test/tigger/TestObjects
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestObjects /Users/adamsh/Projects/rekall-test/tigger/TestObjects
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestObjects /Users/adamsh/Projects/rekall-test/tigger/TestObjects
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - object_types
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestObjects
+fi
+exit 0
 {
-    "time_used": 2.2227299213409424, 
+    "time_used": 3.5481388568878174, 
     "output": [
         "Index||Number Objects ||   PoolType    ||Name", 
         "-----||---------------||---------------||----", 
-        "    1||             31||NonPagedPool   ||Type", 
-        "    2||             34||PagedPool      ||Directory", 
-        "    3||            155||PagedPool      ||SymbolicLink", 
-        "    4||            108||PagedPool      ||Token", 
-        "    5||             25||NonPagedPool   ||Process", 
-        "    6||            365||NonPagedPool   ||Thread", 
-        "    7||              1||NonPagedPool   ||Job ", 
-        "    8||              0||NonPagedPool   ||DebugObject", 
-        "    9||           1908||NonPagedPool   ||Event", 
-        "   10||              0||NonPagedPool   ||EventPair", 
-        "   11||            218||NonPagedPool   ||Mutant", 
-        "   12||              5||NonPagedPool   ||Callback", 
-        "   13||            411||NonPagedPool   ||Semaphore", 
-        "   14||             27||NonPagedPool   ||Timer", 
-        "   15||              0||NonPagedPool   ||Profile", 
-        "   16||              1||PagedPool      ||KeyedEvent", 
-        "   17||              5||NonPagedPool   ||WindowStation", 
-        "   18||              7||NonPagedPool   ||Desktop", 
-        "   19||            271||PagedPool      ||Section", 
-        "   20||            738||PagedPool      ||Key ", 
-        "   21||            373||PagedPool      ||Port", 
-        "   22||              3||NonPagedPool   ||WaitablePort", 
-        "   23||             11||NonPagedPool   ||Adapter", 
-        "   24||              2||NonPagedPool   ||Controller", 
-        "   25||            359||NonPagedPool   ||Device", 
-        "   26||             99||NonPagedPool   ||Driver", 
-        "   27||             54||NonPagedPool   ||IoCompletion", 
-        "   28||           1536||NonPagedPool   ||File", 
-        "   29||             25||NonPagedPool   ||WmiGuid", 
-        "   30||              0||NonPagedPool   ||FilterConnectionPort", 
-        "   31||              0||NonPagedPool   ||FilterCommunicationPort"
+        "1    ||31             ||NonPagedPool   ||Type", 
+        "2    ||34             ||PagedPool      ||Directory", 
+        "3    ||155            ||PagedPool      ||SymbolicLink", 
+        "4    ||108            ||PagedPool      ||Token", 
+        "5    ||25             ||NonPagedPool   ||Process", 
+        "6    ||365            ||NonPagedPool   ||Thread", 
+        "7    ||1              ||NonPagedPool   ||Job ", 
+        "8    ||0              ||NonPagedPool   ||DebugObject", 
+        "9    ||1908           ||NonPagedPool   ||Event", 
+        "10   ||0              ||NonPagedPool   ||EventPair", 
+        "11   ||218            ||NonPagedPool   ||Mutant", 
+        "12   ||5              ||NonPagedPool   ||Callback", 
+        "13   ||411            ||NonPagedPool   ||Semaphore", 
+        "14   ||27             ||NonPagedPool   ||Timer", 
+        "15   ||0              ||NonPagedPool   ||Profile", 
+        "16   ||1              ||PagedPool      ||KeyedEvent", 
+        "17   ||5              ||NonPagedPool   ||WindowStation", 
+        "18   ||7              ||NonPagedPool   ||Desktop", 
+        "19   ||271            ||PagedPool      ||Section", 
+        "20   ||738            ||PagedPool      ||Key ", 
+        "21   ||373            ||PagedPool      ||Port", 
+        "22   ||3              ||NonPagedPool   ||WaitablePort", 
+        "23   ||11             ||NonPagedPool   ||Adapter", 
+        "24   ||2              ||NonPagedPool   ||Controller", 
+        "25   ||359            ||NonPagedPool   ||Device", 
+        "26   ||99             ||NonPagedPool   ||Driver", 
+        "27   ||54             ||NonPagedPool   ||IoCompletion", 
+        "28   ||1536           ||NonPagedPool   ||File", 
+        "29   ||25             ||NonPagedPool   ||WmiGuid", 
+        "30   ||0              ||NonPagedPool   ||FilterConnectionPort", 
+        "31   ||0              ||NonPagedPool   ||FilterCommunicationPort"
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "object_types", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestObjects", 
-        "tempdir": "/tmp/tmpjCWx0x/TestObjectsThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' object_types", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpZrt2hH/TestObjectsThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - object_types", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

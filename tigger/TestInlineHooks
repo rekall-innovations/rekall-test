@@ -1,54 +1,54 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/test_data/tigger/output/TestInlineHooks /home/scudette/projects/test_data/tigger/TestInlineHooks
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestInlineHooks /Users/adamsh/Projects/rekall-test/tigger/TestInlineHooks
 elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/test_data/tigger/output/TestInlineHooks /home/scudette/projects/test_data/tigger/TestInlineHooks
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestInlineHooks /Users/adamsh/Projects/rekall-test/tigger/TestInlineHooks
 elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/test_data/tigger/output/TestInlineHooks /home/scudette/projects/test_data/tigger/TestInlineHooks
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestInlineHooks /Users/adamsh/Projects/rekall-test/tigger/TestInlineHooks
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - hooks_inline --pid 1724
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - hooks_inline --pid 1724
 else
-   less /home/scudette/projects/test_data/tigger/output/TestInlineHooks
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestInlineHooks
 fi
 exit 0
 {
-    "time_used": 52.49474501609802, 
+    "time_used": 81.65309882164001, 
     "output": [
-        "Pid ||      Proc      ||      Dll       ||Name                ||        Hook        ||                        Disassembly                         ", 
-        "----||----------------||----------------||--------------------||--------------------||------------------------------------------------------------", 
-        "1724||explorer.exe    ||CRYPT32.dll     ||-                   ||0xc4216554          ||0xc421654b  DEC DWORD [ECX+0x0]                             ", 
-        "    ||                ||                ||                    ||                    ||0xc421654e  INC EDI                                         ", 
-        "    ||                ||                ||                    ||                    ||0xc421654f  ADD [ECX+0x0], AH                               ", 
-        "    ||                ||                ||                    ||                    ||0xc4216552  JZ 0xc4216554                                   ", 
-        "    ||                ||                ||                    ||                    ||0xc4216554  ADD [GS:EDI+0x0], DH                            ", 
-        "    ||                ||                ||                    ||                    ||0xc4216558  POPA                                            ", 
-        "    ||                ||                ||                    ||                    ||0xc4216559  ADD [ECX+0x0], BH                               ", 
-        "    ||                ||                ||                    ||                    ||0xc421655c  PUSH ESP                                        ", 
-        "    ||                ||                ||                    ||                    ||0xc421655d  ADD [EAX+0x0], BH                               ", 
-        "    ||                ||                ||                    ||                    ||0xc4216560  ADD [EAX], AL                                   ", 
-        "1724||explorer.exe    ||USERENV.dll     ||-                   ||0x76fa0088          ||0x76fa005d  LEA ESI, [EBP-0x8]                              ", 
-        "    ||                ||                ||                    ||                    ||0x76fa0060  MOV EAX, EBX                                    ", 
-        "    ||                ||                ||                    ||                    ||0x76fa0062  CALL 0x76fa0088                                 ", 
-        "    ||                ||                ||                    ||                    ||0x76fa0067  MOV EAX, [EBP-0x4]                              ", 
-        "    ||                ||                ||                    ||                    ||0x76fa006a  DEC EAX                                         ", 
-        "    ||                ||                ||                    ||                    ||0x76fa006b  POP ECX                                         ", 
-        "    ||                ||                ||                    ||                    ||0x76fa006c  MOV [0x5d102a00], EAX                           ", 
-        "    ||                ||                ||                    ||                    ||0x76fa0071  POP ECX                                         ", 
-        "    ||                ||                ||                    ||                    ||0x76fa0072  MOV [0x5d102a04], EDI                           ", 
-        "    ||                ||                ||                    ||                    ||0x76fa0078  XOR EAX, EAX                                    "
+        "Pid ||      Proc      ||      Dll       ||Name||        Hook        ||                        Disassembly                         ", 
+        "----||----------------||----------------||----||--------------------||------------------------------------------------------------", 
+        "1724||explorer.exe    ||CRYPT32.dll     ||-   ||0xc4216554          ||0xc421654b  DEC DWORD [ECX+0x0]                             ", 
+        "    ||                ||                ||    ||                    ||0xc421654e  INC EDI                                         ", 
+        "    ||                ||                ||    ||                    ||0xc421654f  ADD [ECX+0x0], AH                               ", 
+        "    ||                ||                ||    ||                    ||0xc4216552  JZ 0xc4216554                                   ", 
+        "    ||                ||                ||    ||                    ||0xc4216554  ADD [GS:EDI+0x0], DH                            ", 
+        "    ||                ||                ||    ||                    ||0xc4216558  POPA                                            ", 
+        "    ||                ||                ||    ||                    ||0xc4216559  ADD [ECX+0x0], BH                               ", 
+        "    ||                ||                ||    ||                    ||0xc421655c  PUSH ESP                                        ", 
+        "    ||                ||                ||    ||                    ||0xc421655d  ADD [EAX+0x0], BH                               ", 
+        "    ||                ||                ||    ||                    ||0xc4216560  ADD [EAX], AL                                   ", 
+        "1724||explorer.exe    ||USERENV.dll     ||-   ||0x76fa0088          ||0x76fa005d  LEA ESI, [EBP-0x8]                              ", 
+        "    ||                ||                ||    ||                    ||0x76fa0060  MOV EAX, EBX                                    ", 
+        "    ||                ||                ||    ||                    ||0x76fa0062  CALL 0x76fa0088                                 ", 
+        "    ||                ||                ||    ||                    ||0x76fa0067  MOV EAX, [EBP-0x4]                              ", 
+        "    ||                ||                ||    ||                    ||0x76fa006a  DEC EAX                                         ", 
+        "    ||                ||                ||    ||                    ||0x76fa006b  POP ECX                                         ", 
+        "    ||                ||                ||    ||                    ||0x76fa006c  MOV [0x5d102a00], EAX                           ", 
+        "    ||                ||                ||    ||                    ||0x76fa0071  POP ECX                                         ", 
+        "    ||                ||                ||    ||                    ||0x76fa0072  MOV [0x5d102a04], EDI                           ", 
+        "    ||                ||                ||    ||                    ||0x76fa0078  XOR EAX, EAX                                    "
     ], 
     "errors": {}, 
     "return_code": 0, 
     "options": {
         "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "hooks_inline --pid %(pid)s", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestInlineHooks", 
-        "tempdir": "/tmp/tmpowQ6Lk/TestInlineHooksThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - hooks_inline --pid 1724", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpZrt2hH/TestInlineHooksThread-5", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - hooks_inline --pid 1724", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

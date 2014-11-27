@@ -1,45 +1,61 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestPSXview /Users/adamsh/Projects/rekall-test/tigger/TestPSXview
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestPSXview /Users/adamsh/Projects/rekall-test/tigger/TestPSXview
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestPSXview /Users/adamsh/Projects/rekall-test/tigger/TestPSXview
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - psxview
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestPSXview
+fi
+exit 0
 {
-    "time_used": 5.01279091835022, 
+    "time_used": 9.019613027572632, 
     "output": [
-        "_EPROCESS  Name                   PID||PsActiveProcessHead||CSRSS||PspCidTable||Sessions||Handles||PSScan||Thrdproc", 
-        "---------- -------------------- -----||-------------------||-----||-----------||--------||-------||------||--------", 
-        "0x810b1660 System                   4||True               ||False||True       ||False   ||False  ||True  ||True    ", 
-        "0xff25a7e0 alg.exe                216||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff3667e8 VMwareTray.exe         432||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff374980 VMwareUser.exe         452||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0x80f94588 wuauclt.exe            468||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff3802c8 cmd.exe                532||False              ||False||False      ||False   ||False  ||True  ||False   ", 
-        "0xff2ab020 smss.exe               544||True               ||False||True       ||False   ||True   ||True  ||True    ", 
-        "0xff1ecda0 csrss.exe              608||True               ||False||True       ||True    ||True   ||True  ||True    ", 
-        "0xff1ec978 winlogon.exe           632||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff247020 services.exe           676||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff255020 lsass.exe              688||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff27d4d0 wmiprvse.exe           828||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff218230 vmacthlp.exe           844||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0x80ff88d8 svchost.exe            856||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff364310 wscntfy.exe            888||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff217560 svchost.exe            936||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0x80fbf910 svchost.exe           1028||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff38b5f8 TPAutoConnect.e       1084||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff22d558 svchost.exe           1088||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff203b80 svchost.exe           1148||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff1ebc08 logonui.exe           1168||False              ||False||False      ||False   ||False  ||True  ||False   ", 
-        "0xff1d7da0 spoolsv.exe           1432||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff1b8b28 vmtoolsd.exe          1668||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff3865d0 explorer.exe          1724||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0x80f60da0 wuauclt.exe           1732||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff1fdc88 VMUpgradeHelper       1788||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
-        "0xff143b28 TPAutoConnSvc.e       1968||True               ||True ||True       ||True    ||True   ||True  ||True    "
+        "_EPROCESS ||        Name        || PID ||PsActiveProcessHead||CSRSS||PspCidTable||Sessions||Handles||PSScan||Thrdproc", 
+        "----------||--------------------||-----||-------------------||-----||-----------||--------||-------||------||--------", 
+        "0x810b1660||System              ||4    ||True               ||False||True       ||False   ||False  ||True  ||True    ", 
+        "0xff25a7e0||alg.exe             ||216  ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff3667e8||VMwareTray.exe      ||432  ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff374980||VMwareUser.exe      ||452  ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0x80f94588||wuauclt.exe         ||468  ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff3802c8||cmd.exe             ||532  ||False              ||False||False      ||False   ||False  ||True  ||False   ", 
+        "0xff2ab020||smss.exe            ||544  ||True               ||False||True       ||False   ||True   ||True  ||True    ", 
+        "0xff1ecda0||csrss.exe           ||608  ||True               ||False||True       ||True    ||True   ||True  ||True    ", 
+        "0xff1ec978||winlogon.exe        ||632  ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff247020||services.exe        ||676  ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff255020||lsass.exe           ||688  ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff27d4d0||wmiprvse.exe        ||828  ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff218230||vmacthlp.exe        ||844  ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0x80ff88d8||svchost.exe         ||856  ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff364310||wscntfy.exe         ||888  ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff217560||svchost.exe         ||936  ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0x80fbf910||svchost.exe         ||1028 ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff38b5f8||TPAutoConnect.e     ||1084 ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff22d558||svchost.exe         ||1088 ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff203b80||svchost.exe         ||1148 ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff1ebc08||logonui.exe         ||1168 ||False              ||False||False      ||False   ||False  ||True  ||False   ", 
+        "0xff1d7da0||spoolsv.exe         ||1432 ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff1b8b28||vmtoolsd.exe        ||1668 ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff3865d0||explorer.exe        ||1724 ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0x80f60da0||wuauclt.exe         ||1732 ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff1fdc88||VMUpgradeHelper     ||1788 ||True               ||True ||True       ||True    ||True   ||True  ||True    ", 
+        "0xff143b28||TPAutoConnSvc.e     ||1968 ||True               ||True ||True       ||True    ||True   ||True  ||True    "
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "psxview", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestPSXview", 
-        "tempdir": "/tmp/tmpjCWx0x/TestPSXviewThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' psxview", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpYULHcC/TestPSXviewThread-7", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - psxview", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

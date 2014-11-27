@@ -1,5 +1,18 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestUsers /Users/adamsh/Projects/rekall-test/tigger/TestUsers
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestUsers /Users/adamsh/Projects/rekall-test/tigger/TestUsers
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestUsers /Users/adamsh/Projects/rekall-test/tigger/TestUsers
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - users
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestUsers
+fi
+exit 0
 {
-    "time_used": 2.444287061691284, 
+    "time_used": 4.25727105140686, 
     "output": [
         "**************************************************", 
         "Key SAM/SAM/Domains/Account/Users/000001F4 ", 
@@ -8,7 +21,7 @@
         "Comment             ||Built-in account for administering the computer/domain", 
         "NTHash              ||01000100e6769487ddec3969cd1f0882b407f878", 
         "LanHash             ||01000100da9188cbe583bb9b99261969e5ffc546", 
-        "FullName            ||", 
+        "FullName            || ", 
         "Type                ||Default Admin User", 
         "AccountExpiration   ||-", 
         "LoginCount          ||4", 
@@ -25,7 +38,7 @@
         "Comment             ||Built-in account for guest access to the computer/domain", 
         "NTHash              ||01000100", 
         "LanHash             ||01000100", 
-        "FullName            ||", 
+        "FullName            || ", 
         "Type                ||Default Guest Acct", 
         "AccountExpiration   ||-", 
         "LoginCount          ||0", 
@@ -70,15 +83,18 @@
         "Rid                 ||1002", 
         "PwdResetDate        ||2010-06-10 16:07:40+0000"
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "users", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestUsers", 
-        "tempdir": "/tmp/tmpjCWx0x/TestUsersThread-3", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' users", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpaPKNo8/TestUsersThread-6", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - users", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

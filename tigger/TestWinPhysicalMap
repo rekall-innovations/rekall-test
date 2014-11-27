@@ -1,5 +1,18 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestWinPhysicalMap /Users/adamsh/Projects/rekall-test/tigger/TestWinPhysicalMap
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestWinPhysicalMap /Users/adamsh/Projects/rekall-test/tigger/TestWinPhysicalMap
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestWinPhysicalMap /Users/adamsh/Projects/rekall-test/tigger/TestWinPhysicalMap
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - phys_map
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestWinPhysicalMap
+fi
+exit 0
 {
-    "time_used": 2.1355698108673096, 
+    "time_used": 3.325556993484497, 
     "output": [
         "Phys Start|| Phys End ||Number of Pages", 
         "----------||----------||---------------", 
@@ -8,15 +21,18 @@
         "0x01000000||0x07ef0000||28400          ", 
         "0x07f00000||0x08000000||256            "
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "phys_map", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestWinPhysicalMap", 
-        "tempdir": "/tmp/tmpjCWx0x/TestWinPhysicalMapThread-4", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' phys_map", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpZrt2hH/TestWinPhysicalMapThread-6", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - phys_map", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

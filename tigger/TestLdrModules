@@ -1,8 +1,21 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestLdrModules /Users/adamsh/Projects/rekall-test/tigger/TestLdrModules
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestLdrModules /Users/adamsh/Projects/rekall-test/tigger/TestLdrModules
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestLdrModules /Users/adamsh/Projects/rekall-test/tigger/TestLdrModules
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - ldrmodules --pid 1724
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestLdrModules
+fi
+exit 0
 {
-    "time_used": 3.3553810119628906, 
+    "time_used": 4.635469913482666, 
     "output": [
         "  Pid   ||      Process       ||   Base   ||InLoad||InInit||InMem||MappedPath", 
-        "--------||--------------------||----------||------||------||-----||----------", 
+        "--------||--------------------||----------||----- ||----- ||-----||----------", 
         "1724    ||explorer.exe        ||0x01000000||True  ||False ||True ||\\WINDOWS\\explorer.exe", 
         "1724    ||explorer.exe        ||0x00dd0000||True  ||True  ||True ||\\WINDOWS\\system32\\vmhgfs.dll", 
         "1724    ||explorer.exe        ||0x76b40000||True  ||True  ||True ||\\WINDOWS\\system32\\winmm.dll", 
@@ -80,15 +93,18 @@
         "1724    ||explorer.exe        ||0x77b20000||True  ||True  ||True ||\\WINDOWS\\system32\\msasn1.dll", 
         "1724    ||explorer.exe        ||0x72d10000||True  ||True  ||True ||\\WINDOWS\\system32\\msacm32.drv"
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "ldrmodules --pid %(pid)s", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestLdrModules", 
-        "tempdir": "/tmp/tmpjCWx0x/TestLdrModulesThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' ldrmodules --pid 1724", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpX2VhKS/TestLdrModulesThread-8", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - ldrmodules --pid 1724", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

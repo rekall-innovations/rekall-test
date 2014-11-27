@@ -1,5 +1,18 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestVADWalk /Users/adamsh/Projects/rekall-test/tigger/TestVADWalk
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestVADWalk /Users/adamsh/Projects/rekall-test/tigger/TestVADWalk
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestVADWalk /Users/adamsh/Projects/rekall-test/tigger/TestVADWalk
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - vadwalk --pid 1724
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestVADWalk
+fi
+exit 0
 {
-    "time_used": 3.110020875930786, 
+    "time_used": 5.169036865234375, 
     "output": [
         "**************************************************", 
         "Pid: 1724  ", 
@@ -211,15 +224,18 @@
         "0xff228050||0xff243c70||0xff144308||0x00000000||0x7ffdc000||0x7ffdcfff||Vadl", 
         "0xff144308||0xff228050||0x00000000||0x00000000||0x7ffdb000||0x7ffdbfff||Vadl"
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "vadwalk --pid %(pid)s", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestVADWalk", 
-        "tempdir": "/tmp/tmpjCWx0x/TestVADWalkThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' vadwalk --pid 1724", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpDXMRsH/TestVADWalkThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - vadwalk --pid 1724", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

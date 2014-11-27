@@ -1,5 +1,18 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestGetSIDs /Users/adamsh/Projects/rekall-test/tigger/TestGetSIDs
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestGetSIDs /Users/adamsh/Projects/rekall-test/tigger/TestGetSIDs
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestGetSIDs /Users/adamsh/Projects/rekall-test/tigger/TestGetSIDs
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - tokens
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestGetSIDs
+fi
+exit 0
 {
-    "time_used": 4.208308935165405, 
+    "time_used": 5.923142910003662, 
     "output": [
         "    Process     || Pid ||                       Sid                        ||Comment", 
         "----------------||-----||--------------------------------------------------||-------", 
@@ -174,15 +187,18 @@
         "TPAutoConnSvc.e ||1968 ||S-1-1-0                                           ||Everyone", 
         "TPAutoConnSvc.e ||1968 ||S-1-5-11                                          ||Authenticated Users"
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "tokens", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestGetSIDs", 
-        "tempdir": "/tmp/tmpjCWx0x/TestGetSIDsThread-3", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' tokens", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpezmpxE/TestGetSIDsThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - tokens", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

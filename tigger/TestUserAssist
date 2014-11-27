@@ -1,5 +1,18 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestUserAssist /Users/adamsh/Projects/rekall-test/tigger/TestUserAssist
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestUserAssist /Users/adamsh/Projects/rekall-test/tigger/TestUserAssist
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestUserAssist /Users/adamsh/Projects/rekall-test/tigger/TestUserAssist
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - userassist
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestUserAssist
+fi
+exit 0
 {
-    "time_used": 2.66524600982666, 
+    "time_used": 4.25504207611084, 
     "output": [
         "----------------------------", 
         "Registry: \\Device\\HarddiskVolume1\\Documents and Settings\\Administrator\\NTUSER.DAT @ 0xe1da4008", 
@@ -13,7 +26,7 @@
         "REG_BINARY    UEME_CTLSESSION :", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||            00 00 00 00 00 00 00 00             ||    ........    ", 
+        "0x00000000||00 00 00 00 00 00 00 00                         ||........        ", 
         "----------------------------", 
         "Registry: \\Device\\HarddiskVolume1\\Documents and Settings\\Administrator\\NTUSER.DAT @ 0xe1da4008", 
         "Key path: $$$PROTO.HIV/Software/Microsoft/Windows/CurrentVersion/Explorer/UserAssist/{75048700-EF1F-11D0-9888-006097DEACF9}/Count", 
@@ -26,7 +39,7 @@
         "REG_BINARY    UEME_CTLSESSION :", 
         "  Offset  ||                      Hex                       ||      Data      ", 
         "----------||------------------------------------------------||----------------", 
-        "0x00000000||            d7 c8 59 0e 02 00 00 00             ||    ..Y.....    ", 
+        "0x00000000||d7 c8 59 0e 02 00 00 00                         ||..Y.....        ", 
         "", 
         "REG_BINARY    UEME_RUNPIDL:%csidl2%\\MSN.lnk :", 
         "ID:             1", 
@@ -116,15 +129,18 @@
         "----------||------------------------------------------------||----------------", 
         "0x00000000||02 00 00 00 06 00 00 00 a0 97 71 ac af 3c cb 01 ||..........q..<.."
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "userassist", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestUserAssist", 
-        "tempdir": "/tmp/tmpjCWx0x/TestUserAssistThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' userassist", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpZrt2hH/TestUserAssistThread-5", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - userassist", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

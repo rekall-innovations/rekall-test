@@ -1,19 +1,35 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestPagefiles /Users/adamsh/Projects/rekall-test/tigger/TestPagefiles
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestPagefiles /Users/adamsh/Projects/rekall-test/tigger/TestPagefiles
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestPagefiles /Users/adamsh/Projects/rekall-test/tigger/TestPagefiles
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - pagefiles
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestPagefiles
+fi
+exit 0
 {
-    "time_used": 1.9133188724517822, 
+    "time_used": 4.04390287399292, 
     "output": [
         "_MMPAGING_FILE||Number|| Size (b) ||      Filename      ", 
-        "--------------||------||----------||--------------------", 
-        "0x80f28928    ||  0   || 805306368||\\??\\C:\\pagefile.sys "
+        "--------------|| ---  ||----------||--------------------", 
+        "0x80f28928    ||0     ||805306368 ||\\??\\C:\\pagefile.sys "
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "pagefiles", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestPagefiles", 
-        "tempdir": "/tmp/tmpCNteUi/TestPagefilesThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' pagefiles", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpwGB5dB/TestPagefilesThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - pagefiles", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

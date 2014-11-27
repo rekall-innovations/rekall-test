@@ -1,51 +1,67 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestAnalyzeStruct /Users/adamsh/Projects/rekall-test/tigger/TestAnalyzeStruct
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestAnalyzeStruct /Users/adamsh/Projects/rekall-test/tigger/TestAnalyzeStruct
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestAnalyzeStruct /Users/adamsh/Projects/rekall-test/tigger/TestAnalyzeStruct
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - analyze_struct 0xff3865d0
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestAnalyzeStruct
+fi
+exit 0
 {
-    "time_used": 2.33817195892334, 
+    "time_used": 4.999405145645142, 
     "output": [
         "0xff3865d0 is inside pool allocation with tag 'Pro\\xe3' (0xff3865b0)", 
         "  Offset  ||Content", 
         "----------||-------", 
-        "       0x0||Data:0x1b0003", 
-        "       0x4||Data:0x0", 
-        "       0x8||Data:0xff3865d8 _LIST_ENTRY @0xff3865d8 Empty Tag:Pro\\xe3 @0xff3865d8", 
-        "       0xc||Data:0xff3865d8", 
-        "      0x10||Data:0xff3865e0 _LIST_ENTRY @0xff3865e0 Empty Tag:Pro\\xe3 @0xff3865e0", 
-        "      0x14||Data:0xff3865e0", 
-        "      0x18||Data:0x6cc0280", 
-        "      0x1c||Data:0x2c3c", 
-        "      0x20||Data:0x0", 
-        "      0x24||Data:0x0", 
-        "      0x28||Data:0x0", 
-        "      0x2c||Data:0x0", 
-        "      0x30||Data:0x20ac", 
-        "      0x34||Data:0x0", 
-        "      0x38||Data:0x2d", 
-        "      0x3c||Data:0xe", 
-        "      0x40||Data:0xff386610 _LIST_ENTRY @0xff386610 Empty Tag:Pro\\xe3 @0xff386610", 
-        "      0x44||Data:0xff386610", 
-        "      0x48||Data:0x0", 
-        "      0x4c||Data:0x0", 
-        "      0x50||Data:0xff247f58 _LIST_ENTRY @0xff247f58", 
-        "      0x54||Data:0xff1f9cc0", 
-        "      0x58||Data:0x0", 
-        "      0x5c||Data:0x1", 
-        "      0x60||Data:0x12080009", 
-        "      0x64||Data:0x0", 
-        "      0x68||Data:0x0", 
-        "      0x6c||Data:0x0", 
-        "      0x70||Data:0xc1ea8c78", 
-        "      0x74||Data:0x1cb391b", 
-        "      0x78||Data:0x0", 
-        "      0x7c||Data:0x0"
+        "0x00000000||Data:0x1b0003", 
+        "0x00000004||Data:0x0", 
+        "0x00000008||Data:0xff3865d8 _LIST_ENTRY @0xff3865d8 Empty Tag:Pro\\xe3 @0xff3865d8", 
+        "0x0000000c||Data:0xff3865d8", 
+        "0x00000010||Data:0xff3865e0 _LIST_ENTRY @0xff3865e0 Empty Tag:Pro\\xe3 @0xff3865e0", 
+        "0x00000014||Data:0xff3865e0", 
+        "0x00000018||Data:0x6cc0280", 
+        "0x0000001c||Data:0x2c3c", 
+        "0x00000020||Data:0x0", 
+        "0x00000024||Data:0x0", 
+        "0x00000028||Data:0x0", 
+        "0x0000002c||Data:0x0", 
+        "0x00000030||Data:0x20ac", 
+        "0x00000034||Data:0x0", 
+        "0x00000038||Data:0x2d", 
+        "0x0000003c||Data:0xe", 
+        "0x00000040||Data:0xff386610 _LIST_ENTRY @0xff386610 Empty Tag:Pro\\xe3 @0xff386610", 
+        "0x00000044||Data:0xff386610", 
+        "0x00000048||Data:0x0", 
+        "0x0000004c||Data:0x0", 
+        "0x00000050||Data:0xff247f58 _LIST_ENTRY @0xff247f58", 
+        "0x00000054||Data:0xff1f9cc0", 
+        "0x00000058||Data:0x0", 
+        "0x0000005c||Data:0x1", 
+        "0x00000060||Data:0x12080009", 
+        "0x00000064||Data:0x0", 
+        "0x00000068||Data:0x0", 
+        "0x0000006c||Data:0x0", 
+        "0x00000070||Data:0xc1ea8c78", 
+        "0x00000074||Data:0x1cb391b", 
+        "0x00000078||Data:0x0", 
+        "0x0000007c||Data:0x0"
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "analyze_struct 0xff3865d0", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestAnalyzeStruct", 
-        "tempdir": "/tmp/tmpjCWx0x/TestAnalyzeStructThread-4", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' analyze_struct 0xff3865d0", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmplr9jKT/TestAnalyzeStructThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - analyze_struct 0xff3865d0", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

@@ -1,41 +1,57 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestWin32kAutodetect /Users/adamsh/Projects/rekall-test/tigger/TestWin32kAutodetect
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestWin32kAutodetect /Users/adamsh/Projects/rekall-test/tigger/TestWin32kAutodetect
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestWin32kAutodetect /Users/adamsh/Projects/rekall-test/tigger/TestWin32kAutodetect
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - win32k_autodetect
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestWin32kAutodetect
+fi
+exit 0
 {
-    "time_used": 11.87491512298584, 
+    "time_used": 22.94545292854309, 
     "output": [
         "", 
         "************ Struct tagWINDOWSTATION ************", 
         "       field        ||  offset  ||Definition", 
         "--------------------||----------||----------", 
-        "rpwinstaNext        ||       0x4||['Pointer', {'target': 'tagWINDOWSTATION'}]", 
-        "rpdeskList          ||       0x8||['Pointer', {'target': 'tagDESKTOP'}]", 
-        "pTerm               ||       0xc||['Pointer', {'target': 'tagTERMINAL'}]", 
-        "pGlobalAtomTable    ||      0x40||['Pointer', {'target': '_RTL_ATOM_TABLE'}]", 
+        "rpwinstaNext        ||0x00000004||['Pointer', {'target': 'tagWINDOWSTATION'}]", 
+        "rpdeskList          ||0x00000008||['Pointer', {'target': 'tagDESKTOP'}]", 
+        "pTerm               ||0x0000000c||['Pointer', {'target': 'tagTERMINAL'}]", 
+        "pGlobalAtomTable    ||0x00000040||['Pointer', {'target': '_RTL_ATOM_TABLE'}]", 
         "", 
         "************** Struct tagTHREADINFO **************", 
         "       field        ||  offset  ||Definition", 
         "--------------------||----------||----------", 
-        "pEThread            ||       0x0||['Pointer', {'target': '_ETHREAD'}]", 
-        "ppi                 ||      0x2c||['Pointer', {'target': 'tagPROCESSINFO'}]", 
-        "pq                  ||      0x30||['Pointer', {'target': 'tagQ'}]", 
-        "spklActive          ||      0x34||['Pointer', {'target': 'tagKL'}]", 
-        "rpdesk              ||      0x3c||['Pointer', {'target': 'tagDESKTOP'}]", 
-        "PtiLink             ||      0xac||['_LIST_ENTRY']", 
+        "pEThread            ||0x00000000||['Pointer', {'target': '_ETHREAD'}]", 
+        "ppi                 ||0x0000002c||['Pointer', {'target': 'tagPROCESSINFO'}]", 
+        "pq                  ||0x00000030||['Pointer', {'target': 'tagQ'}]", 
+        "spklActive          ||0x00000034||['Pointer', {'target': 'tagKL'}]", 
+        "rpdesk              ||0x0000003c||['Pointer', {'target': 'tagDESKTOP'}]", 
+        "PtiLink             ||0x000000ac||['_LIST_ENTRY']", 
         "", 
         "*************** Struct tagDESKTOP ***************", 
         "       field        ||  offset  ||Definition", 
         "--------------------||----------||----------", 
-        "rpdeskNext          ||       0xc||['Pointer', {'target': 'tagDESKTOP'}]", 
-        "rpwinstaParent      ||      0x10||['Pointer', {'target': 'tagWINDOWSTATION'}]", 
-        "hsectionDesktop     ||      0x40||['Pointer', {'target': '_SECTION_OBJECT'}]"
+        "rpdeskNext          ||0x0000000c||['Pointer', {'target': 'tagDESKTOP'}]", 
+        "rpwinstaParent      ||0x00000010||['Pointer', {'target': 'tagWINDOWSTATION'}]", 
+        "hsectionDesktop     ||0x00000040||['Pointer', {'target': '_SECTION_OBJECT'}]"
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "win32k_autodetect", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestWin32kAutodetect", 
-        "tempdir": "/tmp/tmpjCWx0x/TestWin32kAutodetectThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' win32k_autodetect", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmplr9jKT/TestWin32kAutodetectThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - win32k_autodetect", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

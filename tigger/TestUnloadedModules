@@ -1,5 +1,18 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestUnloadedModules /Users/adamsh/Projects/rekall-test/tigger/TestUnloadedModules
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestUnloadedModules /Users/adamsh/Projects/rekall-test/tigger/TestUnloadedModules
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestUnloadedModules /Users/adamsh/Projects/rekall-test/tigger/TestUnloadedModules
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - unloaded_modules
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestUnloadedModules
+fi
+exit 0
 {
-    "time_used": 1.8657619953155518, 
+    "time_used": 3.455718994140625, 
     "output": [
         "        Name        ||  Start   ||   End    ||Time", 
         "--------------------||----------||----------||----", 
@@ -14,15 +27,18 @@
         "drmkaud.sys         ||0xfcab8000||0xfcab9000||2010-08-11 06:07:44+0000", 
         "kmixer.sys          ||0xf2fe0000||0xf300a000||2010-08-15 19:26:22+0000"
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "unloaded_modules", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestUnloadedModules", 
-        "tempdir": "/tmp/tmpjCWx0x/TestUnloadedModulesThread-3", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' unloaded_modules", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpYULHcC/TestUnloadedModulesThread-6", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - unloaded_modules", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

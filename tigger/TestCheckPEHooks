@@ -1,22 +1,38 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestCheckPEHooks /Users/adamsh/Projects/rekall-test/tigger/TestCheckPEHooks
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestCheckPEHooks /Users/adamsh/Projects/rekall-test/tigger/TestCheckPEHooks
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestCheckPEHooks /Users/adamsh/Projects/rekall-test/tigger/TestCheckPEHooks
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - check_pehooks
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestCheckPEHooks
+fi
+exit 0
 {
-    "time_used": 2.346959114074707, 
+    "time_used": 3.473466157913208, 
     "output": [
         "        Name        ||             Hook             ||                        Disassembly                         ", 
         "--------------------||------------------------------||------------------------------------------------------------", 
-        "Import                                                      ||   Dest   ||Dest Name                                                   ", 
+        "                           Import                           ||   Dest   ||                         Dest Name                          ", 
         "------------------------------------------------------------||----------||------------------------------------------------------------", 
-        "Export                                                      ||   Dest   ||Dest Name                                                   ", 
-        "------------------------------------------------------------||----------||------------------------------------------------------------"
+        "Export||   Dest   ||Dest Name", 
+        "------||----------||---------"
     ], 
+    "errors": {}, 
+    "return_code": 0, 
     "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "check_pehooks", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestCheckPEHooks", 
-        "tempdir": "/tmp/tmpjCWx0x/TestCheckPEHooksThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' check_pehooks", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpHPq5l9/TestCheckPEHooksThread-7", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - check_pehooks", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

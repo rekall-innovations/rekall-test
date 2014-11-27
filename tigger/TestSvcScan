@@ -1,20 +1,20 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/test_data/tigger/output/TestSvcScan /home/scudette/projects/test_data/tigger/TestSvcScan
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestSvcScan /Users/adamsh/Projects/rekall-test/tigger/TestSvcScan
 elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/test_data/tigger/output/TestSvcScan /home/scudette/projects/test_data/tigger/TestSvcScan
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestSvcScan /Users/adamsh/Projects/rekall-test/tigger/TestSvcScan
 elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/test_data/tigger/output/TestSvcScan /home/scudette/projects/test_data/tigger/TestSvcScan
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestSvcScan /Users/adamsh/Projects/rekall-test/tigger/TestSvcScan
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - svcscan
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - svcscan
 else
-   less /home/scudette/projects/test_data/tigger/output/TestSvcScan
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestSvcScan
 fi
 exit 0
 {
-    "time_used": 3.4773471355438232, 
+    "time_used": 5.590491056442261, 
     "output": [
-        "  Offset  ||Order||PID ||Service Name                  ||Display Name                            ||Service Type                  || Service State ||Binary Path", 
+        "  Offset  ||Order||PID ||         Service Name         ||              Display Name              ||         Service Type         || Service State ||Binary Path", 
         "----------||-----||----||------------------------------||----------------------------------------||------------------------------||---------------||-----------", 
         "0x006eabb0||253  ||1028||WZCSVC                        ||Wireless Zero Configuration             ||SERVICE_WIN32_SHARE_PROCESS   ||SERVICE_RUNNING||C:\\WINDOWS\\System32\\svchost.exe -k netsvcs", 
         "0x006e3d18||56   ||1028||ERSvc                         ||Error Reporting Service                 ||SERVICE_WIN32_SHARE_PROCESS   ||SERVICE_RUNNING||C:\\WINDOWS\\System32\\svchost.exe -k netsvcs", 
@@ -104,13 +104,13 @@ exit 0
     "options": {
         "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "svcscan", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestSvcScan", 
-        "tempdir": "/tmp/tmpvMnKhz/TestSvcScanThread-4", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' --name_resolution_strategies 'Module,Symbol' - svcscan", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpXHjR_A/TestSvcScanThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - svcscan", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }
