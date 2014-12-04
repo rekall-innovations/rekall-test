@@ -1,0 +1,39 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestListTerminals /Users/adamsh/Projects/rekall-test/osx10.9.5/TestListTerminals
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestListTerminals /Users/adamsh/Projects/rekall-test/osx10.9.5/TestListTerminals
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestListTerminals /Users/adamsh/Projects/rekall-test/osx10.9.5/TestListTerminals
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - list_terminals
+else
+   less /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestListTerminals
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 10.277137994766235, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestListTerminals)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u\"testdude       ||240            ||/dev/ttys000                  ||'<whitespace [truncated]... != u\"testdude       ||230            ||/dev/ttys000                  ||'\\\\rna<white [truncated]...\nDiff is 661 characters long. Set self.maxDiff to None to see it.\n"
+    }, 
+    "output": [
+        "     User      ||    Session    ||        Terminal vnode        ||                              Recovered input                              ||                             Recovered output                              ", 
+        "---------------||---------------||------------------------------||---------------------------------------------------------------------------||---------------------------------------------------------------------------", 
+        "testdude       ||230            ||/dev/ttys000                  ||'\\rna<whitespace>'                                                         ||'Tests-MacBook-Pro:~ testdude$ ocal/Users/testdude\\x07l Version 13.4.0: Sun", 
+        "               ||               ||                              ||                                                                           ||Aug 17 19:50:11 PDT 2014; root:xnu-2422.115.4~1/RELEASE_X86_64             ", 
+        "               ||               ||                              ||                                                                           ||x86_64<whitespace>'                                                        "
+    ], 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "list_terminals", 
+        "--renderer": "test", 
+        "test_class": "TestListTerminals", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpB0dT24/TestListTerminalsThread-6", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - list_terminals", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

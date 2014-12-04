@@ -1,0 +1,19 @@
+{
+    "time_used": 13.238700151443481, 
+    "output": [
+        "        type        ||      address       ||     connected      ||        file        ||                process                 ", 
+        "--------------------||--------------------||--------------------||--------------------||----------------------------------------"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "unix_sockets", 
+        "--renderer": "test", 
+        "test_class": "TestSocketNetstat", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpFzGxsi/TestSocketNetstatThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - unix_sockets", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "time_used": 13.696818113327026, 
+    "output": [], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "address_resolver", 
+        "--renderer": "test", 
+        "test_class": "TestDarwinAddressResolver", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpFzGxsi/TestDarwinAddressResolverThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - address_resolver", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "time_used": 13.438601016998291, 
+    "output": [
+        " Pid  || Ppid || Uid  ||-||             Name             ", 
+        "------||------||------|| ||------------------------------", 
+        "ERROR:root:Invalid Args: ['proc_regex']"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "pstree", 
+        "--renderer": "test", 
+        "test_class": "TestDawrinPSTree", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpFzGxsi/TestDawrinPSTreeThread-6", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - pstree", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "time_used": 13.619930982589722, 
+    "output": [
+        "protocol||                  src address                   || src port ||                  dst address                   || dst port ||       state        ||                process                 ", 
+        "--------||------------------------------------------------||----------||------------------------------------------------||----------||--------------------||----------------------------------------"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "ipnetstat", 
+        "--renderer": "test", 
+        "test_class": "TestIPNetstat", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpFzGxsi/TestIPNetstatThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - ipnetstat", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

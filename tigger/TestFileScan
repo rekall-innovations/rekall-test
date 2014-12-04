@@ -1,5 +1,23 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestFileScan /Users/adamsh/Projects/rekall-test/tigger/TestFileScan
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestFileScan /Users/adamsh/Projects/rekall-test/tigger/TestFileScan
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestFileScan /Users/adamsh/Projects/rekall-test/tigger/TestFileScan
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - filescan
+else
+   less /Users/adamsh/Projects/rekall-test/tigger/output/TestFileScan
+fi
+exit 0
 {
-    "time_used": 5.382177114486694, 
+    "errors": {}, 
+    "time_used": 14.486311912536621, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestFileScan)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u' ||0x0486d3f8||     3||   0||RWD---||0x8101b4c0||\\x01                   ||     [truncated]... != u' ||0x0486d3f8||     3||   0||RWD---||-         ||-                   ||    -|| [truncated]...\n-  ||0x0486d3f8||     3||   0||RWD---||0x8101b4c0||\u0001                   ||    0||\\$Directory\n?                                      ^^^^^^^^^^  ^                         ^\n+  ||0x0486d3f8||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory\n?                                      ^^^^^^^^^^  ^                         ^\n\n"
+    }, 
     "output": [
         "-||  Offset  || #Ptr ||#Hnd||Access||  Owner   ||        Name        || PID ||Name", 
         " ||----------||------||--- ||------||----------||--------------------||-----||----", 
@@ -627,7 +645,7 @@
         " ||0x0486b8d8||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\wintrust.dll", 
         " ||0x0486bad8||     3||   1||R--rwd||0xff374980||VMwareUser.exe      ||  452||\\Documents and Settings\\Administrator\\Start Menu", 
         " ||0x0486c208||     1||   0||R--r-d||-         ||-                   ||    -||\\WINDOWS\\system32\\security.dll", 
-        " ||0x0486d3f8||     3||   0||RWD---||0x8101b4c0||\u0001                   ||    0||\\$Directory", 
+        " ||0x0486d3f8||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x0486e140||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\wdigest.dll", 
         " ||0x0486e408||     3||   1||R--rwd||0xff374980||VMwareUser.exe      ||  452||\\Documents and Settings\\All Users\\Start Menu", 
         " ||0x0486e6a8||     1||   0||R--r-d||-         ||-                   ||    -||\\Documents and Settings\\Administrator\\Start Menu\\Programs\\Accessories\\Notepad.lnk", 
@@ -640,7 +658,7 @@
         " ||0x048b1828||     1||   0||R--rwd||-         ||-                   ||    -||\\Program Files\\VMware\\VMware Tools\\glib-2.0.dll", 
         " ||0x048b1ad0||     1||   1||RW-rw-||0xff374980||VMwareUser.exe      ||  452||\\Documents and Settings\\Administrator\\Local Settings\\Temporary Internet Files\\Content.IE5\\index.dat", 
         " ||0x048b1d00||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\cryptui.dll", 
-        " ||0x048b2038||     3||   0||RWD---||0x8101b4c0||\u0001                   ||    0||\\$Directory", 
+        " ||0x048b2038||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x048b23d0||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\wzcsvc.dll", 
         " ||0x048b28f8||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\logonui.exe", 
         " ||0x048b2b20||     1||   0||R--r-d||-         ||-                   ||    -||\\Documents and Settings\\All Users\\Start Menu\\Programs\\Games\\Hearts.lnk", 
@@ -1283,17 +1301,16 @@
         " ||0x07c17c68||     1||   0||R--rwd||-         ||-                   ||    -||\\Program Files\\Common Files\\Microsoft Shared\\MSInfo\\msinfo32.exe", 
         " ||0x07c17d00||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\dfrgres.dll"
     ], 
-    "return_code": 0, 
     "options": {
         "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "filescan", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestFileScan", 
-        "tempdir": "/tmp/tmpWl_vpc/TestFileScanThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - filescan", 
-        "testdir": "/home/scudette/projects/rekall-test/tigger"
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmp9ytxdK/TestFileScanThread-7", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - filescan", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

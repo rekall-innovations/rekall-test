@@ -1,0 +1,36 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestEWFAcquire /Users/adamsh/Projects/rekall-test/osx10.9.5/TestEWFAcquire
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestEWFAcquire /Users/adamsh/Projects/rekall-test/osx10.9.5/TestEWFAcquire
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestEWFAcquire /Users/adamsh/Projects/rekall-test/osx10.9.5/TestEWFAcquire
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - ewfacquire /var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpB0dT24/TestEWFAcquireThread-8/output_image.e01
+else
+   less /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestEWFAcquire
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 76.28045201301575, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.tools.ewf.TestEWFAcquire)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 323, in testCase\n    self.assertEqual(self.baseline['hashes'], self.current['hashes'])\nAssertionError: {u'output_image.e01': u'9cb8bed95ffa1c6bf5b52b86d109588c'} != {'output_image.e01': '6e59e27b6f60b0e4f284ca5fe08bb032'}\n- {u'output_image.e01': u'9cb8bed95ffa1c6bf5b52b86d109588c'}\n+ {'output_image.e01': '6e59e27b6f60b0e4f284ca5fe08bb032'}\n"
+    }, 
+    "output": [], 
+    "hashes": {
+        "output_image.e01": "6e59e27b6f60b0e4f284ca5fe08bb032"
+    }, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "ewfacquire %(tempdir)s/output_image.e01", 
+        "--renderer": "test", 
+        "test_class": "TestEWFAcquire", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpB0dT24/TestEWFAcquireThread-8", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - ewfacquire /var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpB0dT24/TestEWFAcquireThread-8/output_image.e01", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

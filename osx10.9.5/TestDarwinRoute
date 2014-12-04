@@ -1,0 +1,75 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinRoute /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinRoute
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinRoute /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinRoute
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinRoute /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinRoute
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - route
+else
+   less /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinRoute
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 9.918823003768921, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestDarwinRoute)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 38 != 41\n"
+    }, 
+    "output": [
+        "     Source IP      ||      Dest IP       ||Interface||  Sent  ||  Recv  ||          Time          ||Expires || Delta  ", 
+        "--------------------||--------------------||---------||--------||--------||------------------------||--------||--------", 
+        "[sockaddr sockaddr] ||[sockaddr           ||en0      ||112     ||0       ||2014-12-05 18:54:16+0000||0       ||-54     ", 
+        "@ 0xFF800D22A788    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800D22A7A8      ||         ||        ||        ||                        ||        ||        ", 
+        "[sockaddr sockaddr] ||[sockaddr           ||en0      ||19      ||3863    ||2014-12-05 18:54:16+0000||3863    ||3809    ", 
+        "@ 0xFF800D4C4108    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800D4C4128      ||         ||        ||        ||                        ||        ||        ", 
+        "[sockaddr sockaddr] ||[sockaddr           ||en0      ||6       ||54      ||2014-12-05 18:54:16+0000||54      ||0       ", 
+        "@ 0xFF800D44F388    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800D44F3A8      ||         ||        ||        ||                        ||        ||        ", 
+        "[sockaddr sockaddr] ||[sockaddr           ||en0      ||0       ||1430    ||2014-12-05 18:54:15+0000||1430    ||1376    ", 
+        "@ 0xFF800D4C4208    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800D4C4228      ||         ||        ||        ||                        ||        ||        ", 
+        "[sockaddr sockaddr] ||[sockaddr           ||lo0      ||0       ||0       ||2014-12-05 18:54:16+0000||0       ||-54     ", 
+        "@ 0xFF800C223708    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800C223728      ||         ||        ||        ||                        ||        ||        ", 
+        "[sockaddr sockaddr] ||[sockaddr           ||en0      ||56      ||0       ||2014-12-05 18:54:21+0000||0       ||-61     ", 
+        "@ 0xFF800D44E488    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800D44E4A8      ||         ||        ||        ||                        ||        ||        ", 
+        "[sockaddr sockaddr] ||[sockaddr           ||en0      ||9       ||0       ||2014-12-05 18:54:16+0000||0       ||-55     ", 
+        "@ 0xFF800D44CA88    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800D44CAA8      ||         ||        ||        ||                        ||        ||        ", 
+        "[sockaddr sockaddr] ||[sockaddr           ||en0      ||8       ||0       ||2014-12-05 18:57:43+0000||0       ||-262    ", 
+        "@ 0xFF800D2E1108    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800D2E1128      ||         ||        ||        ||                        ||        ||        ", 
+        "[sockaddr sockaddr] ||[sockaddr           ||en0      ||5       ||0       ||2014-12-05 18:57:41+0000||0       ||-261    ", 
+        "@ 0xFF800D2FD888    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800D2FD8A8      ||         ||        ||        ||                        ||        ||        ", 
+        "[sockaddr sockaddr] ||[sockaddr           ||lo0      ||-       ||-       ||2014-12-05 18:54:00+0000||0       ||-30     ", 
+        "@ 0xFF800D37C508    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800D37C528      ||         ||        ||        ||                        ||        ||        ", 
+        "[sockaddr sockaddr] ||[sockaddr           ||lo0      ||10      ||0       ||2014-12-05 18:54:00+0000||0       ||-30     ", 
+        "@ 0xFF800C1ED808    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800C1ED828      ||         ||        ||        ||                        ||        ||        ", 
+        "[sockaddr sockaddr] ||[sockaddr           ||en0      ||-       ||-       ||2014-12-05 18:54:14+0000||54      ||0       ", 
+        "@ 0xFF800C210A88    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800C210AA8      ||         ||        ||        ||                        ||        ||        ", 
+        "[sockaddr sockaddr] ||[sockaddr           ||en0      ||15      ||3797    ||2014-12-05 18:54:15+0000||3797    ||3742    ", 
+        "@ 0xFF800D44E108    ||rt_gateway] @       ||         ||        ||        ||                        ||        ||        ", 
+        "                    ||0xFF800D44E128      ||         ||        ||        ||                        ||        ||        "
+    ], 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "route", 
+        "--renderer": "test", 
+        "test_class": "TestDarwinRoute", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpB0dT24/TestDarwinRouteThread-5", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - route", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

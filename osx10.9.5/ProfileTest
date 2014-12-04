@@ -1,0 +1,13 @@
+{
+    "time_used": 1.3828277587890625e-05, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "", 
+        "--renderer": "test", 
+        "test_class": "ProfileTest", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpFzGxsi/ProfileTestThread-6", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

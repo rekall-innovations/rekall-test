@@ -1,0 +1,18 @@
+{
+    "time_used": 14.54767107963562, 
+    "output": [
+        "ERROR:root:Invalid Args: ['proc']"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "dead_procs", 
+        "--renderer": "test", 
+        "test_class": "TestDarwinDeadProcesses", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpFzGxsi/TestDarwinDeadProcessesThread-7", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - dead_procs", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

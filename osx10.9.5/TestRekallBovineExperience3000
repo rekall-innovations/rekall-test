@@ -1,0 +1,43 @@
+{
+    "time_used": 13.316841125488281, 
+    "output": [
+        "               Dogma               ||                              Bessy                              ||                     Pilsner                      ||  Nowrap  ", 
+        "-----------------------------------||-----------------------------------------------------------------||--------------------------------------------------||----------", 
+        "This is a renderer stress-test. The||                                |############                    ||                /\\                                ||This is a fairly long line that shouldn't get wrapped.   ", 
+        "flags should have correct colors,  ||                                |#####  #####                    ||               / |\\                               ||The same row has another line that shouldn't get wrapped.", 
+        "the beer should be yellow and the  ||                                |##        ##                    ||              /  | \\                              ||                                                         ", 
+        "cell on the left should not bleed  ||              _                 |#####  #####                    ||             /   |  \\                             ||                                                         ", 
+        "into the cell on the right.        ||             / \\_               |############                    ||            /____|   \\                            ||                                                         ", 
+        "This is a really long column of    ||            /    \\              |                                ||           / \\    \\   \\                           ||                                                         ", 
+        "text with its own newlines in it!  ||           /\\/\\  /\\  _          |       /;    ;\\                 ||          /   \\    \\  /                           ||                                                         ", 
+        "This bovine experience has been    ||          /    \\/  \\/ \\         |   __  \\____//                  ||         /     \\    \\/                            ||                                                         ", 
+        "brought to you by Rekall.          ||        /\\  .-   `. \\  \\        |  /{_\\_/   `'\\____              ||        /       \\   /                             ||                                                         ", 
+        "                                   ||       /  `-.__ ^   /\\  \\       |  \\___ (o)  (o)   }             ||       /         \\ /                              ||                                                         ", 
+        "                                   ||      / _____________________________/          :--'             ||      /           v                               ||                                                         ", 
+        "                                   ||    ,-,'`@@@@@@@@       @@@@@@         \\_    `__\\                ||     /               ( o )o)                      ||                                                         ", 
+        "                                   ||   ;:(  @@@@@@@@@        @@@             \\___(o'o)               ||    /               ( o )o )o)                    ||                                                         ", 
+        "                                   ||   :: )  @@@@          @@@@@@        ,'@@(  `===='               ||                  (o( ~~~~~~~~o                   ||                                                         ", 
+        "                                   ||   :: : @@@@@:          @@@@         `@@@:                       ||                  ( )' ~~~~~~~' _                 ||                                                         ", 
+        "                                   ||   :: \\  @@@@@:       @@@@@@@)    (  '@@@'                       ||                    o|   o    |-. \\               ||                                                         ", 
+        "                                   ||   :; /\\      /      @@@@@@@@@\\   :@@@@@)                        ||                    o|     o  |  \\ \\              ||                                                         ", 
+        "                                   ||   ::/  )    {_----------------:  :~`,~~;                        ||                     | .      |  | |              ||                                                         ", 
+        "                                   ||  ;; `; :   )                  :  / `; ;                         ||                    o|   .    |  / /              ||                                                         ", 
+        "                                   || ;;;  : :   ;                  :  ;  ; :                         ||                     |  .  .  |._ /               ||                                                         ", 
+        "                                   || `'`  / :  :                   :  :  : :                         ||                     .========.                   ||                                                         ", 
+        "                                   ||     )_ \\__;                   :_ ;  \\_\\                         ||                                                  ||                                                         ", 
+        "                                   ||     :__\\  \\                   \\  \\  :  \\                        ||                                                  ||                                                         ", 
+        "                                   ||         `^'                    `^'  `-^-'                       ||                                                  ||                                                         "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "moo", 
+        "--renderer": "test", 
+        "test_class": "TestRekallBovineExperience3000", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpFzGxsi/TestRekallBovineExperience3000Thread-5", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - moo", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

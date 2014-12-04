@@ -1,0 +1,19 @@
+{
+    "time_used": 12.451058149337769, 
+    "output": [
+        " Context  ||     Filter     ||   Handler    ||       Symbol       ", 
+        "----------||----------------||--------------||--------------------"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "ip_filters", 
+        "--renderer": "test", 
+        "test_class": "TestDarwinIPFilters", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpFzGxsi/TestDarwinIPFiltersThread-5", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - ip_filters", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

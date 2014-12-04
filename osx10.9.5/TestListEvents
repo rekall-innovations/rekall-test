@@ -1,0 +1,19 @@
+{
+    "time_used": 13.790756940841675, 
+    "output": [
+        "        timestamp        ||      category      ||                 actor                  ||       action       ||                 target                 ", 
+        "-------------------------||--------------------||----------------------------------------||--------------------||----------------------------------------"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "events", 
+        "--renderer": "test", 
+        "test_class": "TestListEvents", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpFzGxsi/TestListEventsThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - events", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

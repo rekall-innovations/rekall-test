@@ -1,0 +1,38 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestImageCopy /Users/adamsh/Projects/rekall-test/osx10.9.5/TestImageCopy
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestImageCopy /Users/adamsh/Projects/rekall-test/osx10.9.5/TestImageCopy
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestImageCopy /Users/adamsh/Projects/rekall-test/osx10.9.5/TestImageCopy
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - imagecopy -O /var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpB0dT24/TestImageCopyThread-4/output_image.raw
+else
+   less /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestImageCopy
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 64.67381000518799, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.imagecopy.TestImageCopy)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 323, in testCase\n    self.assertEqual(self.baseline['hashes'], self.current['hashes'])\nAssertionError: {u'output_image.raw': u'5a1cc99d2e23781fa964c6907c81a1d1'} != {'output_image.raw': 'd3e7a43a96573f78ffd337ec4d9d6c71'}\n- {u'output_image.raw': u'5a1cc99d2e23781fa964c6907c81a1d1'}\n+ {'output_image.raw': 'd3e7a43a96573f78ffd337ec4d9d6c71'}\n"
+    }, 
+    "output": [
+        "Range 0x0 - 0x100000000"
+    ], 
+    "hashes": {
+        "output_image.raw": "d3e7a43a96573f78ffd337ec4d9d6c71"
+    }, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "imagecopy -O %(tempdir)s/output_image.raw", 
+        "--renderer": "test", 
+        "test_class": "TestImageCopy", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpB0dT24/TestImageCopyThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - imagecopy -O /var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpB0dT24/TestImageCopyThread-4/output_image.raw", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

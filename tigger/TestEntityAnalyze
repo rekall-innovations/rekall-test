@@ -6,28 +6,33 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /Users/adamsh/Projects/rekall-test/tigger/output/TestEntityAnalyze /Users/adamsh/Projects/rekall-test/tigger/TestEntityAnalyze
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - analyze "Process/command =~ lsass"
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - analyze "Process/command =~ 'lsass'"
 else
    less /Users/adamsh/Projects/rekall-test/tigger/output/TestEntityAnalyze
 fi
 exit 0
 {
-    "time_used": 3.2448580265045166, 
+    "errors": {}, 
+    "time_used": 3.1022748947143555, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.common.entities.TestEntityAnalyze)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertListEqual(previous, current)\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 193, in assertListEqual\n    self.assertEqual(len(a), len(b))\nAssertionError: 30 != 34\n"
+    }, 
     "output": [
         "", 
         "************************************************************* Query analysis: *************************************************************", 
         "               Expression               ||                                         Location in query                                          ", 
         "----------------------------------------||----------------------------------------------------------------------------------------------------", 
-        " ||RegexFilter                           ||Process/command =~ lsass                                                                            ", 
-        ".||Binding                               ||Process/command =~ lsass                                                                            ", 
+        " ||RegexFilter                           ||Process/command =~ 'lsass'                                                                          ", 
+        ".||Binding                               ||Process/command =~ 'lsass'                                                                          ", 
         "..||leaf (str):                          ||                                                                                                    ", 
-        ".||Literal                               ||Process/command =~ lsass                                                                            ", 
+        ".||Literal                               ||Process/command =~ 'lsass'                                                                          ", 
         "..||leaf (str):                          ||                                                                                                    ", 
         "", 
         "*********************************************** Expected requirements for matching objects: ***********************************************", 
         "               Dependency               ||                                            Explanation                                             ", 
         "----------------------------------------||----------------------------------------------------------------------------------------------------", 
-        "+ Process                               ||Process/command =~ lsass                                                                            ", 
+        "+ Process                               ||Process/command =~ 'lsass'                                                                          ", 
         "", 
         "**************************************************** Expected components in result set: ****************************************************", 
         "     Guaranteed     ||     Component      ", 
@@ -40,23 +45,25 @@ exit 0
         "******************************************************* Dependencies on collectors: *******************************************************", 
         "               Collector                ||    Cost to run     ||                               Needed because of                                ", 
         "----------------------------------------||--------------------||--------------------------------------------------------------------------------", 
+        "proc                                    ||normal              ||the query                                                                       ", 
         "PspCidTable                             ||normal              ||proc, handles                                                                   ", 
         "PsActiveProcessHead                     ||normal              ||proc, handles                                                                   ", 
-        "proc                                    ||normal              ||the query                                                                       ", 
-        "handles                                 ||INSANE!             ||proc, handles                                                                   "
+        "handles                                 ||INSANE!             ||proc, handles                                                                   ", 
+        "", 
+        "** Suggested indexing (created automatically). **", 
+        "           Indexed attribute            ", 
+        "----------------------------------------"
     ], 
-    "errors": {}, 
-    "return_code": 0, 
     "options": {
         "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
         "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
-        "commandline": "analyze \"Process/command =~ lsass\"", 
+        "commandline": "analyze \"Process/command =~ 'lsass'\"", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestEntityAnalyze", 
-        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpMn5Sf6/TestEntityAnalyzeThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - analyze \"Process/command =~ lsass\"", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpADpdEw/TestEntityAnalyzeThread-7", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - analyze \"Process/command =~ 'lsass'\"", 
         "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
     }
 }

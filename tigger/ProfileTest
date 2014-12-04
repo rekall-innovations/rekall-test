@@ -1,0 +1,14 @@
+{
+    "time_used": 7.152557373046875e-06, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
+        "commandline": "", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "ProfileTest", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpADpdEw/ProfileTestThread-7", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
+    }
+}

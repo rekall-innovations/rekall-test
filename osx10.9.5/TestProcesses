@@ -1,0 +1,19 @@
+{
+    "time_used": 14.323753118515015, 
+    "output": [
+        "           command            || pid  ||       parent       ||        user        || is_64bit ||       created_at        ||     cr3      ", 
+        "------------------------------||------||--------------------||--------------------||----------||-------------------------||--------------"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "pslist", 
+        "--renderer": "test", 
+        "test_class": "TestProcesses", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpFzGxsi/TestProcessesThread-6", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - pslist", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

@@ -1,0 +1,76 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinPhysicalMap /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinPhysicalMap
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinPhysicalMap /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinPhysicalMap
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinPhysicalMap /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinPhysicalMap
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - phys_map
+else
+   less /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinPhysicalMap
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 10.292613983154297, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestDarwinPhysicalMap)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 43 != 42\n"
+    }, 
+    "output": [
+        "Physical Start|| Physical End ||   Virtual    ||  Pages   ||Type", 
+        "--------------||--------------||--------------||----------||----", 
+        "0x000000000000||0x0000000a0000||0x000000000000||       160||kEfiConventionalMemory", 
+        "0x000000100000||0x000002000000||0x000000000000||      7936||kEfiConventionalMemory", 
+        "0x000002000000||0x000002600000||0x000000000000||      1536||kEfiBootServicesData", 
+        "0x000002600000||0x000008d00000||0x000000000000||     26368||kEfiConventionalMemory", 
+        "0x000008d00000||0x000008d13000||0x000000000000||        19||kEfiLoaderData", 
+        "0x000008d13000||0x000008e00000||0x000000000000||       237||kEfiConventionalMemory", 
+        "0x000008e00000||0x0000093a9000||0x000000000000||      1449||kEfiLoaderData", 
+        "0x0000093a9000||0x000009400000||0x000000000000||        87||kEfiConventionalMemory", 
+        "0x000009400000||0x00000ab65000||0x000000000000||      5989||kEfiLoaderData", 
+        "0x00000ab65000||0x00000ab72000||0xff800ab65000||        13||kEfiRuntimeServicesCode", 
+        "0x00000ab72000||0x00000aba2000||0xff800ab72000||        48||kEfiRuntimeServicesCode", 
+        "0x00000aba2000||0x00000abc6000||0xff800aba2000||        36||kEfiRuntimeServicesData", 
+        "0x00000abc6000||0x00000abe6000||0xff800abc6000||        32||kEfiRuntimeServicesData", 
+        "0x00000abe6000||0x00000abe8000||0x000000000000||         2||kEfiLoaderData", 
+        "0x00000abe8000||0x000015000000||0x000000000000||     42008||kEfiConventionalMemory", 
+        "0x000015000000||0x000015020000||0x000000000000||        32||kEfiBootServicesData", 
+        "0x000015020000||0x000016dc2000||0x000000000000||      7586||kEfiConventionalMemory", 
+        "0x000016dc2000||0x0000171a5000||0x000000000000||       995||kEfiBootServicesData", 
+        "0x0000171a5000||0x000017363000||0x000000000000||       446||kEfiConventionalMemory", 
+        "0x000017363000||0x0000173e0000||0x000000000000||       125||kEfiLoaderCode", 
+        "0x0000173e0000||0x000017422000||0x000000000000||        66||kEfiConventionalMemory", 
+        "0x000017422000||0x00001745b000||0x000000000000||        57||kEfiBootServicesData", 
+        "0x00001745b000||0x00001745c000||0x000000000000||         1||kEfiLoaderCode", 
+        "0x00001745c000||0x0000179de000||0x000000000000||      1410||kEfiBootServicesData", 
+        "0x0000179de000||0x0000179df000||0x000000000000||         1||kEfiACPIReclaimMemory", 
+        "0x0000179df000||0x0000179ec000||0x000000000000||        13||kEfiConventionalMemory", 
+        "0x0000179ec000||0x000017aec000||0x000000000000||       256||kEfiBootServicesData", 
+        "0x000017aec000||0x000017b0e000||0x000000000000||        34||kEfiConventionalMemory", 
+        "0x000017b0e000||0x000017b10000||0x000000000000||         2||kEfiBootServicesData", 
+        "0x000017b10000||0x000017b12000||0x000000000000||         2||kEfiConventionalMemory", 
+        "0x000017b12000||0x0000189ec000||0x000000000000||      3802||kEfiBootServicesData", 
+        "0x0000189ec000||0x0000189ef000||0x000000000000||         3||kEfiConventionalMemory", 
+        "0x0000189ef000||0x000018b6c000||0x000000000000||       381||kEfiBootServicesCode", 
+        "0x000018b6c000||0x000018b9c000||0x000000000000||        48||kEfiConventionalMemory", 
+        "0x000018b9c000||0x000018bc0000||0x000000000000||        36||kEfiConventionalMemory", 
+        "0x000018bc0000||0x000018bc4000||0x000000000000||         4||kEfiReservedMemoryType", 
+        "0x000018bc4000||0x000018bcc000||0x000000000000||         8||kEfiACPIReclaimMemory", 
+        "0x000018bcc000||0x000018bd0000||0x000000000000||         4||kEfiACPIMemoryNVS", 
+        "0x000018bd0000||0x000018fd0000||0x000000000000||      1024||kEfiBootServicesData", 
+        "0x000018fd0000||0x000018ff0000||0x000000000000||        32||kEfiConventionalMemory"
+    ], 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "phys_map", 
+        "--renderer": "test", 
+        "test_class": "TestDarwinPhysicalMap", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpB0dT24/TestDarwinPhysicalMapThread-7", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - phys_map", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

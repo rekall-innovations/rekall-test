@@ -1,0 +1,40 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinFindKASLR /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinFindKASLR
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinFindKASLR /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinFindKASLR
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinFindKASLR /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinFindKASLR
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - find_kaslr
+else
+   less /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinFindKASLR
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 53.268061876297, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestDarwinFindKASLR)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0x00000e600000||Darwin Kernel Version 13.4.0: ' != u'0x000008c00000||Darwin Kernel Version 13.4.0: '\n- 0x00000e600000||Darwin Kernel Version 13.4.0: \n?        ^^\n+ 0x000008c00000||Darwin Kernel Version 13.4.0: \n?        ^^\n\n"
+    }, 
+    "output": [
+        " KASLR Slide  ||        Kernel Version        ", 
+        "--------------||------------------------------", 
+        "0x000008c00000||Darwin Kernel Version 13.4.0: ", 
+        "              ||Sun Aug 17 19:50:11 PDT 2014; ", 
+        "              ||root:xnu-2422.115.4~1/RELEASE_", 
+        "              ||X86_64                        "
+    ], 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "find_kaslr", 
+        "--renderer": "test", 
+        "test_class": "TestDarwinFindKASLR", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpB0dT24/TestDarwinFindKASLRThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - find_kaslr", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

@@ -1,0 +1,40 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinFindDTB /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinFindDTB
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinFindDTB /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinFindDTB
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinFindDTB /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinFindDTB
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - find_dtb
+else
+   less /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinFindDTB
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 8.38957691192627, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestDarwinFindDTB)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0x0000107e1000||True    ||_dtb_hits_idlep' != u'0x00000ade1000||True    ||_dtb_hits_idlep'\n- 0x0000107e1000||True    ||_dtb_hits_idlep\n?       - ^\n+ 0x00000ade1000||True    ||_dtb_hits_idlep\n?        ^^\n\n"
+    }, 
+    "output": [
+        "     DTB      ||Verified||    Source     ", 
+        "--------------||--------||---------------", 
+        "0x00000ade1000||True    ||_dtb_hits_idlep", 
+        "              ||        ||ml4            ", 
+        "0x00000ade1000||True    ||_dtb_hits_kerne", 
+        "              ||        ||l_pmap         "
+    ], 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "find_dtb", 
+        "--renderer": "test", 
+        "test_class": "TestDarwinFindDTB", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpGM8rTa/TestDarwinFindDTBThread-8", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - find_dtb", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

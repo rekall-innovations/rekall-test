@@ -1,0 +1,106 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestProcMaps /Users/adamsh/Projects/rekall-test/osx10.9.5/TestProcMaps
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestProcMaps /Users/adamsh/Projects/rekall-test/osx10.9.5/TestProcMaps
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestProcMaps /Users/adamsh/Projects/rekall-test/osx10.9.5/TestProcMaps
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - maps --proc_regex bash
+else
+   less /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestProcMaps
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 9.071531057357788, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.linux.proc_maps.TestProcMaps)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 68 != 71\n"
+    }, 
+    "output": [
+        "  Pid   ||        Name        ||    Start     ||     End      ||Protection||      Map Name      ", 
+        "--------||--------------------||--------------||--------------||  ------  ||--------------------", 
+        "232     ||bash                ||0x00010b818000||0x00010b89a000||r-x       ||Untitled 1/bin/bash ", 
+        "232     ||bash                ||0x00010b89a000||0x00010b8a5000||rw-       ||Untitled 1/bin/bash ", 
+        "232     ||bash                ||0x00010b8a5000||0x00010b8a8000||rw-       ||-                   ", 
+        "232     ||bash                ||0x00010b8a8000||0x00010b8b1000||r--       ||Untitled 1/bin/bash ", 
+        "232     ||bash                ||0x00010b8b1000||0x00010b8b2000||r--       ||-                   ", 
+        "232     ||bash                ||0x00010b8b2000||0x00010b8b3000||r--       ||-                   ", 
+        "232     ||bash                ||0x00010b8b3000||0x00010b8b4000||rw-       ||-                   ", 
+        "232     ||bash                ||0x00010b8b4000||0x00010b8b5000||---       ||-                   ", 
+        "232     ||bash                ||0x00010b8b5000||0x00010b8ca000||rw-       ||-                   ", 
+        "232     ||bash                ||0x00010b8ca000||0x00010b8cb000||---       ||-                   ", 
+        "232     ||bash                ||0x00010b8cb000||0x00010b8cc000||---       ||-                   ", 
+        "232     ||bash                ||0x00010b8cc000||0x00010b8e1000||rw-       ||-                   ", 
+        "232     ||bash                ||0x00010b8e1000||0x00010b8e2000||---       ||-                   ", 
+        "232     ||bash                ||0x00010b8e2000||0x00010b8e3000||r--       ||-                   ", 
+        "232     ||bash                ||0x00010b8e3000||0x00010b8e4000||rw-       ||-                   ", 
+        "232     ||bash                ||0x00010b8e4000||0x00010b8fc000||rw-       ||-                   ", 
+        "232     ||bash                ||0x00010b8fc000||0x00010b8fd000||r--       ||-                   ", 
+        "232     ||bash                ||0x7fa221400000||0x7fa221500000||rw-       ||-                   ", 
+        "232     ||bash                ||0x7fa221800000||0x7fa222000000||rw-       ||-                   ", 
+        "232     ||bash                ||0x7fff503e8000||0x7fff53be8000||---       ||-                   ", 
+        "232     ||bash                ||0x7fff53be8000||0x7fff543e8000||rw-       ||-                   ", 
+        "232     ||bash                ||0x7fff686fe000||0x7fff68732000||r-x       ||Untitled            ", 
+        "        ||                    ||              ||              ||          ||1/usr/lib/dyld      ", 
+        "232     ||bash                ||0x7fff68732000||0x7fff68734000||rw-       ||Untitled            ", 
+        "        ||                    ||              ||              ||          ||1/usr/lib/dyld      ", 
+        "232     ||bash                ||0x7fff68734000||0x7fff68771000||rw-       ||-                   ", 
+        "232     ||bash                ||0x7fff68771000||0x7fff68785000||r--       ||Untitled            ", 
+        "        ||                    ||              ||              ||          ||1/usr/lib/dyld      ", 
+        "232     ||bash                ||0x7fff70000000||0x7fff7a97f000||r--       ||sub_map             ", 
+        "232     ||bash                ||0x7fff7a97f000||0x7fff7aa00000||rw-       ||Untitled 1/private/v", 
+        "        ||                    ||              ||              ||          ||ar/db/dyld/dyld_shar", 
+        "        ||                    ||              ||              ||          ||ed_cache_x86_64     ", 
+        "232     ||bash                ||0x7fff7aa00000||0x7fff7ac00000||rw-       ||Untitled 1/private/v", 
+        "        ||                    ||              ||              ||          ||ar/db/dyld/dyld_shar", 
+        "        ||                    ||              ||              ||          ||ed_cache_x86_64     ", 
+        "232     ||bash                ||0x7fff7ac00000||0x7fff7ae00000||rw-       ||Untitled 1/private/v", 
+        "        ||                    ||              ||              ||          ||ar/db/dyld/dyld_shar", 
+        "        ||                    ||              ||              ||          ||ed_cache_x86_64     ", 
+        "232     ||bash                ||0x7fff7ae00000||0x7fff7b000000||r--       ||sub_map             ", 
+        "232     ||bash                ||0x7fff7b000000||0x7fff7b200000||rw-       ||Untitled 1/private/v", 
+        "        ||                    ||              ||              ||          ||ar/db/dyld/dyld_shar", 
+        "        ||                    ||              ||              ||          ||ed_cache_x86_64     ", 
+        "232     ||bash                ||0x7fff7b200000||0x7fff7b800000||r--       ||sub_map             ", 
+        "232     ||bash                ||0x7fff7b800000||0x7fff7ba00000||rw-       ||Untitled 1/private/v", 
+        "        ||                    ||              ||              ||          ||ar/db/dyld/dyld_shar", 
+        "        ||                    ||              ||              ||          ||ed_cache_x86_64     ", 
+        "232     ||bash                ||0x7fff7ba00000||0x7fff7bc00000||rw-       ||Untitled 1/private/v", 
+        "        ||                    ||              ||              ||          ||ar/db/dyld/dyld_shar", 
+        "        ||                    ||              ||              ||          ||ed_cache_x86_64     ", 
+        "232     ||bash                ||0x7fff7bc00000||0x7fff7be00000||r--       ||sub_map             ", 
+        "232     ||bash                ||0x7fff7be00000||0x7fff7c000000||rw-       ||Untitled 1/private/v", 
+        "        ||                    ||              ||              ||          ||ar/db/dyld/dyld_shar", 
+        "        ||                    ||              ||              ||          ||ed_cache_x86_64     ", 
+        "232     ||bash                ||0x7fff7c000000||0x7fff7c200000||r--       ||sub_map             ", 
+        "232     ||bash                ||0x7fff7c200000||0x7fff7c400000||rw-       ||Untitled 1/private/v", 
+        "        ||                    ||              ||              ||          ||ar/db/dyld/dyld_shar", 
+        "        ||                    ||              ||              ||          ||ed_cache_x86_64     ", 
+        "232     ||bash                ||0x7fff7c400000||0x7fff7c600000||rw-       ||Untitled 1/private/v", 
+        "        ||                    ||              ||              ||          ||ar/db/dyld/dyld_shar", 
+        "        ||                    ||              ||              ||          ||ed_cache_x86_64     ", 
+        "232     ||bash                ||0x7fff7c600000||0x7fff7d000000||r--       ||sub_map             ", 
+        "232     ||bash                ||0x7fff7d000000||0x7fff7d1e2000||rw-       ||Untitled 1/private/v", 
+        "        ||                    ||              ||              ||          ||ar/db/dyld/dyld_shar", 
+        "        ||                    ||              ||              ||          ||ed_cache_x86_64     ", 
+        "232     ||bash                ||0x7fff7d1e2000||0x7fff80000000||r--       ||sub_map             ", 
+        "232     ||bash                ||0x7fff80000000||0x7fffc0000000||r--       ||sub_map             ", 
+        "232     ||bash                ||0x7fffc0000000||0x7fffffe00000||r--       ||sub_map             ", 
+        "232     ||bash                ||0x7fffffe00000||0x7fffffe01000||r--       ||sub_map             ", 
+        "232     ||bash                ||0x7fffffe56000||0x7fffffe57000||r-x       ||sub_map             "
+    ], 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "maps --proc_regex %(proc_name)s", 
+        "proc_name": "bash", 
+        "--renderer": "test", 
+        "test_class": "TestProcMaps", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpGM8rTa/TestProcMapsThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - maps --proc_regex bash", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

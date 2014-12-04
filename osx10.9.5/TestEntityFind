@@ -1,0 +1,20 @@
+{
+    "time_used": 11.728455066680908, 
+    "output": [
+        "           command            ||     cr3      || is_64bit ||       parent       || pid  ||      session       ||        user        ", 
+        "------------------------------||--------------||----------||--------------------||------||--------------------||--------------------"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "process": "lsass", 
+        "commandline": "find \"Process/command =~ '%(process)s'\"", 
+        "--renderer": "test", 
+        "test_class": "TestEntityFind", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpFzGxsi/TestEntityFindThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - find \"Process/command =~ 'lsass'\"", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}

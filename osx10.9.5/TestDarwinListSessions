@@ -1,0 +1,111 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinListSessions /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinListSessions
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinListSessions /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinListSessions
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinListSessions /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDarwinListSessions
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - sessions
+else
+   less /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDarwinListSessions
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 8.34439492225647, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestDarwinListSessions)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 73 != 77\n"
+    }, 
+    "output": [
+        "Leader Pid||    Leader Name     ||          Login          ", 
+        "----------||--------------------||-------------------------", 
+        "         0||kernel_task         ||                         ", 
+        "       129||softwareupdated     ||_softwareupdate          ", 
+        "         1||launchd             ||_coreaudiod              ", 
+        "       130||xpcd                ||_softwareupdate          ", 
+        "       132||tccd                ||_softwareupdate          ", 
+        "       133||suhelperd           ||_softwareupdate          ", 
+        "       134||timezoned           ||_timezone                ", 
+        "       135||CVMServer           ||_timezone                ", 
+        "       136||launchd             ||_securityagent           ", 
+        "        11||UserEventAgent      ||root                     ", 
+        "        12||kextd               ||root                     ", 
+        "       141||launchd             ||testdude                 ", 
+        "        13||taskgated           ||root                     ", 
+        "       142||securityd_servic    ||testdude                 ", 
+        "        14||notifyd             ||root                     ", 
+        "        15||diskarbitrationd    ||root                     ", 
+        "        16||configd             ||root                     ", 
+        "        17||syslogd             ||root                     ", 
+        "        18||securityd           ||root                     ", 
+        "        20||distnoted           ||root                     ", 
+        "        21||opendirectoryd      ||root                     ", 
+        "        22||powerd              ||root                     ", 
+        "        23||cfprefsd            ||root                     ", 
+        "        25||xpcd                ||root                     ", 
+        "        26||authd               ||root                     ", 
+        "        27||coreservicesd       ||root                     ", 
+        "        29||wdhelper            ||root                     ", 
+        "        30||warmd               ||root                     ", 
+        "       159||coreaudiod          ||_coreaudiod              ", 
+        "        31||usbmuxd             ||_appleevents             ", 
+        "        34||stackshot           ||_usbmuxd                 ", 
+        "       164||xpcd                ||_coreaudiod              ", 
+        "        37||SleepServicesD      ||_softwareupdate          ", 
+        "       166||xpcd                ||_coreaudiod              ", 
+        "        39||revisiond           ||_softwareupdate          ", 
+        "       172||com.apple.audio.    ||_coreaudiod              ", 
+        "        44||mds                 ||_softwareupdate          ", 
+        "        45||mDNSResponder       ||_appleevents             ", 
+        "        48||loginwindow         ||testdude                 ", 
+        "        49||logind              ||_mdnsresponder           ", 
+        "        50||locationd           ||_appleevents             ", 
+        "        51||KernelEventAgent    ||_locationd               ", 
+        "        53||hidd                ||_locationd               ", 
+        "        54||fseventsd           ||_locationd               ", 
+        "        55||firmwaresyncd       ||_locationd               ", 
+        "       184||mdworker            ||_coreaudiod              ", 
+        "        56||dynamic_pager       ||_locationd               ", 
+        "       188||filecoordination    ||_coreaudiod              ", 
+        "        60||launchservicesd     ||_locationd               ", 
+        "        61||appleeventsd        ||_appleevents             ", 
+        "       190||com.apple.ShareK    ||_coreaudiod              ", 
+        "       193||com.apple.audio.    ||_coreaudiod              ", 
+        "        66||autofsd             ||_appleevents             ", 
+        "        67||apsd                ||_appleevents             ", 
+        "        68||aosnotifyd          ||_appleevents             ", 
+        "       197||xpcd                ||_coreaudiod              ", 
+        "        69||airportd            ||_appleevents             ", 
+        "       201||IMDPersistenceAg    ||_coreaudiod              ", 
+        "        80||rpcsvchost          ||_appleevents             ", 
+        "        81||WindowServer        ||root                     ", 
+        "        82||ocspd               ||_appleevents             ", 
+        "        83||backupd             ||_appleevents             ", 
+        "       217||FindMyMacd          ||_coreaudiod              ", 
+        "       224||com.apple.IconSe    ||_coreaudiod              ", 
+        "       227||com.apple.dock.e    ||_coreaudiod              ", 
+        "       100||mds_stores          ||_appleevents             ", 
+        "       229||IMRemoteURLConne    ||_coreaudiod              ", 
+        "       230||login               ||testdude                 ", 
+        "       104||networkd            ||_networkd                ", 
+        "       107||networkd_privile    ||_networkd                ", 
+        "       109||sysmond             ||_networkd                ", 
+        "       110||usbd                ||_networkd                ", 
+        "       111||ntpd                ||_networkd                ", 
+        "       114||com.apple.CodeSi    ||_networkd                ", 
+        "       125||netbiosd            ||_netbios                 "
+    ], 
+    "options": {
+        "--name_resolution_strategies": "Module,Symbol", 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "commandline": "sessions", 
+        "--renderer": "test", 
+        "test_class": "TestDarwinListSessions", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpB0dT24/TestDarwinListSessionsThread-7", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - sessions", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+    }
+}
