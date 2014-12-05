@@ -1,23 +1,5 @@
-#!/bin/bash
-if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/rekall-test/tigger/output/TestCallbacks /home/scudette/projects/rekall-test/tigger/TestCallbacks
-elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/rekall-test/tigger/output/TestCallbacks /home/scudette/projects/rekall-test/tigger/TestCallbacks
-elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/rekall-test/tigger/output/TestCallbacks /home/scudette/projects/rekall-test/tigger/TestCallbacks
-elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - callbacks
-else
-   less /home/scudette/projects/rekall-test/tigger/output/TestCallbacks
-fi
-exit 0
 {
-    "errors": {}, 
-    "time_used": 7.453583002090454, 
-    "return_code": 0, 
-    "failures": {
-        "testCase (__main__.TestCallbacks)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'KeBugCheckCallbackListHead          ||0x00000000||UNKNOWN             ||' != u'KeBugCheckCallbackListHead          ||0x00000000||UNKNOWN             ||       [truncated]...\n- KeBugCheckCallbackListHead          ||0x00000000||UNKNOWN             ||\n+ KeBugCheckCallbackListHead          ||0x00000000||UNKNOWN             ||       \n?                                                                         +++++++\n\n"
-    }, 
+    "time_used": 3.3607969284057617, 
     "output": [
         "                Type                || Callback ||       Module       ||Details", 
         "------------------------------------||----------||--------------------||-------", 
@@ -40,25 +22,24 @@ exit 0
         "IoRegisterShutdownNotification      ||0xfc4ab73a||MountMgr.sys        ||\\Driver\\MountMgr", 
         "IoRegisterFsRegistrationChange      ||0xfc2c0876||sr.sys              ||-      ", 
         "KeBugCheckCallbackListHead          ||0x806d57ca||hal.dll             ||ACPI 1.0 - APIC platform UP", 
-        "KeBugCheckCallbackListHead          ||0x00000000||UNKNOWN             ||       ", 
+        "KeBugCheckCallbackListHead          ||0x00000000||UNKNOWN             ||-      ", 
         "KeRegisterBugCheckReasonCallback    ||0xfc967ac0||mssmbios.sys        ||SMBiosDa", 
         "KeRegisterBugCheckReasonCallback    ||0xfc967a78||mssmbios.sys        ||SMBiosRe", 
         "KeRegisterBugCheckReasonCallback    ||0xfc967a30||mssmbios.sys        ||SMBiosDa", 
         "KeRegisterBugCheckReasonCallback    ||0xfc0d5006||USBPORT.SYS         ||USBPORT", 
         "KeRegisterBugCheckReasonCallback    ||0xfc0d4f66||USBPORT.SYS         ||USBPORT", 
-        "KeRegisterBugCheckReasonCallback    ||0xfc0eb3e2||VIDEOPRT.SYS        ||       ", 
+        "KeRegisterBugCheckReasonCallback    ||0xfc0eb3e2||VIDEOPRT.SYS        ||-      ", 
         "GenericKernelCallback               ||0xfc58e194||vmci.sys            ||-      "
     ], 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
         "commandline": "callbacks", 
-        "pid": 1724, 
+        "pid": "1724", 
         "--renderer": "test", 
-        "test_class": "TestCallbacks", 
-        "tempdir": "/tmp/tmpblovS9/TestCallbacksThread-4", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - callbacks", 
-        "testdir": "/home/scudette/projects/rekall-test/tigger"
+        "test_class": "TestCallBacks", 
+        "tempdir": "/tmp/tmpjCWx0x/TestCallBacksThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' callbacks", 
+        "testdir": "/home/scudette/projects/test_data/tigger"
     }
 }
