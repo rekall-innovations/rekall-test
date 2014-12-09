@@ -13,10 +13,10 @@ fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 0.774960994720459, 
+    "time_used": 0.7700159549713135, 
     "return_code": 0, 
     "failures": {
-        "testCase (rekall.plugins.filesystems.ntfs.TestIStat)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 50 != 58\n"
+        "testCase (rekall.plugins.filesystems.ntfs.TestIStat)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 58 != 50\n"
     }, 
     "output": [
         "MFT Entry Header Values:", 
@@ -42,9 +42,7 @@ exit 0
         "  42-128-1||$DATA                         ||          ||False||   1001647||VCN: 0-1956", 
         "", 
         "Clusters (128-1):", 
-        "478465-4", 
-        "80422(19", 
-        "57)     ", 
+        "478465-480422(1957)      ", 
         "MFT Entry Header Values:", 
         "Entry: 40        Sequence: 1", 
         "$LogFile Sequence Number: 3168732", 
@@ -68,22 +66,16 @@ exit 0
         "  40-128-1||$DATA                         ||          ||False||   1001647||VCN: 0-1967", 
         "", 
         "Clusters (128-1):", 
-        "474540-4||Sparse(1||474588-4||Sparse(3||475804-4||Sparse(1||475820-4||Sparse(3", 
-        "74587(47||)       ||75801(12||)       ||75819(15||)       ||75865(45||)       ", 
-        ")       ||        ||13)     ||        ||)       ||        ||)       ||        ", 
-        "475868-4||Sparse(6||475884-4||Sparse(6||475900-4||Sparse(3||475916-4||Sparse(3", 
-        "75878(10||)       ||75894(10||)       ||75913(13||)       ||76393(47||)       ", 
-        ")       ||        ||)       ||        ||)       ||        ||7)      ||        ", 
-        "476396-4||Sparse(1", 
-        "76494(98||4)      ", 
-        ")       ||        "
+        "474540-474587(47)        ||Sparse(1)                ||474588-475801(1213)      ||Sparse(3)                ", 
+        "475868-475878(10)        ||Sparse(6)                ||475884-475894(10)        ||Sparse(6)                ", 
+        "476396-476494(98)        ||Sparse(14)               "
     ], 
     "options": {
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
         "commandline": "istat %(mfts)s", 
         "--renderer": "test", 
-        "tempdir": "/tmp/tmpz0Nt8i/TestIStatThread-3", 
+        "tempdir": "/tmp/tmpWW7nxt/TestIStatThread-1", 
         "mfts": "42 40", 
         "test_class": "TestIStat", 
         "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - istat 42 40", 
