@@ -1,0 +1,17 @@
+{
+    "time_used": 1.2874603271484375e-05, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
+        "commandline": "", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "IndexSetTest", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpuNmQFi/IndexSetTestThread-7", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
+    }
+}

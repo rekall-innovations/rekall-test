@@ -6,27 +6,27 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestEntityNetstat /Users/adamsh/Projects/rekall-test/osx10.9.5/TestEntityNetstat
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - netstat
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - netstat
 else
    less /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestEntityNetstat
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 19.71673893928528, 
+    "time_used": 16.0369930267334, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestEntityNetstat)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 316 != 327\n"
+        "testCase (__main__.TestEntityNetstat)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'IPv4/TCP||10.0.2.15                                       ||49157     ||23.43. [truncated]... != u'IPv4/TCP||10.0.2.15                                       ||49157     ||23.43. [truncated]...\nDiff is 766 characters long. Set self.maxDiff to None to see it.\n"
     }, 
     "output": [
         "", 
         "**************************************************** IP Connections ****************************************************", 
         "protocol||                  src address                   || src port ||                  dst address                   || dst port ||       state        ||                process                 ", 
         "--------||------------------------------------------------||----------||------------------------------------------------||----------||--------------------||----------------------------------------", 
-        "IPv4/TCP||10.0.2.15                                       ||49157     ||23.43.75.27                                     ||80        ||TCPS_ESTABLISHED    ||ocspd (pid=82)                          ", 
-        "IPv4/TCP||10.0.2.15                                       ||49156     ||23.43.75.27                                     ||80        ||TCPS_ESTABLISHED    ||ocspd (pid=82)                          ", 
-        "IPv4/TCP||10.0.2.15                                       ||49154     ||17.149.240.70                                   ||443       ||TCPS_ESTABLISHED    ||apsd (pid=67)                           ", 
-        "IPv4/TCP||10.0.2.15                                       ||49155     ||80.239.254.10                                   ||80        ||TCPS_ESTABLISHED    ||IMRemoteURLConne (pid=229)              ", 
+        "IPv4/TCP||10.0.2.15                                       ||49157     ||23.43.75.27                                     ||80        ||TCPS_ESTABLISHED    ||Process: ocspd (pid=82)                 ", 
+        "IPv4/TCP||10.0.2.15                                       ||49156     ||23.43.75.27                                     ||80        ||TCPS_ESTABLISHED    ||Process: ocspd (pid=82)                 ", 
+        "IPv4/TCP||10.0.2.15                                       ||49154     ||17.149.240.70                                   ||443       ||TCPS_ESTABLISHED    ||Process: apsd (pid=67)                  ", 
+        "IPv4/TCP||10.0.2.15                                       ||49155     ||80.239.254.10                                   ||80        ||TCPS_ESTABLISHED    ||Process: IMRemoteURLConne (pid=229)     ", 
         "IPv4/TCP||127.0.0.1                                       ||631       ||0.0.0.0                                         ||0         ||TCPS_LISTEN         ||launchd (pid=1)                         ", 
         "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
         "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
@@ -139,8 +139,8 @@ exit 0
         "                    ||                    ||                    ||cn_np/mdssvc        ||                                        ", 
         "STREAM              ||0xff800c5a6d50      ||0x0                 ||/private/var/rpc/nca||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||lrpc/lsarpc         ||                                        ", 
-        "STREAM              ||0xff800c5a6e18      ||0x0                 ||/private/var/run/mDN||Process: launchd (pid=1), Process:      ", 
-        "                    ||                    ||                    ||SResponder          ||mDNSResponder (pid=45) (2 values)       ", 
+        "STREAM              ||0xff800c5a6e18      ||0x0                 ||/private/var/run/mDN||Process: mDNSResponder (pid=45),        ", 
+        "                    ||                    ||                    ||SResponder          ||Process: launchd (pid=1) (2 values)     ", 
         "STREAM              ||0xff800c5a6ee0      ||0x0                 ||/private/var/rpc/nca||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||cn_np/lsarpc        ||                                        ", 
         "STREAM              ||0xff800cba74b8      ||0xff800cba7d50      ||-                   ||launchd (pid=1)                         ", 
@@ -348,14 +348,17 @@ exit 0
         "STREAM              ||0xff800d73cee0      ||0xff800c5a44b0      ||-                   ||launchd (pid=141)                       "
     ], 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
         "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
         "commandline": "netstat", 
         "--renderer": "test", 
         "test_class": "TestEntityNetstat", 
-        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpgQa4fI/TestEntityNetstatThread-7", 
-        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - netstat", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmppP5g1U/TestEntityNetstatThread-7", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - netstat", 
         "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
     }
 }

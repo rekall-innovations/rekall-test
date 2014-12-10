@@ -1,0 +1,15 @@
+{
+    "time_used": 1.0013580322265625e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "commandline": "", 
+        "--renderer": "test", 
+        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmp4Rolk_/SuperpositionTestThread-8", 
+        "mfts": "42 40", 
+        "test_class": "SuperpositionTest", 
+        "--profile": "ntfs", 
+        "path": "RAW/20076517123273.pdf", 
+        "testdir": "/Users/adamsh/Projects/rekall-test/ntfs"
+    }
+}
