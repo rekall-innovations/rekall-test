@@ -1,0 +1,83 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestCheckAFInfo /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestCheckAFInfo
+elif [ "$1" == "meld" ]; then
+   meld /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestCheckAFInfo /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestCheckAFInfo
+elif [ "$1" == "diff" ]; then
+   diff /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestCheckAFInfo /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestCheckAFInfo
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - check_afinfo
+else
+   less /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestCheckAFInfo
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 15.994539022445679, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestCheckAFInfo)": "Traceback (most recent call last):\n  File \"/usr/local/google/home/jordisanchez/projects/rekall/rekall.github/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/usr/local/google/home/jordisanchez/projects/rekall/rekall.github/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 18 != 50\n"
+    }, 
+    "output": [
+        "        Constant Name         ||            Member            || Address  ||       Module       ", 
+        "------------------------------||------------------------------||----------||--------------------", 
+        "tcp6_seq_afinfo               ||seq_ops.start                 ||0xc12575d8||linux kernel        ", 
+        "tcp6_seq_afinfo               ||seq_ops.next                  ||0xc1257565||linux kernel        ", 
+        "tcp6_seq_afinfo               ||seq_ops.stop                  ||0xc1256d28||linux kernel        ", 
+        "tcp6_seq_afinfo               ||seq_ops.show                  ||0xc129a9a3||linux kernel        ", 
+        "tcp6_seq_afinfo               ||seq_fops.llseek               ||0xc10e192b||linux kernel        ", 
+        "tcp6_seq_afinfo               ||seq_fops.open                 ||0xc1256f26||linux kernel        ", 
+        "tcp6_seq_afinfo               ||seq_fops.read                 ||0xc10e1a56||linux kernel        ", 
+        "tcp6_seq_afinfo               ||seq_fops.release              ||0xc110a126||linux kernel        ", 
+        "tcp4_seq_afinfo               ||seq_ops.start                 ||0xc12575d8||linux kernel        ", 
+        "tcp4_seq_afinfo               ||seq_ops.next                  ||0xc1257565||linux kernel        ", 
+        "tcp4_seq_afinfo               ||seq_ops.stop                  ||0xc1256d28||linux kernel        ", 
+        "tcp4_seq_afinfo               ||seq_ops.show                  ||0xc12569af||linux kernel        ", 
+        "tcp4_seq_afinfo               ||seq_fops.llseek               ||0xc10e192b||linux kernel        ", 
+        "tcp4_seq_afinfo               ||seq_fops.open                 ||0xc1256f26||linux kernel        ", 
+        "tcp4_seq_afinfo               ||seq_fops.read                 ||0xc10e1a56||linux kernel        ", 
+        "tcp4_seq_afinfo               ||seq_fops.release              ||0xc110a126||linux kernel        ", 
+        "udplite6_seq_afinfo           ||seq_ops.start                 ||0xc125d3ce||linux kernel        ", 
+        "udplite6_seq_afinfo           ||seq_ops.next                  ||0xc125c25e||linux kernel        ", 
+        "udplite6_seq_afinfo           ||seq_ops.stop                  ||0xc125c15e||linux kernel        ", 
+        "udplite6_seq_afinfo           ||seq_ops.show                  ||0xc12904cd||linux kernel        ", 
+        "udplite6_seq_afinfo           ||seq_fops.llseek               ||0xc10e192b||linux kernel        ", 
+        "udplite6_seq_afinfo           ||seq_fops.open                 ||0xc125c27f||linux kernel        ", 
+        "udplite6_seq_afinfo           ||seq_fops.read                 ||0xc10e1a56||linux kernel        ", 
+        "udplite6_seq_afinfo           ||seq_fops.release              ||0xc110a126||linux kernel        ", 
+        "udp6_seq_afinfo               ||seq_ops.start                 ||0xc125d3ce||linux kernel        ", 
+        "udp6_seq_afinfo               ||seq_ops.next                  ||0xc125c25e||linux kernel        ", 
+        "udp6_seq_afinfo               ||seq_ops.stop                  ||0xc125c15e||linux kernel        ", 
+        "udp6_seq_afinfo               ||seq_ops.show                  ||0xc12904cd||linux kernel        ", 
+        "udp6_seq_afinfo               ||seq_fops.llseek               ||0xc10e192b||linux kernel        ", 
+        "udp6_seq_afinfo               ||seq_fops.open                 ||0xc125c27f||linux kernel        ", 
+        "udp6_seq_afinfo               ||seq_fops.read                 ||0xc10e1a56||linux kernel        ", 
+        "udp6_seq_afinfo               ||seq_fops.release              ||0xc110a126||linux kernel        ", 
+        "udplite4_seq_afinfo           ||seq_ops.start                 ||0xc125d3ce||linux kernel        ", 
+        "udplite4_seq_afinfo           ||seq_ops.next                  ||0xc125c25e||linux kernel        ", 
+        "udplite4_seq_afinfo           ||seq_ops.stop                  ||0xc125c15e||linux kernel        ", 
+        "udplite4_seq_afinfo           ||seq_ops.show                  ||0xc125d2cc||linux kernel        ", 
+        "udplite4_seq_afinfo           ||seq_fops.llseek               ||0xc10e192b||linux kernel        ", 
+        "udplite4_seq_afinfo           ||seq_fops.open                 ||0xc125c27f||linux kernel        ", 
+        "udplite4_seq_afinfo           ||seq_fops.read                 ||0xc10e1a56||linux kernel        ", 
+        "udplite4_seq_afinfo           ||seq_fops.release              ||0xc110a126||linux kernel        ", 
+        "udp4_seq_afinfo               ||seq_ops.start                 ||0xc125d3ce||linux kernel        ", 
+        "udp4_seq_afinfo               ||seq_ops.next                  ||0xc125c25e||linux kernel        ", 
+        "udp4_seq_afinfo               ||seq_ops.stop                  ||0xc125c15e||linux kernel        ", 
+        "udp4_seq_afinfo               ||seq_ops.show                  ||0xc125d2cc||linux kernel        ", 
+        "udp4_seq_afinfo               ||seq_fops.llseek               ||0xc10e192b||linux kernel        ", 
+        "udp4_seq_afinfo               ||seq_fops.open                 ||0xc125c27f||linux kernel        ", 
+        "udp4_seq_afinfo               ||seq_fops.read                 ||0xc10e1a56||linux kernel        ", 
+        "udp4_seq_afinfo               ||seq_fops.release              ||0xc110a126||linux kernel        "
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmp235TiL/TestCheckAFInfoThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - check_afinfo", 
+        "commandline": "check_afinfo", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestCheckAFInfo"
+    }
+}

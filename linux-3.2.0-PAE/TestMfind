@@ -1,0 +1,13 @@
+{
+    "time_used": 0.0005738735198974609, 
+    "hashes": {}, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestMfindThread-1", 
+        "commandline": "mfind %(file)", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestMfind"
+    }
+}

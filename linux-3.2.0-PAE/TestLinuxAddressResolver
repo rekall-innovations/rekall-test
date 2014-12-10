@@ -1,0 +1,15 @@
+{
+    "time_used": 14.886025190353394, 
+    "output": [], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestLinuxAddressResolverThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - address_resolver", 
+        "commandline": "address_resolver", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestLinuxAddressResolver"
+    }
+}

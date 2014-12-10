@@ -1,0 +1,17 @@
+{
+    "time_used": 14.744025945663452, 
+    "output": [], 
+    "hashes": {}, 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "commandline": "memdump --pid=%(pid)s --dump_dir %(tempdir)s", 
+        "pid": 2624, 
+        "--renderer": "test", 
+        "test_class": "TestWinMemDump", 
+        "tempdir": "/tmp/tmpKfcTZK/TestWinMemDumpThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - memdump --pid=2624 --dump_dir /tmp/tmpKfcTZK/TestWinMemDumpThread-1", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE"
+    }
+}

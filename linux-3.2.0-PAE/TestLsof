@@ -1,0 +1,23 @@
+{
+    "time_used": 15.194558143615723, 
+    "output": [
+        "        Name        ||  Pid   ||  User  ||   FD   ||    Size    ||   Offset   ||  Node  ||Path", 
+        "--------------------||--------||--------||--------||------------||------------||--------||----", 
+        "bash                ||2362    ||       0||       0||           0||           0||    1043||/dev/tty1", 
+        "bash                ||2362    ||       0||       1||           0||           0||    1043||/dev/tty1", 
+        "bash                ||2362    ||       0||       2||           0||           0||    1043||/dev/tty1", 
+        "bash                ||2362    ||       0||     255||           0||           0||    1043||/dev/tty1"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "commandline": "lsof --proc_regex %(proc_name)s", 
+        "proc_name": "bash", 
+        "--renderer": "test", 
+        "test_class": "TestLsof", 
+        "tempdir": "/tmp/tmpKfcTZK/TestLsofThread-11", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - lsof --proc_regex bash", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE"
+    }
+}

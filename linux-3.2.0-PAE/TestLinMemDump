@@ -1,0 +1,21 @@
+{
+    "time_used": 14.795459985733032, 
+    "output": [
+        "Writing bash f5836640 to bash_2362.dmp"
+    ], 
+    "hashes": {
+        "bash_2362.dmp": "017e4870bd5c2e89cd1aee96881b10e5", 
+        "bash_2362.dmp.idx": "dc3a10883e23202e6323198df2105691"
+    }, 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestLinMemDumpThread-5", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - memdump --proc_regex bash --dump_dir /tmp/tmpKfcTZK/TestLinMemDumpThread-5", 
+        "commandline": "memdump --proc_regex bash --dump_dir %(tempdir)s", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestLinMemDump"
+    }
+}

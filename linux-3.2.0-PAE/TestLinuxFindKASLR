@@ -1,0 +1,30 @@
+{
+    "time_used": 10.718696117401123, 
+    "output": [
+        "KASLR Slide", 
+        "-----------", 
+        "0x00000000 ", 
+        "0x3b7fcce4 ", 
+        "0x3b902d90 ", 
+        "0x3d97520f ", 
+        "0x3d97a62c ", 
+        "0x3d986d00 ", 
+        "0x3d98d594 ", 
+        "0x3d99c541 ", 
+        "0x3dcbb224 ", 
+        "0x3de41a37 ", 
+        "0x3de41acd ", 
+        "0x3deeaa6a "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestLinuxFindKASLRThread-6", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - find_kaslr", 
+        "commandline": "find_kaslr", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestLinuxFindKASLR"
+    }
+}

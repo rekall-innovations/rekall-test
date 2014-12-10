@@ -1,0 +1,42 @@
+{
+    "time_used": 16.056571006774902, 
+    "output": [
+        "               Dogma               ||                              Bessy                              ||                     Pilsner                      ||  Nowrap  ", 
+        "-----------------------------------||-----------------------------------------------------------------||--------------------------------------------------||----------", 
+        "This is a renderer stress-test. The||                                |############                    ||                /\\                                ||This is a fairly long line that shouldn't get wrapped.   ", 
+        "flags should have correct colors,  ||                                |#####  #####                    ||               / |\\                               ||The same row has another line that shouldn't get wrapped.", 
+        "the beer should be yellow and the  ||                                |##        ##                    ||              /  | \\                              ||                                                         ", 
+        "cell on the left should not bleed  ||              _                 |#####  #####                    ||             /   |  \\                             ||                                                         ", 
+        "into the cell on the right.        ||             / \\_               |############                    ||            /____|   \\                            ||                                                         ", 
+        "This is a really long column of    ||            /    \\              |                                ||           / \\    \\   \\                           ||                                                         ", 
+        "text with its own newlines in it!  ||           /\\/\\  /\\  _          |       /;    ;\\                 ||          /   \\    \\  /                           ||                                                         ", 
+        "This bovine experience has been    ||          /    \\/  \\/ \\         |   __  \\____//                  ||         /     \\    \\/                            ||                                                         ", 
+        "brought to you by Rekall.          ||        /\\  .-   `. \\  \\        |  /{_\\_/   `'\\____              ||        /       \\   /                             ||                                                         ", 
+        "                                   ||       /  `-.__ ^   /\\  \\       |  \\___ (o)  (o)   }             ||       /         \\ /                              ||                                                         ", 
+        "                                   ||      / _____________________________/          :--'             ||      /           v                               ||                                                         ", 
+        "                                   ||    ,-,'`@@@@@@@@       @@@@@@         \\_    `__\\                ||     /               ( o )o)                      ||                                                         ", 
+        "                                   ||   ;:(  @@@@@@@@@        @@@             \\___(o'o)               ||    /               ( o )o )o)                    ||                                                         ", 
+        "                                   ||   :: )  @@@@          @@@@@@        ,'@@(  `===='               ||                  (o( ~~~~~~~~o                   ||                                                         ", 
+        "                                   ||   :: : @@@@@:          @@@@         `@@@:                       ||                  ( )' ~~~~~~~' _                 ||                                                         ", 
+        "                                   ||   :: \\  @@@@@:       @@@@@@@)    (  '@@@'                       ||                    o|   o    |-. \\               ||                                                         ", 
+        "                                   ||   :; /\\      /      @@@@@@@@@\\   :@@@@@)                        ||                    o|     o  |  \\ \\              ||                                                         ", 
+        "                                   ||   ::/  )    {_----------------:  :~`,~~;                        ||                     | .      |  | |              ||                                                         ", 
+        "                                   ||  ;; `; :   )                  :  / `; ;                         ||                    o|   .    |  / /              ||                                                         ", 
+        "                                   || ;;;  : :   ;                  :  ;  ; :                         ||                     |  .  .  |._ /               ||                                                         ", 
+        "                                   || `'`  / :  :                   :  :  : :                         ||                     .========.                   ||                                                         ", 
+        "                                   ||     )_ \\__;                   :_ ;  \\_\\                         ||                                                  ||                                                         ", 
+        "                                   ||     :__\\  \\                   \\  \\  :  \\                        ||                                                  ||                                                         ", 
+        "                                   ||         `^'                    `^'  `-^-'                       ||                                                  ||                                                         "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestRekallBovineExperience3000Thread-10", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - moo", 
+        "commandline": "moo", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestRekallBovineExperience3000"
+    }
+}

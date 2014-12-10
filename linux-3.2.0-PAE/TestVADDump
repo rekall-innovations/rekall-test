@@ -1,0 +1,65 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestVADDump /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestVADDump
+elif [ "$1" == "meld" ]; then
+   meld /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestVADDump /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestVADDump
+elif [ "$1" == "diff" ]; then
+   diff /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestVADDump /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestVADDump
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - vaddump --pid 2362 --dump_dir /tmp/tmphdJosg/TestVADDumpThread-1
+else
+   less /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestVADDump
+fi
+exit 0
+{
+    "errors": {
+        "testCase (rekall.plugins.windows.vadinfo_test.TestVADDump)": "Traceback (most recent call last):\n  File \"/usr/local/google/home/jordisanchez/projects/rekall/rekall.github/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/usr/local/google/home/jordisanchez/projects/rekall/rekall.github/rekall/testlib.py\", line 267, in testCase\n    previous = self.baseline['output']\nKeyError: 'output'\n"
+    }, 
+    "time_used": 9.280838012695312, 
+    "return_code": 0, 
+    "failures": {}, 
+    "output": [
+        "Pid: 2362  ", 
+        "Writing bash, pid 2362 to bash.2362.08048000-08129000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.08129000-0812a000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.0812a000-0812f000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b73da000-b73e1000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b73e1000-b73eb000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b73eb000-b73ec000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b73ec000-b73ed000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b73ed000-b73f6000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b73f6000-b73f7000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b73f7000-b73f8000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b73f8000-b740b000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b740b000-b740c000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b740c000-b740d000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b740f000-b7415000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b7415000-b7416000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b7416000-b7417000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b7417000-b758e000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b758f000-b76eb000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b76eb000-b76ec000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b76ec000-b76ee000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b76ee000-b76ef000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b76f3000-b76f5000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b76f5000-b76f6000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b76f6000-b76f7000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b76f7000-b7714000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b7714000-b7716000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b7716000-b7717000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b771f000-b773b000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b773b000-b773c000.dmp", 
+        "Writing bash, pid 2362 to bash.2362.b773c000-b773d000.dmp"
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "commandline": "vaddump --pid %(pid)s --dump_dir %(tempdir)s", 
+        "pid": 2362, 
+        "--renderer": "test", 
+        "test_class": "TestVADDump", 
+        "tempdir": "/tmp/tmphdJosg/TestVADDumpThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - vaddump --pid 2362 --dump_dir /tmp/tmphdJosg/TestVADDumpThread-1", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE"
+    }
+}

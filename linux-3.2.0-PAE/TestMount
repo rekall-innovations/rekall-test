@@ -1,0 +1,35 @@
+{
+    "time_used": 15.929894924163818, 
+    "output": [
+        "                      Device                      ||                       Path                       ||     Type     ||       flags        ", 
+        "--------------------------------------------------||--------------------------------------------------||--------------||--------------------", 
+        "proc                                              ||/proc                                             ||proc          ||rw, nodev, noexec,  ", 
+        "                                                  ||                                                  ||              ||nosuid, relatime    ", 
+        "devpts                                            ||/dev/pts                                          ||devpts        ||rw, noexec, nosuid, ", 
+        "                                                  ||                                                  ||              ||relatime            ", 
+        "tmpfs                                             ||/run/lock                                         ||tmpfs         ||rw, nodev, noexec,  ", 
+        "                                                  ||                                                  ||              ||nosuid, relatime    ", 
+        "tmpfs                                             ||/run/shm                                          ||tmpfs         ||rw, nodev, noexec,  ", 
+        "                                                  ||                                                  ||              ||nosuid, relatime    ", 
+        "udev                                              ||/dev                                              ||devtmpfs      ||rw, relatime        ", 
+        "tmpfs                                             ||/run                                              ||tmpfs         ||rw, noexec, nosuid, ", 
+        "                                                  ||                                                  ||              ||relatime            ", 
+        "rpc_pipefs                                        ||/var/lib/nfs/rpc_pipefs                           ||rpc_pipefs    ||rw, relatime        ", 
+        "/dev/disk/by-uuid/55bda481-150f-                  ||/                                                 ||ext4          ||rw, relatime        ", 
+        "442e-b781-231a904cebd1                            ||                                                  ||              ||                    ", 
+        "devtmpfs                                          ||/                                                 ||devtmpfs      ||rw, relatime        ", 
+        "sysfs                                             ||/sys                                              ||sysfs         ||rw, nodev, noexec,  ", 
+        "                                                  ||                                                  ||              ||nosuid, relatime    "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestMountThread-7", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - mount", 
+        "commandline": "mount", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestMount"
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "time_used": 14.72034502029419, 
+    "output": [
+        "Timestamp||Facility||Level||                                    Message                                     ", 
+        "---------||   --   || --  ||--------------------------------------------------------------------------------", 
+        "231488553||48      ||LOG_E||] Initializing cgroup subsys cpuset                                             ", 
+        "     1.81||        ||MERG ||<6>[    0.000000] Initializing cgroup subsys cpu                                ", 
+        "         ||        ||     ||<5>[    0.000000] Linux version 3.2.0-4-686-pae (debian-kernel@lists.debian.org)", 
+        "         ||        ||     ||(gcc version 4.6.3 (Debian 4.6.3-14) ) #1 SMP Debian 3.2.51-1                   ", 
+        "         ||        ||     ||<6>[    0.000000] BIOS-provided physical RAM map:                               ", 
+        "         ||        ||     ||<6>[    0.000000]  BIOS-e820: 0000000000000000 - 000000000009fc00 (usable)      ", 
+        "         ||        ||     ||<6>[    0.000000]  BIOS-e820: 000000000009fc00 - 00000000000a0000 (reserved)    ", 
+        "         ||        ||     ||<6>[    0.000000]  BIOS-e820: 00000000000f0000 - 0000000000100000 (reserved)    ", 
+        "         ||        ||     ||<6>[    0.000000]  BIOS-e820: 0000000000100000 - 000000003fffe000 (usable)      ", 
+        "         ||        ||     ||<6>[    0.000000]  BIOS-e820: 000000003fffe000 - 0000000040000000 (reserved)    ", 
+        "         ||        ||     ||<6>[    0.000000]  BIOS-e820: 00000000feffc000 - 00000000ff000000 (reserved)    ", 
+        "         ||        ||     ||<6>[    0.000000]  BIOS-e820: 00000000fffc0000 - 0000000100000000 (reserved)    ", 
+        "         ||        ||     ||<5>[    0.000000] Notice: NX (Execute Disable) protection missing in CPU!       ", 
+        "         ||        ||     ||<6>[    0.000000] SMBIOS 2.4 present.                                           ", 
+        "         ||        ||     ||<7>[    0.000000] DMI: Bochs Bochs, BIOS Bochs 01/01/2011                       ", 
+        "         ||        ||     ||<7>[    0.000000] e820 update range: 0000000000000000 - 0000000000010000        ", 
+        "         ||        ||     ||(usable) ==> (reserved)                                                         ", 
+        "         ||        ||     ||<7>[    0.000000] e820 remove range: 00000000000a0000 - 0000000000100000        ", 
+        "         ||        ||     ||(usable)                                                                        ", 
+        "         ||        ||     ||<6>[    0.000000]                                                               "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestLinuxDmesgThread-8", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - dmesg", 
+        "commandline": "dmesg", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestLinuxDmesg"
+    }
+}

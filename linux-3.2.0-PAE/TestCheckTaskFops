@@ -1,0 +1,68 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestCheckTaskFops /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestCheckTaskFops
+elif [ "$1" == "meld" ]; then
+   meld /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestCheckTaskFops /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestCheckTaskFops
+elif [ "$1" == "diff" ]; then
+   diff /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestCheckTaskFops /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestCheckTaskFops
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - check_task_fops --proc_regex bash --all
+else
+   less /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestCheckTaskFops
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 9.915296077728271, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.linux.check_fops.TestCheckTaskFops)": "Traceback (most recent call last):\n  File \"/usr/local/google/home/jordisanchez/projects/rekall/rekall.github/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/usr/local/google/home/jordisanchez/projects/rekall/rekall.github/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 18 != 34\n"
+    }, 
+    "output": [
+        " Pid  ||      Command       ||            Member            || Address  ||       Module       ", 
+        "------||--------------------||------------------------------||----------||--------------------", 
+        "2362  ||bash                ||fasync                        ||0xc11cdd01||linux kernel        ", 
+        "2362  ||bash                ||llseek                        ||0xc10cc8dd||linux kernel        ", 
+        "2362  ||bash                ||open                          ||0xc11cee82||linux kernel        ", 
+        "2362  ||bash                ||poll                          ||0xc11cdd33||linux kernel        ", 
+        "2362  ||bash                ||read                          ||0xc11cdd94||linux kernel        ", 
+        "2362  ||bash                ||release                       ||0xc11ceabb||linux kernel        ", 
+        "2362  ||bash                ||unlocked_ioctl                ||0xc11cf438||linux kernel        ", 
+        "2362  ||bash                ||write                         ||0xc11ce16b||linux kernel        ", 
+        "2362  ||bash                ||fasync                        ||0xc11cdd01||linux kernel        ", 
+        "2362  ||bash                ||llseek                        ||0xc10cc8dd||linux kernel        ", 
+        "2362  ||bash                ||open                          ||0xc11cee82||linux kernel        ", 
+        "2362  ||bash                ||poll                          ||0xc11cdd33||linux kernel        ", 
+        "2362  ||bash                ||read                          ||0xc11cdd94||linux kernel        ", 
+        "2362  ||bash                ||release                       ||0xc11ceabb||linux kernel        ", 
+        "2362  ||bash                ||unlocked_ioctl                ||0xc11cf438||linux kernel        ", 
+        "2362  ||bash                ||write                         ||0xc11ce16b||linux kernel        ", 
+        "2362  ||bash                ||fasync                        ||0xc11cdd01||linux kernel        ", 
+        "2362  ||bash                ||llseek                        ||0xc10cc8dd||linux kernel        ", 
+        "2362  ||bash                ||open                          ||0xc11cee82||linux kernel        ", 
+        "2362  ||bash                ||poll                          ||0xc11cdd33||linux kernel        ", 
+        "2362  ||bash                ||read                          ||0xc11cdd94||linux kernel        ", 
+        "2362  ||bash                ||release                       ||0xc11ceabb||linux kernel        ", 
+        "2362  ||bash                ||unlocked_ioctl                ||0xc11cf438||linux kernel        ", 
+        "2362  ||bash                ||write                         ||0xc11ce16b||linux kernel        ", 
+        "2362  ||bash                ||fasync                        ||0xc11cdd01||linux kernel        ", 
+        "2362  ||bash                ||llseek                        ||0xc10cc8dd||linux kernel        ", 
+        "2362  ||bash                ||open                          ||0xc11cee82||linux kernel        ", 
+        "2362  ||bash                ||poll                          ||0xc11cdd33||linux kernel        ", 
+        "2362  ||bash                ||read                          ||0xc11cdd94||linux kernel        ", 
+        "2362  ||bash                ||release                       ||0xc11ceabb||linux kernel        ", 
+        "2362  ||bash                ||unlocked_ioctl                ||0xc11cf438||linux kernel        ", 
+        "2362  ||bash                ||write                         ||0xc11ce16b||linux kernel        "
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "commandline": "check_task_fops --proc_regex %(proc_name)s --all", 
+        "proc_name": "bash", 
+        "--renderer": "test", 
+        "test_class": "TestCheckTaskFops", 
+        "tempdir": "/tmp/tmpLtAHOg/TestCheckTaskFopsThread-5", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - check_task_fops --proc_regex bash --all", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE"
+    }
+}

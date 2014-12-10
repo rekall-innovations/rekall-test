@@ -1,0 +1,21 @@
+{
+    "time_used": 15.339599132537842, 
+    "output": [
+        "                 IP Address                  ||        MAC         ||    Device     ", 
+        "---------------------------------------------||--------------------||---------------", 
+        "                                           ::||   00:00:00:00:00:00||             lo", 
+        "                                192.168.122.1||   fe:54:00:20:de:7a||           eth0", 
+        "                                      0.0.0.0||   00:00:00:00:00:00||             lo"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestArpThread-11", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - arp", 
+        "commandline": "arp", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestArp"
+    }
+}

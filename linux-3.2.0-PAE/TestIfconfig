@@ -1,0 +1,22 @@
+{
+    "time_used": 16.168534994125366, 
+    "output": [
+        "   Interface    ||    Ipv4Address     ||       MAC        ||       Flags        ", 
+        "----------------||--------------------||------------------||--------------------", 
+        "lo              ||127.0.0.1           ||00:00:00:00:00:00 ||IFF_LOOPBACK, IFF_UP", 
+        "eth0            ||192.168.122.240     ||00:00:00:00:00:00 ||IFF_BROADCAST,      ", 
+        "                ||                    ||                  ||IFF_MULTICAST,      ", 
+        "                ||                    ||                  ||IFF_UP              "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestIfconfigThread-9", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - ifconfig", 
+        "commandline": "ifconfig", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestIfconfig"
+    }
+}

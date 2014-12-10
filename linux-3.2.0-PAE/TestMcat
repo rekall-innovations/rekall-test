@@ -1,0 +1,41 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestMcat /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestMcat
+elif [ "$1" == "meld" ]; then
+   meld /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestMcat /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestMcat
+elif [ "$1" == "diff" ]; then
+   diff /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestMcat /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestMcat
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - mcat /etc/passwd /tmp/tmpqQdyJi/TestMcatThread-1/mcat
+else
+   less /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestMcat
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 9.999539852142334, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.linux.fs.TestMcat)": "Traceback (most recent call last):\n  File \"/usr/local/google/home/jordisanchez/projects/rekall/rekall.github/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/usr/local/google/home/jordisanchez/projects/rekall/rekall.github/rekall/testlib.py\", line 323, in testCase\n    self.assertEqual(self.baseline['hashes'], self.current['hashes'])\nAssertionError: {} != {'mcat': '55cce656413070ae91d50229a45ffe0a'}\n- {}\n+ {'mcat': '55cce656413070ae91d50229a45ffe0a'}\n"
+    }, 
+    "output": [
+        "Range start || Range end  ", 
+        "------------||------------", 
+        "           0||         942"
+    ], 
+    "hashes": {
+        "mcat": "55cce656413070ae91d50229a45ffe0a"
+    }, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "commandline": "mcat %(file)s %(tempdir)s/mcat", 
+        "--renderer": "test", 
+        "outfile": "outfile", 
+        "test_class": "TestMcat", 
+        "file": "/etc/passwd", 
+        "tempdir": "/tmp/tmpqQdyJi/TestMcatThread-1", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - mcat /etc/passwd /tmp/tmpqQdyJi/TestMcatThread-1/mcat", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE"
+    }
+}

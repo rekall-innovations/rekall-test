@@ -1,0 +1,18 @@
+{
+    "time_used": 19.13018798828125, 
+    "output": [], 
+    "hashes": {
+        "output_image.e01": "add0a22555272ada3da55e0cbbed4285"
+    }, 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestEWFAcquireThread-8", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - ewfacquire /tmp/tmpKfcTZK/TestEWFAcquireThread-8/output_image.e01", 
+        "commandline": "ewfacquire %(tempdir)s/output_image.e01", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestEWFAcquire"
+    }
+}

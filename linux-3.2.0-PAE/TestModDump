@@ -1,0 +1,38 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestModDump /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestModDump
+elif [ "$1" == "meld" ]; then
+   meld /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestModDump /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestModDump
+elif [ "$1" == "diff" ]; then
+   diff /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestModDump /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestModDump
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - moddump --regex floppy --dump_dir /tmp/tmpHo4hbj/TestModDumpThread-2
+else
+   less /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestModDump
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 9.881860971450806, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.windows.procdump_test.TestModDump)": "Traceback (most recent call last):\n  File \"/usr/local/google/home/jordisanchez/projects/rekall/rekall.github/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/usr/local/google/home/jordisanchez/projects/rekall/rekall.github/rekall/testlib.py\", line 323, in testCase\n    self.assertEqual(self.baseline['hashes'], self.current['hashes'])\nAssertionError: {u'lockd.0xf8444000.lkm': u'a5f9d1db175fd208878df6009a0e11ab', u'snd_hda_intel.0 [truncated]... != {'floppy.0xf829d000.lkm': '842bf05f3221cc8ff426fd5e5a791100'}\nDiff is 3248 characters long. Set self.maxDiff to None to see it.\n"
+    }, 
+    "output": [
+        "Wrote 48087 bytes to floppy.0xf829d000.lkm"
+    ], 
+    "hashes": {
+        "floppy.0xf829d000.lkm": "842bf05f3221cc8ff426fd5e5a791100"
+    }, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "commandline": "moddump --regex %(driver)s --dump_dir %(tempdir)s", 
+        "driver": "floppy", 
+        "--renderer": "test", 
+        "test_class": "TestModDump", 
+        "tempdir": "/tmp/tmpHo4hbj/TestModDumpThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - moddump --regex floppy --dump_dir /tmp/tmpHo4hbj/TestModDumpThread-2", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE"
+    }
+}

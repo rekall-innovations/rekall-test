@@ -1,0 +1,16 @@
+{
+    "time_used": 14.171520948410034, 
+    "output": [], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "commandline": "memmap --pid=%(pid)s", 
+        "pid": 2624, 
+        "--renderer": "test", 
+        "test_class": "TestMemmap", 
+        "tempdir": "/tmp/tmpKfcTZK/TestMemmapThread-6", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - memmap --pid=2624", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE"
+    }
+}

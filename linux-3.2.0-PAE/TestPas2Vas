@@ -1,0 +1,12 @@
+{
+    "time_used": 0.002315044403076172, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestPas2VasThread-8", 
+        "commandline": "pas2vas %(offset)s --pid 0 ", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestPas2Vas"
+    }
+}

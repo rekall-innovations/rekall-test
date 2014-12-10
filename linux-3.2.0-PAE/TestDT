@@ -1,0 +1,22 @@
+{
+    "time_used": 16.332707166671753, 
+    "output": [
+        "usage: rekall [-p PROFILE] [-v] [-q] [--debug] [--pager PAGER] [--paging_limit PAGING_LIMIT] [--nocolors] [--renderer {text,json,wide,test,data}] [--plugin [PLUGIN [PLUGIN ...]]] [-h]", 
+        "              [--profile_path [PROFILE_PATH [PROFILE_PATH ...]]] [-f FILENAME] [--buffer_size BUFFER_SIZE] [--output OUTPUT] [--max_collector_cost MAX_COLLECTOR_COST] [--dtb DTB] [--ept EPT [EPT ...]]", 
+        "              [--timezone TIMEZONE] [-o FILE_OFFSET] [--name_resolution_strategies [NAME_RESOLUTION_STRATEGIES [NAME_RESOLUTION_STRATEGIES ...]]] [--autodetect [AUTODETECT [AUTODETECT ...]]]", 
+        "              [--autodetect_threshold AUTODETECT_THRESHOLD] [-r RUN] [-s SESSION_FILENAME] [-] [-a ADDRESS_SPACE]", 
+        "              target [offset]", 
+        "rekall: error: argument target is required"
+    ], 
+    "return_code": 2, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestDTThread-5", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - dt", 
+        "commandline": "dt", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestDT"
+    }
+}

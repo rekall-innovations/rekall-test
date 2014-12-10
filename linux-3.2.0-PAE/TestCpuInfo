@@ -1,0 +1,20 @@
+{
+    "time_used": 16.041254997253418, 
+    "output": [
+        "CPU ||       Vendor       ||                                     Model                                      ", 
+        "----||--------------------||--------------------------------------------------------------------------------", 
+        "0   ||GenuineIntel        ||QEMU Virtual CPU version 1.0                                                    ", 
+        "1   ||GenuineIntel        ||QEMU Virtual CPU version 1.0                                                    "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpKfcTZK/TestCpuInfoThread-12", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - cpuinfo", 
+        "commandline": "cpuinfo", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestCpuInfo"
+    }
+}

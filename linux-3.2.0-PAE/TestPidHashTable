@@ -1,0 +1,100 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestPidHashTable /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestPidHashTable
+elif [ "$1" == "meld" ]; then
+   meld /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestPidHashTable /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestPidHashTable
+elif [ "$1" == "diff" ]; then
+   diff /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestPidHashTable /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/TestPidHashTable
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - pidhashtable
+else
+   less /usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/output/TestPidHashTable
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 15.268238067626953, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestPidHashTable)": "Traceback (most recent call last):\n  File \"/usr/local/google/home/jordisanchez/projects/rekall/rekall.github/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/usr/local/google/home/jordisanchez/projects/rekall/rekall.github/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0xf5498080||getty               ||  2360||     1||     0||     0||0x35b2f000|| [truncated]... != u'0xf5498080||getty               ||  2360||     1||     0||     0||0x35b2f000|| [truncated]...\n- 0xf5498080||getty               ||  2360||     1||     0||     0||0x35b2f000||1925-02-03 12:19:55+0000\n?                                                                                ^ ^^ -------  ^^^^\n+ 0xf5498080||getty               ||  2360||     1||     0||     0||0x35b2f000||2014-11-28 11:40:10+0000\n?                                                                               ++ ^^^^^ ^^^^^^   ^\n\n"
+    }, 
+    "output": [
+        "Offset (V)||        Name        || PID  || PPID || UID  || GID  ||   DTB    ||       Start Time       ", 
+        "----------||--------------------||------||------||------||------||----------||------------------------", 
+        "0xf5498080||getty               ||  2360||     1||     0||     0||0x35b2f000||2014-11-28 11:40:10+0000", 
+        "0xf6067500||kworker/1:0         ||     9||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf614d540||khungtaskd          ||    22||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf703ed60||rs:main Q:Reg       ||  1886||     1||     0||     0||0x35bfc000||2014-11-28 11:40:10+0000", 
+        "0xf7067aa0||scsi_eh_0           ||   111||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf6057900||init                ||     1||     0||     0||     0||0x363e6000||2014-11-28 11:40:07+0000", 
+        "0xf609b940||khelper             ||    14||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf614c0a0||crypto              ||    27||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf703f5a0||getty               ||  2357||     1||     0||     0||0x35be1000||2014-11-28 11:40:10+0000", 
+        "0xf6056460||migration/0         ||     6||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf609a4a0||kintegrityd         ||    19||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf5afd360||exim4               ||  2328||     1||   101||   103||0x35bc0000||2014-11-28 11:40:10+0000", 
+        "0xf5916680||rpcbind             ||  1574||     1||     0||     0||0x35b8b000||2014-11-28 11:40:10+0000", 
+        "0xf5836640||bash                ||  2362||  2355||     0||     0||0x3588f000||2014-11-28 11:40:16+0000", 
+        "0xf7154de0||hd-audio0           ||   443||     2||     0||     0||-         ||2014-11-28 11:40:09+0000", 
+        "0xf6066cc0||kworker/0:1         ||    11||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf614cd00||ksmd                ||    24||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf5afcb20||rsyslogd            ||  1888||     1||     0||     0||0x35bfc000||2014-11-28 11:40:10+0000", 
+        "0xf71ca5e0||kworker/u:1         ||   113||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf60570c0||ksoftirqd/0         ||     3||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf609b100||netns               ||    16||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf70735c0||khubd               ||   105||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf5afc2e0||cron                ||  2037||     1||     0||     0||0x35416000||2014-11-28 11:40:10+0000", 
+        "0xf703f180||getty               ||  2359||     1||     0||     0||0x35b41000||2014-11-28 11:40:10+0000", 
+        "0xf5916ec0||rpc.statd           ||  1605||     1||   102|| 65534||-         ||2014-11-28 11:40:10+0000", 
+        "0xf7105600||dhclient            ||  1694||     1||     0||     0||0x35a3c000||2014-11-28 11:40:10+0000", 
+        "0xf6067920||migration/1         ||     8||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf7066e40||kworker/1:2         ||   131||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf614d960||kworker/1:1         ||    21||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf5af4f60||rpciod              ||  1610||     2||     0||     0||-         ||2014-11-28 11:40:10+0000", 
+        "0xf6066060||cpuset              ||    13||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf614c4c0||fsnotify_mark       ||    26||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf591ef00||getty               ||  2356||     1||     0||     0||0x35b62000||2014-11-28 11:40:10+0000", 
+        "0xf7067680||ext4-dio-unwrit     ||   149||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf6056880||kworker/u:0         ||     5||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf609a8c0||bdi-default         ||    18||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf5917b20||flush-254:0         ||  2361||     2||     0||     0||-         ||2014-11-28 11:40:14+0000", 
+        "0xf60670e0||ksoftirqd/1         ||    10||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf63df140||nfsiod              ||  1620||     2||     0||     0||-         ||2014-11-28 11:40:10+0000", 
+        "0xf614d120||kswapd0             ||    23||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf59bcb00||rsyslogd            ||  1887||     1||     0||     0||0x35bfc000||2014-11-28 11:40:10+0000", 
+        "0xf71ca1c0||scsi_eh_1           ||   112||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf60574e0||kthreadd            ||     2||     0||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf5805720||udevd               ||   392||   292||     0||     0||0x3595c000||2014-11-28 11:40:09+0000", 
+        "0xf609b520||kdevtmpfs           ||    15||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf5b87920||rsyslogd            ||  1879||     1||     0||     0||0x35bfc000||2014-11-28 11:40:10+0000", 
+        "0xf5af4300||acpid               ||  2201||     1||     0||     0||0x35b80000||2014-11-28 11:40:10+0000", 
+        "0xf5499100||getty               ||  2358||     1||     0||     0||0x35b25000||2014-11-28 11:40:10+0000", 
+        "0xf7066a20||kworker/u:2         ||   117||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf7155200||atd                 ||  1981||     1||     0||     0||0x35be0000||2014-11-28 11:40:10+0000", 
+        "0xf6056040||watchdog/0          ||     7||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf71051e0||kpsmoused           ||   397||     2||     0||     0||-         ||2014-11-28 11:40:09+0000", 
+        "0xf609a080||kblockd             ||    20||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf591e6c0||rpc.idmapd          ||  1630||     1||     0||     0||0x35992000||2014-11-28 11:40:10+0000", 
+        "0xf6066480||watchdog/1          ||    12||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf71549c0||vballoon            ||   423||     2||     0||     0||-         ||2014-11-28 11:40:09+0000", 
+        "0xf5af4b40||sshd                ||  2088||     1||     0||     0||0x35b0e000||2014-11-28 11:40:10+0000", 
+        "0xf614c8e0||khugepaged          ||    25||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf5805b40||login               ||  2355||     1||     0||     0||0x3585d000||2014-11-28 11:40:10+0000", 
+        "0xf7154180||udevd               ||   292||     1||     0||     0||-         ||2014-11-28 11:40:09+0000", 
+        "0xf7072960||jbd2/vda1-8         ||   148||     2||     0||     0||-         ||2014-11-28 11:40:08+0000", 
+        "0xf5917700||udevd               ||   381||   292||     0||     0||0x358fe000||2014-11-28 11:40:09+0000", 
+        "0xf6056ca0||kworker/0:0         ||     4||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf609ace0||sync_supers         ||    17||     2||     0||     0||-         ||2014-11-28 11:40:07+0000", 
+        "0xf70380e0||ata_sff             ||   106||     2||     0||     0||-         ||2014-11-28 11:40:08+0000"
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "tempdir": "/tmp/tmpcqe74P/TestPidHashTableThread-6", 
+        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - pidhashtable", 
+        "commandline": "pidhashtable", 
+        "--renderer": "test", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
+        "test_class": "TestPidHashTable"
+    }
+}
