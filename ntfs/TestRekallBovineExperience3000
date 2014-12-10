@@ -1,7 +1,24 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/ntfs/output/TestRekallBovineExperience3000 /home/scudette/projects/rekall-test/ntfs/TestRekallBovineExperience3000
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/ntfs/output/TestRekallBovineExperience3000 /home/scudette/projects/rekall-test/ntfs/TestRekallBovineExperience3000
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/ntfs/output/TestRekallBovineExperience3000 /home/scudette/projects/rekall-test/ntfs/TestRekallBovineExperience3000
+elif [ "$1" == "run" ]; then
+   rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - moo
+else
+   less /home/scudette/projects/rekall-test/ntfs/output/TestRekallBovineExperience3000
+fi
+exit 0
 {
-    "time_used": 3.8810038566589355, 
+    "errors": {}, 
+    "time_used": 0.7451300621032715, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestRekallBovineExperience3000)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 27 != 26\n"
+    }, 
     "output": [
-        "ERROR:root:No profiles match this image. Try specifying manually.", 
         "               Dogma               ||                              Bessy                              ||                     Pilsner                      ||  Nowrap  ", 
         "-----------------------------------||-----------------------------------------------------------------||--------------------------------------------------||----------", 
         "This is a renderer stress-test. The||                                |############                    ||                /\\                                ||This is a fairly long line that shouldn't get wrapped.   ", 
@@ -29,13 +46,12 @@
         "                                   ||     :__\\  \\                   \\  \\  :  \\                        ||                                                  ||                                                         ", 
         "                                   ||         `^'                    `^'  `-^-'                       ||                                                  ||                                                         "
     ], 
-    "return_code": 0, 
     "options": {
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
         "commandline": "moo", 
         "--renderer": "test", 
-        "tempdir": "/tmp/tmpz0Nt8i/TestRekallBovineExperience3000Thread-4", 
+        "tempdir": "/tmp/tmpk9pBEf/TestRekallBovineExperience3000Thread-3", 
         "mfts": "42 40", 
         "test_class": "TestRekallBovineExperience3000", 
         "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - moo", 
