@@ -1,39 +1,40 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestPEInfo /Users/adamsh/Projects/rekall-test/tigger/TestPEInfo
+   cp /home/scudette/projects/rekall-test/tigger/output/TestPEInfo /home/scudette/projects/rekall-test/tigger/TestPEInfo
 elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestPEInfo /Users/adamsh/Projects/rekall-test/tigger/TestPEInfo
+   meld /home/scudette/projects/rekall-test/tigger/output/TestPEInfo /home/scudette/projects/rekall-test/tigger/TestPEInfo
 elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestPEInfo /Users/adamsh/Projects/rekall-test/tigger/TestPEInfo
+   diff /home/scudette/projects/rekall-test/tigger/output/TestPEInfo /home/scudette/projects/rekall-test/tigger/TestPEInfo
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - peinfo --image-base nt
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - peinfo --image-base nt
 else
-   less /Users/adamsh/Projects/rekall-test/tigger/output/TestPEInfo
+   less /home/scudette/projects/rekall-test/tigger/output/TestPEInfo
 fi
 exit 0
 {
-    "time_used": 7.22080397605896, 
+    "errors": {}, 
+    "time_used": 4.090890884399414, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.windows.procinfo.TestPEInfo)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 1564 != 1560\n"
+    }, 
     "output": [
-        "     Attribute      ||                           Value                            ", 
-        "--------------------||------------------------------------------------------------", 
-        "Machine             ||IMAGE_FILE_MACHINE_I386                                     ", 
-        "TimeDateStamp       ||2004-08-04 05:58:36+0000                                    ", 
-        "Characteristics     ||IMAGE_FILE_32BIT_MACHINE, IMAGE_FILE_EXECUTABLE_IMAGE,      ", 
-        "                    ||IMAGE_FILE_LARGE_ADDRESS_AWARE,                             ", 
-        "                    ||IMAGE_FILE_LINE_NUMS_STRIPPED,                              ", 
-        "                    ||IMAGE_FILE_LOCAL_SYMS_STRIPPED                              ", 
-        "GUID/Age            ||BD8F451F3E754ED8A34B50560CEB08E31                           ", 
-        "PDB                 ||ntkrnlpa.pdb                                                ", 
-        "MajorOperatingSystem||5                                                           ", 
-        "Version             ||                                                            ", 
-        "MinorOperatingSystem||1                                                           ", 
-        "Version             ||                                                            ", 
-        "MajorImageVersion   ||5                                                           ", 
-        "MinorImageVersion   ||1                                                           ", 
-        "MajorSubsystemVersio||5                                                           ", 
-        "n                   ||                                                            ", 
-        "MinorSubsystemVersio||1                                                           ", 
-        "n                   ||                                                            ", 
+        "          Attribute           ||                           Value                            ", 
+        "------------------------------||------------------------------------------------------------", 
+        "Machine                       ||IMAGE_FILE_MACHINE_I386                                     ", 
+        "TimeDateStamp                 ||2004-08-04 05:58:36+0000                                    ", 
+        "Characteristics               ||IMAGE_FILE_32BIT_MACHINE, IMAGE_FILE_EXECUTABLE_IMAGE,      ", 
+        "                              ||IMAGE_FILE_LARGE_ADDRESS_AWARE,                             ", 
+        "                              ||IMAGE_FILE_LINE_NUMS_STRIPPED,                              ", 
+        "                              ||IMAGE_FILE_LOCAL_SYMS_STRIPPED                              ", 
+        "GUID/Age                      ||BD8F451F3E754ED8A34B50560CEB08E31                           ", 
+        "PDB                           ||ntkrnlpa.pdb                                                ", 
+        "MajorOperatingSystemVersion   ||5                                                           ", 
+        "MinorOperatingSystemVersion   ||1                                                           ", 
+        "MajorImageVersion             ||5                                                           ", 
+        "MinorImageVersion             ||1                                                           ", 
+        "MajorSubsystemVersion         ||5                                                           ", 
+        "MinorSubsystemVersion         ||1                                                           ", 
         "", 
         "Sections (Relative to 0x804D7000):", 
         "Perm||  Name  ||   VMA    ||   Size   ", 
@@ -1579,18 +1580,19 @@ exit 0
         "        key         ||value", 
         "--------------------||-----"
     ], 
-    "errors": {}, 
-    "return_code": 0, 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "peinfo --image-base nt", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestPEInfo", 
-        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpOfISIx/TestPEInfoThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - peinfo --image-base nt", 
-        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
+        "tempdir": "/tmp/tmp3R0v9W/TestPEInfoThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - peinfo --image-base nt", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

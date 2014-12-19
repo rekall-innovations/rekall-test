@@ -1,18 +1,23 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestProcInfo /Users/adamsh/Projects/rekall-test/tigger/TestProcInfo
+   cp /home/scudette/projects/rekall-test/tigger/output/TestProcInfo /home/scudette/projects/rekall-test/tigger/TestProcInfo
 elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestProcInfo /Users/adamsh/Projects/rekall-test/tigger/TestProcInfo
+   meld /home/scudette/projects/rekall-test/tigger/output/TestProcInfo /home/scudette/projects/rekall-test/tigger/TestProcInfo
 elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestProcInfo /Users/adamsh/Projects/rekall-test/tigger/TestProcInfo
+   diff /home/scudette/projects/rekall-test/tigger/output/TestProcInfo /home/scudette/projects/rekall-test/tigger/TestProcInfo
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - procinfo --pid=1724
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - procinfo --pid=1724
 else
-   less /Users/adamsh/Projects/rekall-test/tigger/output/TestProcInfo
+   less /home/scudette/projects/rekall-test/tigger/output/TestProcInfo
 fi
 exit 0
 {
-    "time_used": 6.0778820514678955, 
+    "errors": {}, 
+    "time_used": 3.967499017715454, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.windows.procinfo.TestProcInfo)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 694 != 690\n"
+    }, 
     "output": [
         "**************************************************", 
         "Pid: 1724 explorer.exe", 
@@ -49,25 +54,21 @@ exit 0
         "   windir=C:\\WINDOWS", 
         "", 
         "PE Infomation", 
-        "     Attribute      ||                           Value                            ", 
-        "--------------------||------------------------------------------------------------", 
-        "Machine             ||IMAGE_FILE_MACHINE_I386                                     ", 
-        "TimeDateStamp       ||2004-08-04 06:14:38+0000                                    ", 
-        "Characteristics     ||IMAGE_FILE_32BIT_MACHINE, IMAGE_FILE_EXECUTABLE_IMAGE,      ", 
-        "                    ||IMAGE_FILE_LINE_NUMS_STRIPPED,                              ", 
-        "                    ||IMAGE_FILE_LOCAL_SYMS_STRIPPED                              ", 
-        "GUID/Age            ||6FFB289C02224E7985B067F4DCB3EE732                           ", 
-        "PDB                 ||explorer.pdb                                                ", 
-        "MajorOperatingSystem||5                                                           ", 
-        "Version             ||                                                            ", 
-        "MinorOperatingSystem||1                                                           ", 
-        "Version             ||                                                            ", 
-        "MajorImageVersion   ||5                                                           ", 
-        "MinorImageVersion   ||1                                                           ", 
-        "MajorSubsystemVersio||4                                                           ", 
-        "n                   ||                                                            ", 
-        "MinorSubsystemVersio||10                                                          ", 
-        "n                   ||                                                            ", 
+        "          Attribute           ||                           Value                            ", 
+        "------------------------------||------------------------------------------------------------", 
+        "Machine                       ||IMAGE_FILE_MACHINE_I386                                     ", 
+        "TimeDateStamp                 ||2004-08-04 06:14:38+0000                                    ", 
+        "Characteristics               ||IMAGE_FILE_32BIT_MACHINE, IMAGE_FILE_EXECUTABLE_IMAGE,      ", 
+        "                              ||IMAGE_FILE_LINE_NUMS_STRIPPED,                              ", 
+        "                              ||IMAGE_FILE_LOCAL_SYMS_STRIPPED                              ", 
+        "GUID/Age                      ||6FFB289C02224E7985B067F4DCB3EE732                           ", 
+        "PDB                           ||explorer.pdb                                                ", 
+        "MajorOperatingSystemVersion   ||5                                                           ", 
+        "MinorOperatingSystemVersion   ||1                                                           ", 
+        "MajorImageVersion             ||5                                                           ", 
+        "MinorImageVersion             ||1                                                           ", 
+        "MajorSubsystemVersion         ||4                                                           ", 
+        "MinorSubsystemVersion         ||10                                                          ", 
         "", 
         "Sections (Relative to 0x01000000):", 
         "Perm||  Name  ||   VMA    ||   Size   ", 
@@ -709,18 +710,19 @@ exit 0
         "        key         ||value", 
         "--------------------||-----"
     ], 
-    "errors": {}, 
-    "return_code": 0, 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "procinfo --pid=%(pid)s", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestProcInfo", 
-        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpMn5Sf6/TestProcInfoThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - procinfo --pid=1724", 
-        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
+        "tempdir": "/tmp/tmp3R0v9W/TestProcInfoThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - procinfo --pid=1724", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

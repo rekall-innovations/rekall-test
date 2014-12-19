@@ -6,38 +6,41 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /home/scudette/projects/rekall-test/tigger/output/TestWinMessageHooks /home/scudette/projects/rekall-test/tigger/TestWinMessageHooks
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - messagehooks
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - messagehooks
 else
    less /home/scudette/projects/rekall-test/tigger/output/TestWinMessageHooks
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 9.823003053665161, 
+    "time_used": 9.259253025054932, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestWinMessageHooks)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0xbc63a308||0   ||TPAutoConnect.e (1084)        ||1096 (TPAutoConnect.e 1084)  [truncated]... != u'0xbc63a308||0   ||TPAutoConnect.e (1084)        ||1096 (TPAutoConnect.e 1084)  [truncated]...\n- 0xbc63a308||0   ||TPAutoConnect.e (1084)        ||1096 (TPAutoConnect.e 1084)   ||WH_MSGFILTER   ||          ||0x004384f6||\\Program Files\\VMware\\VMware Tools\\TPAutoConnect.exe!+0x384f6\n?                                                                                                                  --\n+ 0xbc63a308||0   ||TPAutoConnect.e (1084)        ||1096 (TPAutoConnect.e 1084)   ||WH_MSGFILTER   ||          ||  0x4384f6||\\Program Files\\VMware\\VMware Tools\\TPAutoConnect.exe!+0x384f6\n?                                                                                                                ++\n\n"
+        "testCase (__main__.TestWinMessageHooks)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0xbc63a308||0   ||TPAutoConnect.e (1084)        ||1096 (TPAutoConnect.e 1084)  [truncated]... != u'0xbc63a308||0   ||TPAutoConnect.e (1084)        ||1096 (TPAutoConnect.e 1084)  [truncated]...\nDiff is 647 characters long. Set self.maxDiff to None to see it.\n"
     }, 
     "output": [
         "tagHOOK(V)||Sess||            Owner             ||            Thread            ||    Filter     ||  Flags   || Function ||Module", 
         "----------||----||------------------------------||------------------------------||---------------||----------||----------||------", 
-        "0xbc63a308||0   ||TPAutoConnect.e (1084)        ||1096 (TPAutoConnect.e 1084)   ||WH_MSGFILTER   ||          ||  0x4384f6||\\Program Files\\VMware\\VMware Tools\\TPAutoConnect.exe!+0x384f6", 
-        "0xbc63a768||0   ||TPAutoConnect.e (1084)        ||1096 (TPAutoConnect.e 1084)   ||WH_CBT         ||          ||  0x439684||\\Program Files\\VMware\\VMware Tools\\TPAutoConnect.exe!+0x39684", 
-        "0xbc635bb0||0   ||csrss.exe (608)               ||1824 (csrss.exe 608)          ||WH_MSGFILTER   ||          ||0x75b65886||\\WINDOWS\\system32\\winsrv.dll!+0x5886", 
-        "0xbc93e670||0   ||TPAutoConnSvc.e (1968)        ||984 (TPAutoConnSvc.e 1968)    ||WH_MSGFILTER   ||          ||  0x4186fc||\\Program Files\\VMware\\VMware Tools\\TPAutoConnSvc.exe!+0x186fc", 
-        "0xbc93e410||0   ||TPAutoConnSvc.e (1968)        ||892 (TPAutoConnSvc.e 1968)    ||WH_MSGFILTER   ||          ||  0x4186fc||\\Program Files\\VMware\\VMware Tools\\TPAutoConnSvc.exe!+0x186fc", 
-        "0xbc93e060||0   ||TPAutoConnSvc.e (1968)        ||1972 (TPAutoConnSvc.e 1968)   ||WH_MSGFILTER   ||          ||  0x4186fc||\\Program Files\\VMware\\VMware Tools\\TPAutoConnSvc.exe!+0x186fc"
+        "0xbc63a308||0   ||TPAutoConnect.e (1084)        ||1096 (TPAutoConnect.e 1084)   ||WH_MSGFILTER   ||          ||  0x4384f6||tpautoconnect!+0x384f6", 
+        "0xbc63a768||0   ||TPAutoConnect.e (1084)        ||1096 (TPAutoConnect.e 1084)   ||WH_CBT         ||          ||  0x439684||tpautoconnect!+0x39684", 
+        "0xbc635bb0||0   ||csrss.exe (608)               ||1824 (csrss.exe 608)          ||WH_MSGFILTER   ||          ||0x75b65886||winsrv!+0x5886", 
+        "0xbc93e670||0   ||TPAutoConnSvc.e (1968)        ||984 (TPAutoConnSvc.e 1968)    ||WH_MSGFILTER   ||          ||  0x4186fc||tpautoconnsvc!+0x186fc", 
+        "0xbc93e410||0   ||TPAutoConnSvc.e (1968)        ||892 (TPAutoConnSvc.e 1968)    ||WH_MSGFILTER   ||          ||  0x4186fc||tpautoconnsvc!+0x186fc", 
+        "0xbc93e060||0   ||TPAutoConnSvc.e (1968)        ||1972 (TPAutoConnSvc.e 1968)   ||WH_MSGFILTER   ||          ||  0x4186fc||tpautoconnsvc!+0x186fc"
     ], 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "messagehooks", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestWinMessageHooks", 
-        "tempdir": "/tmp/tmpX2i83D/TestWinMessageHooksThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - messagehooks", 
+        "tempdir": "/tmp/tmp3R0v9W/TestWinMessageHooksThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - messagehooks", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

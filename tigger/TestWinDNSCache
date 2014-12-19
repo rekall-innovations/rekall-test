@@ -1,0 +1,20 @@
+{
+    "time_used": 4.337771892547607, 
+    "output": [], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "commandline": "dns_cache", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestWinDNSCache", 
+        "tempdir": "/tmp/tmp3R0v9W/TestWinDNSCacheThread-3", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - dns_cache", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}
