@@ -13,10 +13,10 @@ fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 0.8373110294342041, 
+    "time_used": 0.8976449966430664, 
     "return_code": 0, 
     "failures": {
-        "testCase (rekall.plugins.filesystems.ntfs.TestFStat)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 26 != 24\n"
+        "testCase (rekall.plugins.filesystems.ntfs.TestFStat)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'  Inode   ||             Type             ||   Name   || Res ||   Size   ||Com [truncated]... != u'     Inode     ||             Type             ||   Name   || Res ||   Size    [truncated]...\n-   Inode   ||             Type             ||   Name   || Res ||   Size   ||Comment\n+      Inode     ||             Type             ||   Name   || Res ||   Size   ||Comment\n? +++          ++\n\n"
     }, 
     "output": [
         "MFT Entry Header Values:", 
@@ -34,12 +34,12 @@ exit 0
         "Accessed                      ||2008-12-31 23:16:29+0000      ", 
         "", 
         "Attributes:", 
-        "  Inode   ||             Type             ||   Name   || Res ||   Size   ||Comment", 
-        "----------||------------------------------||----------||-----||----------||-------", 
-        "   42-16-0||$STANDARD_INFORMATION         ||          ||True ||        72||       ", 
-        "   42-48-3||$FILE_NAME                    ||          ||True ||        90||200765~1.PDF", 
-        "   42-48-2||$FILE_NAME                    ||          ||True ||       102||20076517123273.pdf", 
-        "  42-128-1||$DATA                         ||          ||False||   1001647||VCN: 0-1956", 
+        "     Inode     ||             Type             ||   Name   || Res ||   Size   ||Comment", 
+        "---------------||------------------------------||----------||-----||----------||-------", 
+        "        42-16-0||$STANDARD_INFORMATION         ||          ||True ||        72||       ", 
+        "        42-48-3||$FILE_NAME                    ||          ||True ||        90||200765~1.PDF", 
+        "        42-48-2||$FILE_NAME                    ||          ||True ||       102||20076517123273.pdf", 
+        "       42-128-1||$DATA                         ||          ||False||   1001647||VCN: 0-1956", 
         "", 
         "Clusters (128-1):", 
         "478465-480422(1957)      "
@@ -49,7 +49,7 @@ exit 0
         "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
         "commandline": "fstat %(path)s", 
         "--renderer": "test", 
-        "tempdir": "/tmp/tmpWW7nxt/TestFStatThread-3", 
+        "tempdir": "/tmp/tmpop1vil/TestFStatThread-4", 
         "mfts": "42 40", 
         "test_class": "TestFStat", 
         "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - fstat RAW/20076517123273.pdf", 
