@@ -13,41 +13,23 @@ fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 6.6766111850738525, 
+    "time_used": 2.3866348266601562, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestCallbacks)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'KeBugCheckCallbackListHead          ||0x00000000||UNKNOWN             ||-      [truncated]... != u'KeBugCheckCallbackListHead          ||0x00000000||UNKNOWN             ||       [truncated]...\n- KeBugCheckCallbackListHead          ||0x00000000||UNKNOWN             ||-      \n?                                                                         ^\n+ KeBugCheckCallbackListHead          ||0x00000000||UNKNOWN             ||       \n?                                                                         ^\n\n"
+        "testCase (__main__.TestCallbacks)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 29 != 11\n"
     }, 
     "output": [
-        "                Type                || Callback ||       Module       ||Details", 
-        "------------------------------------||----------||--------------------||-------", 
-        "GenericKernelCallback               ||0xfc58e194||vmci.sys            ||-      ", 
-        "IoRegisterShutdownNotification      ||0xfc9af5be||Fs_Rec.SYS          ||\\FileSystem\\Fs_Rec", 
-        "IoRegisterShutdownNotification      ||0xfc9af5be||Fs_Rec.SYS          ||\\FileSystem\\Fs_Rec", 
-        "IoRegisterShutdownNotification      ||0xf3b457fa||vmhgfs.sys          ||\\FileSystem\\vmhgfs", 
-        "IoRegisterShutdownNotification      ||0xfc0f765c||VIDEOPRT.SYS        ||\\Driver\\mnmdd", 
-        "IoRegisterShutdownNotification      ||0xfc0f765c||VIDEOPRT.SYS        ||\\Driver\\VgaSave", 
-        "IoRegisterShutdownNotification      ||0xfc6bec74||Cdfs.SYS            ||\\FileSystem\\Cdfs", 
-        "IoRegisterShutdownNotification      ||0xfc9af5be||Fs_Rec.SYS          ||\\FileSystem\\Fs_Rec", 
-        "IoRegisterShutdownNotification      ||0xfc9af5be||Fs_Rec.SYS          ||\\FileSystem\\Fs_Rec", 
-        "IoRegisterShutdownNotification      ||0xfc9af5be||Fs_Rec.SYS          ||\\FileSystem\\Fs_Rec", 
-        "IoRegisterShutdownNotification      ||0xfc0f765c||VIDEOPRT.SYS        ||\\Driver\\vmx_svga", 
-        "IoRegisterShutdownNotification      ||0xfc0f765c||VIDEOPRT.SYS        ||\\Driver\\RDPCDD", 
-        "IoRegisterShutdownNotification      ||0xfc33d2be||ftdisk.sys          ||\\Driver\\Ftdisk", 
-        "IoRegisterShutdownNotification      ||0xfc1db33d||Mup.sys             ||\\FileSystem\\Mup", 
-        "IoRegisterShutdownNotification      ||0x805f4630||ntoskrnl.exe        ||\\Driver\\WMIxWDM", 
-        "IoRegisterShutdownNotification      ||0x805cc77c||ntoskrnl.exe        ||\\FileSystem\\RAW", 
-        "IoRegisterShutdownNotification      ||0xfc4ab73a||MountMgr.sys        ||\\Driver\\MountMgr", 
-        "IoRegisterFsRegistrationChange      ||0xfc2c0876||sr.sys              ||-      ", 
-        "KeBugCheckCallbackListHead          ||0x806d57ca||hal.dll             ||ACPI 1.0 - APIC platform UP", 
-        "KeBugCheckCallbackListHead          ||0x00000000||UNKNOWN             ||       ", 
-        "KeRegisterBugCheckReasonCallback    ||0xfc967ac0||mssmbios.sys        ||SMBiosDa", 
-        "KeRegisterBugCheckReasonCallback    ||0xfc967a78||mssmbios.sys        ||SMBiosRe", 
-        "KeRegisterBugCheckReasonCallback    ||0xfc967a30||mssmbios.sys        ||SMBiosDa", 
-        "KeRegisterBugCheckReasonCallback    ||0xfc0d5006||USBPORT.SYS         ||USBPORT", 
-        "KeRegisterBugCheckReasonCallback    ||0xfc0d4f66||USBPORT.SYS         ||USBPORT", 
-        "KeRegisterBugCheckReasonCallback    ||0xfc0eb3e2||VIDEOPRT.SYS        ||       ", 
-        "GenericKernelCallback               ||0xfc58e194||vmci.sys            ||-      "
+        "                Type                ||  Offset  || Callback ||                      Symbol                      ||Details", 
+        "------------------------------------||----------||----------||--------------------------------------------------||-------", 
+        "nt!PspCreateProcessNotifyRoutine    ||0x805593e0||0x00000000||                                                  ", 
+        "nt!KeBugCheckCallbackListHead       ||0x80fa35d8||0x00000048||                                                  ||-      ", 
+        "nt!KeBugCheckCallbackListHead       ||0x806dff40||0x00000000||                                                  ||-      ", 
+        "nt!KeBugCheckReasonCallbackListHead ||0xfc968a80||0xf92cf5e6||                                                  ||       ", 
+        "nt!KeBugCheckReasonCallbackListHead ||0xfc968a60||0xf92cf58e||                                                  ||       ", 
+        "nt!KeBugCheckReasonCallbackListHead ||0xfc968aa0||0xf92cf536||                                                  ||       ", 
+        "nt!KeBugCheckReasonCallbackListHead ||0x80ef6180||0xf81a9ee8||                                                  ||       ", 
+        "nt!KeBugCheckReasonCallbackListHead ||0x80fa73a8||0xf81a9e48||                                                  ||       ", 
+        "nt!KeBugCheckReasonCallbackListHead ||0xfc0ed9e0||0xf81e14b4||                                                  ||       "
     ], 
     "options": {
         "--name_resolution_strategies": [
@@ -60,7 +42,7 @@ exit 0
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestCallbacks", 
-        "tempdir": "/tmp/tmpeJxAOQ/TestCallbacksThread-4", 
+        "tempdir": "/tmp/tmpgj4t19/TestCallbacksThread-3", 
         "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - callbacks", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
