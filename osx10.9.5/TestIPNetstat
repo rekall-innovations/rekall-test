@@ -1,19 +1,77 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/test/osx10.9.5/output/TestIPNetstat /Users/adamsh/Projects/test/osx10.9.5/TestIPNetstat
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/test/osx10.9.5/output/TestIPNetstat /Users/adamsh/Projects/test/osx10.9.5/TestIPNetstat
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/test/osx10.9.5/output/TestIPNetstat /Users/adamsh/Projects/test/osx10.9.5/TestIPNetstat
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - ipnetstat
+else
+   less /Users/adamsh/Projects/test/osx10.9.5/output/TestIPNetstat
+fi
+exit 0
 {
-    "time_used": 13.619930982589722, 
+    "errors": {}, 
+    "time_used": 17.888707160949707, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestIPNetstat)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 2 != 40\n"
+    }, 
     "output": [
         "protocol||                  src address                   || src port ||                  dst address                   || dst port ||       state        ||                process                 ", 
-        "--------||------------------------------------------------||----------||------------------------------------------------||----------||--------------------||----------------------------------------"
+        "--------||------------------------------------------------||----------||------------------------------------------------||----------||--------------------||----------------------------------------", 
+        "IPv4/TCP||10.0.2.15                                       ||49157     ||23.43.75.27                                     ||80        ||TCPS_ESTABLISHED    ||Process: ocspd (pid=82)                 ", 
+        "IPv4/TCP||10.0.2.15                                       ||49156     ||23.43.75.27                                     ||80        ||TCPS_ESTABLISHED    ||Process: ocspd (pid=82)                 ", 
+        "IPv4/TCP||10.0.2.15                                       ||49154     ||17.149.240.70                                   ||443       ||TCPS_ESTABLISHED    ||Process: apsd (pid=67)                  ", 
+        "IPv4/TCP||10.0.2.15                                       ||49155     ||80.239.254.10                                   ||80        ||TCPS_ESTABLISHED    ||Process: IMRemoteURLConne (pid=229)     ", 
+        "IPv4/TCP||127.0.0.1                                       ||631       ||0.0.0.0                                         ||0         ||TCPS_LISTEN         ||launchd (pid=1)                         ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||5353      ||0.0.0.0                                         ||0         ||-                   ||mDNSResponder (pid=45)                  ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||58246     ||0.0.0.0                                         ||0         ||-                   ||mDNSResponder (pid=45)                  ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||123       ||0.0.0.0                                         ||0         ||-                   ||ntpd (pid=111)                          ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||137       ||0.0.0.0                                         ||0         ||-                   ||Process: launchd (pid=1), Process:      ", 
+        "        ||                                                ||          ||                                                ||          ||                    ||netbiosd (pid=125) (2 values)           ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||UserEventAgent (pid=145)                ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||138       ||0.0.0.0                                         ||0         ||-                   ||Process: launchd (pid=1), Process:      ", 
+        "        ||                                                ||          ||                                                ||          ||                    ||netbiosd (pid=125) (2 values)           ", 
+        "IPv4/UDP||0.0.0.0                                         ||58884     ||0.0.0.0                                         ||0         ||-                   ||syslogd (pid=17)                        ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||10.0.2.15                                       ||123       ||0.0.0.0                                         ||0         ||-                   ||ntpd (pid=111)                          ", 
+        "IPv4/UDP||127.0.0.1                                       ||123       ||0.0.0.0                                         ||0         ||-                   ||ntpd (pid=111)                          ", 
+        "IPv6/ICM||::                                              ||0         ||::                                              ||0         ||-                   ||configd (pid=16)                        ", 
+        "PV6     ||                                                ||          ||                                                ||          ||                    ||                                        ", 
+        "IPv6/TCP||::1                                             ||631       ||::                                              ||0         ||TCPS_LISTEN         ||launchd (pid=1)                         ", 
+        "IPv6/UDP||::                                              ||0         ||::                                              ||0         ||-                   ||-                                       ", 
+        "IPv6/UDP||::                                              ||5353      ||::                                              ||0         ||-                   ||mDNSResponder (pid=45)                  ", 
+        "IPv6/UDP||::                                              ||0         ||::                                              ||0         ||-                   ||airportd (pid=69)                       ", 
+        "IPv6/UDP||::                                              ||58246     ||::                                              ||0         ||-                   ||mDNSResponder (pid=45)                  ", 
+        "IPv6/UDP||::                                              ||0         ||::                                              ||0         ||-                   ||-                                       ", 
+        "IPv6/UDP||::                                              ||123       ||::                                              ||0         ||-                   ||ntpd (pid=111)                          ", 
+        "IPv6/UDP||::1                                             ||123       ||::                                              ||0         ||-                   ||ntpd (pid=111)                          ", 
+        "IPv6/UDP||fe80:1::1                                       ||123       ||::                                              ||0         ||-                   ||ntpd (pid=111)                          ", 
+        "IPv6/UDP||fe80:4::a00:27ff:fed8:38b4                      ||123       ||::                                              ||0         ||-                   ||ntpd (pid=111)                          "
     ], 
-    "return_code": 0, 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "--filename": "/Users/adamsh/Projects/test/osx10.9.5/vmem.e01", 
         "commandline": "ipnetstat", 
         "--renderer": "test", 
         "test_class": "TestIPNetstat", 
-        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpFzGxsi/TestIPNetstatThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module,Symbol' - ipnetstat", 
-        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmplpabav/TestIPNetstatThread-4", 
+        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - ipnetstat", 
+        "testdir": "/Users/adamsh/Projects/test/osx10.9.5"
     }
 }
