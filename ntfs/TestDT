@@ -6,20 +6,20 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /home/scudette/projects/rekall-test/ntfs/output/TestDT /home/scudette/projects/rekall-test/ntfs/TestDT
 elif [ "$1" == "run" ]; then
-   rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - dt MFT_ENTRY
+   rekall  --profile 'ntfs' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/ntfs/../profile_cache/' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - dt MFT_ENTRY
 else
    less /home/scudette/projects/rekall-test/ntfs/output/TestDT
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 0.7436130046844482, 
+    "time_used": 1.0724802017211914, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestDT)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'Offset      ||            Field             ||Content' != u'Offset              ||            Field             ||Content'\n- Offset      ||            Field             ||Content\n+ Offset              ||            Field             ||Content\n?             ++++++++\n\n"
+        "testCase (__main__.TestDT)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'[MFT_ENTRY MFT_ENTRY] @ 0x000000 ' != u'[MFT_ENTRY MFT_ENTRY] @ 0x000000000000 '\n- [MFT_ENTRY MFT_ENTRY] @ 0x000000 \n+ [MFT_ENTRY MFT_ENTRY] @ 0x000000000000 \n?                                 ++++++\n\n"
     }, 
     "output": [
-        "[MFT_ENTRY MFT_ENTRY] @ 0x000000 ", 
+        "[MFT_ENTRY MFT_ENTRY] @ 0x000000000000 ", 
         "Offset              ||            Field             ||Content", 
         "--------------------||------------------------------||-------", 
         " ||           0x0    ||magic                         || [String:magic]: ''", 
@@ -41,12 +41,13 @@ exit 0
     "options": {
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/ntfs/../profile_cache/", 
         "commandline": "dt MFT_ENTRY", 
         "--renderer": "test", 
-        "tempdir": "/tmp/tmpYzNIdY/TestDTThread-4", 
-        "mfts": "42 40", 
+        "tempdir": "/tmp/tmpxdhsN5/TestDTThread-3", 
         "test_class": "TestDT", 
-        "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - dt MFT_ENTRY", 
+        "mft": 42, 
+        "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/ntfs/../profile_cache/' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - dt MFT_ENTRY", 
         "--profile": "ntfs", 
         "path": "RAW/20076517123273.pdf", 
         "testdir": "/home/scudette/projects/rekall-test/ntfs"

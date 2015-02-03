@@ -6,17 +6,17 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /home/scudette/projects/rekall-test/ntfs/output/TestIStat /home/scudette/projects/rekall-test/ntfs/TestIStat
 elif [ "$1" == "run" ]; then
-   rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - istat 40
+   rekall  --profile 'ntfs' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/ntfs/../profile_cache/' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - istat 40
 else
    less /home/scudette/projects/rekall-test/ntfs/output/TestIStat
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 0.40011000633239746, 
+    "time_used": 0.9306249618530273, 
     "return_code": 0, 
     "failures": {
-        "testCase (rekall.plugins.filesystems.ntfs.TestIStat)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 50 != 26\n"
+        "testCase (rekall.plugins.filesystems.ntfs.TestIStat)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'Clusters (128-1):' != u'Clusters ($DATA-1):'\n- Clusters (128-1):\n?           ^^^\n+ Clusters ($DATA-1):\n?           ^^^^^\n\n"
     }, 
     "output": [
         "MFT Entry Header Values:", 
@@ -41,7 +41,7 @@ exit 0
         "        40-48-2||$FILE_NAME                    ||          ||True ||       102||20076517123273.pdf", 
         "       40-128-1||$DATA                         ||          ||False||   1001647||VCN: 0-1967", 
         "", 
-        "Clusters (128-1):", 
+        "Clusters ($DATA-1):", 
         "474540-474587(47)        ||Sparse(1)                ||474588-475801(1213)      ||Sparse(3)                ", 
         "475868-475878(10)        ||Sparse(6)                ||475884-475894(10)        ||Sparse(6)                ", 
         "476396-476494(98)        ||Sparse(14)               "
@@ -49,13 +49,14 @@ exit 0
     "options": {
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/ntfs/../profile_cache/", 
         "commandline": "istat %(mfts)s", 
         "--renderer": "test", 
-        "tempdir": "/tmp/tmp66JA3l/TestIStatThread-2", 
+        "tempdir": "/tmp/tmpxdhsN5/TestIStatThread-3", 
         "mfts": 40, 
         "test_class": "TestIStat", 
         "mft": 42, 
-        "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - istat 40", 
+        "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/ntfs/../profile_cache/' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - istat 40", 
         "--profile": "ntfs", 
         "path": "RAW/20076517123273.pdf", 
         "testdir": "/home/scudette/projects/rekall-test/ntfs"
