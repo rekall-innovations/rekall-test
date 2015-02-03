@@ -1,46 +1,68 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestSessions /home/scudette/projects/rekall-test/tigger/TestSessions
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestSessions /home/scudette/projects/rekall-test/tigger/TestSessions
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestSessions /home/scudette/projects/rekall-test/tigger/TestSessions
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - sessions
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestSessions
+fi
+exit 0
 {
-    "time_used": 3.051147937774658, 
+    "errors": {}, 
+    "time_used": 1.7664899826049805, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestSessions)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'Session(V): fc9bd000 ID: 0 Processes: 23' != u'Session(V): 0xfc9bd000 ID: 0 Processes: 23'\n- Session(V): fc9bd000 ID: 0 Processes: 23\n+ Session(V): 0xfc9bd000 ID: 0 Processes: 23\n?             ++\n\n"
+    }, 
     "output": [
         "**************************************************", 
-        "Session(V): fc9bd000 ID: 0 Processes: 23", 
-        "PagedPoolStart: bc000000 PagedPoolEnd bc3fffff", 
-        " Process: 608 csrss.exe 2010-08-11 06:06:23+0000 @ 0xff1ecda0", 
-        " Process: 632 winlogon.exe 2010-08-11 06:06:23+0000 @ 0xff1ec978", 
-        " Process: 676 services.exe 2010-08-11 06:06:24+0000 @ 0xff247020", 
-        " Process: 688 lsass.exe 2010-08-11 06:06:24+0000 @ 0xff255020", 
-        " Process: 844 vmacthlp.exe 2010-08-11 06:06:24+0000 @ 0xff218230", 
-        " Process: 856 svchost.exe 2010-08-11 06:06:24+0000 @ 0x80ff88d8", 
-        " Process: 936 svchost.exe 2010-08-11 06:06:24+0000 @ 0xff217560", 
-        " Process: 1028 svchost.exe 2010-08-11 06:06:24+0000 @ 0x80fbf910", 
-        " Process: 1088 svchost.exe 2010-08-11 06:06:25+0000 @ 0xff22d558", 
-        " Process: 1148 svchost.exe 2010-08-11 06:06:26+0000 @ 0xff203b80", 
-        " Process: 1432 spoolsv.exe 2010-08-11 06:06:26+0000 @ 0xff1d7da0", 
-        " Process: 1668 vmtoolsd.exe 2010-08-11 06:06:35+0000 @ 0xff1b8b28", 
-        " Process: 1788 VMUpgradeHelper 2010-08-11 06:06:38+0000 @ 0xff1fdc88", 
-        " Process: 1968 TPAutoConnSvc.e 2010-08-11 06:06:39+0000 @ 0xff143b28", 
-        " Process: 216 alg.exe 2010-08-11 06:06:39+0000 @ 0xff25a7e0", 
-        " Process: 888 wscntfy.exe 2010-08-11 06:06:49+0000 @ 0xff364310", 
-        " Process: 1084 TPAutoConnect.e 2010-08-11 06:06:52+0000 @ 0xff38b5f8", 
-        " Process: 1732 wuauclt.exe 2010-08-11 06:07:44+0000 @ 0x80f60da0", 
-        " Process: 1724 explorer.exe 2010-08-11 06:09:29+0000 @ 0xff3865d0", 
-        " Process: 432 VMwareTray.exe 2010-08-11 06:09:31+0000 @ 0xff3667e8", 
-        " Process: 452 VMwareUser.exe 2010-08-11 06:09:32+0000 @ 0xff374980", 
-        " Process: 468 wuauclt.exe 2010-08-11 06:09:37+0000 @ 0x80f94588", 
-        " Process: 828 wmiprvse.exe 2010-08-15 19:26:08+0000 @ 0xff27d4d0", 
+        "Session(V): 0xfc9bd000 ID: 0 Processes: 23", 
+        "PagedPoolStart: 0xbc000000 PagedPoolEnd 0xbc3fffff", 
+        " Process: 0xff1ecda0||csrss.exe||  608 @ 2010-08-11 06:06:23+0000", 
+        " Process: 0xff1ec978||winlogon.exe||  632 @ 2010-08-11 06:06:23+0000", 
+        " Process: 0xff247020||services.exe||  676 @ 2010-08-11 06:06:24+0000", 
+        " Process: 0xff255020||lsass.exe||  688 @ 2010-08-11 06:06:24+0000", 
+        " Process: 0xff218230||vmacthlp.exe||  844 @ 2010-08-11 06:06:24+0000", 
+        " Process: 0x80ff88d8||svchost.exe||  856 @ 2010-08-11 06:06:24+0000", 
+        " Process: 0xff217560||svchost.exe||  936 @ 2010-08-11 06:06:24+0000", 
+        " Process: 0x80fbf910||svchost.exe|| 1028 @ 2010-08-11 06:06:24+0000", 
+        " Process: 0xff22d558||svchost.exe|| 1088 @ 2010-08-11 06:06:25+0000", 
+        " Process: 0xff203b80||svchost.exe|| 1148 @ 2010-08-11 06:06:26+0000", 
+        " Process: 0xff1d7da0||spoolsv.exe|| 1432 @ 2010-08-11 06:06:26+0000", 
+        " Process: 0xff1b8b28||vmtoolsd.exe|| 1668 @ 2010-08-11 06:06:35+0000", 
+        " Process: 0xff1fdc88||VMUpgradeHelper|| 1788 @ 2010-08-11 06:06:38+0000", 
+        " Process: 0xff143b28||TPAutoConnSvc.e|| 1968 @ 2010-08-11 06:06:39+0000", 
+        " Process: 0xff25a7e0||alg.exe||  216 @ 2010-08-11 06:06:39+0000", 
+        " Process: 0xff364310||wscntfy.exe||  888 @ 2010-08-11 06:06:49+0000", 
+        " Process: 0xff38b5f8||TPAutoConnect.e|| 1084 @ 2010-08-11 06:06:52+0000", 
+        " Process: 0x80f60da0||wuauclt.exe|| 1732 @ 2010-08-11 06:07:44+0000", 
+        " Process: 0xff3865d0||explorer.exe|| 1724 @ 2010-08-11 06:09:29+0000", 
+        " Process: 0xff3667e8||VMwareTray.exe||  432 @ 2010-08-11 06:09:31+0000", 
+        " Process: 0xff374980||VMwareUser.exe||  452 @ 2010-08-11 06:09:32+0000", 
+        " Process: 0x80f94588||wuauclt.exe||  468 @ 2010-08-11 06:09:37+0000", 
+        " Process: 0xff27d4d0||wmiprvse.exe||  828 @ 2010-08-15 19:26:08+0000", 
         " Image: 0xff384348, Address 0xbf800000, Name: win32k.sys", 
         " Image: 0x80f04f08, Address 0xbf9c1000, Name: dxg.sys", 
         " Image: 0x80f54ae8, Address 0xbf9d3000, Name: vmx_fb.dll", 
         " Image: 0xbf7f009c, Address 0xc07e4de8, Name: -"
     ], 
     "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "sessions", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestSessions", 
-        "tempdir": "/tmp/tmpjCWx0x/TestSessionsThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' sessions", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmp7helMn/TestSessionsThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - sessions", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

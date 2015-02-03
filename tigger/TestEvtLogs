@@ -1,18 +1,23 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestEvtLogs /Users/adamsh/Projects/rekall-test/tigger/TestEvtLogs
+   cp /home/scudette/projects/rekall-test/tigger/output/TestEvtLogs /home/scudette/projects/rekall-test/tigger/TestEvtLogs
 elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestEvtLogs /Users/adamsh/Projects/rekall-test/tigger/TestEvtLogs
+   meld /home/scudette/projects/rekall-test/tigger/output/TestEvtLogs /home/scudette/projects/rekall-test/tigger/TestEvtLogs
 elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestEvtLogs /Users/adamsh/Projects/rekall-test/tigger/TestEvtLogs
+   diff /home/scudette/projects/rekall-test/tigger/output/TestEvtLogs /home/scudette/projects/rekall-test/tigger/TestEvtLogs
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - evtlogs
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - evtlogs
 else
-   less /Users/adamsh/Projects/rekall-test/tigger/output/TestEvtLogs
+   less /home/scudette/projects/rekall-test/tigger/output/TestEvtLogs
 fi
 exit 0
 {
-    "time_used": 5.093559980392456, 
+    "errors": {}, 
+    "time_used": 3.735694169998169, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestEvtLogs)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'2010-06-10 16:08:07+0000||AppEvent.Evt||        ||S-0-0||WmdmPm||100     ||Inf [truncated]... != u\"2010-06-10 16:08:07+0000||AppEvent.Evt||        ||S-0-0||WmdmPm||100     ||Inf [truncated]...\n- 2010-06-10 16:08:07+0000||AppEvent.Evt||        ||S-0-0||WmdmPm||100     ||Info      ||       \n?                                                                                        ^^\n+ 2010-06-10 16:08:07+0000||AppEvent.Evt||        ||S-0-0||WmdmPm||100     ||Info      ||''     \n?                                                                                        ^^\n\n"
+    }, 
     "output": [
         "TimeWritten||Filename||Computer||Sid||Source||Event Id||Event Type||Message", 
         "-----------||--------||--------||---||------||--------||----------||-------", 
@@ -38,7 +43,7 @@ exit 0
         "2010-06-10 16:07:55+0000||AppEvent.Evt||BILLY-DB5B96DD3||S-82-1828744960||COM+  ||4156    ||Info      ||'Remove old EventClass(CLSID_ComSystemAppEventData) from event system!.'", 
         "2010-06-10 16:07:55+0000||AppEvent.Evt||BILLY-DB5B96DD3||S-65-1677747456||COM+  ||4156    ||Info      ||'Added EventClass(CLSID_ComSystemAppEventData) to event system!.'", 
         "2010-06-10 16:07:55+0000||AppEvent.Evt||BILLY-DB5B96DD3||S-82-1728080128||COM+  ||4156    ||Info      ||'RegisterComSystemAppEventData() succeeded!  Will re-try CoCreateInstance(CLSID_ComSystemAppEventData)'", 
-        "2010-06-10 16:08:07+0000||AppEvent.Evt||        ||S-0-0||WmdmPm||100     ||Info      ||       ", 
+        "2010-06-10 16:08:07+0000||AppEvent.Evt||        ||S-0-0||WmdmPm||100     ||Info      ||''     ", 
         "2010-06-10 12:01:43+0000||SysEvent.Evt||MACHINENAME||S-53-805318912||EventLog||6009    ||Info      ||'5.01.';'2600';'Service Pack 2';'Uniprocessor Free'", 
         "2010-06-10 12:01:43+0000||SysEvent.Evt||MACHINENAME||S-0-57344||EventLog||6005    ||Info      ||       ", 
         "2010-06-10 12:02:06+0000||SysEvent.Evt||MACHINENAME||S-224-1281772645||Serial||2       ||Info      ||'\\\\Device\\\\Serial0';'\\\\Device\\\\Serial0'", 
@@ -60,20 +65,21 @@ exit 0
         "2010-06-10 16:11:40+0000||SysEvent.Evt||BILLY-DB5B96DD3||S-67-1828745216||Service Control Manager||7036    ||Info      ||'Computer Browser';'stopped'", 
         "2010-06-10 16:11:43+0000||SysEvent.Evt||BILLY-DB5B96DD3||S-84-1912630528||Service Control Manager||7036    ||Info      ||'Terminal Services';'running'", 
         "2010-06-10 16:11:43+0000||SysEvent.Evt||BILLY-DB5B96DD3||S-1-5-18||Service Control Manager||7035    ||Info      ||'Fast User Switching Compatibility';'start'", 
-        "2010-06-10 16:11:43+0000||SysEvent.Evt||BILL    ||S-0-0||Service Control Manager||7036    ||Info      ||       "
+        "2010-06-10 16:11:43+0000||SysEvent.Evt||BILL    ||S-0-0||Service Control Manager||7036    ||Info      ||'';''  "
     ], 
-    "errors": {}, 
-    "return_code": 0, 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "evtlogs", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestEvtLogs", 
-        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpHPq5l9/TestEvtLogsThread-7", 
-        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - evtlogs", 
-        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
+        "tempdir": "/tmp/tmpZjUbTN/TestEvtLogsThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - evtlogs", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

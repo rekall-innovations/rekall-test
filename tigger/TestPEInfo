@@ -13,10 +13,10 @@ fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 4.090890884399414, 
+    "time_used": 2.319628953933716, 
     "return_code": 0, 
     "failures": {
-        "testCase (rekall.plugins.windows.procinfo.TestPEInfo)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 1564 != 1560\n"
+        "testCase (rekall.plugins.windows.procinfo.TestPEInfo)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'Sections (Relative to 0x804D7000):' != u'Sections (Relative to 0x804d7000):'\n- Sections (Relative to 0x804D7000):\n?                            ^\n+ Sections (Relative to 0x804d7000):\n?                            ^\n\n"
     }, 
     "output": [
         "          Attribute           ||                           Value                            ", 
@@ -36,7 +36,7 @@ exit 0
         "MajorSubsystemVersion         ||5                                                           ", 
         "MinorSubsystemVersion         ||1                                                           ", 
         "", 
-        "Sections (Relative to 0x804D7000):", 
+        "Sections (Relative to 0x804d7000):", 
         "Perm||  Name  ||   VMA    ||   Size   ", 
         "----||--------||----------||----------", 
         "xr- ||.text   ||0x00000600||0x0006a800", 
@@ -1591,7 +1591,7 @@ exit 0
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestPEInfo", 
-        "tempdir": "/tmp/tmp3R0v9W/TestPEInfoThread-4", 
+        "tempdir": "/tmp/tmptiwqJb/TestPEInfoThread-1", 
         "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - peinfo --image-base nt", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }

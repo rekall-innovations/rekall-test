@@ -1,14 +1,32 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestWindowsStations /home/scudette/projects/rekall-test/tigger/TestWindowsStations
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestWindowsStations /home/scudette/projects/rekall-test/tigger/TestWindowsStations
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestWindowsStations /home/scudette/projects/rekall-test/tigger/TestWindowsStations
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - windows_stations
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestWindowsStations
+fi
+exit 0
 {
-    "time_used": 11.545355081558228, 
+    "errors": {}, 
+    "time_used": 8.310473918914795, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestWindowsStations)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'Desktops: Default, Disconnect, Winlogon' != u'Desktops: Default , Disconnect , Winlogon'\n- Desktops: Default, Disconnect, Winlogon\n+ Desktops: Default , Disconnect , Winlogon\n?                  +            +\n\n"
+    }, 
     "output": [
         "**************************************************", 
         "WindowStation: 0x81028820, Name: WinSta0, Next: 0x80f73038", 
         "SessionId: 0, AtomTable: 0xe172b348, Interactive: True", 
-        "Desktops: Default, Disconnect, Winlogon", 
+        "Desktops: Default , Disconnect , Winlogon", 
         "ptiDrawingClipboard: pid - tid -", 
         "spwndClipOpen: 0x0, spwndClipViewer: 0x0 - -", 
         "cNumClipFormats: 4, iClipSerialNumber: 5", 
-        "pClipBase: 0xe10318b8, Formats: -, -, -, -", 
+        "pClipBase: 0xe10318b8, Formats: - , - , - , -", 
         "**************************************************", 
         "WindowStation: 0x80f73038, Name: Service-0x0-3e7$, Next: 0xff208e28", 
         "SessionId: 0, AtomTable: 0xe17b46a8, Interactive: False", 
@@ -43,14 +61,18 @@
         "pClipBase: 0x0, Formats: "
     ], 
     "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "windows_stations", 
-        "pid": "1724", 
+        "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestWindowsStations", 
-        "tempdir": "/tmp/tmpjCWx0x/TestWindowsStationsThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' windows_stations", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "tempdir": "/tmp/tmph_4ch0/TestWindowsStationsThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - windows_stations", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

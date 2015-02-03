@@ -1,11 +1,29 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestPrintKey /home/scudette/projects/rekall-test/tigger/TestPrintKey
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestPrintKey /home/scudette/projects/rekall-test/tigger/TestPrintKey
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestPrintKey /home/scudette/projects/rekall-test/tigger/TestPrintKey
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - printkey
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestPrintKey
+fi
+exit 0
 {
-    "time_used": 2.30334210395813, 
+    "errors": {}, 
+    "time_used": 1.3043830394744873, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestPrintKey)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'Key name: S-1-5-21-1614895754-436374069-839522115-500_Classes (S) @ 0XC7801024 [truncated]... != u'Key name: S-1-5-21-1614895754-436374069-839522115-500_Classes (S) @ 0xc7801024 [truncated]...\n- Key name: S-1-5-21-1614895754-436374069-839522115-500_Classes (S) @ 0XC7801024\n?                                                                      ^^\n+ Key name: S-1-5-21-1614895754-436374069-839522115-500_Classes (S) @ 0xc7801024\n?                                                                      ^^\n\n"
+    }, 
     "output": [
         "Legend: (S) = Stable   (V) = Volatile", 
         "", 
         "----------------------------", 
         "Registry: \\Device\\HarddiskVolume1\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\Microsoft\\Windows\\UsrClass.dat @ 0xe1e158c0", 
-        "Key name: S-1-5-21-1614895754-436374069-839522115-500_Classes (S) @ 0XC7801024", 
+        "Key name: S-1-5-21-1614895754-436374069-839522115-500_Classes (S) @ 0xc7801024", 
         "Last updated: 2010-06-10 16:12:08+0000", 
         "", 
         "Subkeys:", 
@@ -13,17 +31,19 @@
         "", 
         "Values:"
     ], 
-    "return_code": 0, 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "commandline": "printkey", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestPrintKey", 
-        "tempdir": "/tmp/tmpQINVfN/TestPrintKeyThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - printkey", 
+        "tempdir": "/tmp/tmp0s8Uay/TestPrintKeyThread-2", 
+        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - printkey", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }
