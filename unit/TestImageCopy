@@ -1,0 +1,18 @@
+{
+    "time_used": 0.9856131076812744, 
+    "output": [
+        "ERROR:root:Physical address space is not set. (Try plugins.load_as)"
+    ], 
+    "hashes": {}, 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/Users/adamsh/Projects/test/unit/../profile_cache/", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpro6JbZ/TestImageCopyThread-8", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/unit/../profile_cache/' - imagecopy -O /var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpro6JbZ/TestImageCopyThread-8/output_image.raw", 
+        "commandline": "imagecopy -O %(tempdir)s/output_image.raw", 
+        "--renderer": "test", 
+        "testdir": "/Users/adamsh/Projects/test/unit", 
+        "test_class": "TestImageCopy"
+    }
+}

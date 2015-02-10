@@ -1,0 +1,18 @@
+{
+    "time_used": 0.9841389656066895, 
+    "output": [
+        "ERROR:root:Physical address space is not set. (Try plugins.load_as)"
+    ], 
+    "hashes": {}, 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/Users/adamsh/Projects/test/unit/../profile_cache/", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpro6JbZ/TestEWFAcquireThread-4", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/unit/../profile_cache/' - ewfacquire /var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpro6JbZ/TestEWFAcquireThread-4/output_image.e01", 
+        "commandline": "ewfacquire %(tempdir)s/output_image.e01", 
+        "--renderer": "test", 
+        "testdir": "/Users/adamsh/Projects/test/unit", 
+        "test_class": "TestEWFAcquire"
+    }
+}

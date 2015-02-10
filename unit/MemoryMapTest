@@ -1,0 +1,12 @@
+{
+    "time_used": 1.0967254638671875e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/Users/adamsh/Projects/test/unit/../profile_cache/", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpyk6dZ2/MemoryMapTestThread-8", 
+        "commandline": "", 
+        "--renderer": "test", 
+        "testdir": "/Users/adamsh/Projects/test/unit", 
+        "test_class": "MemoryMapTest"
+    }
+}

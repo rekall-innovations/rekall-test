@@ -1,22 +1,22 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/test/osx10.9.5/output/TestRekallBovineExperience3000 /Users/adamsh/Projects/test/osx10.9.5/TestRekallBovineExperience3000
+   cp /Users/adamsh/Projects/test/unit/output/TestRekallBovineExperience3000 /Users/adamsh/Projects/test/unit/TestRekallBovineExperience3000
 elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/test/osx10.9.5/output/TestRekallBovineExperience3000 /Users/adamsh/Projects/test/osx10.9.5/TestRekallBovineExperience3000
+   meld /Users/adamsh/Projects/test/unit/output/TestRekallBovineExperience3000 /Users/adamsh/Projects/test/unit/TestRekallBovineExperience3000
 elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/test/osx10.9.5/output/TestRekallBovineExperience3000 /Users/adamsh/Projects/test/osx10.9.5/TestRekallBovineExperience3000
+   diff /Users/adamsh/Projects/test/unit/output/TestRekallBovineExperience3000 /Users/adamsh/Projects/test/unit/TestRekallBovineExperience3000
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - moo
+   rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/unit/../profile_cache/' - moo
 else
-   less /Users/adamsh/Projects/test/osx10.9.5/output/TestRekallBovineExperience3000
+   less /Users/adamsh/Projects/test/unit/output/TestRekallBovineExperience3000
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 1.8680930137634277, 
+    "time_used": 1.1170930862426758, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestRekallBovineExperience3000)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 333, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 26 != 100\n"
+        "testCase (__main__.TestRekallBovineExperience3000)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 333, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'               Dogma               ||                              Bessy       [truncated]... != u'               Dogma               ||                              Bessy       [truncated]...\n-                Dogma               ||                              Bessy                              ||                      Pilsner                     ||  Nowrap  \n?                                                                                                         -\n+                Dogma               ||                              Bessy                              ||                     Pilsner                      ||  Nowrap  \n?                                                                                                                                                          +\n\n"
     }, 
     "output": [
         "               Dogma               ||                              Bessy                              ||                     Pilsner                      ||  Nowrap  ", 
@@ -121,18 +121,13 @@ exit 0
         "                                                            ||0x18800000  Bd      MBcBd   Bc      AXMBd   Bd      Bd      Bd      MBd         ||                              "
     ], 
     "options": {
-        "--name_resolution_strategies": [
-            "Module", 
-            "Symbol"
-        ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/test/osx10.9.5/vmem.e01", 
-        "--cache_dir": "/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/", 
+        "--cache_dir": "/Users/adamsh/Projects/test/unit/../profile_cache/", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpSeVaeY/TestRekallBovineExperience3000Thread-2", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/unit/../profile_cache/' - moo", 
         "commandline": "moo", 
         "--renderer": "test", 
-        "test_class": "TestRekallBovineExperience3000", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpGNLSlg/TestRekallBovineExperience3000Thread-4", 
-        "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - moo", 
-        "testdir": "/Users/adamsh/Projects/test/osx10.9.5"
+        "testdir": "/Users/adamsh/Projects/test/unit", 
+        "test_class": "TestRekallBovineExperience3000"
     }
 }

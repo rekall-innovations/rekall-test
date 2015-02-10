@@ -1,0 +1,35 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/test/unit/output/TestListTerminals /Users/adamsh/Projects/test/unit/TestListTerminals
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/test/unit/output/TestListTerminals /Users/adamsh/Projects/test/unit/TestListTerminals
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/test/unit/output/TestListTerminals /Users/adamsh/Projects/test/unit/TestListTerminals
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/unit/../profile_cache/' - list_terminals
+else
+   less /Users/adamsh/Projects/test/unit/output/TestListTerminals
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 0.997204065322876, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestListTerminals)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 333, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'      User     ||    Session    ||        Terminal vnode        ||             [truncated]... != u'     User      ||    Session    ||        Terminal vnode        ||             [truncated]...\nDiff is 811 characters long. Set self.maxDiff to None to see it.\n"
+    }, 
+    "output": [
+        "     User      ||    Session    ||        Terminal vnode        ||                              Recovered input                              ||                             Recovered output                              ", 
+        "---------------||---------------||------------------------------||---------------------------------------------------------------------------||---------------------------------------------------------------------------"
+    ], 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/Users/adamsh/Projects/test/unit/../profile_cache/", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpSeVaeY/TestListTerminalsThread-6", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/unit/../profile_cache/' - list_terminals", 
+        "commandline": "list_terminals", 
+        "--renderer": "test", 
+        "testdir": "/Users/adamsh/Projects/test/unit", 
+        "test_class": "TestListTerminals"
+    }
+}

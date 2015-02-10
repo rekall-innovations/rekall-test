@@ -1,0 +1,17 @@
+{
+    "time_used": 1.3113021850585938e-05, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/test/osx10.9.5/vmem.e01", 
+        "--cache_dir": "/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/", 
+        "commandline": "", 
+        "--renderer": "test", 
+        "test_class": "MemoryMapTest", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmp5oo570/MemoryMapTestThread-8", 
+        "testdir": "/Users/adamsh/Projects/test/osx10.9.5"
+    }
+}

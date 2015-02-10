@@ -1,0 +1,12 @@
+{
+    "time_used": 8.106231689453125e-06, 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/Users/adamsh/Projects/test/unit/../profile_cache/", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpro6JbZ/ValidatorTestThread-8", 
+        "commandline": "", 
+        "--renderer": "test", 
+        "testdir": "/Users/adamsh/Projects/test/unit", 
+        "test_class": "ValidatorTest"
+    }
+}
