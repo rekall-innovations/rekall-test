@@ -1,18 +1,19 @@
 {
-    "time_used": 15.55762505531311, 
+    "time_used": 8.606532096862793, 
     "output": [
-        "Skipped %d/%d sockets."
+        "Skipped 36/36 sockets."
     ], 
     "hashes": {}, 
     "return_code": 0, 
     "options": {
         "executable": "rekall ", 
         "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
-        "tempdir": "/tmp/tmpKfcTZK/TestPacketQueuesThread-9", 
-        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - pkt_queues --dump_dir /tmp/tmpKfcTZK/TestPacketQueuesThread-9", 
         "commandline": "pkt_queues --dump_dir %(tempdir)s", 
         "--renderer": "test", 
-        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
-        "test_class": "TestPacketQueues"
+        "test_class": "TestPacketQueues", 
+        "--cache_dir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
+        "tempdir": "/tmp/tmpPLRE3f/TestPacketQueuesThread-2", 
+        "executed_command": "rekall  --cache_dir '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/../profile_cache/' --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - pkt_queues --dump_dir /tmp/tmpPLRE3f/TestPacketQueuesThread-2", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE"
     }
 }
