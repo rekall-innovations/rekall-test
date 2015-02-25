@@ -6,17 +6,17 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /home/scudette/projects/rekall-test/tigger/output/TestVADMap /home/scudette/projects/rekall-test/tigger/TestVADMap
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - vadmap --pid 1724
+   rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - vadmap --pid 1724
 else
    less /home/scudette/projects/rekall-test/tigger/output/TestVADMap
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 38.93483018875122, 
+    "time_used": 18.920623779296875, 
     "return_code": 0, 
     "failures": {
-        "testCase (rekall.plugins.windows.vadinfo_test.TestVADMap)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 216, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 266, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0x00010000||0x00001000||Valid               ||        ' != u'0x00010000||    0x1000||Valid               ||        '\n- 0x00010000||0x00001000||Valid               ||        \n?               ----\n+ 0x00010000||    0x1000||Valid               ||        \n?             ++++\n\n"
+        "testCase (rekall.plugins.windows.vadinfo_test.TestVADMap)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 1429 != 1430\n"
     }, 
     "output": [
         "**************************************************", 
@@ -44,7 +44,8 @@ exit 0
         "0x00190000||    0x5000||Valid               ||        ", 
         "0x00195000||    0xb000||Demand Zero         ||        ", 
         "0x001a0000||    0x2000||Valid               ||        ", 
-        "0x001a2000||    0xe000||Demand Zero         ||        ", 
+        "0x001a2000||    0x1000||Demand Zero         ||ProtoType: True", 
+        "0x001a3000||    0xd000||Demand Zero         ||        ", 
         "0x001b0000||    0x2000||Valid               ||        ", 
         "0x001b2000||    0x5000||File Mapping        ||filename: \\WINDOWS\\system32\\unicode.nls", 
         "0x001b7000||    0x1000||Valid               ||        ", 
@@ -160,7 +161,7 @@ exit 0
         "0x00d8c000||    0x4000||Valid               ||        ", 
         "0x00d90000||   0x3f000||Demand Zero         ||        ", 
         "0x00dcf000||    0x4000||Valid               ||        ", 
-        "0x00dd3000||    0x1000||Demand Zero         ||        ", 
+        "0x00dd3000||    0x1000||Demand Zero         ||ProtoType: True", 
         "0x00dd4000||    0x9000||Valid               ||        ", 
         "0x00de0000||    0x1000||Valid               ||        ", 
         "0x00df0000||    0x1000||Valid               ||        ", 
@@ -1450,15 +1451,19 @@ exit 0
         "0x7ffd2000||    0x7000||Valid               ||        "
     ], 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
         "commandline": "vadmap --pid %(pid)s", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestVADMap", 
-        "tempdir": "/tmp/tmprrMyIr/TestVADMapThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - vadmap --pid 1724", 
+        "tempdir": "/tmp/tmpJBeieC/TestVADMapThread-2", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - vadmap --pid 1724", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

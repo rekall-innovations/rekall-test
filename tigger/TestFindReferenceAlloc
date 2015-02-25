@@ -1,0 +1,30 @@
+{
+    "time_used": 1.882807970046997, 
+    "output": [
+        "usage: rekall [-p PROFILE] [-v] [-q] [--debug] [--pager PAGER] [--paging_limit PAGING_LIMIT] [--nocolors] [--renderer {text,json,wide,test,data}]", 
+        "              [--plugin [PLUGIN [PLUGIN ...]]] [-h] [--profile_path [PROFILE_PATH [PROFILE_PATH ...]]] [-f FILENAME] [--buffer_size BUFFER_SIZE] [--output OUTPUT]", 
+        "              [--max_collector_cost MAX_COLLECTOR_COST] [--ept EPT [EPT ...]] [--timezone TIMEZONE] [-o FILE_OFFSET] [--cache_dir CACHE_DIR]", 
+        "              [--pagefile [PAGEFILE [PAGEFILE ...]]] [--name_resolution_strategies [{Module,Symbol,Export} [{Module,Symbol,Export} ...]]]", 
+        "              [--autodetect {nt_index,osx,pe,rsds,ntfs,linux} [{nt_index,osx,pe,rsds,ntfs,linux} ...]] [--autodetect_threshold AUTODETECT_THRESHOLD]", 
+        "              [--autodetect_scan_length AUTODETECT_SCAN_LENGTH] [-r RUN] [-s SESSION_FILENAME] [-] [--dtb DTB]", 
+        "              address", 
+        "rekall: error: argument address is required"
+    ], 
+    "return_code": 2, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "commandline": "show_referrer_alloc", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestFindReferenceAlloc", 
+        "tempdir": "/tmp/tmpEgIERt/TestFindReferenceAllocThread-2", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - show_referrer_alloc", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}
