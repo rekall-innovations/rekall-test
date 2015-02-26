@@ -1,16 +1,14 @@
 {
-    "time_used": 0.9546771049499512, 
+    "time_used": 9.06604790687561, 
     "output": [
-        "usage: rekall [-v] [-q] [--debug] [--pager PAGER] [--paging_limit PAGING_LIMIT] [--nocolors] [--renderer {text,json,wide,test,data}] [--plugin [PLUGIN [PLUGIN ...]]]", 
-        "              [-h] [--profile_path [PROFILE_PATH [PROFILE_PATH ...]]] [-f FILENAME] [--buffer_size BUFFER_SIZE] [--output OUTPUT]", 
-        "              [--max_collector_cost MAX_COLLECTOR_COST] [--dtb DTB] [--ept EPT [EPT ...]] [--timezone TIMEZONE] [-o FILE_OFFSET] [--cache_dir CACHE_DIR]", 
-        "              [--pagefile [PAGEFILE [PAGEFILE ...]]] [--name_resolution_strategies [{Module,Symbol,Export} [{Module,Symbol,Export} ...]]]", 
-        "              [--autodetect {nt_index,osx,pe,rsds,ntfs,linux} [{nt_index,osx,pe,rsds,ntfs,linux} ...]] [--autodetect_threshold AUTODETECT_THRESHOLD]", 
-        "              [--autodetect_scan_length AUTODETECT_SCAN_LENGTH] [-r RUN] [-s SESSION_FILENAME] [-]", 
-        "              module_name guid", 
-        "rekall: error: argument module_name is required"
+        "Extracting cabinet: ntkrnlpa.pd_", 
+        "  extracting ntkrnlpa.pdb", 
+        "", 
+        "All done, no errors.", 
+        "Fetching Profile ntkrnlpa/GUID/BD8F451F3E754ED8A34B50560CEB08E31Trying to fetch http://msdl.microsoft.com/download/symbols/ntkrnlpa.pdb/BD8F451F3E754ED8A34B50560CEB08E31/ntkrnlpa.pd_", 
+        "Received 394861 bytes"
     ], 
-    "return_code": 2, 
+    "return_code": 0, 
     "options": {
         "--name_resolution_strategies": [
             "Module", 
@@ -19,12 +17,12 @@
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
-        "commandline": "build_local_profile", 
+        "commandline": "build_local_profile ntkrnlpa BD8F451F3E754ED8A34B50560CEB08E31", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestBuildProfileLocally", 
-        "tempdir": "/tmp/tmpEgIERt/TestBuildProfileLocallyThread-3", 
-        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - build_local_profile", 
+        "tempdir": "/tmp/tmpNyeV1H/TestBuildProfileLocallyThread-1", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - build_local_profile ntkrnlpa BD8F451F3E754ED8A34B50560CEB08E31", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }
