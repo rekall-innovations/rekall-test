@@ -1,31 +1,37 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/linux-3.2.0-PAE/output/TestLinuxFindKernelSlide /home/scudette/projects/rekall-test/linux-3.2.0-PAE/TestLinuxFindKernelSlide
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/linux-3.2.0-PAE/output/TestLinuxFindKernelSlide /home/scudette/projects/rekall-test/linux-3.2.0-PAE/TestLinuxFindKernelSlide
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/linux-3.2.0-PAE/output/TestLinuxFindKernelSlide /home/scudette/projects/rekall-test/linux-3.2.0-PAE/TestLinuxFindKernelSlide
+elif [ "$1" == "run" ]; then
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/' --renderer 'test' --filename '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - find_kernelslide
+else
+   less /home/scudette/projects/rekall-test/linux-3.2.0-PAE/output/TestLinuxFindKernelSlide
+fi
+exit 0
 {
-    "time_used": 8.843080997467041, 
+    "errors": {}, 
+    "time_used": 7.243014097213745, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestLinuxFindKernelSlide)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 14 != 3\n"
+    }, 
     "output": [
         "Kernel slide", 
         "------------", 
-        "0x00000000  ", 
-        "0x3b7fcce4  ", 
-        "0x3b902d90  ", 
-        "0x3d97520f  ", 
-        "0x3d97a62c  ", 
-        "0x3d986d00  ", 
-        "0x3d98d594  ", 
-        "0x3d99c541  ", 
-        "0x3dcbb224  ", 
-        "0x3de41a37  ", 
-        "0x3de41acd  ", 
-        "0x3deeaa6a  "
+        "0x00000000  "
     ], 
-    "return_code": 0, 
     "options": {
         "executable": "rekall ", 
-        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "--filename": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
         "commandline": "find_kernelslide", 
         "--renderer": "test", 
         "test_class": "TestLinuxFindKernelSlide", 
-        "--cache_dir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
-        "tempdir": "/tmp/tmpuOH0qU/TestLinuxFindKernelSlideThread-3", 
-        "executed_command": "rekall  --cache_dir '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/../profile_cache/' --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - find_kernelslide", 
-        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE"
+        "--cache_dir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
+        "tempdir": "/tmp/tmp_qkPZX/TestLinuxFindKernelSlideThread-2", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/' --renderer 'test' --filename '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - find_kernelslide", 
+        "testdir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE"
     }
 }
