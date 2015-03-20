@@ -1,0 +1,24 @@
+{
+    "time_used": 0.845271110534668, 
+    "output": [
+        "usage: rekall [-v] [-q] [--debug] [--pager PAGER] [--paging_limit PAGING_LIMIT] [--nocolors] [--renderer {text,json,wide,test,data}] [--plugin [PLUGIN [PLUGIN ...]]] [-h]", 
+        "              [--repository_path [REPOSITORY_PATH [REPOSITORY_PATH ...]]] [-f FILENAME] [--buffer_size BUFFER_SIZE] [--output OUTPUT] [--max_collector_cost MAX_COLLECTOR_COST] [--dtb DTB]", 
+        "              [-o FILE_OFFSET] [--ept EPT [EPT ...]] [--timezone TIMEZONE] [--cache_dir CACHE_DIR] [--pagefile [PAGEFILE [PAGEFILE ...]]]", 
+        "              [--name_resolution_strategies [{Module,Symbol,Export} [{Module,Symbol,Export} ...]]] [--autodetect {nt_index,osx,pe,rsds,ntfs,linux} [{nt_index,osx,pe,rsds,ntfs,linux} ...]]", 
+        "              [--autodetect_threshold AUTODETECT_THRESHOLD] [--autodetect_scan_length AUTODETECT_SCAN_LENGTH] [-r RUN] [-s SESSION_FILENAME] [-]", 
+        "              address", 
+        "rekall: error: argument address is required"
+    ], 
+    "return_code": 2, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "commandline": "inspect_vaddr", 
+        "--renderer": "test", 
+        "test_class": "TestMemoryTranslation", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
+        "tempdir": "/tmp/tmp5dvllU/TestMemoryTranslationThread-2", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/' --renderer 'test' --filename '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - inspect_vaddr", 
+        "testdir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE"
+    }
+}

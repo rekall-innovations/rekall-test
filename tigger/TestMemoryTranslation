@@ -1,0 +1,42 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestMemoryTranslation /home/scudette/projects/rekall-test/tigger/TestMemoryTranslation
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestMemoryTranslation /home/scudette/projects/rekall-test/tigger/TestMemoryTranslation
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestMemoryTranslation /home/scudette/projects/rekall-test/tigger/TestMemoryTranslation
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - inspect_vaddr "nt"
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestMemoryTranslation
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 1.013071060180664, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestMemoryTranslation)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 6 != 3\n"
+    }, 
+    "output": [
+        "        Address Space         ||  Offset  ||           Base AS            ||Base AS Offset", 
+        "------------------------------||----------||------------------------------||--------------", 
+        "Kernel AS@0x319000            ||0x804d7000||EWFAddressSpace               ||0x004d7000    "
+    ], 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "commandline": "inspect_vaddr \"nt\"", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestMemoryTranslation", 
+        "tempdir": "/tmp/tmpJ6MGE4/TestMemoryTranslationThread-2", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - inspect_vaddr \"nt\"", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}
