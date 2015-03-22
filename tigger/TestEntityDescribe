@@ -1,22 +1,22 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestEntityDescribe /Users/adamsh/Projects/rekall-test/tigger/TestEntityDescribe
+   cp /Users/adamsh/Projects/test/tigger/output/TestEntityDescribe /Users/adamsh/Projects/test/tigger/TestEntityDescribe
 elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestEntityDescribe /Users/adamsh/Projects/rekall-test/tigger/TestEntityDescribe
+   meld /Users/adamsh/Projects/test/tigger/output/TestEntityDescribe /Users/adamsh/Projects/test/tigger/TestEntityDescribe
 elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestEntityDescribe /Users/adamsh/Projects/rekall-test/tigger/TestEntityDescribe
+   diff /Users/adamsh/Projects/test/tigger/output/TestEntityDescribe /Users/adamsh/Projects/test/tigger/TestEntityDescribe
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - describe
+   rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - describe
 else
-   less /Users/adamsh/Projects/rekall-test/tigger/output/TestEntityDescribe
+   less /Users/adamsh/Projects/test/tigger/output/TestEntityDescribe
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 2.9972920417785645, 
+    "time_used": 2.648221969604492, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestEntityDescribe)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 182 != 198\n"
+        "testCase (__main__.TestEntityDescribe)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'name            ||str (Field)         ||Name of the zone as used by kernel.    [truncated]... != u'name            ||unicode (Field)     ||Name of the zone as used by kernel.    [truncated]...\n- name            ||str (Field)         ||Name of the zone as used by kernel.                         ||True            ||-                             \n?                   ^^^             ----\n+ name            ||unicode (Field)     ||Name of the zone as used by kernel.                         ||True            ||-                             \n?                   ^^^^^^^\n\n"
     }, 
     "output": [
         "", 
@@ -31,15 +31,15 @@ exit 0
         "is_exhaustible  ||bool (Field)        ||Whether the zone can be exhausted/filled up.                ||True            ||-                             ", 
         "is_expandable   ||bool (Field)        ||Whether the zone can grow.                                  ||True            ||-                             ", 
         "max_size        ||int (Field)         ||Maximum size the zone can grow to, if any.                  ||True            ||-                             ", 
-        "name            ||str (Field)         ||Name of the zone as used by kernel.                         ||True            ||-                             ", 
+        "name            ||unicode (Field)     ||Name of the zone as used by kernel.                         ||True            ||-                             ", 
         "page_count      ||int (Field)         ||Count of memory pages used by the zone.                     ||True            ||-                             ", 
         "tracks_pages    ||bool (Field)        ||Whether the zone tracks the pages it used.                  ||True            ||-                             ", 
-        "type            ||str (Field)         ||Type of thing found in the zone.                            ||True            ||-                             ", 
+        "type            ||unicode (Field)     ||Type of thing found in the zone.                            ||True            ||-                             ", 
         "", 
         "****************************************** Buffer: Stores raw memory contents at a given address. ******************************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
-        "contents        ||str (Field)         ||Raw contents (contains unprintable characters).             ||True            ||-                             ", 
+        "contents        ||unicode (Field)     ||Raw contents (contains unprintable characters).             ||True            ||-                             ", 
         "context         ||Identity (Field)    ||Owner of the buffer, e.g. a zone, terminal...               ||True            ||-                             ", 
         "end             ||BaseObject (Field)  ||Pointer to end of the buffer.                               ||True            ||-                             ", 
         "kind            ||str (Field)         ||Ring buffer's end can be lower than its start.              ||True            ||-                             ", 
@@ -58,7 +58,7 @@ exit 0
         "handles         ||Identity (Alias)    ||Handles by processes on this socket.                        ||False           ||Aliased to &Handle/resource   ", 
         "packets_received||int (Field)         ||Packets in.                                                 ||True            ||-                             ", 
         "packets_sent    ||int (Field)         ||Packets out.                                                ||True            ||-                             ", 
-        "protocol_family ||str (Field)         ||Protocol family determines addressing.                      ||True            ||-                             ", 
+        "protocol_family ||unicode (Field)     ||Protocol family determines addressing.                      ||True            ||-                             ", 
         "source          ||Identity (Field)    ||Source of TCP connection or of UDP datagram.                ||True            ||-                             ", 
         "", 
         "******************************** Endpoint: One side of a connection - source/client or server/destination. ********************************", 
@@ -79,11 +79,11 @@ exit 0
         "******************************** Event: Something that happened, e.g. 'User/name=h4x0r', 'pwned', 'local/*' ********************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
-        "action          ||str (Field)         ||One word action, such as 'created' or 'pwned'.              ||True            ||-                             ", 
+        "action          ||unicode (Field)     ||One word action, such as 'created' or 'pwned'.              ||True            ||-                             ", 
         "actor           ||Identity (Field)    ||Who done it.                                                ||True            ||-                             ", 
         "category        ||str (Field)         ||In lieu of timestamp, approximate timing, e.g. recent.      ||True            ||-                             ", 
-        "description     ||str (Field)         ||What happened. Did Timmy fall down the well?                ||True            ||-                             ", 
-        "native_id       ||str (Field)         ||Native event ID, such as Windows Event ID, etc.             ||True            ||-                             ", 
+        "description     ||unicode (Field)     ||What happened. Did Timmy fall down the well?                ||True            ||-                             ", 
+        "native_id       ||unicode (Field)     ||Native event ID, such as Windows Event ID, etc.             ||True            ||-                             ", 
         "target          ||Identity (Field)    ||Unwitting (or is it) victim.                                ||True            ||-                             ", 
         "timestamp       ||datetime (Field)    ||When did this go down?                                      ||True            ||-                             ", 
         "", 
@@ -93,7 +93,7 @@ exit 0
         "handles         ||Identity (Alias)    ||Handles by processes on this file.                          ||False           ||Aliased to &Handle/resource   ", 
         "mount           ||Identity (Field)    ||The volume this file is on.                                 ||True            ||-                             ", 
         "parent          ||Identity (Field)    ||Parent file (directory, ZIP archive, etc.)                  ||True            ||-                             ", 
-        "path            ||str (Field)         ||The filesystem path to this file.                           ||True            ||-                             ", 
+        "path            ||unicode (Field)     ||The filesystem path to this file.                           ||True            ||-                             ", 
         "type            ||str (Field)         ||Is this a directory, normal file, etc.                      ||True            ||-                             ", 
         "", 
         "****************************************** Handle: A handle from process to file/connection/etc. ******************************************", 
@@ -109,44 +109,44 @@ exit 0
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
         "base_object     ||BaseObject (Field)  ||An instance of BaseObject.                                  ||True            ||-                             ", 
         "state           ||str (Field)         ||Allocation state (freed or not).                            ||True            ||-                             ", 
-        "type            ||str (Field)         ||Class name of the base object.                              ||True            ||-                             ", 
+        "type            ||unicode (Field)     ||Class name of the base object.                              ||True            ||-                             ", 
         "", 
         "********************************************** Named: Human-readable identifying information. **********************************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
-        "kind            ||str (Field)         ||Human-readable type                                         ||True            ||-                             ", 
-        "name            ||str (Field)         ||Human-readable name                                         ||True            ||-                             ", 
+        "kind            ||unicode (Field)     ||Human-readable type                                         ||True            ||-                             ", 
+        "name            ||unicode (Field)     ||Human-readable name                                         ||True            ||-                             ", 
         "", 
         "************************************************** NetworkInterface: A network interface. **************************************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
         "endpoints       ||Identity (Alias)    ||Endpoints of this interface (IP/MAC/etc.)                   ||False           ||Aliased to &Endpoint/interface", 
-        "name            ||str (Field)         ||E.g. en01, tunnel, etc.                                     ||True            ||-                             ", 
+        "name            ||unicode (Field)     ||E.g. en01, tunnel, etc.                                     ||True            ||-                             ", 
         "state           ||str (Field)         ||State of the inteface.                                      ||True            ||-                             ", 
         "", 
         "***************************************** OSIDataLayer: OSI layers 5-7 constitute the data layer. *****************************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
-        "protocol        ||str (Field)         ||Highest-layer protocol (usually layer 7).                   ||True            ||-                             ", 
+        "protocol        ||unicode (Field)     ||Highest-layer protocol (usually layer 7).                   ||True            ||-                             ", 
         "", 
         "****************************************************** OSILayer2: MAC-layer endpoint. ******************************************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
-        "address         ||str (Field)         ||Address at layer 2.                                         ||True            ||-                             ", 
-        "protocol        ||str (Field)         ||Layer 2 protocol.                                           ||True            ||-                             ", 
+        "address         ||unicode (Field)     ||Address at layer 2.                                         ||True            ||-                             ", 
+        "protocol        ||unicode (Field)     ||Layer 2 protocol.                                           ||True            ||-                             ", 
         "", 
         "**************************************************** OSILayer3: Network-layer endpoint. ****************************************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
-        "address         ||str (Field)         ||Address at layer 3.                                         ||True            ||-                             ", 
-        "protocol        ||str (Field)         ||Layer 3 protocol.                                           ||True            ||-                             ", 
+        "address         ||unicode (Field)     ||Address at layer 3.                                         ||True            ||-                             ", 
+        "protocol        ||unicode (Field)     ||Layer 3 protocol.                                           ||True            ||-                             ", 
         "", 
         "*************************************************** OSILayer4: Transport-layer endpoint. ***************************************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
         "port            ||int (Field)         ||TCP/UDP port.                                               ||True            ||-                             ", 
-        "protocol        ||str (Field)         ||Layer 4 protocol.                                           ||True            ||-                             ", 
-        "state           ||str (Field)         ||State if stateful.                                          ||True            ||-                             ", 
+        "protocol        ||unicode (Field)     ||Layer 4 protocol.                                           ||True            ||-                             ", 
+        "state           ||unicode (Field)     ||State if stateful.                                          ||True            ||-                             ", 
         "", 
         "********************************************** Permissions: Basic permissions and ownership. **********************************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
@@ -161,9 +161,9 @@ exit 0
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
         "arguments       ||list (Field)        ||List of arguments.                                          ||False           ||-                             ", 
         "children        ||Identity (Alias)    ||Children of this process.                                   ||False           ||Aliased to &Process/parent    ", 
-        "command         ||str (Field)         ||The path to the binary or the command that executed.        ||True            ||-                             ", 
+        "command         ||unicode (Field)     ||The path to the binary or the command that executed.        ||True            ||-                             ", 
         "cr3             ||Pointer (Field)     ||Saved CR3 value (DTB location).                             ||True            ||-                             ", 
-        "env             ||str (Field)         ||Process env variables.                                      ||False           ||-                             ", 
+        "env             ||unicode (Field)     ||Process env variables.                                      ||False           ||-                             ", 
         "handles         ||Identity (Alias)    ||Handles owned by this process.                              ||False           ||Aliased to &Handle/process    ", 
         "image_file      ||Identity (Field)    ||The file where the process was loaded from.                 ||False           ||-                             ", 
         "is_64bit        ||bool (Field)        ||Is the process running in 64bit.                            ||True            ||-                             ", 
@@ -184,13 +184,13 @@ exit 0
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
         "matched_object  ||Identity (Field)    ||The object containing the match.                            ||True            ||-                             ", 
         "method          ||str (Field)         ||How was the scan done?                                      ||True            ||-                             ", 
-        "signature       ||str (Field)         ||The signature used in the search.                           ||True            ||-                             ", 
+        "signature       ||unicode (Field)     ||The signature used in the search.                           ||True            ||-                             ", 
         "", 
         "******************************************************* Socket: A UNIX domain socket *******************************************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
-        "address         ||str (Field)         ||Memory address of the socket.                               ||True            ||-                             ", 
-        "connected       ||str (Field)         ||Memory address of other socket in pair.                     ||True            ||-                             ", 
+        "address         ||unicode (Field)     ||Memory address of the socket.                               ||True            ||-                             ", 
+        "connected       ||unicode (Field)     ||Memory address of other socket in pair.                     ||True            ||-                             ", 
         "file            ||Identity (Field)    ||The file this socket binds to.                              ||True            ||-                             ", 
         "type            ||str (Field)         ||Type in AF_UNIX/AF_LOCAL family.                            ||True            ||-                             ", 
         "", 
@@ -214,20 +214,24 @@ exit 0
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
         "home_dir        ||Identity (Field)    ||File that represents the user's home dir.                   ||True            ||-                             ", 
         "processes       ||Identity (Alias)    ||Processes running as this user.                             ||False           ||Aliased to &Process/user      ", 
-        "real_name       ||str (Field)         ||User's real name.                                           ||True            ||-                             ", 
+        "real_name       ||unicode (Field)     ||User's real name.                                           ||True            ||-                             ", 
         "uid             ||int (Field)         ||A unique user id, if any.                                   ||True            ||-                             ", 
-        "username        ||str (Field)         ||System username.                                            ||True            ||-                             "
+        "username        ||unicode (Field)     ||System username.                                            ||True            ||-                             "
     ], 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--filename": "/Users/adamsh/Projects/test/tigger/tigger.vmem.E01", 
+        "--cache_dir": "/Users/adamsh/Projects/test/tigger/../profile_cache/", 
         "commandline": "describe", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestEntityDescribe", 
-        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpYnLb5F/TestEntityDescribeThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - describe", 
-        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpCpif2c/TestEntityDescribeThread-2", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - describe", 
+        "testdir": "/Users/adamsh/Projects/test/tigger"
     }
 }
