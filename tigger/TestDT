@@ -6,22 +6,25 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /home/scudette/projects/rekall-test/tigger/output/TestDT /home/scudette/projects/rekall-test/tigger/TestDT
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - dt _EPROCESS
+   rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - dt _EPROCESS
 else
    less /home/scudette/projects/rekall-test/tigger/output/TestDT
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 1.4351329803466797, 
+    "time_used": 0.9080548286437988, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestDT)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'[_EPROCESS _EPROCESS] @ 0x000000 ' != u'[_EPROCESS _EPROCESS] @ 0x00000000 '\n- [_EPROCESS _EPROCESS] @ 0x000000 \n+ [_EPROCESS _EPROCESS] @ 0x00000000 \n?                                 ++\n\n"
+        "testCase (__main__.TestDT)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 319 != 322\n"
     }, 
     "output": [
         "[_EPROCESS _EPROCESS] @ 0x00000000 ", 
         "Offset              ||            Field             ||Content", 
         "--------------------||------------------------------||-------", 
+        " ||      0x-1        ||RealVadRoot                   ||-      ", 
+        " ||      0x-1        ||name                          || [String:ImageFileName]: '\\x00'", 
+        " ||      0x-1        ||pid                           || [unsigned int:UniqueProcessId]: 0x00000000", 
         " ||       0x0        ||Pcb                           ||[_KPROCESS Pcb] @ 0x00000000", 
         ".||       0x0        ||Header                        ||[_DISPATCHER_HEADER Header] @ 0x00000000", 
         "..||       0x0       ||Type                          || [Enumeration:Type]: 0x00000000 (EventNotificationObject)", 
@@ -103,8 +106,8 @@ exit 0
         ".||       0x0        ||Shared                        || [BitField(2-32):Shared]: 0x00000000", 
         ".||       0x0        ||Value                         || [unsigned long:Value]: 0x00000000", 
         ".||       0x0        ||Waiting                       || [BitField(0-1):Waiting]: 0x00000000", 
-        " ||      0x70        ||CreateTime                    || [WinFileTime:CreateTime]: 0x00000000 (-)", 
-        " ||      0x78        ||ExitTime                      || [WinFileTime:ExitTime]: 0x00000000 (-)", 
+        " ||      0x70        ||CreateTime                    ||-      ", 
+        " ||      0x78        ||ExitTime                      ||-      ", 
         " ||      0x80        ||RundownProtect                ||[_EX_RUNDOWN_REF RundownProtect] @ 0x00000080", 
         ".||       0x0        ||Count                         || [unsigned long:Count]: 0x00000000", 
         ".||       0x0        ||Ptr                           ||<Void Pointer to [0x00000000] (Ptr)>", 
@@ -346,12 +349,13 @@ exit 0
         ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
         "commandline": "dt _EPROCESS", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestDT", 
-        "tempdir": "/tmp/tmpPOuthR/TestDTThread-3", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - dt _EPROCESS", 
+        "tempdir": "/tmp/tmpJ3WPKx/TestDTThread-3", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - dt _EPROCESS", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }
