@@ -1,50 +1,68 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/linux-3.2.0-PAE/output/TestIOmem /home/scudette/projects/rekall-test/linux-3.2.0-PAE/TestIOmem
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/linux-3.2.0-PAE/output/TestIOmem /home/scudette/projects/rekall-test/linux-3.2.0-PAE/TestIOmem
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/linux-3.2.0-PAE/output/TestIOmem /home/scudette/projects/rekall-test/linux-3.2.0-PAE/TestIOmem
+elif [ "$1" == "run" ]; then
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/' --renderer 'test' --filename '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - iomem
+else
+   less /home/scudette/projects/rekall-test/linux-3.2.0-PAE/output/TestIOmem
+fi
+exit 0
 {
-    "time_used": 15.760124921798706, 
-    "output": [
-        " Resource ||-||  Start   ||   End    ||Name", 
-        "----------|| ||----------||----------||----", 
-        "0xc13e7214|| ||0x00000000||0xfffffffff||PCI mem", 
-        "0xf79f9040||.||0x00000000||0x0000ffff||reserved", 
-        "0xf79f9064||.||0x00010000||0x0009fbff||System RAM", 
-        "0xf79f9088||.||0x0009fc00||0x0009ffff||reserved", 
-        "0xf60c2e68||.||0x000a0000||0x000bffff||PCI Bus 0000:00", 
-        "0xc13e3044||..||0x000a0000||0x000bffff||Video RAM area", 
-        "0xc13e3298||.||0x000c0000||0x000c8fff||Video ROM", 
-        "0xc13e31c0||.||0x000c9000||0x000c99ff||Adapter ROM", 
-        "0xc13e31e4||.||0x000ca000||0x000cc3ff||Adapter ROM", 
-        "0xf79f90ac||.||0x000f0000||0x000fffff||reserved", 
-        "0xc13e32bc||..||0x000f0000||0x000fffff||System ROM", 
-        "0xf79f90d0||.||0x00100000||0x3fffdfff||System RAM", 
-        "0xc13e2fd4||..||0x01000000||0x012c93bf||Kernel code", 
-        "0xc13e2ff8||..||0x012c93c0||0x0141a0ff||Kernel data", 
-        "0xc13e301c||..||0x01485000||0x0150afff||Kernel bss", 
-        "0xf79f90f4||.||0x3fffe000||0x3fffffff||reserved", 
-        "0xf60c2e8c||.||0x80000000||0xfebfffff||PCI Bus 0000:00", 
-        "0xf61161c4||..||0xfc000000||0xfdffffff||0000:00:02.0", 
-        "0xf6117a9c||..||0xfebc0000||0xfebdffff||0000:00:03.0", 
-        "0xf611629c||..||0xfebe0000||0xfebeffff||0000:00:02.0", 
-        "0xf61171c4||..||0xfebf0000||0xfebf3fff||0000:00:04.0", 
-        "0xf599a620||...||0xfebf0000||0xfebf3fff||ICH HD audio", 
-        "0xf61161e8||..||0xfebf4000||0xfebf4fff||0000:00:02.0", 
-        "0xf61179e8||..||0xfebf5000||0xfebf5fff||0000:00:03.0", 
-        "0xf70a1e20||...||0xfebf5000||0xfebf5fff||virtio-pci", 
-        "0xf61189e8||..||0xfebf6000||0xfebf6fff||0000:00:05.0", 
-        "0xf70a1d60||...||0xfebf6000||0xfebf6fff||virtio-pci", 
-        "0xf79f9180||.||0xfec00000||0xfec003ff||IOAPIC 0", 
-        "0xf79f91c0||.||0xfed00000||0xfed003ff||HPET 0", 
-        "0xc13e5954||.||0xfee00000||0xfee00fff||Local APIC", 
-        "0xf79f9118||.||0xfeffc000||0xfeffffff||reserved", 
-        "0xf79f913c||.||0xfffc0000||0xffffffff||reserved"
-    ], 
+    "errors": {}, 
+    "time_used": 4.156991958618164, 
     "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestIOmem)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u' Resource ||-||  Start   ||   End    ||Name' != u' Resource ||  Start   ||   End    ||Name'\n-  Resource ||-||  Start   ||   End    ||Name\n?             ---\n+  Resource ||  Start   ||   End    ||Name\n\n"
+    }, 
+    "output": [
+        " Resource ||  Start   ||   End    ||Name", 
+        "----------||----------||----------||----", 
+        "0xc13e7214||0x00000000||0xfffffffff|| ||PCI mem", 
+        "0xf79f9040||0x00000000||0x0000ffff||.||reserved", 
+        "0xf79f9064||0x00010000||0x0009fbff||.||System RAM", 
+        "0xf79f9088||0x0009fc00||0x0009ffff||.||reserved", 
+        "0xf60c2e68||0x000a0000||0x000bffff||.||PCI Bus 0000:00", 
+        "0xc13e3044||0x000a0000||0x000bffff||..||Video RAM area", 
+        "0xc13e3298||0x000c0000||0x000c8fff||.||Video ROM", 
+        "0xc13e31c0||0x000c9000||0x000c99ff||.||Adapter ROM", 
+        "0xc13e31e4||0x000ca000||0x000cc3ff||.||Adapter ROM", 
+        "0xf79f90ac||0x000f0000||0x000fffff||.||reserved", 
+        "0xc13e32bc||0x000f0000||0x000fffff||..||System ROM", 
+        "0xf79f90d0||0x00100000||0x3fffdfff||.||System RAM", 
+        "0xc13e2fd4||0x01000000||0x012c93bf||..||Kernel code", 
+        "0xc13e2ff8||0x012c93c0||0x0141a0ff||..||Kernel data", 
+        "0xc13e301c||0x01485000||0x0150afff||..||Kernel bss", 
+        "0xf79f90f4||0x3fffe000||0x3fffffff||.||reserved", 
+        "0xf60c2e8c||0x80000000||0xfebfffff||.||PCI Bus 0000:00", 
+        "0xf61161c4||0xfc000000||0xfdffffff||..||0000:00:02.0", 
+        "0xf6117a9c||0xfebc0000||0xfebdffff||..||0000:00:03.0", 
+        "0xf611629c||0xfebe0000||0xfebeffff||..||0000:00:02.0", 
+        "0xf61171c4||0xfebf0000||0xfebf3fff||..||0000:00:04.0", 
+        "0xf599a620||0xfebf0000||0xfebf3fff||...||ICH HD audio", 
+        "0xf61161e8||0xfebf4000||0xfebf4fff||..||0000:00:02.0", 
+        "0xf61179e8||0xfebf5000||0xfebf5fff||..||0000:00:03.0", 
+        "0xf70a1e20||0xfebf5000||0xfebf5fff||...||virtio-pci", 
+        "0xf61189e8||0xfebf6000||0xfebf6fff||..||0000:00:05.0", 
+        "0xf70a1d60||0xfebf6000||0xfebf6fff||...||virtio-pci", 
+        "0xf79f9180||0xfec00000||0xfec003ff||.||IOAPIC 0", 
+        "0xf79f91c0||0xfed00000||0xfed003ff||.||HPET 0", 
+        "0xc13e5954||0xfee00000||0xfee00fff||.||Local APIC", 
+        "0xf79f9118||0xfeffc000||0xfeffffff||.||reserved", 
+        "0xf79f913c||0xfffc0000||0xffffffff||.||reserved"
+    ], 
     "options": {
         "executable": "rekall ", 
-        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
-        "tempdir": "/tmp/tmpKfcTZK/TestIOmemThread-4", 
-        "executed_command": "rekall  --renderer 'test' --filename '/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - iomem", 
+        "--filename": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
         "commandline": "iomem", 
         "--renderer": "test", 
-        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE", 
-        "test_class": "TestIOmem"
+        "test_class": "TestIOmem", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
+        "tempdir": "/tmp/tmp9nx01Y/TestIOmemThread-1", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/' --renderer 'test' --filename '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - iomem", 
+        "testdir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE"
     }
 }
