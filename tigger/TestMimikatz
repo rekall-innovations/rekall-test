@@ -1,0 +1,25 @@
+{
+    "time_used": 2.634310007095337, 
+    "output": [
+        "       Module       ||        User        ||       Domain       ||      Password      ", 
+        "--------------------||--------------------||--------------------||--------------------", 
+        "ERROR:root:Unable to decrypt LSA secret."
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "commandline": "mimikatz", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestMimikatz", 
+        "tempdir": "/tmp/tmpfiRZ9E/TestMimikatzThread-1", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - mimikatz", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}
