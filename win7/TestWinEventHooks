@@ -1,0 +1,56 @@
+{
+    "time_used": 5.561409950256348, 
+    "output": [
+        "**************************************************", 
+        "Handle: 0x4b0073, Object: 0xf900c2115250, Session: 1", 
+        "Type: TYPE_WINEVENTHOOK, Flags: -, Thread: 1872, Process: 1868 (explorer.exe)", 
+        "eventMin: 0xf900c2115270 EVENT_OBJECT_REORDER", 
+        "eventMax: 0xf900c2115274 EVENT_OBJECT_REORDER", 
+        "Flags: , offPfn: 0x7fefdd740e8, idProcess: 0, idThread: 0", 
+        "ihmod: -1", 
+        "**************************************************", 
+        "Handle: 0x1007e, Object: 0xf900c1b2e460, Session: 1", 
+        "Type: TYPE_WINEVENTHOOK, Flags: -, Thread: 1928, Process: 1868 (explorer.exe)", 
+        "eventMin: 0xf900c1b2e480 EVENT_SYSTEM_MENUSTART", 
+        "eventMax: 0xf900c1b2e484 EVENT_SYSTEM_MENUPOPUPEND", 
+        "Flags: , offPfn: 0xff617cc4, idProcess: 0, idThread: 0", 
+        "ihmod: -1", 
+        "**************************************************", 
+        "Handle: 0x5010f, Object: 0xf900c20e5390, Session: 1", 
+        "Type: TYPE_WINEVENTHOOK, Flags: -, Thread: 1792, Process: 1868 (explorer.exe)", 
+        "eventMin: 0xf900c20e53b0 EVENT_SYSTEM_DESKTOPSWITCH", 
+        "eventMax: 0xf900c20e53b4 EVENT_SYSTEM_DESKTOPSWITCH", 
+        "Flags: , offPfn: 0x7fef8d02fd4, idProcess: 0, idThread: 0", 
+        "ihmod: -1"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/win7/win7.elf.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/win7/../profile_cache/", 
+        "enabled": [
+            "TestWinPsList", 
+            "TestCmdScan", 
+            "TestCommandScan", 
+            "TestConsoleScan", 
+            "TestConsoles", 
+            "TestMftDump", 
+            "TestMimikatz", 
+            "TestPoolTracker", 
+            "TestWinDNSCache", 
+            "TestWinEventHooks", 
+            "TestWinSSDT"
+        ], 
+        "commandline": "eventhooks", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestWinEventHooks", 
+        "tempdir": "/tmp/tmpHTQnXu/TestWinEventHooksThread-1", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/win7/../profile_cache/' --filename '/home/scudette/projects/rekall-test/win7/win7.elf.E01' --name_resolution_strategies 'Module' 'Symbol' - eventhooks", 
+        "testdir": "/home/scudette/projects/rekall-test/win7"
+    }
+}

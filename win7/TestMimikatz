@@ -1,0 +1,39 @@
+{
+    "time_used": 10.715813875198364, 
+    "output": [
+        "       Module       ||        User        ||       Domain       ||      Password      ", 
+        "--------------------||--------------------||--------------------||--------------------", 
+        "wdigest             ||a                   ||a-PC                ||a\u0000\u0000\u0000\u0000\u0000\u0000\u0000            ", 
+        "wdigest             ||A-PC$               ||WORKGROUP           ||                    "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/win7/win7.elf.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/win7/../profile_cache/", 
+        "enabled": [
+            "TestWinPsList", 
+            "TestCmdScan", 
+            "TestCommandScan", 
+            "TestConsoleScan", 
+            "TestConsoles", 
+            "TestMftDump", 
+            "TestMimikatz", 
+            "TestPoolTracker", 
+            "TestWinDNSCache", 
+            "TestWinEventHooks", 
+            "TestWinSSDT"
+        ], 
+        "commandline": "mimikatz", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestMimikatz", 
+        "tempdir": "/tmp/tmpHTQnXu/TestMimikatzThread-2", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/win7/../profile_cache/' --filename '/home/scudette/projects/rekall-test/win7/win7.elf.E01' --name_resolution_strategies 'Module' 'Symbol' - mimikatz", 
+        "testdir": "/home/scudette/projects/rekall-test/win7"
+    }
+}

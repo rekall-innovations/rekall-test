@@ -1,0 +1,24 @@
+{
+    "time_used": 0.8069620132446289, 
+    "output": [
+        " MFT ||      file_modified      ||      mft_modified       ||         access          ||       create_time       ||                                                Name                                                ", 
+        "-----||-------------------------||-------------------------||-------------------------||-------------------------||----------------------------------------------------------------------------------------------------"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "commandline": "mftdump", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestMftDump", 
+        "tempdir": "/tmp/tmp14Irxn/TestMftDumpThread-2", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - mftdump", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}

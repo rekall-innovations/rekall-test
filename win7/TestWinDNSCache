@@ -1,0 +1,46 @@
+{
+    "time_used": 6.075126886367798, 
+    "output": [
+        "                    Name                     ||    Record    ||      Type      ||Data", 
+        "---------------------------------------------||--------------||----------------||----", 
+        " ||wpad                                       ||0x000001d11990||HTABLE          ", 
+        ".||wpad.corp.google.com                       ||0x000000b34940||CNAME           ||wpad.v.corp.google.com", 
+        ".||wpad.v.corp.google.com                     ||0x000000b34a00||A               ||172.16.255.9", 
+        " ||teredo.ipv6.microsoft.com                  ||0x000001d119e0||HTABLE          ", 
+        ".||teredo.ipv6.microsoft.com                  ||0x000000b34b70||A               ||127.0.0.1", 
+        " ||www.msftncsi.com                           ||0x000001d11a50||HTABLE          ", 
+        ".||www.msftncsi.com                           ||0x000000b33650||CNAME           ||newncsi.glbdns.microsoft.com", 
+        ".||newncsi.glbdns.microsoft.com               ||0x000000b33720||CNAME           ||ncsi.glbdns.microsoft.com", 
+        ".||ncsi.glbdns.microsoft.com                  ||0x000000b33800||A               ||65.54.161.12"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/win7/win7.elf.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/win7/../profile_cache/", 
+        "enabled": [
+            "TestWinPsList", 
+            "TestCmdScan", 
+            "TestCommandScan", 
+            "TestConsoleScan", 
+            "TestConsoles", 
+            "TestMftDump", 
+            "TestMimikatz", 
+            "TestPoolTracker", 
+            "TestWinDNSCache", 
+            "TestWinEventHooks", 
+            "TestWinSSDT"
+        ], 
+        "commandline": "dns_cache", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestWinDNSCache", 
+        "tempdir": "/tmp/tmpHTQnXu/TestWinDNSCacheThread-2", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/win7/../profile_cache/' --filename '/home/scudette/projects/rekall-test/win7/win7.elf.E01' --name_resolution_strategies 'Module' 'Symbol' - dns_cache", 
+        "testdir": "/home/scudette/projects/rekall-test/win7"
+    }
+}
