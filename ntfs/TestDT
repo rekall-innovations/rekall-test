@@ -13,10 +13,10 @@ fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 1.0724802017211914, 
+    "time_used": 0.8451471328735352, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestDT)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'[MFT_ENTRY MFT_ENTRY] @ 0x000000 ' != u'[MFT_ENTRY MFT_ENTRY] @ 0x000000000000 '\n- [MFT_ENTRY MFT_ENTRY] @ 0x000000 \n+ [MFT_ENTRY MFT_ENTRY] @ 0x000000000000 \n?                                 ++++++\n\n"
+        "testCase (__main__.TestDT)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 18 != 19\n"
     }, 
     "output": [
         "[MFT_ENTRY MFT_ENTRY] @ 0x000000000000 ", 
@@ -34,6 +34,7 @@ exit 0
         " ||          0x1c    ||mft_entry_allocated           || [unsigned short:mft_entry_allocated]: <Unable to read 2 bytes from 28>", 
         " ||          0x20    ||base_record_reference         || [unsigned long long:base_record_reference]: <Unable to read 8 bytes from 32>", 
         " ||          0x28    ||next_attribute_id             || [unsigned short:next_attribute_id]: <Unable to read 2 bytes from 40>", 
+        " ||          0x2c    ||record_number                 || [unsigned long:record_number]: <Unable to read 4 bytes from 44>", 
         " ||0xffffffffffff    ||_attributes                   ||<ListArray 0 x NTFS_ATTRIBUTE @ 0xFFFFFFFFFFFF>", 
         " ||0xffffffffffff    ||fixup_magic                   || [String:fixup_magic]: <Plugin not active>", 
         " ||0xffffffffffff    ||fixup_table                   ||<Array - x String @ 0xFFFFFFFFFFFF>"
@@ -44,7 +45,7 @@ exit 0
         "--cache_dir": "/home/scudette/projects/rekall-test/ntfs/../profile_cache/", 
         "commandline": "dt MFT_ENTRY", 
         "--renderer": "test", 
-        "tempdir": "/tmp/tmpxdhsN5/TestDTThread-3", 
+        "tempdir": "/tmp/tmpiFPV3U/TestDTThread-4", 
         "test_class": "TestDT", 
         "mft": 42, 
         "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/ntfs/../profile_cache/' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - dt MFT_ENTRY", 
