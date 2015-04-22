@@ -1,8 +1,24 @@
 {
-    "time_used": 3.1353180408477783, 
+    "time_used": 1.5955750942230225, 
     "output": [
         "  Pid   ||    Start     ||     End      ||Flags ||    Pgoff     ||Major ||Minor ||    Inode    ||                                   File Path                                    ", 
-        "--------||--------------||--------------||------||--------------||------||------||-------------||--------------------------------------------------------------------------------"
+        "--------||--------------||--------------||------||--------------||------||------||-------------||--------------------------------------------------------------------------------", 
+        "1872    ||0x000000008000||0x00000001b000||r, x  ||0x000000000000||31    ||4     ||632          ||/system/bin/sh                                                                  ", 
+        "1872    ||0x00000001b000||0x00000001c000||r, w  ||0x000000013000||31    ||4     ||632          ||/system/bin/sh                                                                  ", 
+        "1872    ||0x00000001c000||0x00000001e000||r, w  ||0x000000000000||0     ||0     ||0            ||[heap]                                                                          ", 
+        "1872    ||0x000040000000||0x000040010000||r     ||0x000000000000||0     ||10    ||315          ||/dev/__properties__ (deleted)                                                   ", 
+        "1872    ||0x000040010000||0x000040011000||r     ||0x000000000000||0     ||0     ||0            ||                                                                                ", 
+        "1872    ||0x0000afb00000||0x0000afb16000||r, x  ||0x000000000000||31    ||4     ||1105         ||/system/lib/libm.so                                                             ", 
+        "1872    ||0x0000afb16000||0x0000afb17000||r, w  ||0x000000016000||31    ||4     ||1105         ||/system/lib/libm.so                                                             ", 
+        "1872    ||0x0000afc00000||0x0000afc01000||r, x  ||0x000000000000||31    ||4     ||1194         ||/system/lib/libstdc++.so                                                        ", 
+        "1872    ||0x0000afc01000||0x0000afc02000||r, w  ||0x000000001000||31    ||4     ||1194         ||/system/lib/libstdc++.so                                                        ", 
+        "1872    ||0x0000afd00000||0x0000afd40000||r, x  ||0x000000000000||31    ||4     ||1055         ||/system/lib/libc.so                                                             ", 
+        "1872    ||0x0000afd40000||0x0000afd43000||r, w  ||0x000000040000||31    ||4     ||1055         ||/system/lib/libc.so                                                             ", 
+        "1872    ||0x0000afd43000||0x0000afd4e000||r, w  ||0x000000000000||0     ||0     ||0            ||                                                                                ", 
+        "1872    ||0x0000b0001000||0x0000b0009000||r, x  ||0x000000001000||31    ||4     ||599          ||/system/bin/linker                                                              ", 
+        "1872    ||0x0000b0009000||0x0000b000a000||r, w  ||0x000000009000||31    ||4     ||599          ||/system/bin/linker                                                              ", 
+        "1872    ||0x0000b000a000||0x0000b0015000||r, w  ||0x000000000000||0     ||0     ||0            ||                                                                                ", 
+        "1872    ||0x0000beb1e000||0x0000beb40000||r, w  ||0x000000000000||0     ||0     ||0            ||[stack]                                                                         "
     ], 
     "return_code": 0, 
     "options": {
@@ -14,13 +30,13 @@
         "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
         "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
         "commandline": "maps --proc_regex %(proc_name)s", 
-        "proc_name": "bash", 
+        "proc_name": "sh", 
         "pid": 1872, 
         "--renderer": "test", 
-        "tempdir": "/tmp/tmpLK4HON/TestProcMapsThread-1", 
+        "tempdir": "/tmp/tmpAxLgiT/TestProcMapsThread-1", 
         "test_class": "TestProcMaps", 
         "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
-        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - maps --proc_regex bash", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - maps --proc_regex sh", 
         "testdir": "/home/scudette/projects/rekall-test/android"
     }
 }
