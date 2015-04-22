@@ -1,0 +1,26 @@
+{
+    "time_used": 3.2352418899536133, 
+    "output": [
+        "     DTB      ||Valid", 
+        "--------------||-----", 
+        "0x000000004000||True "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "find_dtb", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestLinuxFindDTBThread-3", 
+        "test_class": "TestLinuxFindDTB", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - find_dtb", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

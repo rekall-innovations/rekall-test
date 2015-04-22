@@ -1,0 +1,24 @@
+{
+    "time_used": 10.028748035430908, 
+    "output": [], 
+    "hashes": {}, 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "mls %(file)s", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestMlsThread-4", 
+        "test_class": "TestMls", 
+        "file": "/etc/passwd", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - mls /etc/passwd", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "time_used": 3.363335132598877, 
+    "output": [
+        "    Module    ||         Module Name          ||Ref Count ||Known", 
+        "--------------||------------------------------||----------||-----", 
+        "0x0000bf02d4c4||bcm4329                       ||    3     ||True ", 
+        "0x0000bf03a910||lime                          ||    3     ||True "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "check_modules", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestCheckModulesThread-4", 
+        "test_class": "TestCheckModules", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - check_modules", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

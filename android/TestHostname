@@ -1,0 +1,26 @@
+{
+    "time_used": 3.083901882171631, 
+    "output": [
+        "                                    Hostname                                    ", 
+        "--------------------------------------------------------------------------------", 
+        "localhost.localdomain                                                           "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "hostname", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestHostnameThread-2", 
+        "test_class": "TestHostname", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - hostname", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

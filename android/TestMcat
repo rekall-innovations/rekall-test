@@ -1,0 +1,27 @@
+{
+    "time_used": 3.4213039875030518, 
+    "output": [
+        "ERROR: No files found."
+    ], 
+    "hashes": {}, 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "mcat %(file)s %(tempdir)s/mcat", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "outfile": "outfile", 
+        "test_class": "TestMcat", 
+        "tempdir": "/tmp/tmpLK4HON/TestMcatThread-4", 
+        "file": "/etc/passwd", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - mcat /etc/passwd /tmp/tmpLK4HON/TestMcatThread-4/mcat", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

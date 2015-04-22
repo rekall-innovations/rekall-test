@@ -1,0 +1,19 @@
+{
+    "time_used": 8.106231689453125e-06, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/JsonTestThread-2", 
+        "test_class": "JsonTest", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

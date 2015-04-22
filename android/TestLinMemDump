@@ -1,0 +1,29 @@
+{
+    "time_used": 1.7127370834350586, 
+    "output": [
+        "Writing sh d367c400 to sh_1872.dmp"
+    ], 
+    "hashes": {
+        "sh_1872.dmp": "dd31c069ed086879c4654968fcaa761d", 
+        "sh_1872.dmp.idx": "eed5cc679a213575fb5343d79740d957"
+    }, 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "memdump --proc_regex %(proc_name)s --dump_dir %(tempdir)s", 
+        "proc_name": "sh", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpJUO1zh/TestLinMemDumpThread-2", 
+        "test_class": "TestLinMemDump", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - memdump --proc_regex sh --dump_dir /tmp/tmpJUO1zh/TestLinMemDumpThread-2", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "time_used": 3.158879041671753, 
+    "output": [
+        "", 
+        "******************* 0xcb404800 *******************", 
+        "Virtual 0x0000cb404800 DTB 0x2ad3c000", 
+        "l1 descriptor@ 0x2ad3f2d0 = 0x2b40044e", 
+        "Section base 0x2b400000", 
+        "Physical Address 0x2b404800"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "vtop --pid %(pid)s - %(vaddr)s", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestVtoPThread-2", 
+        "test_class": "TestVtoP", 
+        "vaddr": 3409987584, 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - vtop --pid 1872 - 3409987584", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

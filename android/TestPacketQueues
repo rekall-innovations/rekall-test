@@ -1,0 +1,25 @@
+{
+    "time_used": 7.429347991943359, 
+    "output": [
+        "Skipped 375/375 sockets."
+    ], 
+    "hashes": {}, 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "pkt_queues --dump_dir %(tempdir)s", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestPacketQueuesThread-4", 
+        "test_class": "TestPacketQueues", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - pkt_queues --dump_dir /tmp/tmpLK4HON/TestPacketQueuesThread-4", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

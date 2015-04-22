@@ -1,0 +1,49 @@
+{
+    "time_used": 2.6043379306793213, 
+    "output": [
+        "Pid: 1872  ", 
+        "Writing sh, pid 1872 to sh.1872.00008000-0001b000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.0001b000-0001c000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.40000000-40010000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.afb00000-afb16000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.afb16000-afb17000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.afc00000-afc01000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.afc01000-afc02000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.afd00000-afd40000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.afd40000-afd43000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.b0001000-b0009000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.b0009000-b000a000.dmp"
+    ], 
+    "hashes": {
+        "sh.1872.b0009000-b000a000.dmp": "54cc6a5345215358231db9897955b0b8", 
+        "sh.1872.0001b000-0001c000.dmp": "d69d4923304ee19348a8753d1f69fedd", 
+        "sh.1872.40000000-40010000.dmp": "1764a80c403636ac6d8d475ff17dae87", 
+        "sh.1872.afc00000-afc01000.dmp": "61768df9f8fb8bb9c1a27307bc9a258c", 
+        "sh.1872.afb00000-afb16000.dmp": "49948d804510bb22ac792d8470155a08", 
+        "sh.1872.afb16000-afb17000.dmp": "ca7b32b4e4d729973824bfffc69b2d41", 
+        "sh.1872.b0001000-b0009000.dmp": "e3fc0a6636335f5b1f1e44a2b9ed3ec2", 
+        "sh.1872.00008000-0001b000.dmp": "bcf0ba06e305498f210cf42e2e63fcbe", 
+        "sh.1872.afd00000-afd40000.dmp": "7c90b81538a046ae7300360e21bf1fa6", 
+        "sh.1872.afc01000-afc02000.dmp": "76c2fe9ae09a0183bdc9d6768cbac1a3", 
+        "sh.1872.afd40000-afd43000.dmp": "bfac849673af0519b6db864af137af36"
+    }, 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "vaddump --proc_regex %(proc_name)s --dump_dir %(tempdir)s", 
+        "proc_name": "sh", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpYymJ6r/TestLinVadDumpThread-1", 
+        "test_class": "TestLinVadDump", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - vaddump --proc_regex sh --dump_dir /tmp/tmpYymJ6r/TestLinVadDumpThread-1", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

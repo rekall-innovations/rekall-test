@@ -1,0 +1,95 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/android/output/TestLsof /home/scudette/projects/rekall-test/android/TestLsof
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/android/output/TestLsof /home/scudette/projects/rekall-test/android/TestLsof
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/android/output/TestLsof /home/scudette/projects/rekall-test/android/TestLsof
+elif [ "$1" == "run" ]; then
+   rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - lsof --proc_regex sh
+else
+   less /home/scudette/projects/rekall-test/android/output/TestLsof
+fi
+exit 0
+{
+    "errors": {}, 
+    "time_used": 3.6709249019622803, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.linux.lsof.TestLsof)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 2 != 54\n"
+    }, 
+    "output": [
+        "        Name        ||  Pid   ||  User  ||   FD   ||    Size    ||   Offset   ||  Node  ||Path", 
+        "--------------------||--------||--------||--------||------------||------------||--------||----", 
+        "sh                  ||1872    ||       0||       0||           0||           0||       4||/dev/pts/1", 
+        "sh                  ||1872    ||       0||       1||           0||           0||       4||/dev/pts/1", 
+        "sh                  ||1872    ||       0||       2||           0||           0||       4||/dev/pts/1", 
+        "sh                  ||1872    ||       0||       7||           0||           0||     511||socket:/socket:[511]", 
+        "sh                  ||1872    ||       0||       9||       65536||           0||     315||/dev/__properties__ (deleted) ", 
+        "sh                  ||1872    ||       0||      12||           0||           0||     843||socket:/socket:[843]", 
+        "sh                  ||1872    ||       0||      13||           0||           0||    3086||socket:/socket:[3086]", 
+        "sh                  ||1872    ||       0||      14||           0||           0||   22023||socket:/socket:[22023]", 
+        "sh                  ||1872    ||       0||      15||           0||           0||    3355||socket:/socket:[3355]", 
+        "sh                  ||1872    ||       0||      16||           0||           0||    2964||socket:/socket:[2964]", 
+        "sh                  ||1872    ||       0||      17||           0||           0||    7835||socket:/socket:[7835]", 
+        "sh                  ||1872    ||       0||      18||           0||           0||    2989||socket:/socket:[2989]", 
+        "sh                  ||1872    ||       0||      19||           0||           0||   21897||socket:/socket:[21897]", 
+        "sh                  ||1872    ||       0||      20||           0||           0||    2995||socket:/socket:[2995]", 
+        "sh                  ||1872    ||       0||      21||           0||           0||    6986||socket:/socket:[6986]", 
+        "sh                  ||1872    ||       0||      22||           0||           0||   21747||socket:/socket:[21747]", 
+        "sh                  ||1872    ||       0||      23||           0||           0||    3618||socket:/socket:[3618]", 
+        "sh                  ||1872    ||       0||      24||           0||           0||    3624||socket:/socket:[3624]", 
+        "sh                  ||1872    ||       0||      25||           0||           0||    3709||socket:/socket:[3709]", 
+        "sh                  ||1872    ||       0||      26||           0||           0||    3817||socket:/socket:[3817]", 
+        "sh                  ||1872    ||       0||      27||           0||           0||    3854||socket:/socket:[3854]", 
+        "sh                  ||1872    ||       0||      28||           0||           0||    3940||socket:/socket:[3940]", 
+        "sh                  ||1872    ||       0||      29||           0||           0||    3992||socket:/socket:[3992]", 
+        "sh                  ||1872    ||       0||      30||           0||           0||    4093||socket:/socket:[4093]", 
+        "sh                  ||1872    ||       0||      31||           0||           0||    4150||socket:/socket:[4150]", 
+        "sh                  ||1872    ||       0||      32||           0||           0||    4337||socket:/socket:[4337]", 
+        "sh                  ||1872    ||       0||      33||           0||           0||    7036||socket:/socket:[7036]", 
+        "sh                  ||1872    ||       0||      34||           0||           0||    4384||socket:/socket:[4384]", 
+        "sh                  ||1872    ||       0||      35||           0||           0||    4413||socket:/socket:[4413]", 
+        "sh                  ||1872    ||       0||      36||           0||           0||    4447||socket:/socket:[4447]", 
+        "sh                  ||1872    ||       0||      38||           0||           0||   17932||socket:/socket:[17932]", 
+        "sh                  ||1872    ||       0||      39||           0||           0||    4658||socket:/socket:[4658]", 
+        "sh                  ||1872    ||       0||      40||           0||           0||    4688||socket:/socket:[4688]", 
+        "sh                  ||1872    ||       0||      42||           0||           0||    4782||socket:/socket:[4782]", 
+        "sh                  ||1872    ||       0||      43||           0||           0||    4832||socket:/socket:[4832]", 
+        "sh                  ||1872    ||       0||      44||           0||           0||    4893||socket:/socket:[4893]", 
+        "sh                  ||1872    ||       0||      45||           0||           0||    4973||socket:/socket:[4973]", 
+        "sh                  ||1872    ||       0||      46||           0||           0||    4994||socket:/socket:[4994]", 
+        "sh                  ||1872    ||       0||      48||           0||           0||    5053||socket:/socket:[5053]", 
+        "sh                  ||1872    ||       0||      50||           0||           0||   22132||socket:/socket:[22132]", 
+        "sh                  ||1872    ||       0||      51||           0||           0||   21958||socket:/socket:[21958]", 
+        "sh                  ||1872    ||       0||      52||           0||           0||    5181||socket:/socket:[5181]", 
+        "sh                  ||1872    ||       0||      55||           0||           0||   22109||socket:/socket:[22109]", 
+        "sh                  ||1872    ||       0||      56||           0||           0||   22061||socket:/socket:[22061]", 
+        "sh                  ||1872    ||       0||      57||           0||           0||       4||/dev/pts/1", 
+        "sh                  ||1872    ||       0||      58||           0||           0||    5407||socket:/socket:[5407]", 
+        "sh                  ||1872    ||       0||      59||           0||           0||    5519||socket:/socket:[5519]", 
+        "sh                  ||1872    ||       0||      62||           0||           0||    5709||socket:/socket:[5709]", 
+        "sh                  ||1872    ||       0||      63||           0||           0||    5736||socket:/socket:[5736]", 
+        "sh                  ||1872    ||       0||      65||           0||           0||   22294||socket:/socket:[22294]", 
+        "sh                  ||1872    ||       0||      66||           0||           0||    6260||socket:/socket:[6260]", 
+        "sh                  ||1872    ||       0||    1023||           0||           0||     225||/dev/tty"
+    ], 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "lsof --proc_regex %(proc_name)s", 
+        "proc_name": "sh", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmp66Grpg/TestLsofThread-2", 
+        "test_class": "TestLsof", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - lsof --proc_regex sh", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

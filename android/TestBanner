@@ -1,0 +1,27 @@
+{
+    "time_used": 2.98506498336792, 
+    "output": [
+        "                                     Banner                                     ", 
+        "--------------------------------------------------------------------------------", 
+        "Linux version 2.6.35.10-gc0a661b (joe@zuul) (gcc version 4.4.3 (GCC) ) #2       ", 
+        "PREEMPT Sat Aug 4 12:26:50 CDT 2012                                             "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "banner", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestBannerThread-3", 
+        "test_class": "TestBanner", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - banner", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

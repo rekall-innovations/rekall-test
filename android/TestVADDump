@@ -1,0 +1,35 @@
+{
+    "time_used": 6.0120849609375, 
+    "output": [
+        "Pid: 1872  ", 
+        "Writing sh, pid 1872 to sh.1872.00008000-0001b000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.0001b000-0001c000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.40000000-40010000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.afb00000-afb16000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.afb16000-afb17000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.afc00000-afc01000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.afc01000-afc02000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.afd00000-afd40000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.afd40000-afd43000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.b0001000-b0009000.dmp", 
+        "Writing sh, pid 1872 to sh.1872.b0009000-b000a000.dmp"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "vaddump --pid %(pid)s --dump_dir %(tempdir)s", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestVADDumpThread-3", 
+        "test_class": "TestVADDump", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - vaddump --pid 1872 --dump_dir /tmp/tmpLK4HON/TestVADDumpThread-3", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "time_used": 7.664716958999634, 
+    "output": [
+        "   Proto    ||     SAddr     || SPort  ||     DAddr     ||DPort||     State     ||  Pid   ||        Comm        ", 
+        "------------||---------------||--------||---------------||-----||---------------||--------||--------------------", 
+        "**************************************************", 
+        "   Proto    ||RefCount||     Type      ||      State       || Inode  ||        Path        ", 
+        "------------||--------||---------------||------------------||--------||--------------------"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "netstat", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestNetstatThread-2", 
+        "test_class": "TestNetstat", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - netstat", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

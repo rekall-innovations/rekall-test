@@ -1,0 +1,27 @@
+{
+    "time_used": 3.2469568252563477, 
+    "output": [
+        "                 IP Address                  ||        MAC         ||    Device     ", 
+        "---------------------------------------------||--------------------||---------------", 
+        "                                           ::||   00:00:00:00:00:00||             lo", 
+        "                                  50.94.125.1||   00:90:fb:34:af:ca||           eth0"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "arp", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestArpThread-3", 
+        "test_class": "TestArp", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - arp", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

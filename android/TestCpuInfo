@@ -1,0 +1,35 @@
+{
+    "time_used": 2.652923107147217, 
+    "output": [
+        "CPU ||       Vendor       ||                                     Model                                      ", 
+        "----||--------------------||--------------------------------------------------------------------------------", 
+        "ERROR:root:Traceback (most recent call last):", 
+        "  File \"/home/scudette/rekall/rekall/session.py\", line 644, in _RunPlugin", 
+        "    return plugin_obj.render(ui_renderer) or plugin_obj", 
+        "  File \"/home/scudette/rekall/rekall/plugins/linux/cpuinfo.py\", line 113, in render", 
+        "    for processor, cpu in self.calculate():", 
+        "  File \"/home/scudette/rekall/rekall/plugins/linux/cpuinfo.py\", line 75, in calculate", 
+        "    raise AttributeError(\"Unable to get CPU info for memory capture\")", 
+        "AttributeError: Unable to get CPU info for memory capture", 
+        "", 
+        "ERROR:root:Unable to get CPU info for memory capture. Try --debug for more information."
+    ], 
+    "return_code": 255, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "cpuinfo", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestCpuInfoThread-4", 
+        "test_class": "TestCpuInfo", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - cpuinfo", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "time_used": 3.138416051864624, 
+    "output": [
+        "", 
+        "******************** Overview ********************", 
+        "   Virtual    ||  Core Start  ||Total Size||        Name        ", 
+        "--------------||--------------||----------||--------------------", 
+        "0x0000bf03a910||0x0000bf03a000||      8014||lime                ", 
+        "0x0000bf02d4c4||0x0000bf000000||    228359||bcm4329             "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "lsmod", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestLsmodThread-4", 
+        "test_class": "TestLsmod", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - lsmod", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

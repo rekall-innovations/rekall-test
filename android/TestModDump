@@ -1,0 +1,28 @@
+{
+    "time_used": 2.74271297454834, 
+    "output": [
+        "Wrote 6962 bytes to lime.0xbf03a000.lkm"
+    ], 
+    "hashes": {
+        "lime.0xbf03a000.lkm": "f246b2d843dad7fbdcc16da9c27f25f6"
+    }, 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "driver": "lime", 
+        "commandline": "moddump --regex %(driver)s --dump_dir %(tempdir)s", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestModDumpThread-3", 
+        "test_class": "TestModDump", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - moddump --regex lime --dump_dir /tmp/tmpLK4HON/TestModDumpThread-3", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

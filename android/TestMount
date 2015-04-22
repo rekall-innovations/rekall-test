@@ -1,0 +1,47 @@
+{
+    "time_used": 3.8600809574127197, 
+    "output": [
+        "                      Device                      ||                       Path                       ||     Type     ||       flags        ", 
+        "--------------------------------------------------||--------------------------------------------------||--------------||--------------------", 
+        "tmpfs                                             ||/app-cache                                        ||tmpfs         ||rw, relatime        ", 
+        "tmpfs                                             ||/mnt/obb                                          ||tmpfs         ||rw, relatime        ", 
+        "tmpfs                                             ||/mnt/asec                                         ||tmpfs         ||rw, relatime        ", 
+        "/dev/block/vold/179:1                             ||/mnt/secure/asec                                  ||vfat          ||rw, nodev, noexec,  ", 
+        "                                                  ||                                                  ||              ||nosuid, relatime    ", 
+        "/dev/block/mtdblock5                              ||/cache                                            ||yaffs2        ||rw, nodev, nosuid,  ", 
+        "                                                  ||                                                  ||              ||relatime            ", 
+        "/dev/block/mtdblock6                              ||/data                                             ||yaffs2        ||rw, nodev, nosuid,  ", 
+        "                                                  ||                                                  ||              ||relatime            ", 
+        "none                                              ||/acct                                             ||cgroup        ||rw, relatime        ", 
+        "tmpfs                                             ||/mnt/sdcard/.android_secure                       ||tmpfs         ||relatime, ro        ", 
+        "htcfs                                             ||/data/htcfs                                       ||fuse          ||rw, nodev, nosuid,  ", 
+        "                                                  ||                                                  ||              ||relatime            ", 
+        "/dev/block/vold/179:1                             ||/mnt/sdcard                                       ||vfat          ||rw, nodev, noexec,  ", 
+        "                                                  ||                                                  ||              ||nosuid, relatime    ", 
+        "none                                              ||/dev/cpuctl                                       ||cgroup        ||rw, relatime        ", 
+        "tmpfs                                             ||/dev                                              ||tmpfs         ||rw, relatime        ", 
+        "devpts                                            ||/dev/pts                                          ||devpts        ||rw, relatime        ", 
+        "/dev/block/mtdblock4                              ||/system                                           ||yaffs2        ||relatime, ro        ", 
+        "sysfs                                             ||/sys                                              ||sysfs         ||rw, relatime        ", 
+        "/sys/kernel/debug                                 ||/sys/kernel/debug                                 ||debugfs       ||rw, relatime        ", 
+        "proc                                              ||/proc                                             ||proc          ||rw, relatime        "
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "mount", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestMountThread-4", 
+        "test_class": "TestMount", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - mount", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

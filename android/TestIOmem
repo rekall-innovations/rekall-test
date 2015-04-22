@@ -1,0 +1,48 @@
+{
+    "time_used": 3.2284250259399414, 
+    "output": [
+        "   Resource   ||    Start     ||     End      ||Name", 
+        "--------------||--------------||--------------||----", 
+        "0x0000c04ec820||0x000000000000||0x0000ffffffff|| ||PCI mem", 
+        "0x0000c04e962c||0x000002b00000||0x000002efffff||.||msm_hdmi.0", 
+        "0x0000c04e9ad4||0x000003700000||0x0000039fffff||.||kgsl_phys_memory", 
+        "0x0000d30cf680||0x000003700000||0x0000039fffff||..||kgsl", 
+        "0x0000c04da088||0x000003a00000||0x000003a3ffff||.||ram_console", 
+        "0x0000c04dabec||0x000003b00000||0x000003dfffff||.||msm_panel.1", 
+        "0x0000c09aa000||0x000020000000||0x00002e7fffff||.||System RAM", 
+        "0x0000c04e2454||0x000020038000||0x0000204d5fff||..||Kernel text", 
+        "0x0000c04e2470||0x0000204d6000||0x00002062f617||..||Kernel data", 
+        "0x0000c09aa020||0x000030000000||0x000033ffffff||.||System RAM", 
+        "0x0000c09aa040||0x000034000000||0x00003b5fffff||.||System RAM", 
+        "0x0000c04e9ab8||0x0000a0000000||0x0000a001ffff||.||kgsl_reg_memory", 
+        "0x0000d30cf620||0x0000a0000000||0x0000a001ffff||..||kgsl", 
+        "0x0000c04e3d18||0x0000a0200000||0x0000a0200fff||.||msm_serial_hs_bcm.0", 
+        "0x0000c04e3e30||0x0000a0300000||0x0000a0300fff||.||msm_sdcc.1", 
+        "0x0000c04e3ebc||0x0000a0400000||0x0000a0400fff||.||msm_sdcc.2", 
+        "0x0000c04e3f48||0x0000a0500000||0x0000a0500fff||.||msm_sdcc.3", 
+        "0x0000c04d9184||0x0000a0800000||0x0000a0801000||.||msm_hsusb", 
+        "0x0000c04e9b90||0x0000a1200000||0x0000a1200fff||.||spi_base", 
+        "0x0000c04d9278||0x0000a9900000||0x0000a9900fff||.||msm_i2c.0", 
+        "0x0000d3c4f2c0||0x0000a9900000||0x0000a9900fff||..||msm_i2c", 
+        "0x0000c04e4060||0x0000aa200000||0x0000aa2effff||.||mdp", 
+        "0x0000c04d92cc||0x0000aa600000||0x0000aa600fff||.||msm_mddi.0"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "iomem", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestIOmemThread-1", 
+        "test_class": "TestIOmem", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - iomem", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

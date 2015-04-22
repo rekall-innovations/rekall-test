@@ -1,0 +1,25 @@
+{
+    "time_used": 3.3376779556274414, 
+    "output": [
+        "      Chain symbol       ||Index||Priority||   Address    ||       Module       ||                 Symbol                 ", 
+        "-------------------------||-----||--------||--------------||--------------------||----------------------------------------"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "notifier_chains", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpLK4HON/TestNotifierChainPluginThread-3", 
+        "test_class": "TestNotifierChainPlugin", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - notifier_chains", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}
