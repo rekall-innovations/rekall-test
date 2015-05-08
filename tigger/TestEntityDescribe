@@ -13,10 +13,10 @@ fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 2.9218060970306396, 
+    "time_used": 2.8310630321502686, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestEntityDescribe)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 198 != 210\n"
+        "testCase (__main__.TestEntityDescribe)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 234 != 210\n"
     }, 
     "output": [
         "", 
@@ -242,7 +242,7 @@ exit 0
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestEntityDescribe", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmp8y1vEC/TestEntityDescribeThread-1", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpibiDri/TestEntityDescribeThread-1", 
         "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - describe", 
         "testdir": "/Users/adamsh/Projects/test/tigger"
     }

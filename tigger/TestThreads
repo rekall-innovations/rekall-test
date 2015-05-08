@@ -1,22 +1,22 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/rekall-test/tigger/output/TestThreads /home/scudette/projects/rekall-test/tigger/TestThreads
+   cp /Users/adamsh/Projects/test/tigger/output/TestThreads /Users/adamsh/Projects/test/tigger/TestThreads
 elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/rekall-test/tigger/output/TestThreads /home/scudette/projects/rekall-test/tigger/TestThreads
+   meld /Users/adamsh/Projects/test/tigger/output/TestThreads /Users/adamsh/Projects/test/tigger/TestThreads
 elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/rekall-test/tigger/output/TestThreads /home/scudette/projects/rekall-test/tigger/TestThreads
+   diff /Users/adamsh/Projects/test/tigger/output/TestThreads /Users/adamsh/Projects/test/tigger/TestThreads
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - threads
+   rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - threads
 else
-   less /home/scudette/projects/rekall-test/tigger/output/TestThreads
+   less /Users/adamsh/Projects/test/tigger/output/TestThreads
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 29.699501037597656, 
+    "time_used": 28.529733180999756, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestThreads)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0xff1e58c8||  1088||  1184||0x7c810856   ||svchost.exe     ||dnsrslvr/GUID/0AA [truncated]... != u'0xff1e58c8||  1088||  1184||0x7c810856   ||svchost.exe     ||dnsrslvr!NotifyTh [truncated]...\n- 0xff1e58c8||  1088||  1184||0x7c810856   ||svchost.exe     ||dnsrslvr/GUID/0AAC9D813C4D41318A514BABA5ED17082!IsConnectedInterfaceNotAvailable+0x27\n+ 0xff1e58c8||  1088||  1184||0x7c810856   ||svchost.exe     ||dnsrslvr!NotifyThread\n\n"
+        "testCase (__main__.TestThreads)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0xff1e58c8||  1088||  1184||0x7c810856   ||svchost.exe     ||dnsrslvr!NotifyTh [truncated]... != u'0xff1e58c8||  1088||  1184||0x7c810856   ||svchost.exe     ||dnsrslvr/GUID/0AA [truncated]...\n- 0xff1e58c8||  1088||  1184||0x7c810856   ||svchost.exe     ||dnsrslvr!NotifyThread\n+ 0xff1e58c8||  1088||  1184||0x7c810856   ||svchost.exe     ||dnsrslvr/GUID/0AAC9D813C4D41318A514BABA5ED17082!IsConnectedInterfaceNotAvailable+0x27\n\n"
     }, 
     "output": [
         " _ETHREAD || PID  || TID  ||Start Address||    Process     ||Symbol", 
@@ -314,8 +314,8 @@ exit 0
         "0xff36f5f8||  1028||   124||0x7c810856   ||svchost.exe     ||ssdpapi!+0x742e", 
         "0xff397248||  1084||  1096||0x7c810867   ||TPAutoConnect.e ||tpautoconnect!+0x2462c", 
         "0xff21a868||  1088||  1092||0x7c810867   ||svchost.exe     ||svchost!+0x2509", 
-        "0xff1e58c8||  1088||  1184||0x7c810856   ||svchost.exe     ||dnsrslvr!NotifyThread", 
-        "0xff1e55a8||  1088||  1188||0x7c810856   ||svchost.exe     ||dnsrslvr!IpNotifyThread", 
+        "0xff1e58c8||  1088||  1184||0x7c810856   ||svchost.exe     ||dnsrslvr/GUID/0AAC9D813C4D41318A514BABA5ED17082!IsConnectedInterfaceNotAvailable+0x27", 
+        "0xff1e55a8||  1088||  1188||0x7c810856   ||svchost.exe     ||dnsrslvr/GUID/0AAC9D813C4D41318A514BABA5ED17082!Cache_RecordList+0x9b", 
         "0xff212c18||  1088||  1192||0x7c810856   ||svchost.exe     ||      ", 
         "0xff14f720||  1088||  1828||0x7c810856   ||svchost.exe     ||      ", 
         "0xff14ebf8||  1088||  1936||0x7c810856   ||svchost.exe     ||hnetcfg!+0x3085b", 
@@ -393,14 +393,14 @@ exit 0
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
-        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "--filename": "/Users/adamsh/Projects/test/tigger/tigger.vmem.E01", 
+        "--cache_dir": "/Users/adamsh/Projects/test/tigger/../profile_cache/", 
         "commandline": "threads", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestThreads", 
-        "tempdir": "/tmp/tmps56Uz3/TestThreadsThread-4", 
-        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - threads", 
-        "testdir": "/home/scudette/projects/rekall-test/tigger"
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpibiDri/TestThreadsThread-7", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - threads", 
+        "testdir": "/Users/adamsh/Projects/test/tigger"
     }
 }
