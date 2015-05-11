@@ -1,22 +1,22 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/test/tigger/output/TestThrdScan /Users/adamsh/Projects/test/tigger/TestThrdScan
+   cp /home/scudette/projects/rekall-test/tigger/output/TestThrdScan /home/scudette/projects/rekall-test/tigger/TestThrdScan
 elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/test/tigger/output/TestThrdScan /Users/adamsh/Projects/test/tigger/TestThrdScan
+   meld /home/scudette/projects/rekall-test/tigger/output/TestThrdScan /home/scudette/projects/rekall-test/tigger/TestThrdScan
 elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/test/tigger/output/TestThrdScan /Users/adamsh/Projects/test/tigger/TestThrdScan
+   diff /home/scudette/projects/rekall-test/tigger/output/TestThrdScan /home/scudette/projects/rekall-test/tigger/TestThrdScan
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - thrdscan
+   rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - thrdscan
 else
-   less /Users/adamsh/Projects/test/tigger/output/TestThrdScan
+   less /home/scudette/projects/rekall-test/tigger/output/TestThrdScan
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 30.38096809387207, 
+    "time_used": 31.569895029067993, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestThrdScan)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0x066f75a8||  1088||  1188||0x7677464b   ||2010-08-11 06:06:26+0000||-         [truncated]... != u'0x066f75a8||  1088||  1188||0x7677464b   ||2010-08-11 06:06:26+0000||-         [truncated]...\nDiff is 649 characters long. Set self.maxDiff to None to see it.\n"
+        "testCase (__main__.TestThrdScan)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'0x066f75a8||  1088||  1188||0x7677464b   ||2010-08-11 06:06:26+0000||-         [truncated]... != u'0x066f75a8||  1088||  1188||0x7677464b   ||2010-08-11 06:06:26+0000||-         [truncated]...\nDiff is 647 characters long. Set self.maxDiff to None to see it.\n"
     }, 
     "output": [
         "Offset(P) || PID  || TID  ||Start Address||      Create Time       ||       Exit Time        ||    Process     ||Symbol", 
@@ -382,8 +382,8 @@ exit 0
         "0x066f1990||  1168||  1172|| 0x100b95d   ||2010-08-11 06:06:26+0000||2010-08-11 06:09:35+0000||logonui.exe     ||      ", 
         "0x066f2b18||  1148||  1152|| 0x1002509   ||2010-08-11 06:06:26+0000||-                       ||svchost.exe     ||svchost!+0x2509", 
         "0x066f3da8||   856||   860|| 0x1002509   ||2010-08-11 06:06:24+0000||-                       ||svchost.exe     ||svchost!+0x2509", 
-        "0x066f75a8||  1088||  1188||0x7677464b   ||2010-08-11 06:06:26+0000||-                       ||svchost.exe     ||dnsrslvr/GUID/0AAC9D813C4D41318A514BABA5ED17082!Cache_RecordList+0x9b", 
-        "0x066f78c8||  1088||  1184||0x767756a3   ||2010-08-11 06:06:26+0000||-                       ||svchost.exe     ||dnsrslvr/GUID/0AAC9D813C4D41318A514BABA5ED17082!IsConnectedInterfaceNotAvailable+0x27", 
+        "0x066f75a8||  1088||  1188||0x7677464b   ||2010-08-11 06:06:26+0000||-                       ||svchost.exe     ||dnsrslvr!IpNotifyThread", 
+        "0x066f78c8||  1088||  1184||0x767756a3   ||2010-08-11 06:06:26+0000||-                       ||svchost.exe     ||dnsrslvr!NotifyThread", 
         "0x06734448||  1028||  1364||0x7c910760   ||2010-08-11 06:06:26+0000||-                       ||svchost.exe     ||ntdll!RtlpWorkerThread", 
         "0x06735428||  1028||  1440||0x7731709d   ||2010-08-11 06:06:26+0000||-                       ||svchost.exe     ||schedsvc!+0x1709d", 
         "0x067793c8||   632||  1684||0x769c8831   ||2010-08-11 06:06:35+0000||-                       ||winlogon.exe    ||userenv!+0x8831", 
@@ -410,14 +410,14 @@ exit 0
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/test/tigger/tigger.vmem.E01", 
-        "--cache_dir": "/Users/adamsh/Projects/test/tigger/../profile_cache/", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
         "commandline": "thrdscan", 
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestThrdScan", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpibiDri/TestThrdScanThread-4", 
-        "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - thrdscan", 
-        "testdir": "/Users/adamsh/Projects/test/tigger"
+        "tempdir": "/tmp/tmps56Uz3/TestThrdScanThread-3", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - thrdscan", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }
