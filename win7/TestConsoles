@@ -1,5 +1,23 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/win7/output/TestConsoles /home/scudette/projects/rekall-test/win7/TestConsoles
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/win7/output/TestConsoles /home/scudette/projects/rekall-test/win7/TestConsoles
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/win7/output/TestConsoles /home/scudette/projects/rekall-test/win7/TestConsoles
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/win7/../profile_cache/' --filename '/home/scudette/projects/rekall-test/win7/win7.elf.E01' --name_resolution_strategies 'Module' 'Symbol' - consoles
+else
+   less /home/scudette/projects/rekall-test/win7/output/TestConsoles
+fi
+exit 0
 {
-    "time_used": 5.542320966720581, 
+    "errors": {}, 
+    "time_used": 10.097250938415527, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestConsoles)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 242 != 236\n"
+    }, 
     "output": [
         "**************************************************", 
         "ConsoleProcess: 0xfa8002adbb30||conhost.exe|| 2652", 
@@ -32,19 +50,13 @@
         "Cmd #1 at 0x5b920: winpmem_1.1-write.exe -w -l", 
         "Cmd #2 at 0xb3e70: vol.exe --profile Win7SP1x64 --file \\\\.\\pmem", 
         "----", 
-        "Alias: v Source:  Target: ", 
-        "----", 
         "Alias: v Source: - Target: -", 
-        "----", 
-        "Alias: v Source: - Target: -", 
-        "----", 
-        "Alias: v Source:  Target: ", 
         "----", 
         "Alias: v Source: - Target: -", 
         "----", 
         "Alias: v Source: - Target: -", 
         "----", 
-        "Alias:  Source:  Target: ", 
+        "Alias: v Source: - Target: -", 
         "----", 
         "Alias:  Source: - Target: -", 
         "----", 
@@ -244,7 +256,6 @@
         "       0xa1f64: ", 
         "       0xa204e: Win7SP1x64:pmem 07:41:27>"
     ], 
-    "return_code": 0, 
     "options": {
         "--name_resolution_strategies": [
             "Module", 
@@ -270,7 +281,7 @@
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestConsoles", 
-        "tempdir": "/tmp/tmpHTQnXu/TestConsolesThread-3", 
+        "tempdir": "/tmp/tmpBo1gVP/TestConsolesThread-3", 
         "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/win7/../profile_cache/' --filename '/home/scudette/projects/rekall-test/win7/win7.elf.E01' --name_resolution_strategies 'Module' 'Symbol' - consoles", 
         "testdir": "/home/scudette/projects/rekall-test/win7"
     }
