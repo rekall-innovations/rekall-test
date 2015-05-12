@@ -13,10 +13,10 @@ fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 3.8674728870391846, 
+    "time_used": 7.260253190994263, 
     "return_code": 0, 
     "failures": {
-        "testCase (rekall.plugins.windows.pfn_test.TestVtoP)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 202 != 43\n"
+        "testCase (rekall.plugins.windows.pfn_test.TestVtoP)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 43 != 34\n"
     }, 
     "output": [
         "", 
@@ -28,15 +28,7 @@ exit 0
         "", 
         "PTE Contains 0x0", 
         "PTE Type: Vad", 
-        "[_MMPTE_PROTOTYPE Proto] @ 0x032ABEE8                                      ", 
-        "  0x00 Protection    [Enumeration:Enumeration]: 0x00000000 (MM_ZERO_ACCESS)", 
-        "  0x00 ProtoAddress  [BitField(32-64):ProtoAddress]: 0x00000000            ", 
-        "  0x00 Prototype     [BitField(10-11):Prototype]: 0x00000000               ", 
-        "  0x00 ReadOnly      [BitField(8-9):ReadOnly]: 0x00000000                  ", 
-        "  0x00 Unused        [BitField(16-32):Unused]: 0x00000000                  ", 
-        "  0x00 Unused0       [BitField(1-8):Unused0]: 0x00000000                   ", 
-        "  0x00 Unused1       [BitField(9-10):Unused1]: 0x00000000                  ", 
-        "  0x00 Valid         [BitField(0-1):Valid]: 0x00000000                     ", 
+        "", 
         "Prototype PTE is found in VAD", 
         "**************************************************", 
         "Pid: 1724 explorer.exe", 
@@ -60,7 +52,6 @@ exit 0
         "  0x00 Valid            [BitField(0-1):Valid]: 0x00000000                           ", 
         "  0x00 Write            [BitField(1-2):Write]: 0x00000001                           ", 
         "  0x00 WriteThrough     [BitField(3-4):WriteThrough]: 0x00000000                    ", 
-        "Invalid PTE", 
         "Physical Address 0x5941000"
     ], 
     "options": {
@@ -76,7 +67,7 @@ exit 0
         "--renderer": "test", 
         "test_class": "TestVtoP", 
         "vaddr": 1953792, 
-        "tempdir": "/tmp/tmpYFEDZw/TestVtoPThread-3", 
+        "tempdir": "/tmp/tmp5KRedy/TestVtoPThread-3", 
         "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - vtop --pid 1724 - 1953792", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
