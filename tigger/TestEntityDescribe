@@ -13,12 +13,20 @@ fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 2.8310630321502686, 
+    "time_used": 3.2079830169677734, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestEntityDescribe)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 234 != 210\n"
+        "testCase (__main__.TestEntityDescribe)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 210 != 235\n"
     }, 
     "output": [
+        "", 
+        "*********************************** AddressSpace: Represents a memory address space, most often virtual. ***********************************", 
+        "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
+        "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
+        "architecture    ||unicode (Field)     ||The CPU architecture (e.g. x86_64 or ARM_32).               ||True            ||-                             ", 
+        "dtb             ||int (Field)         ||The DTB of this address space, if any.                      ||True            ||-                             ", 
+        "owner           ||Identity (Field)    ||The process, if any, that owns this address space.          ||True            ||-                             ", 
+        "type            ||str (Field)         ||Physical AS won't have a DTB.                               ||True            ||-                             ", 
         "", 
         "********************************************* AllocationZone: Zone as used by zone allocators. *********************************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
@@ -116,6 +124,22 @@ exit 0
         "process         ||Identity (Field)    ||The process that owns this handle.                          ||True            ||-                             ", 
         "resource        ||Identity (Field)    ||The object of the handle, e.g. file or socket               ||True            ||-                             ", 
         "", 
+        "************************* MemoryDescriptor: Represents a virtual address descriptor (VAD on Windows, map on UNIX) *************************", 
+        "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
+        "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
+        "address_space   ||Identity (Field)    ||The address space start/end are valid in.                   ||True            ||-                             ", 
+        "code_signed     ||bool (Field)        ||If backed by an executable, is the exe signed?              ||True            ||-                             ", 
+        "end             ||Pointer (Field)     ||End of the range, valid in the address_space.               ||True            ||-                             ", 
+        "file            ||Identity (Field)    ||The file this range is backed by, if any.                   ||True            ||-                             ", 
+        "label           ||unicode (Field)     ||Purpose of this range. E.g. __TEXT, or mmap.                ||True            ||-                             ", 
+        "max_permissions ||list (Field)        ||Set of permissions this range can have.                     ||True            ||-                             ", 
+        "permissions     ||list (Field)        ||Set of permissions bits on this range.                      ||True            ||-                             ", 
+        "process         ||Identity (Alias)    ||The process that owns this range, if any.                   ||False           ||Aliased to MemoryDescriptor/ad", 
+        "                ||                    ||                                                            ||                ||dress_space->AddressSpace/owne", 
+        "                ||                    ||                                                            ||                ||r                             ", 
+        "shared          ||str (Field)         ||Is this shared memory?                                      ||True            ||-                             ", 
+        "start           ||Pointer (Field)     ||Start of the range, valid in the address_space.             ||True            ||-                             ", 
+        "", 
         "********************************************** Named: Human-readable identifying information. **********************************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
@@ -164,6 +188,7 @@ exit 0
         "*********************************************************** Process: A process. ***********************************************************", 
         "     Field      ||        Type        ||                        Description                         ||Show by default ||            Notes             ", 
         "----------------||--------------------||------------------------------------------------------------||----------------||------------------------------", 
+        "address_spaces  ||Identity (Alias)    ||Address spaces of this process.                             ||False           ||Aliased to &AddressSpace/owner", 
         "arguments       ||list (Field)        ||List of arguments.                                          ||False           ||-                             ", 
         "children        ||Identity (Alias)    ||Children of this process.                                   ||False           ||Aliased to &Process/parent    ", 
         "command         ||unicode (Field)     ||The path to the binary or the command that executed.        ||True            ||-                             ", 
@@ -242,7 +267,7 @@ exit 0
         "pid": 1724, 
         "--renderer": "test", 
         "test_class": "TestEntityDescribe", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpibiDri/TestEntityDescribeThread-1", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpmYSYR9/TestEntityDescribeThread-2", 
         "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - describe", 
         "testdir": "/Users/adamsh/Projects/test/tigger"
     }
