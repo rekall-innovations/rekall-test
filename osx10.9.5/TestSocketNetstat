@@ -6,17 +6,17 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /Users/adamsh/Projects/test/osx10.9.5/output/TestSocketNetstat /Users/adamsh/Projects/test/osx10.9.5/TestSocketNetstat
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - unix_sockets
+   rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - unix_sockets
 else
    less /Users/adamsh/Projects/test/osx10.9.5/output/TestSocketNetstat
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 17.809723138809204, 
+    "time_used": 19.68694806098938, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestSocketNetstat)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 2 != 283\n"
+        "testCase (__main__.TestSocketNetstat)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'STREAM              ||0xff800c5a64b8      ||0x0                 ||/private/var [truncated]... != u'STREAM              ||0xff800c5a64b8      ||0x0                 ||/private/var [truncated]...\n- STREAM              ||0xff800c5a64b8      ||0x0                 ||/private/var/run/usb||Process: launchd (pid=1), Process:      \n?                                                                                         ^^^^  ^                   ^^^^^ ^^^^\n+ STREAM              ||0xff800c5a64b8      ||0x0                 ||/private/var/run/usb||(2 values): launchd (pid=1), usbmuxd    \n?                                                                                         ^^^^^^^  ^                   ^ ^^^^^\n\n"
     }, 
     "output": [
         "        type        ||      address       ||     connected      ||        file        ||                process                 ", 
@@ -70,13 +70,13 @@ exit 0
         "                    ||                    ||                    ||nchd/sock           ||                                        ", 
         "STREAM              ||0xff800c5a63f0      ||0x0                 ||/private/var/run/cup||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||sd                  ||                                        ", 
-        "STREAM              ||0xff800c5a64b8      ||0x0                 ||/private/var/run/usb||Process: launchd (pid=1), Process:      ", 
-        "                    ||                    ||                    ||muxd                ||usbmuxd (pid=31) (2 values)             ", 
+        "STREAM              ||0xff800c5a64b8      ||0x0                 ||/private/var/run/usb||(2 values): launchd (pid=1), usbmuxd    ", 
+        "                    ||                    ||                    ||muxd                ||(pid=31)                                ", 
         "STREAM              ||0xff800c5a6580      ||0x0                 ||/private/var/run/sys||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||temkeychaincheck.soc||                                        ", 
         "                    ||                    ||                    ||ket                 ||                                        ", 
-        "DGRAM               ||0xff800c5a6648      ||0x0                 ||/private/var/run/sys||Process: launchd (pid=1), Process:      ", 
-        "                    ||                    ||                    ||log                 ||syslogd (pid=17) (2 values)             ", 
+        "DGRAM               ||0xff800c5a6648      ||0x0                 ||/private/var/run/sys||(2 values): launchd (pid=1), syslogd    ", 
+        "                    ||                    ||                    ||log                 ||(pid=17)                                ", 
         "STREAM              ||0xff800c5a6710      ||0x0                 ||/private/var/run/por||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||tmap.socket         ||                                        ", 
         "STREAM              ||0xff800c5a67d8      ||0x0                 ||/private/var/run/vpn||launchd (pid=1)                         ", 
@@ -89,14 +89,14 @@ exit 0
         "                    ||                    ||                    ||lrpc/srvsvc         ||                                        ", 
         "STREAM              ||0xff800c5a6af8      ||0x0                 ||/private/var/rpc/nca||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||cn_np/srvsvc        ||                                        ", 
-        "STREAM              ||0xff800c5a6bc0      ||0x0                 ||/private/var/rpc/nca||Process: rpcsvchost (pid=80), Process:  ", 
-        "                    ||                    ||                    ||lrpc/NETLOGON       ||launchd (pid=1) (2 values)              ", 
+        "STREAM              ||0xff800c5a6bc0      ||0x0                 ||/private/var/rpc/nca||(2 values): rpcsvchost (pid=80), launchd", 
+        "                    ||                    ||                    ||lrpc/NETLOGON       ||(pid=1)                                 ", 
         "STREAM              ||0xff800c5a6c88      ||0x0                 ||/private/var/rpc/nca||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||cn_np/mdssvc        ||                                        ", 
         "STREAM              ||0xff800c5a6d50      ||0x0                 ||/private/var/rpc/nca||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||lrpc/lsarpc         ||                                        ", 
-        "STREAM              ||0xff800c5a6e18      ||0x0                 ||/private/var/run/mDN||Process: mDNSResponder (pid=45),        ", 
-        "                    ||                    ||                    ||SResponder          ||Process: launchd (pid=1) (2 values)     ", 
+        "STREAM              ||0xff800c5a6e18      ||0x0                 ||/private/var/run/mDN||(2 values): mDNSResponder (pid=45),     ", 
+        "                    ||                    ||                    ||SResponder          ||launchd (pid=1)                         ", 
         "STREAM              ||0xff800c5a6ee0      ||0x0                 ||/private/var/rpc/nca||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||cn_np/lsarpc        ||                                        ", 
         "STREAM              ||0xff800cba74b8      ||0xff800cba7d50      ||-                   ||launchd (pid=1)                         ", 
@@ -310,11 +310,12 @@ exit 0
         ], 
         "executable": "rekall ", 
         "--filename": "/Users/adamsh/Projects/test/osx10.9.5/vmem.e01", 
+        "--cache_dir": "/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/", 
         "commandline": "unix_sockets", 
         "--renderer": "test", 
         "test_class": "TestSocketNetstat", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmplpabav/TestSocketNetstatThread-8", 
-        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - unix_sockets", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpwpVWxF/TestSocketNetstatThread-6", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - unix_sockets", 
         "testdir": "/Users/adamsh/Projects/test/osx10.9.5"
     }
 }

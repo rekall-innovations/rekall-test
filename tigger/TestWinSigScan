@@ -1,0 +1,23 @@
+{
+    "time_used": 2.8812239170074463, 
+    "output": [
+        "ERROR:root:No signature given."
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/test/tigger/tigger.vmem.E01", 
+        "--cache_dir": "/Users/adamsh/Projects/test/tigger/../profile_cache/", 
+        "commandline": "sigscan", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestWinSigScan", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpV0Tbwx/TestWinSigScanThread-8", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - sigscan", 
+        "testdir": "/Users/adamsh/Projects/test/tigger"
+    }
+}

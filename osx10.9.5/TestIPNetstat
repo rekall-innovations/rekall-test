@@ -13,19 +13,19 @@ fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 29.641247987747192, 
+    "time_used": 19.47982406616211, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestIPNetstat)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'IPv4/TCP||10.0.2.15                                       ||49157     ||23.43. [truncated]... != u'IPv4/TCP||127.0.0.1                                       ||631       ||0.0.0. [truncated]...\nDiff is 779 characters long. Set self.maxDiff to None to see it.\n"
+        "testCase (__main__.TestIPNetstat)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'IPv4/TCP||10.0.2.15                                       ||49154     ||17.149 [truncated]... != u'IPv4/TCP||10.0.2.15                                       ||49154     ||17.149 [truncated]...\nDiff is 766 characters long. Set self.maxDiff to None to see it.\n"
     }, 
     "output": [
         "protocol||                  src address                   || src port ||                  dst address                   || dst port ||       state        ||                process                 ", 
         "--------||------------------------------------------------||----------||------------------------------------------------||----------||--------------------||----------------------------------------", 
         "IPv4/TCP||127.0.0.1                                       ||631       ||0.0.0.0                                         ||0         ||TCPS_LISTEN         ||launchd (pid=1)                         ", 
-        "IPv4/TCP||10.0.2.15                                       ||49154     ||17.149.240.70                                   ||443       ||TCPS_ESTABLISHED    ||Process: apsd (pid=67)                  ", 
-        "IPv4/TCP||10.0.2.15                                       ||49156     ||23.43.75.27                                     ||80        ||TCPS_ESTABLISHED    ||Process: ocspd (pid=82)                 ", 
-        "IPv4/TCP||10.0.2.15                                       ||49157     ||23.43.75.27                                     ||80        ||TCPS_ESTABLISHED    ||Process: ocspd (pid=82)                 ", 
-        "IPv4/TCP||10.0.2.15                                       ||49155     ||80.239.254.10                                   ||80        ||TCPS_ESTABLISHED    ||Process: IMRemoteURLConne (pid=229)     ", 
+        "IPv4/TCP||10.0.2.15                                       ||49154     ||17.149.240.70                                   ||443       ||TCPS_ESTABLISHED    ||apsd (pid=67)                           ", 
+        "IPv4/TCP||10.0.2.15                                       ||49156     ||23.43.75.27                                     ||80        ||TCPS_ESTABLISHED    ||ocspd (pid=82)                          ", 
+        "IPv4/TCP||10.0.2.15                                       ||49157     ||23.43.75.27                                     ||80        ||TCPS_ESTABLISHED    ||ocspd (pid=82)                          ", 
+        "IPv4/TCP||10.0.2.15                                       ||49155     ||80.239.254.10                                   ||80        ||TCPS_ESTABLISHED    ||IMRemoteURLConne (pid=229)              ", 
         "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
         "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
         "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
@@ -38,10 +38,10 @@ exit 0
         "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
         "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
         "IPv4/UDP||0.0.0.0                                         ||123       ||0.0.0.0                                         ||0         ||-                   ||ntpd (pid=111)                          ", 
-        "IPv4/UDP||0.0.0.0                                         ||137       ||0.0.0.0                                         ||0         ||-                   ||Process: launchd (pid=1), Process:      ", 
-        "        ||                                                ||          ||                                                ||          ||                    ||netbiosd (pid=125) (2 values)           ", 
-        "IPv4/UDP||0.0.0.0                                         ||138       ||0.0.0.0                                         ||0         ||-                   ||Process: launchd (pid=1), Process:      ", 
-        "        ||                                                ||          ||                                                ||          ||                    ||netbiosd (pid=125) (2 values)           ", 
+        "IPv4/UDP||0.0.0.0                                         ||137       ||0.0.0.0                                         ||0         ||-                   ||(2 values): launchd (pid=1), netbiosd   ", 
+        "        ||                                                ||          ||                                                ||          ||                    ||(pid=125)                               ", 
+        "IPv4/UDP||0.0.0.0                                         ||138       ||0.0.0.0                                         ||0         ||-                   ||(2 values): launchd (pid=1), netbiosd   ", 
+        "        ||                                                ||          ||                                                ||          ||                    ||(pid=125)                               ", 
         "IPv4/UDP||0.0.0.0                                         ||5353      ||0.0.0.0                                         ||0         ||-                   ||mDNSResponder (pid=45)                  ", 
         "IPv4/UDP||0.0.0.0                                         ||58246     ||0.0.0.0                                         ||0         ||-                   ||mDNSResponder (pid=45)                  ", 
         "IPv4/UDP||0.0.0.0                                         ||58884     ||0.0.0.0                                         ||0         ||-                   ||syslogd (pid=17)                        ", 
@@ -71,7 +71,7 @@ exit 0
         "commandline": "ipnetstat", 
         "--renderer": "test", 
         "test_class": "TestIPNetstat", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmp1TE8lM/TestIPNetstatThread-4", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpwpVWxF/TestIPNetstatThread-3", 
         "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - ipnetstat", 
         "testdir": "/Users/adamsh/Projects/test/osx10.9.5"
     }
