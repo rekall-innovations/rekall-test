@@ -1,0 +1,17 @@
+{
+    "time_used": 8.106231689453125e-06, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/", 
+        "commandline": "", 
+        "--renderer": "test", 
+        "test_class": "EfilterIntegrationTest", 
+        "tempdir": "/tmp/tmp50iaOH/EfilterIntegrationTestThread-1", 
+        "testdir": "/home/scudette/projects/rekall-test/osx10.9.5"
+    }
+}

@@ -1,0 +1,41 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestAFF4Acquire /home/scudette/projects/rekall-test/tigger/TestAFF4Acquire
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestAFF4Acquire /home/scudette/projects/rekall-test/tigger/TestAFF4Acquire
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestAFF4Acquire /home/scudette/projects/rekall-test/tigger/TestAFF4Acquire
+elif [ "$1" == "run" ]; then
+   rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - aff4acquire /tmp/tmpZjTeCb/TestAFF4AcquireThread-2/output_image.aff4
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestAFF4Acquire
+fi
+exit 0
+{
+    "errors": {
+        "testCase (rekall.plugins.tools.aff4acquire.TestAFF4Acquire)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 330, in testCase\n    self.assertEqual(self.baseline['hashes'], self.current['hashes'])\nKeyError: 'hashes'\n"
+    }, 
+    "time_used": 14.57480502128601, 
+    "return_code": 0, 
+    "failures": {}, 
+    "output": [], 
+    "hashes": {
+        "output_image.aff4": "bad8353a654d597be0e6ddb4b92ba81a"
+    }, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "commandline": "aff4acquire %(tempdir)s/output_image.aff4", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "TestAFF4Acquire", 
+        "tempdir": "/tmp/tmpZjTeCb/TestAFF4AcquireThread-2", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - aff4acquire /tmp/tmpZjTeCb/TestAFF4AcquireThread-2/output_image.aff4", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}

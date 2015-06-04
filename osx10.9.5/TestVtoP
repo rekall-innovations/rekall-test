@@ -1,0 +1,31 @@
+{
+    "time_used": 3.7084569931030273, 
+    "output": [
+        "", 
+        "****************** 0x10b818000 ******************", 
+        "Virtual 0x00010b818000 DTB 0xf9fe000", 
+        "pml4e@ 0xf9fe000 = 0x8ab7027", 
+        "pdpte@ 0x8ab7020 = 0x8a90027", 
+        "pde@ 0x8a902e0 = 0x8a8f027", 
+        "pte@ 0x8a8f0c0 = 0x15ca7025", 
+        "Physical Address 0x15ca7000"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/", 
+        "commandline": "vtop --pid %(pid)s - %(vaddr)s", 
+        "pid": 232, 
+        "--renderer": "test", 
+        "test_class": "TestVtoP", 
+        "vaddr": 4488003584, 
+        "tempdir": "/tmp/tmplQGBSI/TestVtoPThread-2", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --filename '/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - vtop --pid 232 - 4488003584", 
+        "testdir": "/home/scudette/projects/rekall-test/osx10.9.5"
+    }
+}

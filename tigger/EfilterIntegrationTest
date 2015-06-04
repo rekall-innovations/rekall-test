@@ -1,0 +1,18 @@
+{
+    "time_used": 1.0013580322265625e-05, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "commandline": "", 
+        "pid": 1724, 
+        "--renderer": "test", 
+        "test_class": "EfilterIntegrationTest", 
+        "tempdir": "/tmp/tmp4_dfYq/EfilterIntegrationTestThread-2", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}

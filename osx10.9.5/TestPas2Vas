@@ -1,0 +1,26 @@
+{
+    "time_used": 5.08565092086792, 
+    "output": [
+        "   Physical   ||   Virtual    || Pid  ||Name", 
+        "--------------||--------------||------||----", 
+        "0x000015ca7000||0x00010b818000||   232||bash"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/", 
+        "commandline": "pas2vas %(offset)s --pid %(pid)s ", 
+        "pid": 232, 
+        "--renderer": "test", 
+        "test_class": "TestPas2Vas", 
+        "offset": 365588480, 
+        "tempdir": "/tmp/tmpinbJ7S/TestPas2VasThread-2", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --filename '/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - pas2vas 365588480 --pid 232 ", 
+        "testdir": "/home/scudette/projects/rekall-test/osx10.9.5"
+    }
+}

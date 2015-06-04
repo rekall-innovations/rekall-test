@@ -1,0 +1,20 @@
+{
+    "time_used": 8.821487426757812e-06, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "commandline": "", 
+        "proc_name": "sh", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpW31v2j/EfilterIntegrationTestThread-2", 
+        "test_class": "EfilterIntegrationTest", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

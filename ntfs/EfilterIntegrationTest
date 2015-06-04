@@ -1,0 +1,16 @@
+{
+    "time_used": 1.621246337890625e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/ntfs/../profile_cache/", 
+        "commandline": "", 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpjmN9Xu/EfilterIntegrationTestThread-3", 
+        "test_class": "EfilterIntegrationTest", 
+        "mft": 42, 
+        "--profile": "ntfs", 
+        "path": "RAW/20076517123273.pdf", 
+        "testdir": "/home/scudette/projects/rekall-test/ntfs"
+    }
+}
