@@ -1,22 +1,22 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestFileScan /Users/adamsh/Projects/rekall-test/tigger/TestFileScan
+   cp /home/scudette/projects/rekall-test/tigger/output/TestFileScan /home/scudette/projects/rekall-test/tigger/TestFileScan
 elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestFileScan /Users/adamsh/Projects/rekall-test/tigger/TestFileScan
+   meld /home/scudette/projects/rekall-test/tigger/output/TestFileScan /home/scudette/projects/rekall-test/tigger/TestFileScan
 elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestFileScan /Users/adamsh/Projects/rekall-test/tigger/TestFileScan
+   diff /home/scudette/projects/rekall-test/tigger/output/TestFileScan /home/scudette/projects/rekall-test/tigger/TestFileScan
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - filescan
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - filescan
 else
-   less /Users/adamsh/Projects/rekall-test/tigger/output/TestFileScan
+   less /home/scudette/projects/rekall-test/tigger/output/TestFileScan
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 14.486311912536621, 
+    "time_used": 12.936851978302002, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestFileScan)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u' ||0x0486d3f8||     3||   0||RWD---||0x8101b4c0||\\x01                   ||     [truncated]... != u' ||0x0486d3f8||     3||   0||RWD---||-         ||-                   ||    -|| [truncated]...\n-  ||0x0486d3f8||     3||   0||RWD---||0x8101b4c0||\u0001                   ||    0||\\$Directory\n?                                      ^^^^^^^^^^  ^                         ^\n+  ||0x0486d3f8||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory\n?                                      ^^^^^^^^^^  ^                         ^\n\n"
+        "testCase (__main__.TestFileScan)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 1281 != 1279\n"
     }, 
     "output": [
         "-||  Offset  || #Ptr ||#Hnd||Access||  Owner   ||        Name        || PID ||Name", 
@@ -236,7 +236,6 @@ exit 0
         " ||0x010c7630||     1||   0||R--r-d||-         ||-                   ||    -||\\WINDOWS\\system32\\wow32.dll", 
         " ||0x010c79c8||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\winsta.dll", 
         " ||0x010c7f90||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\win32k.sys", 
-        " ||0x010c8540||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x010c8b78||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\wuaucpl.cpl", 
         " ||0x010c95a0||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\netlogon.dll", 
         " ||0x010c9648||     1||   1||RW-rw-||0x80f60da0||wuauclt.exe         || 1732||\\WINDOWS\\WindowsUpdate.log", 
@@ -278,7 +277,6 @@ exit 0
         " ||0x010d86b0||     1||   0||R--r-d||-         ||-                   ||    -||\\WINDOWS\\system32\\tcpmon.dll", 
         " ||0x010d8a90||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\ssdpsrv.dll", 
         " ||0x010d8b68||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\alg.exe", 
-        " ||0x010d9218||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x010d94b0||     1||   1||RW-rw-||0x80f60da0||wuauclt.exe         || 1732||\\WINDOWS\\WindowsUpdate.log", 
         " ||0x010d9f90||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x010da5c8||     1||   0||R--r--||-         ||-                   ||    -||\\WINDOWS\\WinSxS\\Policies\\x86_policy.8.0.Microsoft.VC80.MFCLOC_1fc8b3b9a1e18e3b_x-ww_caeee150\\8.0.50727.762.policy", 
@@ -289,7 +287,7 @@ exit 0
         " ||0x010dd4c8||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x010ddd80||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x010de278||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
-        " ||0x010de998||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
+        "F||0x010de698||     0||   0||------||-         ||-                   ||    -||\\Endpoint", 
         " ||0x010dfa70||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\shlwapi.dll", 
         " ||0x0110c3d8||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\ersvc.dll", 
         " ||0x0110d028||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\nddeapi.dll", 
@@ -534,8 +532,10 @@ exit 0
         " ||0x029377f0||     1||   1||R--rw-||0xff1ec978||winlogon.exe        ||  632||\\WINDOWS\\system32", 
         " ||0x02937930||     1||   1||------||0xff1ec978||winlogon.exe        ||  632||\\{9B365890-165F-11D0-A195-0020AFD156E4}", 
         " ||0x029d9938||     1||   0||R--rwd||-         ||-                   ||    -||\\Documents and Settings\\Administrator\\Start Menu\\Programs\\Accessories\\desktop.ini", 
+        "F||0x02a52a70||     0||   0||------||-         ||-                   ||    -||\u5140\ue15f\u8088\u810dpoint", 
         " ||0x02a52e50||     1||   0||R--rwd||-         ||-                   ||    -||\\Documents and Settings\\Administrator\\My Documents\\My Pictures\\Desktop.ini", 
         " ||0x02ae4dc8||     1||   1||R--rw-||0xff143b28||TPAutoConnSvc.e     || 1968||\\WINDOWS\\WinSxS\\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2180_x-ww_a84f1ff9", 
+        "F||0x02bbe470||     0||   0||------||-         ||-                   ||    -||\\Endpoint", 
         " ||0x02bf8230||     2||   1||------||0xff25a7e0||alg.exe             ||  216||\\Endpoint", 
         " ||0x02cd2c00||     3||   1||------||0xff25a7e0||alg.exe             ||  216||\\net\\NtControlPipe12", 
         " ||0x02cd2dc8||     1||   1||R--rw-||0xff25a7e0||alg.exe             ||  216||\\WINDOWS\\WinSxS\\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2180_x-ww_a84f1ff9", 
@@ -719,7 +719,6 @@ exit 0
         " ||0x04a497e0||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\themeui.dll", 
         " ||0x04a49988||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x04a49b68||     1||   0||R--r--||-         ||-                   ||    -||\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\IconCache.db", 
-        " ||0x04a4ac20||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x04a4b028||     1||   1||RW----||0x80f60da0||wuauclt.exe         || 1732||\\WINDOWS\\SoftwareDistribution\\DataStore\\Logs\\tmp.edb", 
         " ||0x04a4b9d0||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\dhcpcsvc.dll", 
         " ||0x04a4baf0||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\cscui.dll", 
@@ -728,7 +727,6 @@ exit 0
         " ||0x04a4db18||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\shfolder.dll", 
         " ||0x04a4df90||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\WinSxS\\x86_Microsoft.VC80.CRT_1fc8b3b9a1e18e3b_8.0.50727.762_x-ww_6b128700\\msvcp80.dll", 
         " ||0x04a4e4b0||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\shgina.dll", 
-        " ||0x04a4fc68||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x04a50788||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\rsaenh.dll", 
         " ||0x04a50860||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\winscard.dll", 
         " ||0x04a50cd8||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\WinSxS\\x86_Microsoft.VC80.CRT_1fc8b3b9a1e18e3b_8.0.50727.762_x-ww_6b128700\\msvcr80.dll", 
@@ -751,7 +749,6 @@ exit 0
         " ||0x04b59550||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\freecell.exe", 
         " ||0x04b596f0||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\perfmon.exe", 
         " ||0x04b59788||     1||   1||RW-rw-||0x80f94588||wuauclt.exe         ||  468||\\WINDOWS\\WindowsUpdate.log", 
-        " ||0x04b5b038||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x04b5b2f0||     1||   0||R--r-d||-         ||-                   ||    -||\\WINDOWS\\system32\\ipv6mon.dll", 
         " ||0x04b5b388||     2||   0||R--r--||-         ||-                   ||    -||\\WINDOWS\\WinSxS\\Policies\\x86_policy.6.0.Microsoft.Windows.Common-Controls_6595b64144ccf1df_x-ww_5ddad775\\6.0.2600.2180.Policy", 
         " ||0x04b5b420||     2||   0||R--r--||-         ||-                   ||    -||\\WINDOWS\\WinSxS\\Manifests\\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2180_x-ww_a84f1ff9.Manifest", 
@@ -828,7 +825,6 @@ exit 0
         " ||0x0573f548||     1||   1||R--rw-||0xff3667e8||VMwareTray.exe      ||  432||\\WINDOWS\\WinSxS\\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2180_x-ww_a84f1ff9", 
         " ||0x0573f960||     1||   1||RW----||0x80f60da0||wuauclt.exe         || 1732||\\WINDOWS\\SoftwareDistribution\\DataStore\\DataStore.edb", 
         " ||0x0573fa18||     1||   1||R--rw-||0xff3865d0||explorer.exe        || 1724||\\WINDOWS\\WinSxS\\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2180_x-ww_a84f1ff9", 
-        " ||0x0573fac0||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x057c12d0||     1||   0||R--rwd||-         ||-                   ||    -||\\Program Files\\VMware\\VMware Tools\\vmtools.dll", 
         " ||0x057c1e78||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\msasn1.dll", 
         " ||0x057c1f90||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\Restore\\rstrui.exe", 
@@ -916,7 +912,6 @@ exit 0
         " ||0x05ce4df8||     2||   1||R--rw-||0xff1ec978||winlogon.exe        ||  632||\\WINDOWS\\srchasst", 
         " ||0x05ce55b0||     2||   1||R--rw-||0xff1ec978||winlogon.exe        ||  632||\\WINDOWS\\ime\\imkr6_1", 
         " ||0x05ce5648||     2||   1||R--rw-||0xff1ec978||winlogon.exe        ||  632||\\Program Files\\Common Files\\Microsoft Shared\\MSInfo", 
-        " ||0x05ce5840||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
         " ||0x05ce5d00||     2||   1||R--rw-||0xff1ec978||winlogon.exe        ||  632||\\Program Files\\Internet Explorer\\Connection Wizard", 
         " ||0x05ce64b0||     2||   1||RW-r--||0xff247020||services.exe        ||  676||\\WINDOWS\\system32\\config\\AppEvent.Evt", 
         " ||0x05ce68d8||     2||   1||R--rw-||0xff1ec978||winlogon.exe        ||  632||\\WINDOWS\\system32\\IME\\PINTLGNT", 
@@ -951,6 +946,8 @@ exit 0
         " ||0x05d6d8d8||     2||   1||R--rw-||0xff1ec978||winlogon.exe        ||  632||\\Program Files\\Common Files\\Microsoft Shared\\web server extensions\\40\\bin", 
         " ||0x05dee128||     1||   0||R--r-d||-         ||-                   ||    -||\\Documents and Settings\\All Users\\Start Menu\\Set Program Access and Defaults.lnk", 
         " ||0x05dee6a8||     1||   0||R--rwd||-         ||-                   ||    -||\\Program Files\\VMware\\VMware Tools\\VMwareUser.exe", 
+        "F||0x05deea18||     0||   0||------||-         ||-                   ||    -||\u0d88\ue1e7\u3048\ue17f\u0202\u1c06\uf910", 
+        "F||0x05deeab0||     0||   0||------||-         ||-                   ||    -||\ubfb8\ue1e5\ud728\ue1dd\u0000", 
         " ||0x05def028||     1||   0||R--r-d||-         ||-                   ||    -||\\WINDOWS\\system32\\wbem\\cimwin32.dll", 
         " ||0x05def748||     1||   0||------||-         ||-                   ||    -||\\{9B365890-165F-11D0-A195-0020AFD156E4}", 
         " ||0x05defb98||     1||   0||R--r-d||-         ||-                   ||    -||\\WINDOWS\\system32\\stobject.dll", 
@@ -1157,6 +1154,7 @@ exit 0
         " ||0x06381908||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\winsta.dll", 
         " ||0x06381b90||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\wbem\\wmiprov.dll", 
         " ||0x06383028||     3||   1||R--rwd||0x80fbf910||svchost.exe         || 1028||\\WINDOWS\\system32\\wbem\\mof", 
+        "F||0x063833d0||     0||   0||-W----||-         ||-                   ||    -||\u0000   ", 
         " ||0x063847a8||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\desk.cpl", 
         " ||0x063c5338||     1||   1||RW-rw-||0x80f60da0||wuauclt.exe         || 1732||\\WINDOWS\\WindowsUpdate.log", 
         " ||0x063c6240||     2||   1||R--rw-||0xff1ec978||winlogon.exe        ||  632||\\WINDOWS\\WinSxS", 
@@ -1236,7 +1234,7 @@ exit 0
         " ||0x065a18e0||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\WinSxS\\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2180_x-ww_a84f1ff9\\comctl32.dll", 
         " ||0x065a4f90||     1||   0||R--r-d||-         ||-                   ||    -||\\WINDOWS\\system32\\unimdm.tsp", 
         " ||0x065a57a0||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
-        " ||0x065a5cc0||     3||   0||RWD---||-         ||-                   ||    -||\\$Directory", 
+        " ||0x065c0068||     0||   0||------||-         ||-                   ||    -||\uf5d8\ue1d5\u90b0\u810dpoint", 
         " ||0x065c02c0||     4||   1||RW----||0x810b1660||System              ||    4||\\Documents and Settings\\LocalService\\Local Settings\\Application Data\\Microsoft\\Windows\\UsrClass.dat", 
         " ||0x065e6b80||     3||   1||R--rwd||0x80fbf910||svchost.exe         || 1028||\\WINDOWS\\pchealth\\helpctr\\BATCH", 
         " ||0x065e6c80||     3||   1||------||0xff1b8b28||vmtoolsd.exe        || 1668||\\net\\NtControlPipe9", 
@@ -1302,15 +1300,19 @@ exit 0
         " ||0x07c17d00||     1||   0||R--rwd||-         ||-                   ||    -||\\WINDOWS\\system32\\dfrgres.dll"
     ], 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
         "commandline": "filescan", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestFileScan", 
-        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmp9ytxdK/TestFileScanThread-7", 
-        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - filescan", 
-        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmpX7Ejn6/TestFileScanThread-1", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - filescan", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

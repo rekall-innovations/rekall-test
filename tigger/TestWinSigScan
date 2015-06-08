@@ -1,7 +1,11 @@
 {
-    "time_used": 2.8812239170074463, 
+    "time_used": 1.7088210582733154, 
     "output": [
-        "ERROR:root:No signature given."
+        "Hit in physical AS:", 
+        "  Offset  ||Matching part", 
+        "----------||-------------", 
+        "0x00095818||310036003100340038003900350037", 
+        "0x0023b2c1||433a5c57494e444f"
     ], 
     "return_code": 0, 
     "options": {
@@ -10,14 +14,14 @@
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/test/tigger/tigger.vmem.E01", 
-        "--cache_dir": "/Users/adamsh/Projects/test/tigger/../profile_cache/", 
-        "commandline": "sigscan", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "sigscan \"310036003100340038003900350037*433a5c57494e444f\"", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestWinSigScan", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpV0Tbwx/TestWinSigScanThread-8", 
-        "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - sigscan", 
-        "testdir": "/Users/adamsh/Projects/test/tigger"
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmpRIm0lb/TestWinSigScanThread-2", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - sigscan \"310036003100340038003900350037*433a5c57494e444f\"", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

@@ -6,17 +6,17 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /home/scudette/projects/rekall-test/tigger/output/TestDriverScan /home/scudette/projects/rekall-test/tigger/TestDriverScan
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - driverscan
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - driverscan
 else
    less /home/scudette/projects/rekall-test/tigger/output/TestDriverScan
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 3.748081922531128, 
+    "time_used": 4.262048006057739, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestDriverScan)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 221, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 271, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u' ||0x01058388||4   ||0   ||0xfc76b000||    0x6b00||Fdc                 ||Fdc   [truncated]... != u' ||0x01058388||   4||   0||0xfc76b000||    0x6b00||Fdc                 ||Fdc   [truncated]...\n-  ||0x01058388||4   ||0   ||0xfc76b000||    0x6b00||Fdc                 ||Fdc         ||\\Driver\\Fdc\n?                 ---   ---\n+  ||0x01058388||   4||   0||0xfc76b000||    0x6b00||Fdc                 ||Fdc         ||\\Driver\\Fdc\n?                +++   +++\n\n"
+        "testCase (__main__.TestDriverScan)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 102 != 103\n"
     }, 
     "output": [
         "-||Offset(P) ||#Ptr||#Hnd||  Start   ||   Size   ||    Service Key     ||    Name    ||Driver Name", 
@@ -99,6 +99,7 @@ exit 0
         " ||0x048f8da0||   3||   0||0xf3c01000||   0x12400||IPSec               ||IPSec       ||\\Driver\\IPSec", 
         " ||0x048f9030||   4||   0||0xf3b41000||   0x1da80||vmhgfs              ||vmhgfs      ||\\FileSystem\\vmhgfs", 
         " ||0x0493f880||   3||   0||0xf337d000||    0xed80||sysaudio            ||sysaudio    ||\\Driver\\sysaudio", 
+        " ||0x04a49270||   0||   0||0xf2fe0000||   0x29f00||\ub2e8\uff1e\u3c88\uff23\u61d8\u77e4              ||            ||\u0000          ", 
         " ||0x04a49880||   3||   0||0xfc174000||    0x2280||RasAcd              ||RasAcd      ||\\Driver\\RasAcd", 
         " ||0x04a96ca8||   3||   0||0xfc9b3000||    0x1080||mnmdd               ||mnmdd       ||\\Driver\\mnmdd", 
         " ||0x04b60a18||   3||   0||0xfc9b5000||    0x1080||RDPCDD              ||RDPCDD      ||\\Driver\\RDPCDD", 
@@ -123,15 +124,19 @@ exit 0
         " ||0x069d4f38||   3||   0||0xfc68b000||    0x8700||Wanarp              ||Wanarp      ||\\Driver\\Wanarp"
     ], 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
         "commandline": "driverscan", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestDriverScan", 
-        "tempdir": "/tmp/tmpblovS9/TestDriverScanThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - driverscan", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmpIP_zzM/TestDriverScanThread-4", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - driverscan", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

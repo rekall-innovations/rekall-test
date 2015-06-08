@@ -6,17 +6,17 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /home/scudette/projects/rekall-test/tigger/output/TestDriverIrp /home/scudette/projects/rekall-test/tigger/TestDriverIrp
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - driverirp
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - driverirp
 else
    less /home/scudette/projects/rekall-test/tigger/output/TestDriverIrp
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 6.027462005615234, 
+    "time_used": 6.968952894210815, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestDriverIrp)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'DriverSize: 0x6b00' != u'DriverSize: 0x00006b00'\n- DriverSize: 0x6b00\n+ DriverSize: 0x00006b00\n?               ++++\n\n"
+        "testCase (__main__.TestDriverIrp)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 3465 != 3500\n"
     }, 
     "output": [
         "**************************************************", 
@@ -2715,6 +2715,41 @@ exit 0
         "  26||IRP_MJ_SET_QUOTA                    ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
         "  27||IRP_MJ_PNP                          ||0xf337f0f7||\\SystemRoot\\system32\\drivers\\sysaudio.sys", 
         "**************************************************", 
+        "DriverName: ", 
+        "DriverStart: 0xf2fe0000", 
+        "DriverSize: 0x00029f00", 
+        "DriverStartIo: 0x00000000", 
+        "----||             Func Name              ||Func Addr ||Module", 
+        "    ||------------------------------------||----------||------", 
+        "   0||IRP_MJ_CREATE                       ||0xfc107fe2||\\SystemRoot\\system32\\DRIVERS\\ks.sys", 
+        "   1||IRP_MJ_CREATE_NAMED_PIPE            ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "   2||IRP_MJ_CLOSE                        ||0xfc107711||\\SystemRoot\\system32\\DRIVERS\\ks.sys", 
+        "   3||IRP_MJ_READ                         ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "   4||IRP_MJ_WRITE                        ||0xfc1071cc||\\SystemRoot\\system32\\DRIVERS\\ks.sys", 
+        "   5||IRP_MJ_QUERY_INFORMATION            ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "   6||IRP_MJ_SET_INFORMATION              ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "   7||IRP_MJ_QUERY_EA                     ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "   8||IRP_MJ_SET_EA                       ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "   9||IRP_MJ_FLUSH_BUFFERS                ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  10||IRP_MJ_QUERY_VOLUME_INFORMATION     ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  11||IRP_MJ_SET_VOLUME_INFORMATION       ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  12||IRP_MJ_DIRECTORY_CONTROL            ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  13||IRP_MJ_FILE_SYSTEM_CONTROL          ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  14||IRP_MJ_DEVICE_CONTROL               ||0xfc106f60||\\SystemRoot\\system32\\DRIVERS\\ks.sys", 
+        "  15||IRP_MJ_INTERNAL_DEVICE_CONTROL      ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  16||IRP_MJ_SHUTDOWN                     ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  17||IRP_MJ_LOCK_CONTROL                 ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  18||IRP_MJ_CLEANUP                      ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  19||IRP_MJ_CREATE_MAILSLOT              ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  20||IRP_MJ_QUERY_SECURITY               ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  21||IRP_MJ_SET_SECURITY                 ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  22||IRP_MJ_POWER                        ||0xfc1007cf||\\SystemRoot\\system32\\DRIVERS\\ks.sys", 
+        "  23||IRP_MJ_SYSTEM_CONTROL               ||0xf30062b0||-     ", 
+        "  24||IRP_MJ_DEVICE_CHANGE                ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  25||IRP_MJ_QUERY_QUOTA                  ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  26||IRP_MJ_SET_QUOTA                    ||0x804f320e||\\WINDOWS\\system32\\ntkrnlpa.exe", 
+        "  27||IRP_MJ_PNP                          ||0xf2fef470||-     ", 
+        "**************************************************", 
         "DriverName: RasAcd", 
         "DriverStart: 0xfc174000", 
         "DriverSize: 0x00002280", 
@@ -3492,12 +3527,13 @@ exit 0
         ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
         "commandline": "driverirp", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestDriverIrp", 
-        "tempdir": "/tmp/tmptsaWZv/TestDriverIrpThread-4", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - driverirp", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmpX7Ejn6/TestDriverIrpThread-4", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - driverirp", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

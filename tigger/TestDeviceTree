@@ -6,17 +6,17 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /home/scudette/projects/rekall-test/tigger/output/TestDeviceTree /home/scudette/projects/rekall-test/tigger/TestDeviceTree
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - devicetree
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - devicetree
 else
    less /home/scudette/projects/rekall-test/tigger/output/TestDeviceTree
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 3.0190558433532715, 
+    "time_used": 6.384886980056763, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestDeviceTree)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 659 != 1056\n"
+        "testCase (__main__.TestDeviceTree)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 1056 != 1057\n"
     }, 
     "output": [
         "   Type   || Address  ||        Name        ||         Device Type          ||Path", 
@@ -980,6 +980,7 @@ exit 0
         " ||DRV     ||0x0493f880||\\Driver\\sysaudio    ", 
         ".||DEV     ||0x80fcd738||sysaudio            ||FILE_DEVICE_KS                ", 
         ".||ATT     ||0x80fcd738||sysaudio            ||FILE_DEVICE_KS                ||\\Driver\\sysaudio", 
+        " ||DRV     ||0x04a49270||\u0000                   ", 
         " ||DRV     ||0x04a49880||\\Driver\\RasAcd      ", 
         ".||DEV     ||0xff382d80||RasAcd              ||UNKNOWN (241)                 ", 
         ".||ATT     ||0xff382d80||RasAcd              ||UNKNOWN (241)                 ||\\Driver\\RasAcd", 
@@ -1083,12 +1084,13 @@ exit 0
         ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
         "commandline": "devicetree", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestDeviceTree", 
-        "tempdir": "/tmp/tmpnqAw3w/TestDeviceTreeThread-3", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - devicetree", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmpX7Ejn6/TestDeviceTreeThread-3", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - devicetree", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

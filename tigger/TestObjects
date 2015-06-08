@@ -6,52 +6,52 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /home/scudette/projects/rekall-test/tigger/output/TestObjects /home/scudette/projects/rekall-test/tigger/TestObjects
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - object_types
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - object_types
 else
    less /home/scudette/projects/rekall-test/tigger/output/TestObjects
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 3.039875030517578, 
+    "time_used": 2.3880369663238525, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestObjects)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'Index||Number Objects ||   PoolType    ||Name' != u'Index||Number Objects ||      PoolType      ||Name'\n- Index||Number Objects ||   PoolType    ||Name\n+ Index||Number Objects ||      PoolType      ||Name\n?                         +++               ++\n\n"
+        "testCase (__main__.TestObjects)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'Index||Number Objects ||      PoolType      ||Name' != u'   Type   ||Index||Number Objects ||      PoolType      ||Name'\n- Index||Number Objects ||      PoolType      ||Name\n+    Type   ||Index||Number Objects ||      PoolType      ||Name\n? ++++++++++++\n\n"
     }, 
     "output": [
-        "Index||Number Objects ||      PoolType      ||Name", 
-        "-----||---------------||--------------------||----", 
-        "    1||             31||NonPagedPool        ||Type", 
-        "    2||             34||PagedPool           ||Directory", 
-        "    3||            155||PagedPool           ||SymbolicLink", 
-        "    4||            108||PagedPool           ||Token", 
-        "    5||             25||NonPagedPool        ||Process", 
-        "    6||            365||NonPagedPool        ||Thread", 
-        "    7||              1||NonPagedPool        ||Job ", 
-        "    8||              0||NonPagedPool        ||DebugObject", 
-        "    9||           1908||NonPagedPool        ||Event", 
-        "   10||              0||NonPagedPool        ||EventPair", 
-        "   11||            218||NonPagedPool        ||Mutant", 
-        "   12||              5||NonPagedPool        ||Callback", 
-        "   13||            411||NonPagedPool        ||Semaphore", 
-        "   14||             27||NonPagedPool        ||Timer", 
-        "   15||              0||NonPagedPool        ||Profile", 
-        "   16||              1||PagedPool           ||KeyedEvent", 
-        "   17||              5||NonPagedPool        ||WindowStation", 
-        "   18||              7||NonPagedPool        ||Desktop", 
-        "   19||            271||PagedPool           ||Section", 
-        "   20||            738||PagedPool           ||Key ", 
-        "   21||            373||PagedPool           ||Port", 
-        "   22||              3||NonPagedPool        ||WaitablePort", 
-        "   23||             11||NonPagedPool        ||Adapter", 
-        "   24||              2||NonPagedPool        ||Controller", 
-        "   25||            359||NonPagedPool        ||Device", 
-        "   26||             99||NonPagedPool        ||Driver", 
-        "   27||             54||NonPagedPool        ||IoCompletion", 
-        "   28||           1536||NonPagedPool        ||File", 
-        "   29||             25||NonPagedPool        ||WmiGuid", 
-        "   30||              0||NonPagedPool        ||FilterConnectionPort", 
-        "   31||              0||NonPagedPool        ||FilterCommunicationPort"
+        "   Type   ||Index||Number Objects ||      PoolType      ||Name", 
+        "----------||-----||---------------||--------------------||----", 
+        "0x810d6438||    1||             31||NonPagedPool        ||Type", 
+        "0x810d6268||    2||             34||PagedPool           ||Directory", 
+        "0x810b1040||    3||            155||PagedPool           ||SymbolicLink", 
+        "0x810b1e70||    4||            108||PagedPool           ||Token", 
+        "0x810b1ca0||    5||             25||NonPagedPool        ||Process", 
+        "0x810b1ad0||    6||            365||NonPagedPool        ||Thread", 
+        "0x810b1900||    7||              1||NonPagedPool        ||Job ", 
+        "0x810b1238||    8||              0||NonPagedPool        ||DebugObject", 
+        "0x810ae980||    9||           1908||NonPagedPool        ||Event", 
+        "0x810ae7b0||   10||              0||NonPagedPool        ||EventPair", 
+        "0x810ae5e0||   11||            218||NonPagedPool        ||Mutant", 
+        "0x810ae410||   12||              5||NonPagedPool        ||Callback", 
+        "0x810ad040||   13||            411||NonPagedPool        ||Semaphore", 
+        "0x810ade70||   14||             27||NonPagedPool        ||Timer", 
+        "0x810adca0||   15||              0||NonPagedPool        ||Profile", 
+        "0x810adad0||   16||              1||PagedPool           ||KeyedEvent", 
+        "0x810ad900||   17||              5||NonPagedPool        ||WindowStation", 
+        "0x810ad730||   18||              7||NonPagedPool        ||Desktop", 
+        "0x810ad560||   19||            271||PagedPool           ||Section", 
+        "0x810aa8f8||   20||            738||PagedPool           ||Key ", 
+        "0x810d5818||   21||            373||PagedPool           ||Port", 
+        "0x810d5648||   22||              3||NonPagedPool        ||WaitablePort", 
+        "0x8109de70||   23||             11||NonPagedPool        ||Adapter", 
+        "0x8109dca0||   24||              2||NonPagedPool        ||Controller", 
+        "0x8109dad0||   25||            359||NonPagedPool        ||Device", 
+        "0x8109d900||   26||             99||NonPagedPool        ||Driver", 
+        "0x8109d730||   27||             54||NonPagedPool        ||IoCompletion", 
+        "0x8109d560||   28||           1536||NonPagedPool        ||File", 
+        "0x810d15b0||   29||             25||NonPagedPool        ||WmiGuid", 
+        "0x81018398||   30||              0||NonPagedPool        ||FilterConnectionPort", 
+        "0x80f6a040||   31||              0||NonPagedPool        ||FilterCommunicationPort"
     ], 
     "options": {
         "--name_resolution_strategies": [
@@ -60,13 +60,13 @@ exit 0
         ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
-        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "--format": "test", 
         "commandline": "object_types", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestObjects", 
-        "tempdir": "/tmp/tmp4_dfYq/TestObjectsThread-4", 
-        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - object_types", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmpTNxpmX/TestObjectsThread-4", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - object_types", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }
