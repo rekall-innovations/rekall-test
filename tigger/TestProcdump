@@ -1,21 +1,45 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestProcdump /home/scudette/projects/rekall-test/tigger/TestProcdump
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestProcdump /home/scudette/projects/rekall-test/tigger/TestProcdump
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestProcdump /home/scudette/projects/rekall-test/tigger/TestProcdump
+elif [ "$1" == "run" ]; then
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - procdump --pid 1724 --dump_dir /tmp/tmpZTwv6z/TestProcdumpThread-2
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestProcdump
+fi
+exit 0
 {
-    "time_used": 3.3742640018463135, 
+    "errors": {}, 
+    "logging": "", 
+    "time_used": 3.5155069828033447, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.windows.procdump_test.TestProcdump)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 235, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 332, in testCase\n    self.assertEqual(self.baseline['hashes'], self.current['hashes'])\nAssertionError: {u'executable.explorer_exe_1724.exe': u'3eff80820f6c1320b9c92c9f4310e0d0'} != {'executable.explorer_exe_1724.exe': 'afd97e5127a13b317330f128f56df118'}\n- {u'executable.explorer_exe_1724.exe': u'3eff80820f6c1320b9c92c9f4310e0d0'}\n+ {'executable.explorer_exe_1724.exe': 'afd97e5127a13b317330f128f56df118'}\n"
+    }, 
     "output": [
         "**************************************************", 
         "Dumping explorer.exe, pid: 1724   output: executable.explorer_exe_1724.exe"
     ], 
     "hashes": {
-        "executable.explorer_exe_1724.exe": "3eff80820f6c1320b9c92c9f4310e0d0"
+        "executable.explorer_exe_1724.exe": "afd97e5127a13b317330f128f56df118"
     }, 
     "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
-        "commandline": "procdump --pid %(pid)s --dump-dir %(tempdir)s", 
-        "pid": "1724", 
-        "--renderer": "test", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "procdump --pid %(pid)s --dump_dir %(tempdir)s", 
+        "pid": 1724, 
         "test_class": "TestProcdump", 
-        "tempdir": "/tmp/tmpjCWx0x/TestProcdumpThread-3", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' procdump --pid 1724 --dump-dir /tmp/tmpjCWx0x/TestProcdumpThread-3", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmpZTwv6z/TestProcdumpThread-2", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - procdump --pid 1724 --dump_dir /tmp/tmpZTwv6z/TestProcdumpThread-2", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

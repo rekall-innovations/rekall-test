@@ -6,17 +6,18 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /home/scudette/projects/rekall-test/tigger/output/TestEATHooks /home/scudette/projects/rekall-test/tigger/TestEATHooks
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - hooks_eat --pid 1724
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - hooks_eat --pid 1724
 else
    less /home/scudette/projects/rekall-test/tigger/output/TestEATHooks
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 20.139761924743652, 
+    "logging": "", 
+    "time_used": 20.278409957885742, 
     "return_code": 0, 
     "failures": {
-        "testCase (rekall.plugins.windows.malware.apihooks.TestEATHooks)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 39 != 35\n"
+        "testCase (rekall.plugins.windows.malware.apihooks.TestEATHooks)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 235, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 285, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 35 != 25\n"
     }, 
     "output": [
         "Pid ||      Proc      ||             Dll              ||                           Export                           ||   Dest   ||                         Dest Name                          ", 
@@ -28,7 +29,6 @@ exit 0
         "1724||explorer.exe    ||SHDOCVW.dll                   ||shdocvw:- (208)                                             ||0x77e96573||rpcrt4!+0x26573                                             ", 
         "1724||explorer.exe    ||SHDOCVW.dll                   ||shdocvw:- (213)                                             ||0x77e86576||rpcrt4!+0x16576                                             ", 
         "1724||explorer.exe    ||CRYPT32.dll                   ||crypt32:- (1027)                                            ||0xe10e6974||0xe10e6974                                                  ", 
-        "1724||explorer.exe    ||CRYPT32.dll                   ||crypt32:- (1050)                                            ||0x781a7474||0x781a7474                                                  ", 
         "1724||explorer.exe    ||CRYPT32.dll                   ||crypt32:- (1055)                                            ||0xc3fc436e||0xc3fc436e                                                  ", 
         "1724||explorer.exe    ||CRYPT32.dll                   ||crypt32:- (1081)                                            ||0xe11c7265||0xe11c7265                                                  ", 
         "1724||explorer.exe    ||CRYPT32.dll                   ||crypt32:- (1149)                                            ||0xe11a7453||0xe11a7453                                                  ", 
@@ -40,20 +40,11 @@ exit 0
         "1724||explorer.exe    ||CRYPT32.dll                   ||crypt32:- (1268)                                            ||0xcb1c7265||0xcb1c7265                                                  ", 
         "1724||explorer.exe    ||CRYPT32.dll                   ||crypt32:- (1273)                                            ||0xe1146169||0xe1146169                                                  ", 
         "1724||explorer.exe    ||CRYPT32.dll                   ||crypt32:- (1286)                                            ||0xcb1c7265||0xcb1c7265                                                  ", 
-        "1724||explorer.exe    ||USERENV.dll                   ||userenv:- (160)                                             ||0x76da003d||0x76da003d                                                  ", 
         "1724||explorer.exe    ||USERENV.dll                   ||userenv:- (167)                                             ||0x76e8004b||rtutils!+0x4b                                               ", 
-        "1724||explorer.exe    ||USERENV.dll                   ||userenv:- (171)                                             ||0x76f00053||0x76f00053                                                  ", 
         "1724||explorer.exe    ||USERENV.dll                   ||userenv:- (174)                                             ||0x76f60059||wldap32!+0x59                                               ", 
         "1724||explorer.exe    ||USERENV.dll                   ||userenv:- (175)                                             ||0x76f8005b||wldap32!+0x2005b                                            ", 
-        "1724||explorer.exe    ||USERENV.dll                   ||userenv:- (176)                                             ||0x76fa005d||0x76fa005d                                                  ", 
-        "1724||explorer.exe    ||urlmon.dll                    ||urlmon:- (182)                                              ||0x773a0013||0x773a0013                                                  ", 
         "1724||explorer.exe    ||urlmon.dll                    ||urlmon:- (184)                                              ||0x773e0017||comctl32!+0x10017                                           ", 
-        "1724||explorer.exe    ||urlmon.dll                    ||urlmon:- (186)                                              ||0x7742001b||comctl32!+0x5001b                                           ", 
-        "1724||explorer.exe    ||WZCSAPI.DLL                   ||wzcsapi:- (83)                                              ||0x73080004||0x73080004                                                  ", 
-        "1724||explorer.exe    ||WZCSAPI.DLL                   ||wzcsapi:- (92)                                              ||0x73180014||0x73180014                                                  ", 
-        "1724||explorer.exe    ||WZCSAPI.DLL                   ||wzcsapi:- (94)                                              ||0x731c0018||0x731c0018                                                  ", 
-        "1724||explorer.exe    ||WZCSAPI.DLL                   ||wzcsapi:- (97)                                              ||0x7322001e||0x7322001e                                                  ", 
-        "1724||explorer.exe    ||WZCSAPI.DLL                   ||wzcsapi:- (99)                                              ||0x73260022||0x73260022                                                  "
+        "1724||explorer.exe    ||urlmon.dll                    ||urlmon:- (186)                                              ||0x7742001b||comctl32!+0x5001b                                           "
     ], 
     "options": {
         "--name_resolution_strategies": [
@@ -62,12 +53,13 @@ exit 0
         ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
         "commandline": "hooks_eat --pid %(pid)s", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestEATHooks", 
-        "tempdir": "/tmp/tmp3R0v9W/TestEATHooksThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - hooks_eat --pid 1724", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmpZTwv6z/TestEATHooksThread-1", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - hooks_eat --pid 1724", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

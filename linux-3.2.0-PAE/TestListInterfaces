@@ -1,0 +1,25 @@
+{
+    "time_used": 5.205502986907959, 
+    "output": [
+        "   Interface    ||    Ipv4Address     ||       MAC        ||       Flags        ", 
+        "----------------||--------------------||------------------||--------------------", 
+        "lo              ||127.0.0.1           ||00:00:00:00:00:00 ||IFF_LOOPBACK, IFF_UP", 
+        "eth0            ||192.168.122.240     ||00:00:00:00:00:00 ||IFF_BROADCAST,      ", 
+        "                ||                    ||                  ||IFF_MULTICAST,      ", 
+        "                ||                    ||                  ||IFF_UP              "
+    ], 
+    "logging": "", 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "--format": "test", 
+        "commandline": "ifconfig", 
+        "pid": 2362, 
+        "test_class": "TestListInterfaces", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
+        "tempdir": "/tmp/tmpq0GuCz/TestListInterfacesThread-1", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - ifconfig", 
+        "testdir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE"
+    }
+}

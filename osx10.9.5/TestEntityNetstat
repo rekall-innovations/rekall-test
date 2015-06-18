@@ -1,22 +1,23 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/test/osx10.9.5/output/TestEntityNetstat /Users/adamsh/Projects/test/osx10.9.5/TestEntityNetstat
+   cp /home/scudette/projects/rekall-test/osx10.9.5/output/TestEntityNetstat /home/scudette/projects/rekall-test/osx10.9.5/TestEntityNetstat
 elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/test/osx10.9.5/output/TestEntityNetstat /Users/adamsh/Projects/test/osx10.9.5/TestEntityNetstat
+   meld /home/scudette/projects/rekall-test/osx10.9.5/output/TestEntityNetstat /home/scudette/projects/rekall-test/osx10.9.5/TestEntityNetstat
 elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/test/osx10.9.5/output/TestEntityNetstat /Users/adamsh/Projects/test/osx10.9.5/TestEntityNetstat
+   diff /home/scudette/projects/rekall-test/osx10.9.5/output/TestEntityNetstat /home/scudette/projects/rekall-test/osx10.9.5/TestEntityNetstat
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - netstat
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - netstat
 else
-   less /Users/adamsh/Projects/test/osx10.9.5/output/TestEntityNetstat
+   less /home/scudette/projects/rekall-test/osx10.9.5/output/TestEntityNetstat
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 16.82485604286194, 
+    "logging": "", 
+    "time_used": 8.60647201538086, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestEntityNetstat)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'IPv4/TCP||10.0.2.15                                       ||49154     ||17.149 [truncated]... != u'IPv4/TCP||10.0.2.15                                       ||49154     ||17.149 [truncated]...\nDiff is 766 characters long. Set self.maxDiff to None to see it.\n"
+        "testCase (__main__.TestEntityNetstat)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 235, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 285, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0. [truncated]... != u'IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0. [truncated]...\nDiff is 765 characters long. Set self.maxDiff to None to see it.\n"
     }, 
     "output": [
         "", 
@@ -33,12 +34,12 @@ exit 0
         "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
         "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
         "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
+        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
         "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||UserEventAgent (pid=145)                ", 
-        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
-        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
-        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
-        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
-        "IPv4/UDP||0.0.0.0                                         ||0         ||0.0.0.0                                         ||0         ||-                   ||-                                       ", 
         "IPv4/UDP||0.0.0.0                                         ||123       ||0.0.0.0                                         ||0         ||-                   ||ntpd (pid=111)                          ", 
         "IPv4/UDP||0.0.0.0                                         ||137       ||0.0.0.0                                         ||0         ||-                   ||(2 values): launchd (pid=1), netbiosd   ", 
         "        ||                                                ||          ||                                                ||          ||                    ||(pid=125)                               ", 
@@ -133,14 +134,14 @@ exit 0
         "                    ||                    ||                    ||lrpc/srvsvc         ||                                        ", 
         "STREAM              ||0xff800c5a6af8      ||0x0                 ||/private/var/rpc/nca||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||cn_np/srvsvc        ||                                        ", 
-        "STREAM              ||0xff800c5a6bc0      ||0x0                 ||/private/var/rpc/nca||(2 values): rpcsvchost (pid=80), launchd", 
-        "                    ||                    ||                    ||lrpc/NETLOGON       ||(pid=1)                                 ", 
+        "STREAM              ||0xff800c5a6bc0      ||0x0                 ||/private/var/rpc/nca||(2 values): launchd (pid=1), rpcsvchost ", 
+        "                    ||                    ||                    ||lrpc/NETLOGON       ||(pid=80)                                ", 
         "STREAM              ||0xff800c5a6c88      ||0x0                 ||/private/var/rpc/nca||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||cn_np/mdssvc        ||                                        ", 
         "STREAM              ||0xff800c5a6d50      ||0x0                 ||/private/var/rpc/nca||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||lrpc/lsarpc         ||                                        ", 
-        "STREAM              ||0xff800c5a6e18      ||0x0                 ||/private/var/run/mDN||(2 values): mDNSResponder (pid=45),     ", 
-        "                    ||                    ||                    ||SResponder          ||launchd (pid=1)                         ", 
+        "STREAM              ||0xff800c5a6e18      ||0x0                 ||/private/var/run/mDN||(2 values): launchd (pid=1),            ", 
+        "                    ||                    ||                    ||SResponder          ||mDNSResponder (pid=45)                  ", 
         "STREAM              ||0xff800c5a6ee0      ||0x0                 ||/private/var/rpc/nca||launchd (pid=1)                         ", 
         "                    ||                    ||                    ||cn_np/lsarpc        ||                                        ", 
         "STREAM              ||0xff800cba74b8      ||0xff800cba7d50      ||-                   ||launchd (pid=1)                         ", 
@@ -353,13 +354,14 @@ exit 0
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/test/osx10.9.5/vmem.e01", 
-        "--cache_dir": "/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/", 
+        "--filename": "/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01", 
+        "--format": "test", 
         "commandline": "netstat", 
-        "--renderer": "test", 
+        "pid": 232, 
         "test_class": "TestEntityNetstat", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpwpVWxF/TestEntityNetstatThread-3", 
-        "executed_command": "rekall  --renderer 'test' --cache_dir '/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - netstat", 
-        "testdir": "/Users/adamsh/Projects/test/osx10.9.5"
+        "--cache_dir": "/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/", 
+        "tempdir": "/tmp/tmptwH6zC/TestEntityNetstatThread-2", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - netstat", 
+        "testdir": "/home/scudette/projects/rekall-test/osx10.9.5"
     }
 }

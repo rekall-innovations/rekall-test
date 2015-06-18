@@ -1,18 +1,5 @@
-#!/bin/bash
-if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestInlineHooks /Users/adamsh/Projects/rekall-test/tigger/TestInlineHooks
-elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestInlineHooks /Users/adamsh/Projects/rekall-test/tigger/TestInlineHooks
-elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestInlineHooks /Users/adamsh/Projects/rekall-test/tigger/TestInlineHooks
-elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - hooks_inline --pid 1724
-else
-   less /Users/adamsh/Projects/rekall-test/tigger/output/TestInlineHooks
-fi
-exit 0
 {
-    "time_used": 81.65309882164001, 
+    "time_used": 28.82563090324402, 
     "output": [
         "Pid ||      Proc      ||      Dll       ||Name||        Hook        ||                        Disassembly                         ", 
         "----||----------------||----------------||----||--------------------||------------------------------------------------------------", 
@@ -25,30 +12,24 @@ exit 0
         "    ||                ||                ||    ||                    ||0xc4216559  ADD [ECX+0x0], BH                               ", 
         "    ||                ||                ||    ||                    ||0xc421655c  PUSH ESP                                        ", 
         "    ||                ||                ||    ||                    ||0xc421655d  ADD [EAX+0x0], BH                               ", 
-        "    ||                ||                ||    ||                    ||0xc4216560  ADD [EAX], AL                                   ", 
-        "1724||explorer.exe    ||USERENV.dll     ||-   ||0x76fa0088          ||0x76fa005d  LEA ESI, [EBP-0x8]                              ", 
-        "    ||                ||                ||    ||                    ||0x76fa0060  MOV EAX, EBX                                    ", 
-        "    ||                ||                ||    ||                    ||0x76fa0062  CALL 0x76fa0088                                 ", 
-        "    ||                ||                ||    ||                    ||0x76fa0067  MOV EAX, [EBP-0x4]                              ", 
-        "    ||                ||                ||    ||                    ||0x76fa006a  DEC EAX                                         ", 
-        "    ||                ||                ||    ||                    ||0x76fa006b  POP ECX                                         ", 
-        "    ||                ||                ||    ||                    ||0x76fa006c  MOV [0x5d102a00], EAX                           ", 
-        "    ||                ||                ||    ||                    ||0x76fa0071  POP ECX                                         ", 
-        "    ||                ||                ||    ||                    ||0x76fa0072  MOV [0x5d102a04], EDI                           ", 
-        "    ||                ||                ||    ||                    ||0x76fa0078  XOR EAX, EAX                                    "
+        "    ||                ||                ||    ||                    ||0xc4216560  ADD [EAX], AL                                   "
     ], 
-    "errors": {}, 
+    "logging": "", 
     "return_code": 0, 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
         "commandline": "hooks_inline --pid %(pid)s", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestInlineHooks", 
-        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpZrt2hH/TestInlineHooksThread-5", 
-        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - hooks_inline --pid 1724", 
-        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmpBvFHdu/TestInlineHooksThread-2", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - hooks_inline --pid 1724", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

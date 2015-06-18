@@ -6,17 +6,18 @@ elif [ "$1" == "meld" ]; then
 elif [ "$1" == "diff" ]; then
    diff /home/scudette/projects/rekall-test/tigger/output/TestProcInfo /home/scudette/projects/rekall-test/tigger/TestProcInfo
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - procinfo --pid=1724
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - procinfo --pid=1724
 else
    less /home/scudette/projects/rekall-test/tigger/output/TestProcInfo
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 3.967499017715454, 
+    "logging": "", 
+    "time_used": 6.710675954818726, 
     "return_code": 0, 
     "failures": {
-        "testCase (rekall.plugins.windows.procinfo.TestProcInfo)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 694 != 690\n"
+        "testCase (rekall.plugins.windows.procinfo.TestProcInfo)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 235, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 285, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'KERNEL32.dll!LeaveCriticalSection                 ||                           [truncated]... != u'KERNEL32.dll!LeaveCriticalSection                 ||ntdll!RtlLeaveCriticalSect [truncated]...\n- KERNEL32.dll!LeaveCriticalSection                 ||                                                            ||576  \n?                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n+ KERNEL32.dll!LeaveCriticalSection                 ||ntdll!RtlLeaveCriticalSection                               ||576  \n?                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
     }, 
     "output": [
         "**************************************************", 
@@ -138,8 +139,8 @@ exit 0
         "KERNEL32.dll!GetStartupInfoW                      ||                                                            ||429  ", 
         "KERNEL32.dll!GetCommandLineW                      ||                                                            ||266  ", 
         "KERNEL32.dll!SetErrorMode                         ||                                                            ||768  ", 
-        "KERNEL32.dll!LeaveCriticalSection                 ||                                                            ||576  ", 
-        "KERNEL32.dll!EnterCriticalSection                 ||                                                            ||150  ", 
+        "KERNEL32.dll!LeaveCriticalSection                 ||ntdll!RtlLeaveCriticalSection                               ||576  ", 
+        "KERNEL32.dll!EnterCriticalSection                 ||ntdll!RtlEnterCriticalSection                               ||150  ", 
         "KERNEL32.dll!ResetEvent                           ||                                                            ||700  ", 
         "KERNEL32.dll!LoadLibraryExA                       ||                                                            ||578  ", 
         "KERNEL32.dll!CompareFileTime                      ||                                                            ||54   ", 
@@ -173,12 +174,12 @@ exit 0
         "KERNEL32.dll!FlushInstructionCache                ||                                                            ||231  ", 
         "KERNEL32.dll!lstrcpynW                            ||                                                            ||945  ", 
         "KERNEL32.dll!GetSystemWindowsDirectoryW           ||                                                            ||448  ", 
-        "KERNEL32.dll!SetLastError                         ||                                                            ||787  ", 
+        "KERNEL32.dll!SetLastError                         ||ntdll!RtlRestoreLastWin32Error                              ||787  ", 
         "KERNEL32.dll!GetProcessHeap                       ||                                                            ||410  ", 
-        "KERNEL32.dll!HeapFree                             ||                                                            ||520  ", 
-        "KERNEL32.dll!HeapReAlloc                          ||                                                            ||524  ", 
-        "KERNEL32.dll!HeapSize                             ||                                                            ||526  ", 
-        "KERNEL32.dll!HeapAlloc                            ||                                                            ||514  ", 
+        "KERNEL32.dll!HeapFree                             ||ntdll!RtlFreeHeap                                           ||520  ", 
+        "KERNEL32.dll!HeapReAlloc                          ||ntdll!RtlReAllocateHeap                                     ||524  ", 
+        "KERNEL32.dll!HeapSize                             ||ntdll!RtlSizeHeap                                           ||526  ", 
+        "KERNEL32.dll!HeapAlloc                            ||ntdll!RtlAllocateHeap                                       ||514  ", 
         "KERNEL32.dll!GetUserDefaultLCID                   ||                                                            ||469  ", 
         "KERNEL32.dll!ReadProcessMemory                    ||                                                            ||678  ", 
         "KERNEL32.dll!OpenProcess                          ||                                                            ||628  ", 
@@ -195,7 +196,7 @@ exit 0
         "KERNEL32.dll!GetSystemDefaultLCID                 ||                                                            ||435  ", 
         "KERNEL32.dll!GetLocaleInfoW                       ||                                                            ||364  ", 
         "KERNEL32.dll!CreateEventW                         ||                                                            ||76   ", 
-        "KERNEL32.dll!GetLastError                         ||                                                            ||360  ", 
+        "KERNEL32.dll!GetLastError                         ||ntdll!RtlGetLastWin32Error                                  ||360  ", 
         "KERNEL32.dll!RegisterWaitForSingleObject          ||                                                            ||683  ", 
         "KERNEL32.dll!OpenEventW                           ||                                                            ||620  ", 
         "KERNEL32.dll!WaitForSingleObject                  ||                                                            ||890  ", 
@@ -221,7 +222,7 @@ exit 0
         "KERNEL32.dll!DeactivateActCtx                     ||                                                            ||115  ", 
         "KERNEL32.dll!DelayLoadFailureHook                 ||                                                            ||125  ", 
         "KERNEL32.dll!GetProcAddress                       ||                                                            ||407  ", 
-        "KERNEL32.dll!DeleteCriticalSection                ||                                                            ||127  ", 
+        "KERNEL32.dll!DeleteCriticalSection                ||ntdll!RtlDeleteCriticalSection                              ||127  ", 
         "KERNEL32.dll!CreateEventA                         ||                                                            ||75   ", 
         "KERNEL32.dll!HeapDestroy                          ||                                                            ||518  ", 
         "KERNEL32.dll!InitializeCriticalSection            ||                                                            ||533  ", 
@@ -465,8 +466,8 @@ exit 0
         "USER32.dll!GetMenuItemInfoW                       ||                                                            ||309  ", 
         "USER32.dll!SetMenuItemInfoW                       ||                                                            ||611  ", 
         "USER32.dll!CharNextW                              ||                                                            ||44   ", 
-        "ntdll.dll!RtlNtStatusToDosError                   ||                                                            ||717  ", 
-        "ntdll.dll!NtQueryInformationProcess               ||                                                            ||235  ", 
+        "ntdll.dll!RtlNtStatusToDosError                   ||ntdll!RtlNtStatusToDosError                                 ||717  ", 
+        "ntdll.dll!NtQueryInformationProcess               ||ntdll!NtQueryInformationProcess                             ||235  ", 
         "SHLWAPI.dll!StrCpyNW                              ||                                                            ||240  ", 
         "SHLWAPI.dll!\ufffd8\ufffd\u0001                                  ||                                                            ||63717", 
         "SHLWAPI.dll!\ufffd\u0001                                    ||                                                            ||14517", 
@@ -717,12 +718,13 @@ exit 0
         ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
         "commandline": "procinfo --pid=%(pid)s", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestProcInfo", 
-        "tempdir": "/tmp/tmp3R0v9W/TestProcInfoThread-2", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - procinfo --pid=1724", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmpeFIZ9z/TestProcInfoThread-3", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - procinfo --pid=1724", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

@@ -1,23 +1,5 @@
-#!/bin/bash
-if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/rekall-test/tigger/output/TestWinDllList /home/scudette/projects/rekall-test/tigger/TestWinDllList
-elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/rekall-test/tigger/output/TestWinDllList /home/scudette/projects/rekall-test/tigger/TestWinDllList
-elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/rekall-test/tigger/output/TestWinDllList /home/scudette/projects/rekall-test/tigger/TestWinDllList
-elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - dlllist
-else
-   less /home/scudette/projects/rekall-test/tigger/output/TestWinDllList
-fi
-exit 0
 {
-    "errors": {}, 
-    "time_used": 3.6434178352355957, 
-    "return_code": 0, 
-    "failures": {
-        "testCase (__main__.TestWinDllList)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'\\u5265\\u6d65\\u766f\\u6261\\u656c\\u6f56\\u756c\\u656d\\u3a73\\u4720\\u7465\\u6f4c\\u6967 [truncated]... != u''\n- \\u5265\\u6d65\\u766f\\u6261\\u656c\\u6f56\\u756c\\u656d\\u3a73\\u4720\\u7465\\u6f4c\\u6967\\u6163\n+ \n\n"
-    }, 
+    "time_used": 2.4619550704956055, 
     "output": [
         "**************************************************", 
         "System pid: 4     ", 
@@ -471,7 +453,7 @@ exit 0
         "**************************************************", 
         "vmacthlp.exe pid: 844   ", 
         "Command line : \"C:\\Program Files\\VMware\\VMware Tools\\vmacthlp.exe\"", 
-        "", 
+        "Service Pack 2", 
         "", 
         "   Base   ||   Size   ||      Load Reason/Count       ||Path", 
         "----------||----------||------------------------------||----", 
@@ -1263,6 +1245,8 @@ exit 0
         "0x71aa0000||    0x8000||1                             ||C:\\WINDOWS\\system32\\WS2HELP.dll", 
         "0x76d60000||   0x19000||1                             ||C:\\WINDOWS\\system32\\iphlpapi.dll"
     ], 
+    "logging": "", 
+    "return_code": 0, 
     "options": {
         "--name_resolution_strategies": [
             "Module", 
@@ -1270,13 +1254,13 @@ exit 0
         ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
-        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "--format": "test", 
         "commandline": "dlllist", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestWinDllList", 
-        "tempdir": "/tmp/tmpd5NF_I/TestWinDllListThread-1", 
-        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - dlllist", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmpmuziew/TestWinDllListThread-2", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - dlllist", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

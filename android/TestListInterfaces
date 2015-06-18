@@ -1,0 +1,31 @@
+{
+    "time_used": 4.972616910934448, 
+    "output": [
+        "   Interface    ||    Ipv4Address     ||       MAC        ||       Flags        ", 
+        "----------------||--------------------||------------------||--------------------", 
+        "lo              ||127.0.0.1           ||00:00:00:00:00:00 ||IFF_LOOPBACK, IFF_UP", 
+        "eth0            ||50.94.125.176       ||00:00:00:00:00:00 ||IFF_BROADCAST,      ", 
+        "                ||                    ||                  ||IFF_MULTICAST,      ", 
+        "                ||                    ||                  ||IFF_UP              "
+    ], 
+    "logging": "", 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--format": "test", 
+        "commandline": "ifconfig", 
+        "proc_name": "sh", 
+        "pid": 1872, 
+        "tempdir": "/tmp/tmpO5e1nQ/TestListInterfacesThread-2", 
+        "test_class": "TestListInterfaces", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - ifconfig", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

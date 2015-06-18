@@ -1,11 +1,28 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestMimikatz /home/scudette/projects/rekall-test/tigger/TestMimikatz
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestMimikatz /home/scudette/projects/rekall-test/tigger/TestMimikatz
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestMimikatz /home/scudette/projects/rekall-test/tigger/TestMimikatz
+elif [ "$1" == "run" ]; then
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - mimikatz
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestMimikatz
+fi
+exit 0
 {
-    "time_used": 2.8874378204345703, 
+    "errors": {}, 
+    "logging": "CRITICAL:rekall.1:Unable to decrypt LSA secret.\n", 
+    "time_used": 1.905858039855957, 
+    "return_code": 0, 
+    "failures": {
+        "testCase (__main__.TestMimikatz)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 235, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 285, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 3 != 2\n"
+    }, 
     "output": [
         "       Module       ||        User        ||       Domain       ||      Password      ", 
-        "--------------------||--------------------||--------------------||--------------------", 
-        "CRITICAL:rekall.1:Unable to decrypt LSA secret."
+        "--------------------||--------------------||--------------------||--------------------"
     ], 
-    "return_code": 0, 
     "options": {
         "--name_resolution_strategies": [
             "Module", 
@@ -18,7 +35,7 @@
         "pid": 1724, 
         "test_class": "TestMimikatz", 
         "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
-        "tempdir": "/tmp/tmp9gr3S7/TestMimikatzThread-1", 
+        "tempdir": "/tmp/tmpOD1IuU/TestMimikatzThread-1", 
         "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - mimikatz", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
