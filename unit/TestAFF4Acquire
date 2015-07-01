@@ -1,0 +1,16 @@
+{
+    "time_used": 0.457150936126709, 
+    "output": [], 
+    "logging": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/py27/bin/rekall\", line 9, in <module>\n    load_entry_point('rekall==1.3.2', 'console_scripts', 'rekall')()\n  File \"/Users/adamsh/Projects/rekall/py27/lib/python2.7/site-packages/pkg_resources/__init__.py\", line 552, in load_entry_point\n    return get_distribution(dist).load_entry_point(group, name)\n  File \"/Users/adamsh/Projects/rekall/py27/lib/python2.7/site-packages/pkg_resources/__init__.py\", line 2672, in load_entry_point\n    return ep.load()\n  File \"/Users/adamsh/Projects/rekall/py27/lib/python2.7/site-packages/pkg_resources/__init__.py\", line 2345, in load\n    return self.resolve()\n  File \"/Users/adamsh/Projects/rekall/py27/lib/python2.7/site-packages/pkg_resources/__init__.py\", line 2351, in resolve\n    module = __import__(self.module_name, fromlist=['__name__'], level=0)\n  File \"/Users/adamsh/Projects/rekall/py27/lib/python2.7/site-packages/rekall-1.3.2-py2.7.egg/rekall/rekal.py\", line 36, in <module>\n    from rekall import plugins  # pylint: disable=unused-import\n  File \"/Users/adamsh/Projects/rekall/py27/lib/python2.7/site-packages/rekall-1.3.2-py2.7.egg/rekall/plugins/__init__.py\", line 4, in <module>\n    from rekall.plugins import addrspaces\n  File \"/Users/adamsh/Projects/rekall/py27/lib/python2.7/site-packages/rekall-1.3.2-py2.7.egg/rekall/plugins/addrspaces/__init__.py\", line 8, in <module>\n    from rekall.plugins.addrspaces import crash\n  File \"/Users/adamsh/Projects/rekall/py27/lib/python2.7/site-packages/rekall-1.3.2-py2.7.egg/rekall/plugins/addrspaces/crash.py\", line 27, in <module>\n    from rekall.plugins.overlays.windows import crashdump\n  File \"/Users/adamsh/Projects/rekall/py27/lib/python2.7/site-packages/rekall-1.3.2-py2.7.egg/rekall/plugins/overlays/__init__.py\", line 3, in <module>\n    from rekall.plugins.overlays import basic\n  File \"/Users/adamsh/Projects/rekall/py27/lib/python2.7/site-packages/rekall-1.3.2-py2.7.egg/rekall/plugins/overlays/basic.py\", line 29, in <module>\n    import pytz\n  File \"build/bdist.linux-x86_64/egg/pytz/__init__.py\", line 1512, in <module>\n  File \"build/bdist.linux-x86_64/egg/pytz/lazy.py\", line 160, in __new__\n  File \"build/bdist.linux-x86_64/egg/pytz/lazy.py\", line 145, in lazy\nKeyboardInterrupt\n", 
+    "return_code": 1, 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/Users/adamsh/Projects/test/unit/../profile_cache/", 
+        "--format": "test", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmp1EFUiQ/TestAFF4AcquireThread-1", 
+        "executed_command": "rekall  --format 'test' --cache_dir '/Users/adamsh/Projects/test/unit/../profile_cache/' - aff4acquire /var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmp1EFUiQ/TestAFF4AcquireThread-1/output_image.aff4", 
+        "commandline": "aff4acquire %(tempdir)s/output_image.aff4", 
+        "testdir": "/Users/adamsh/Projects/test/unit", 
+        "test_class": "TestAFF4Acquire"
+    }
+}
