@@ -1,38 +1,47 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/rekall-test/tigger/output/TestGrep /Users/adamsh/Projects/rekall-test/tigger/TestGrep
+   cp /home/scudette/projects/rekall-test/tigger/output/TestGrep /home/scudette/projects/rekall-test/tigger/TestGrep
 elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/rekall-test/tigger/output/TestGrep /Users/adamsh/Projects/rekall-test/tigger/TestGrep
+   meld /home/scudette/projects/rekall-test/tigger/output/TestGrep /home/scudette/projects/rekall-test/tigger/TestGrep
 elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/rekall-test/tigger/output/TestGrep /Users/adamsh/Projects/rekall-test/tigger/TestGrep
+   diff /home/scudette/projects/rekall-test/tigger/output/TestGrep /home/scudette/projects/rekall-test/tigger/TestGrep
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - grep explorer.exe --offset 4281886160
+   rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - grep explorer.exe --offset 4281886160
 else
-   less /Users/adamsh/Projects/rekall-test/tigger/output/TestGrep
+   less /home/scudette/projects/rekall-test/tigger/output/TestGrep
 fi
 exit 0
 {
-    "time_used": 3.74991512298584, 
-    "output": [
-        "  Offset  ||                            Hex                             ||        Data        ||                Comment                 ", 
-        "----------||------------------------------------------------------------||--------------------||----------------------------------------", 
-        "0xff386730||30 67 38 ff 30 67 38 ff 00 00 00 00 00 00 00 00 00 d0 9b fc ||0g8.0g8.............||                                        ", 
-        "0xff386744||65 78 70 6c 6f 72 65 72 2e 65 78 65 00 00 00 00 00 00 00 00 ||explorer.exe........||                                        "
-    ], 
     "errors": {}, 
+    "logging": "", 
+    "time_used": 1.2624549865722656, 
     "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.core_test.TestGrep)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 235, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 285, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 4 != 5\n"
+    }, 
+    "output": [
+        "  Offset  ||                              Data                               ||                Comment                 ", 
+        "----------||-----------------------------------------------------------------||----------------------------------------", 
+        "0xff386734||30 67 38 ff 00 00 00 00 00 00 00 00 00 d0 9b fc ||0g8.............|| ", 
+        "0xff386744||65 78 70 6c 6f 72 65 72 2e 65 78 65 00 00 00 00 ||explorer.exe....|| ", 
+        "0xff386754||00 00 00 00 00 00 00 00 00 00 00 00 d4 7f 24 ff ||..............$.|| "
+    ], 
     "options": {
-        "--name_resolution_strategies": "Module,Symbol", 
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "keyword": "explorer.exe", 
+        "--format": "test", 
         "commandline": "grep %(keyword)s --offset %(offset)s", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestGrep", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
         "offset": 4281886160, 
-        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpYULHcC/TestGrepThread-4", 
-        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module,Symbol' - grep explorer.exe --offset 4281886160", 
-        "testdir": "/Users/adamsh/Projects/rekall-test/tigger"
+        "tempdir": "/tmp/tmpwXsnn1/TestGrepThread-1", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - grep explorer.exe --offset 4281886160", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }
