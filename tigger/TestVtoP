@@ -1,22 +1,23 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/rekall-test/tigger/output/TestVtoP /home/scudette/projects/rekall-test/tigger/TestVtoP
+   cp /Users/adamsh/Projects/test/tigger/output/TestVtoP /Users/adamsh/Projects/test/tigger/TestVtoP
 elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/rekall-test/tigger/output/TestVtoP /home/scudette/projects/rekall-test/tigger/TestVtoP
+   meld /Users/adamsh/Projects/test/tigger/output/TestVtoP /Users/adamsh/Projects/test/tigger/TestVtoP
 elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/rekall-test/tigger/output/TestVtoP /home/scudette/projects/rekall-test/tigger/TestVtoP
+   diff /Users/adamsh/Projects/test/tigger/output/TestVtoP /Users/adamsh/Projects/test/tigger/TestVtoP
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - vtop --pid 1724 - 1953792
+   rekall  --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - vtop --pid 1724 - 1953792
 else
-   less /home/scudette/projects/rekall-test/tigger/output/TestVtoP
+   less /Users/adamsh/Projects/test/tigger/output/TestVtoP
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 7.260253190994263, 
+    "logging": "", 
+    "time_used": 4.543864011764526, 
     "return_code": 0, 
     "failures": {
-        "testCase (rekall.plugins.windows.pfn_test.TestVtoP)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 233, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 283, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 43 != 34\n"
+        "testCase (rekall.plugins.windows.pfn_test.TestVtoP)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 235, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 285, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'   VAD    ||lev||Start Addr|| End Addr ||com ||-------||------||      Protect  [truncated]... != u'   VAD    ||lev||Start Addr|| End Addr || com  ||-------||------||      Protec [truncated]...\n-    VAD    ||lev||Start Addr|| End Addr ||com ||-------||------||      Protect       ||Filename\n+    VAD    ||lev||Start Addr|| End Addr || com  ||-------||------||      Protect       ||Filename\n?                                          +   +\n\n"
     }, 
     "output": [
         "", 
@@ -32,9 +33,9 @@ exit 0
         "Prototype PTE is found in VAD", 
         "**************************************************", 
         "Pid: 1724 explorer.exe", 
-        "   VAD    ||lev||Start Addr|| End Addr ||com ||-------||------||      Protect       ||Filename", 
-        "----------||---||----------||----------||----||       ||      ||--------------------||--------", 
-        "0xff23fb80||  8||0x001d0000||0x0020cfff||   0||Mapped ||      ||READONLY            ||\\WINDOWS\\system32\\locale.nls", 
+        "   VAD    ||lev||Start Addr|| End Addr || com  ||-------||------||      Protect       ||Filename", 
+        "----------||---||----------||----------||------||       ||      ||--------------------||--------", 
+        "0xff23fb80||  8||0x001d0000||0x0020cfff||     0||Mapped ||      ||READONLY            ||\\WINDOWS\\system32\\locale.nls", 
         "", 
         "_MMVAD.FirstPrototypePte: 0xe1674008", 
         "PTE is at 0xe1674070", 
@@ -60,15 +61,15 @@ exit 0
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
-        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "--filename": "/Users/adamsh/Projects/test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
         "commandline": "vtop --pid %(pid)s - %(vaddr)s", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestVtoP", 
         "vaddr": 1953792, 
-        "tempdir": "/tmp/tmp5KRedy/TestVtoPThread-3", 
-        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - vtop --pid 1724 - 1953792", 
-        "testdir": "/home/scudette/projects/rekall-test/tigger"
+        "--cache_dir": "/Users/adamsh/Projects/test/tigger/../profile_cache/", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmp8nt_zJ/TestVtoPThread-2", 
+        "executed_command": "rekall  --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - vtop --pid 1724 - 1953792", 
+        "testdir": "/Users/adamsh/Projects/test/tigger"
     }
 }
