@@ -1,0 +1,38 @@
+{
+    "time_used": 0.08938908576965332, 
+    "output": [], 
+    "logging": [
+        "Traceback (most recent call last):", 
+        "  File \"/home/scudette/Dev/bin/rekall\", line 5, in <module>", 
+        "    from pkg_resources import load_entry_point", 
+        "  File \"/home/scudette/Dev/local/lib/python2.7/site-packages/pkg_resources.py\", line 35, in <module>", 
+        "    from urlparse import urlparse, urlunparse", 
+        "  File \"/usr/lib/python2.7/urlparse.py\", line 73, in <module>", 
+        "    class ResultMixin(object):", 
+        "KeyboardInterrupt"
+    ], 
+    "return_code": 1, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/win10/win10.aff4", 
+        "--format": "test", 
+        "commandline": "vaddump --pid %(pid)s --dump_dir %(tempdir)s", 
+        "pid": 3152, 
+        "test_class": "TestVADDump", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/win10/../profile_cache/", 
+        "tempdir": "/tmp/tmpf8m6FZ/TestVADDumpThread-3", 
+        "executed_command": "rekall  -v --cache_dir '/home/scudette/projects/rekall-test/win10/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/win10/win10.aff4' --name_resolution_strategies 'Module' 'Symbol' - vaddump --pid 3152 --dump_dir /tmp/tmpf8m6FZ/TestVADDumpThread-3", 
+        "Xenabled": [
+            "TestWinPsList", 
+            "TestPoolTracker", 
+            "TestWinDNSCache", 
+            "TestWinSSDT", 
+            "TestLdrModules"
+        ], 
+        "testdir": "/home/scudette/projects/rekall-test/win10"
+    }
+}

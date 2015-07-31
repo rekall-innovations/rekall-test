@@ -1,19 +1,20 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/rekall-test/tigger/output/TestVtoP /home/scudette/projects/rekall-test/tigger/TestVtoP
+   cp /home/scudette/projects/rekall-test/tigger/output/TestVadPTE /home/scudette/projects/rekall-test/tigger/TestVadPTE
 elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/rekall-test/tigger/output/TestVtoP /home/scudette/projects/rekall-test/tigger/TestVtoP
+   meld /home/scudette/projects/rekall-test/tigger/output/TestVadPTE /home/scudette/projects/rekall-test/tigger/TestVadPTE
 elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/rekall-test/tigger/output/TestVtoP /home/scudette/projects/rekall-test/tigger/TestVtoP
+   diff /home/scudette/projects/rekall-test/tigger/output/TestVadPTE /home/scudette/projects/rekall-test/tigger/TestVadPTE
 elif [ "$1" == "run" ]; then
-   rekall  -v --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - vtop --pid 1724 - 1953792
+   rekall  -v --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - run --run /tmp/tmpbgDjXa/TestVadPTE.script
 else
-   less /home/scudette/projects/rekall-test/tigger/output/TestVtoP
+   less /home/scudette/projects/rekall-test/tigger/output/TestVadPTE
 fi
 exit 0
 {
     "errors": {}, 
     "logging": [
+        "DEBUG:rekall.1:Running plugin (<class 'rekall.rekal.Run'>) with args (()) kwargs ({'run': '/tmp/tmpbgDjXa/TestVadPTE.script', 'script': \"print 'hello!'\"})", 
         "DEBUG:rekall.1:Voting round with base: None", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: No base address space provided", 
@@ -93,38 +94,40 @@ exit 0
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
         "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
-        "DEBUG:rekall.1:Running plugin (<class 'rekall.plugins.windows.pfn.VtoP'>) with args (()) kwargs ({'profile': None, 'proc_regex': None, 'phys_eprocess': None, 'virtual_address': '1953792', 'pid': [1724], 'eprocess': None, 'method': ['PsActiveProcessHead', 'CSRSS', 'PspCidTable', 'Sessions', 'Handles']})", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/help_doc.gz", 
+        "INFO:rekall.1:Loaded profile help_doc from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
+        "DEBUG:rekall.1:Running plugin (cc) with args ((844,)) kwargs ({})", 
         "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/dtb.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/default_address_space.gz", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/process_context.gz", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/PsLoadedModuleList.gz", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/kernel_base.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/pslist_PsActiveProcessHead.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/pslist_CSRSS.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/pslist_PspCidTable.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/pslist_Sessions.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/pslist_Handles.gz", 
-        "DEBUG:rekall.1:Switching to process context: explorer.exe (Pid 1724@0xff3865d0)", 
+        "DEBUG:rekall.1:Switching to process context: vmacthlp.exe (Pid 844@0xff218230)", 
+        "DEBUG:rekall.1:Running plugin (vtop) with args ((2012024832,)) kwargs ({})", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/PsLoadedModuleList.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/kernel_base.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/dtb2task.gz", 
-        "DEBUG:rekall.1:Switching to process context: explorer.exe (Pid 1724@0xff3865d0)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Flushed default_address_space in 0.00118899345398", 
-        "DEBUG:rekall.1:Flushed process_context in 0.000777006149292", 
-        "DEBUG:rekall.1:Flushed profile_obj in 0.000419855117798"
+        "DEBUG:rekall.1:Flushed default_address_space in 0.0013370513916", 
+        "DEBUG:rekall.1:Flushed process_context in 0.000890016555786", 
+        "DEBUG:rekall.1:Flushed profile_obj in 0.000452995300293"
     ], 
-    "time_used": 1.596195936203003, 
+    "time_used": 2.6573898792266846, 
     "return_code": 0, 
     "failures": {
-        "testCase (rekall.plugins.windows.pfn_test.TestVtoP)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 34 != 43\n"
+        "testCase (__main__.TestVadPTE)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 31 != 48\n"
     }, 
     "output": [
+        "Switching to process context: vmacthlp.exe (Pid 844@0xff218230)", 
         "", 
-        "******************** 0x1dd000 ********************", 
-        "Virtual 0x001dd000 Page Directory 0x6cc0280", 
-        "pdpte@ 0x6cc0280 = 0x4339001", 
-        "pde@ 0x4339000 = 0x32ab067", 
-        "pte@ 0x32abee8 = 0x0", 
-        "[_MMPTE_SOFTWARE Soft] @ 0x032abee8 ", 
+        "******************* 0x77ed1000 *******************", 
+        "Virtual 0x77ed1000 Page Directory 0x6cc00c0", 
+        "pdpte@ 0x6cc00c8 = 0x1c50001", 
+        "pde@ 0x1c50df8 = 0x1c84067", 
+        "pte@ 0x1c84688 = 0x0", 
+        "[_MMPTE_SOFTWARE Soft] @ 0x01c84688 ", 
         "Offset||            Field             ||Content", 
         "------||------------------------------||-------", 
         " || 0x0  ||PageFileHigh                  || [BitField(32-64):PageFileHigh]: 0x00000000", 
@@ -136,31 +139,35 @@ exit 0
         " || 0x0  ||Valid                         || [BitField(0-1):Valid]: 0x00000000", 
         "Consulting Vad: Prototype PTE is found in VAD", 
         "**************************************************", 
-        "Pid: 1724 explorer.exe", 
+        "Pid: 844 vmacthlp.exe", 
         "   VAD    ||lev||Start Addr|| End Addr || com  ||-------||------||      Protect       ||Filename", 
         "----------||---||----------||----------||------||       ||      ||--------------------||--------", 
-        "0xff23fb80||  8||0x001d0000||0x0020cfff||     0||Mapped ||      ||READONLY            ||\\WINDOWS\\system32\\locale.nls", 
+        "0xff39b478||  7||0x77e70000||0x77f00fff||     1||Mapped ||Exe   ||EXECUTE_WRITECOPY   ||\\WINDOWS\\system32\\rpcrt4.dll", 
         "", 
-        "_MMVAD.FirstPrototypePte: 0xe1674008", 
-        "Prototype PTE is at virtual address 0xe1674070 (Physical Address 0x3b93070)", 
-        "pte@ 0x3b93070 = 0x59418c2", 
-        "[_MMPTE_TRANSITION Trans] @ 0x03b93070 ", 
+        "_MMVAD.FirstPrototypePte: 0xe16c1330", 
+        "Prototype PTE is at virtual address 0xe16c1638 (Physical Address 0x5137638)", 
+        "pte@ 0x5137638 = 0x3d97121", 
+        "[_MMPTE_HARDWARE Hard] @ 0x05137638 ", 
         "Offset||            Field             ||Content", 
         "------||------------------------------||-------", 
+        " || 0x0  ||Accessed                      || [BitField(5-6):Accessed]: 0x00000001", 
         " || 0x0  ||CacheDisable                  || [BitField(4-5):CacheDisable]: 0x00000000", 
+        " || 0x0  ||CopyOnWrite                   || [BitField(9-10):CopyOnWrite]: 0x00000000", 
+        " || 0x0  ||Dirty                         || [BitField(6-7):Dirty]: 0x00000000", 
+        " || 0x0  ||Global                        || [BitField(8-9):Global]: 0x00000001", 
+        " || 0x0  ||LargePage                     || [BitField(7-8):LargePage]: 0x00000000", 
         " || 0x0  ||Owner                         || [BitField(2-3):Owner]: 0x00000000", 
-        " || 0x0  ||PageFrameNumber               || [BitField(12-38):PageFrameNumber]: 0x00005941", 
-        " || 0x0  ||Protection                    || [Enumeration:Enumeration]: 0x00000006 (MM_EXECUTE_READWRITE)", 
+        " || 0x0  ||PageFrameNumber               || [BitField(12-38):PageFrameNumber]: 0x00003D97", 
         " || 0x0  ||Prototype                     || [BitField(10-11):Prototype]: 0x00000000", 
-        " || 0x0  ||Transition                    || [BitField(11-12):Transition]: 0x00000001", 
-        " || 0x0  ||Unused                        || [BitField(38-64):Unused]: 0x00000000", 
-        " || 0x0  ||Valid                         || [BitField(0-1):Valid]: 0x00000000", 
-        " || 0x0  ||Write                         || [BitField(1-2):Write]: 0x00000001", 
+        " || 0x0  ||Valid                         || [BitField(0-1):Valid]: 0x00000001", 
+        " || 0x0  ||Write                         || [BitField(1-2):Write]: 0x00000000", 
         " || 0x0  ||WriteThrough                  || [BitField(3-4):WriteThrough]: 0x00000000", 
-        "Physical Address 0x5941000", 
+        " || 0x0  ||reserved0                     || [BitField(11-12):reserved0]: 0x00000000", 
+        " || 0x0  ||reserved1                     || [BitField(38-64):reserved1]: 0x00000000", 
+        "Physical Address 0x3d97000", 
         "", 
         "Deriving physical address from runtime physical address space:", 
-        "Physical Address 0x5941000"
+        "Physical Address 0x3d97000"
     ], 
     "options": {
         "--name_resolution_strategies": [
@@ -170,13 +177,12 @@ exit 0
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "--format": "test", 
-        "commandline": "vtop --pid %(pid)s - %(vaddr)s", 
+        "commandline": "run --run /tmp/tmpbgDjXa/TestVadPTE.script", 
         "pid": 1724, 
-        "test_class": "TestVtoP", 
-        "vaddr": 1953792, 
+        "test_class": "TestVadPTE", 
         "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
-        "tempdir": "/tmp/tmpEgKVxV/TestVtoPThread-3", 
-        "executed_command": "rekall  -v --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - vtop --pid 1724 - 1953792", 
+        "tempdir": "/tmp/tmpbgDjXa/TestVadPTEThread-2", 
+        "executed_command": "rekall  -v --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - run --run /tmp/tmpbgDjXa/TestVadPTE.script", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

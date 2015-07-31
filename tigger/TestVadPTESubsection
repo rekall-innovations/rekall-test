@@ -1,19 +1,20 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/rekall-test/osx10.9.5/output/TestVtoP /home/scudette/projects/rekall-test/osx10.9.5/TestVtoP
+   cp /home/scudette/projects/rekall-test/tigger/output/TestVadPTESubsection /home/scudette/projects/rekall-test/tigger/TestVadPTESubsection
 elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/rekall-test/osx10.9.5/output/TestVtoP /home/scudette/projects/rekall-test/osx10.9.5/TestVtoP
+   meld /home/scudette/projects/rekall-test/tigger/output/TestVadPTESubsection /home/scudette/projects/rekall-test/tigger/TestVadPTESubsection
 elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/rekall-test/osx10.9.5/output/TestVtoP /home/scudette/projects/rekall-test/osx10.9.5/TestVtoP
+   diff /home/scudette/projects/rekall-test/tigger/output/TestVadPTESubsection /home/scudette/projects/rekall-test/tigger/TestVadPTESubsection
 elif [ "$1" == "run" ]; then
-   rekall  -v --cache_dir '/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - vtop --pid 232 - 4488003584
+   rekall  -v --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - run --run /tmp/tmpIRu3n8/TestVadPTESubsection.script
 else
-   less /home/scudette/projects/rekall-test/osx10.9.5/output/TestVtoP
+   less /home/scudette/projects/rekall-test/tigger/output/TestVadPTESubsection
 fi
 exit 0
 {
     "errors": {}, 
     "logging": [
+        "DEBUG:rekall.1:Running plugin (<class 'rekall.rekal.Run'>) with args (()) kwargs ({'run': '/tmp/tmpIRu3n8/TestVadPTESubsection.script', 'script': \"print 'hello!'\"})", 
         "DEBUG:rekall.1:Voting round with base: None", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: No base address space provided", 
@@ -38,7 +39,7 @@ exit 0
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Unable to open AFF4 volume", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
-        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /home/scudette/projects/rekall-test/osx10.9.5/vmem.e01_info", 
+        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /home/scudette/projects/rekall-test/tigger/tigger.vmem.E01_info", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
         "DEBUG:rekall.1:Succeeded instantiating FileAddressSpace", 
         "DEBUG:rekall.1:Voting round with base: FileAddressSpace", 
@@ -52,7 +53,7 @@ exit 0
         "DEBUG:rekall.1:Succeeded instantiating EWFAddressSpace", 
         "DEBUG:rekall.1:Voting round with base: EWFAddressSpace", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
-        "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0x0", 
+        "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0xf000ff53", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
         "DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Header signature invalid", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
@@ -87,46 +88,68 @@ exit 0
         "DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
         "INFO:rekall.1:Autodetected physical address space EWFAddressSpace", 
         "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/index.gz", 
-        "INFO:rekall.1:Detected fingerprinted image 7ce106426bb4230cbb927cee938266eb0a8626db", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/7ce106426bb4230cbb927cee938266eb0a8626db/profile.gz", 
+        "INFO:rekall.1:Detected fingerprinted image d48ff8ae52b14facf19f7e82affc0bd1ef03cd35", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/profile.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/OSX/10.9.5_13F34.64bit.gz", 
-        "INFO:rekall.1:Loaded profile OSX/10.9.5_13F34.64bit from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
-        "DEBUG:rekall.1:Running plugin (<class 'rekall.plugins.darwin.misc.DarwinVtoP'>) with args (()) kwargs ({'profile': None, 'proc_regex': None, 'vm_kernel_slide': None, 'virtual_address': '4488003584', 'pid': [232], 'phys_proc': None, 'proc': None, 'method': None, 'first': None})", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/7ce106426bb4230cbb927cee938266eb0a8626db/dtb.gz", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/7ce106426bb4230cbb927cee938266eb0a8626db/default_address_space.gz", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/7ce106426bb4230cbb927cee938266eb0a8626db/vm_kernel_slide.gz", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/7ce106426bb4230cbb927cee938266eb0a8626db/process_context.gz", 
-        "DEBUG:rekall.1:Listed 0 processes using deadprocs", 
-        "DEBUG:rekall.1:Listed 108 processes using tasks", 
-        "DEBUG:rekall.1:Listed 107 processes using pidhash", 
-        "DEBUG:rekall.1:Listed 108 processes using pgrphash", 
-        "DEBUG:rekall.1:Listed 107 processes using allproc", 
-        "DEBUG:rekall.1:Switching to process context: bash (Pid 232@0xff800cba3c88)", 
-        "DEBUG:rekall.1:Switching to Kernel context", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
+        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/help_doc.gz", 
+        "INFO:rekall.1:Loaded profile help_doc from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
+        "DEBUG:rekall.1:Running plugin (cc) with args ((844,)) kwargs ({})", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/dtb.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/default_address_space.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/pslist_PsActiveProcessHead.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/pslist_CSRSS.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/pslist_PspCidTable.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/pslist_Sessions.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/pslist_Handles.gz", 
+        "DEBUG:rekall.1:Switching to process context: vmacthlp.exe (Pid 844@0xff218230)", 
+        "DEBUG:rekall.1:Running plugin (vtop) with args ((2009485312,)) kwargs ({})", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/PsLoadedModuleList.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/kernel_base.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/dtb2task.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/d48ff8ae52b14facf19f7e82affc0bd1ef03cd35/drive_letter_device_map.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Flushed default_address_space in 0.0027379989624", 
-        "DEBUG:rekall.1:Flushed process_context in 0.0019199848175", 
-        "DEBUG:rekall.1:Flushed profile_obj in 0.000940799713135"
+        "DEBUG:rekall.1:Flushed default_address_space in 0.00230884552002", 
+        "DEBUG:rekall.1:Flushed process_context in 0.00219988822937", 
+        "DEBUG:rekall.1:Flushed profile_obj in 0.00106620788574"
     ], 
-    "time_used": 3.430377960205078, 
+    "time_used": 2.706753969192505, 
     "return_code": 0, 
     "failures": {
-        "testCase (rekall.plugins.windows.pfn_test.TestVtoP)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 8 != 11\n"
+        "testCase (__main__.TestVadPTESubsection)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 40 != 29\n"
     }, 
     "output": [
+        "Switching to process context: vmacthlp.exe (Pid 844@0xff218230)", 
         "", 
-        "****************** 0x10b818000 ******************", 
-        "Virtual 0x00010b818000 Page Directory 0xf9fe000", 
-        "pml4e@ 0xf9fe000 = 0x8ab7027", 
-        "pdpte@ 0x8ab7020 = 0x8a90027", 
-        "pde@ 0x8a902e0 = 0x8a8f027", 
-        "pte@ 0x8a8f0c0 = 0x15ca7025", 
-        "Physical Address 0x15ca7000", 
+        "******************* 0x77c65000 *******************", 
+        "Virtual 0x77c65000 Page Directory 0x6cc00c0", 
+        "pdpte@ 0x6cc00c8 = 0x1c50001", 
+        "pde@ 0x1c50df0 = 0x1d81067", 
+        "pte@ 0x1d81328 = 0x0", 
+        "[_MMPTE_SOFTWARE Soft] @ 0x01d81328 ", 
+        "Offset||            Field             ||Content", 
+        "------||------------------------------||-------", 
+        " || 0x0  ||PageFileHigh                  || [BitField(32-64):PageFileHigh]: 0x00000000", 
+        " || 0x0  ||PageFileLow                   || [BitField(1-5):PageFileLow]: 0x00000000", 
+        " || 0x0  ||Protection                    || [Enumeration:Enumeration]: 0x00000000 (MM_ZERO_ACCESS)", 
+        " || 0x0  ||Prototype                     || [BitField(10-11):Prototype]: 0x00000000", 
+        " || 0x0  ||Transition                    || [BitField(11-12):Transition]: 0x00000000", 
+        " || 0x0  ||Unused                        || [BitField(12-32):Unused]: 0x00000000", 
+        " || 0x0  ||Valid                         || [BitField(0-1):Valid]: 0x00000000", 
+        "Consulting Vad: Prototype PTE is found in VAD", 
+        "**************************************************", 
+        "Pid: 844 vmacthlp.exe", 
+        "   VAD    ||lev||Start Addr|| End Addr || com  ||-------||------||      Protect       ||Filename", 
+        "----------||---||----------||----------||------||       ||      ||--------------------||--------", 
+        "0xff2514d8||  5||0x77c10000||0x77c67fff||     7||Mapped ||Exe   ||EXECUTE_WRITECOPY   ||\\WINDOWS\\system32\\msvcrt.dll", 
         "", 
+        "_MMVAD.FirstPrototypePte: 0xe16cad10", 
+        "Prototype PTE is at virtual address 0xe16cafb8 (Physical Address 0x53c0fb8)", 
+        "Subsection PTE to file C:\\WINDOWS\\system32\\msvcrt.dll @ 0x50e00", 
         "Deriving physical address from runtime physical address space:", 
-        "Physical Address 0x15ca7000"
+        "Physical Address Unavailable."
     ], 
     "options": {
         "--name_resolution_strategies": [
@@ -134,15 +157,14 @@ exit 0
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "--format": "test", 
-        "commandline": "vtop --pid %(pid)s - %(vaddr)s", 
-        "pid": 232, 
-        "test_class": "TestVtoP", 
-        "vaddr": 4488003584, 
-        "--cache_dir": "/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/", 
-        "tempdir": "/tmp/tmpeQnLGX/TestVtoPThread-3", 
-        "executed_command": "rekall  -v --cache_dir '/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - vtop --pid 232 - 4488003584", 
-        "testdir": "/home/scudette/projects/rekall-test/osx10.9.5"
+        "commandline": "run --run /tmp/tmpIRu3n8/TestVadPTESubsection.script", 
+        "pid": 1724, 
+        "test_class": "TestVadPTESubsection", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmpIRu3n8/TestVadPTESubsectionThread-3", 
+        "executed_command": "rekall  -v --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - run --run /tmp/tmpIRu3n8/TestVadPTESubsection.script", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

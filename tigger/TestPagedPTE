@@ -1,0 +1,44 @@
+{
+    "time_used": 3.1586577892303467, 
+    "output": [
+        "Switching to process context: vmacthlp.exe (Pid 844@0xff218230)", 
+        "", 
+        "******************** 0x250000 ********************", 
+        "Virtual 0x00250000 Page Directory 0x6cc00c0", 
+        "pdpte@ 0x6cc00c0 = 0x1c4f001", 
+        "pde@ 0x1c4f008 = 0x1c75067", 
+        "pte@ 0x1c75280 = 0x4b300000080", 
+        "[_MMPTE_SOFTWARE Soft] @ 0x01c75280 ", 
+        "Offset||            Field             ||Content", 
+        "------||------------------------------||-------", 
+        " || 0x0  ||PageFileHigh                  || [BitField(32-64):PageFileHigh]: 0x000004B3", 
+        " || 0x0  ||PageFileLow                   || [BitField(1-5):PageFileLow]: 0x00000000", 
+        " || 0x0  ||Protection                    || [Enumeration:Enumeration]: 0x00000004 (MM_READWRITE)", 
+        " || 0x0  ||Prototype                     || [BitField(10-11):Prototype]: 0x00000000", 
+        " || 0x0  ||Transition                    || [BitField(11-12):Transition]: 0x00000000", 
+        " || 0x0  ||Unused                        || [BitField(12-32):Unused]: 0x00000000", 
+        " || 0x0  ||Valid                         || [BitField(0-1):Valid]: 0x00000000", 
+        "Pagefile (0) @ 0x4b3000", 
+        "", 
+        "Deriving physical address from runtime physical address space:", 
+        "Physical Address Unavailable."
+    ], 
+    "logging": "", 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "run --run /tmp/tmp0ztiY1/TestPagedPTE.script", 
+        "pid": 1724, 
+        "test_class": "TestPagedPTE", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "tempdir": "/tmp/tmp0ztiY1/TestPagedPTEThread-4", 
+        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - run --run /tmp/tmp0ztiY1/TestPagedPTE.script", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}
