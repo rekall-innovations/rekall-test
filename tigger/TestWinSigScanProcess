@@ -1,0 +1,30 @@
+{
+    "time_used": 3.4607810974121094, 
+    "output": [
+        "Hit in task explorer.exe (1724):", 
+        "  Offset  ||Matching part", 
+        "----------||-------------", 
+        "0x01011884||534f4654574152455c4d6963726f736f66745c57696e646f7773204e545c43757272656e7456657273696f6e5c57696e6c6f676f6e", 
+        "0x01042880||55534552454e562e646c6c"
+    ], 
+    "logging": "/home/jordisanchez/projects/rekall/head-environment/local/lib/python2.7/site-packages/ipython-4.0.0_b1-py2.7.egg/IPython/config.py:13: ShimWarning: The `IPython.config` package has been deprecated. You should import from traitlets.config instead.\n  \"You should import from traitlets.config instead.\", ShimWarning)\n", 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "proc_regex": "explorer", 
+        "--filename": "/home/jordisanchez/projects/rekall/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "sigscan %(signature)s --proc_regex %(proc_regex)s", 
+        "pid": 1724, 
+        "executable": "rekall ", 
+        "test_class": "TestWinSigScanProcess", 
+        "--cache_dir": "/home/jordisanchez/projects/rekall/rekall-test/tigger/../profile_cache/", 
+        "signature": "534f4654574152455c4d6963726f736f66745c57696e646f7773204e545c43757272656e7456657273696f6e5c57696e6c6f676f6e*55534552454e562e646c6c", 
+        "tempdir": "/tmp/tmpk_UBVv/TestWinSigScanProcessThread-1", 
+        "executed_command": "rekall  --cache_dir '/home/jordisanchez/projects/rekall/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/jordisanchez/projects/rekall/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - sigscan 534f4654574152455c4d6963726f736f66745c57696e646f7773204e545c43757272656e7456657273696f6e5c57696e6c6f676f6e*55534552454e562e646c6c --proc_regex explorer", 
+        "testdir": "/home/jordisanchez/projects/rekall/rekall-test/tigger"
+    }
+}

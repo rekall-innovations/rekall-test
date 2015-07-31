@@ -1,0 +1,28 @@
+{
+    "time_used": 2.3233389854431152, 
+    "output": [
+        "Hit in physical AS:", 
+        "  Offset  ||Matching part", 
+        "----------||-------------", 
+        "0x00057ad0||436f756c646e277420616c6c6f636174652076616c6964205453532064657363726970746f7220696e204e7450726f63657373537461727475702c20426c5365747570466f724e74206973206661696c696e67"
+    ], 
+    "logging": "/home/jordisanchez/projects/rekall/head-environment/local/lib/python2.7/site-packages/ipython-4.0.0_b1-py2.7.egg/IPython/config.py:13: ShimWarning: The `IPython.config` package has been deprecated. You should import from traitlets.config instead.\n  \"You should import from traitlets.config instead.\", ShimWarning)\n", 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/jordisanchez/projects/rekall/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "sigscan %(signature)s --scan_physical", 
+        "pid": 1724, 
+        "test_class": "TestWinSigScanPhysical", 
+        "--cache_dir": "/home/jordisanchez/projects/rekall/rekall-test/tigger/../profile_cache/", 
+        "signature": "436f756c646e277420616c6c6f636174652076616c6964205453532064657363726970746f7220696e204e7450726f63657373537461727475702c20426c5365747570466f724e74206973206661696c696e67", 
+        "tempdir": "/tmp/tmpINVq83/TestWinSigScanPhysicalThread-4", 
+        "executed_command": "rekall  --cache_dir '/home/jordisanchez/projects/rekall/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/jordisanchez/projects/rekall/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - sigscan 436f756c646e277420616c6c6f636174652076616c6964205453532064657363726970746f7220696e204e7450726f63657373537461727475702c20426c5365747570466f724e74206973206661696c696e67 --scan_physical", 
+        "testdir": "/home/jordisanchez/projects/rekall/rekall-test/tigger"
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "time_used": 2.733933925628662, 
+    "output": [
+        "Hit in task bash (2362):", 
+        "  Offset  ||Matching part", 
+        "----------||-------------", 
+        "0x08320408||504154483d2f7573722f6c6f63616c2f7362696e3a2f7573722f6c6f63616c2f62696e3a2f7573722f7362696e3a2f7573722f62696e3a2f7362696e3a2f62696e"
+    ], 
+    "logging": "/home/jordisanchez/projects/rekall/head-environment/local/lib/python2.7/site-packages/ipython-4.0.0_b1-py2.7.egg/IPython/config.py:13: ShimWarning: The `IPython.config` package has been deprecated. You should import from traitlets.config instead.\n  \"You should import from traitlets.config instead.\", ShimWarning)\n", 
+    "return_code": 0, 
+    "options": {
+        "proc_regex": "bash", 
+        "--filename": "/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "--format": "test", 
+        "commandline": "sigscan %(signature)s --proc_regex %(proc_regex)s", 
+        "pid": 2362, 
+        "executable": "rekall ", 
+        "test_class": "TestLinuxSigScanProcess", 
+        "--cache_dir": "/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
+        "signature": "504154483d2f7573722f6c6f63616c2f7362696e3a2f7573722f6c6f63616c2f62696e3a2f7573722f7362696e3a2f7573722f62696e3a2f7362696e3a2f62696e", 
+        "tempdir": "/tmp/tmpzVwsyJ/TestLinuxSigScanProcessThread-5", 
+        "executed_command": "rekall  --cache_dir '/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/../profile_cache/' --format 'test' --filename '/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - sigscan 504154483d2f7573722f6c6f63616c2f7362696e3a2f7573722f6c6f63616c2f62696e3a2f7573722f7362696e3a2f7573722f62696e3a2f7362696e3a2f62696e --proc_regex bash", 
+        "testdir": "/home/jordisanchez/projects/rekall/rekall-test/linux-3.2.0-PAE"
+    }
+}
