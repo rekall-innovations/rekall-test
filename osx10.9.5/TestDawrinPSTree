@@ -1,22 +1,23 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDawrinPSTree /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDawrinPSTree
+   cp /Users/adamsh/Projects/test/osx10.9.5/output/TestDawrinPSTree /Users/adamsh/Projects/test/osx10.9.5/TestDawrinPSTree
 elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDawrinPSTree /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDawrinPSTree
+   meld /Users/adamsh/Projects/test/osx10.9.5/output/TestDawrinPSTree /Users/adamsh/Projects/test/osx10.9.5/TestDawrinPSTree
 elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDawrinPSTree /Users/adamsh/Projects/rekall-test/osx10.9.5/TestDawrinPSTree
+   diff /Users/adamsh/Projects/test/osx10.9.5/output/TestDawrinPSTree /Users/adamsh/Projects/test/osx10.9.5/TestDawrinPSTree
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - pstree
+   rekall  --cache_dir '/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - pstree
 else
-   less /Users/adamsh/Projects/rekall-test/osx10.9.5/output/TestDawrinPSTree
+   less /Users/adamsh/Projects/test/osx10.9.5/output/TestDawrinPSTree
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 9.880456924438477, 
+    "logging": "", 
+    "time_used": 7.845139980316162, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestDawrinPSTree)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 3 != 108\n"
+        "testCase (__main__.TestDawrinPSTree)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 235, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall/testlib.py\", line 285, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 108 != 115\n"
     }, 
     "output": [
         " Pid  || Ppid || Uid  ||-||             Name             ", 
@@ -38,6 +39,10 @@ exit 0
         "    14||     1||     0||..||notifyd                       ", 
         "    13||     1||     0||..||taskgated                     ", 
         "    12||     1||     0||..||kextd                         ", 
+        "156224||     0||     0||..||                              ", 
+        "   720||      ||      ||  ||                              ", 
+        "     0||     0||156146||...||                              ", 
+        "      ||      ||   640||   ||                              ", 
         "   172||     1||   202||..||com.apple.audio.              ", 
         "   227||     1||   501||..||com.apple.dock.e              ", 
         "   159||     1||   202||..||coreaudiod                    ", 
@@ -101,6 +106,9 @@ exit 0
         "   183||   141||   501||...||ubd                           ", 
         "   146||   141||   501||...||distnoted                     ", 
         "   192||   141||   501||...||imagent                       ", 
+        "206670||   501||   501||...||                              ", 
+        "   464||      ||      ||   ||                              ", 
+        "     0||     0||     0||....||                              ", 
         "   207||   141||   501||...||lsboxd                        ", 
         "   223||   141||   501||...||secd                          ", 
         "   204||   141||   501||...||SocialPushAgent               ", 
@@ -134,12 +142,14 @@ exit 0
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01", 
+        "--filename": "/Users/adamsh/Projects/test/osx10.9.5/vmem.e01", 
+        "--format": "test", 
         "commandline": "pstree", 
-        "--renderer": "test", 
+        "pid": 232, 
         "test_class": "TestDawrinPSTree", 
-        "tempdir": "/var/folders/yc/4zng19655k37kyxgskb3vvf0006t70/T/tmpao6WjV/TestDawrinPSTreeThread-1", 
-        "executed_command": "rekall  --renderer 'test' --filename '/Users/adamsh/Projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - pstree", 
-        "testdir": "/Users/adamsh/Projects/rekall-test/osx10.9.5"
+        "--cache_dir": "/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpMJOylS/TestDawrinPSTreeThread-8", 
+        "executed_command": "rekall  --cache_dir '/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - pstree", 
+        "testdir": "/Users/adamsh/Projects/test/osx10.9.5"
     }
 }
