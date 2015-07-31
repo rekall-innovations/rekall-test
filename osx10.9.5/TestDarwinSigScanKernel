@@ -1,0 +1,28 @@
+{
+    "time_used": 54.759974002838135, 
+    "output": [
+        "Hit in kernel AS:", 
+        "    Offset    ||Matching part", 
+        "--------------||-------------", 
+        "0xfe90800c7eed||2f55736572732f76626f782f74696e646572626f782f342e332d6d61632d72656c2f6f75742f64617277696e2e616d6436342f72656c656173652f6f626a2f56426f7856676142696f732f56426f7856676142696f732e73796d"
+    ], 
+    "logging": "/home/jordisanchez/projects/rekall/head-environment/local/lib/python2.7/site-packages/ipython-4.0.0_b1-py2.7.egg/IPython/config.py:13: ShimWarning: The `IPython.config` package has been deprecated. You should import from traitlets.config instead.\n  \"You should import from traitlets.config instead.\", ShimWarning)\n", 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/jordisanchez/projects/rekall/rekall-test/osx10.9.5/vmem.e01", 
+        "--format": "test", 
+        "commandline": "sigscan %(signature)s --scan_kernel", 
+        "pid": 232, 
+        "test_class": "TestDarwinSigScanKernel", 
+        "--cache_dir": "/home/jordisanchez/projects/rekall/rekall-test/osx10.9.5/../profile_cache/", 
+        "signature": "2f55736572732f76626f782f74696e646572626f782f342e332d6d61632d72656c2f6f75742f64617277696e2e616d6436342f72656c656173652f6f626a2f56426f7856676142696f732f56426f7856676142696f732e73796d", 
+        "tempdir": "/tmp/tmporUZ0I/TestDarwinSigScanKernelThread-1", 
+        "executed_command": "rekall  --cache_dir '/home/jordisanchez/projects/rekall/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/jordisanchez/projects/rekall/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - sigscan 2f55736572732f76626f782f74696e646572626f782f342e332d6d61632d72656c2f6f75742f64617277696e2e616d6436342f72656c656173652f6f626a2f56426f7856676142696f732f56426f7856676142696f732e73796d --scan_kernel", 
+        "testdir": "/home/jordisanchez/projects/rekall/rekall-test/osx10.9.5"
+    }
+}
