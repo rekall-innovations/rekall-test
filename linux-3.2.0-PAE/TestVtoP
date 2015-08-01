@@ -100,6 +100,7 @@ exit 0
         "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/ntfs.gz", 
         "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
+        "INFO:rekall.1:guess_profile: autodetection hit @ 12cb06c - Linux version ", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/Debian/3.2.0-4-686-pae.gz", 
         "INFO:rekall.1:Loaded profile Debian/3.2.0-4-686-pae from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
         "DEBUG:rekall.1:Found Kernel slide 0x0.", 
@@ -110,10 +111,10 @@ exit 0
         "DEBUG:rekall.1:Switching to process context: bash (Pid 2362@0xf5836640)", 
         "DEBUG:rekall.1:Switching to Kernel context"
     ], 
-    "time_used": 2.1943399906158447, 
+    "time_used": 4.1872899532318115, 
     "return_code": 0, 
     "failures": {
-        "testCase (rekall.plugins.windows.pfn_test.TestVtoP)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 7 != 10\n"
+        "testCase (rekall.plugins.windows.pfn_test.TestVtoP)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'Large page mapped 0x35916ec0' != u'Large page mapped'\n- Large page mapped 0x35916ec0\n?                  -----------\n+ Large page mapped\n\n"
     }, 
     "output": [
         "", 
@@ -121,7 +122,7 @@ exit 0
         "Virtual 0xf5916ec0 Page Directory 0x3588f000", 
         "pdpte@ 0x3588f018 = 0x1485001", 
         "pde@ 0x1485d60 = 0x358001e3", 
-        "Large page mapped 0x35916ec0", 
+        "Large page mapped", 
         "Physical Address 0x35916ec0", 
         "", 
         "Deriving physical address from runtime physical address space:", 
@@ -136,7 +137,7 @@ exit 0
         "test_class": "TestVtoP", 
         "vaddr": 4119948992, 
         "--cache_dir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
-        "tempdir": "/tmp/tmpfE71Z0/TestVtoPThread-1", 
+        "tempdir": "/tmp/tmpYSdSAo/TestVtoPThread-2", 
         "executed_command": "rekall  -v --cache_dir '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - vtop --pid 2362 - 4119948992", 
         "testdir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE"
     }
