@@ -1,23 +1,12 @@
-#!/bin/bash
-if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/rekall-test/ntfs/output/TestDT /home/scudette/projects/rekall-test/ntfs/TestDT
-elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/rekall-test/ntfs/output/TestDT /home/scudette/projects/rekall-test/ntfs/TestDT
-elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/rekall-test/ntfs/output/TestDT /home/scudette/projects/rekall-test/ntfs/TestDT
-elif [ "$1" == "run" ]; then
-   rekall  -v --profile 'ntfs' --cache_dir '/home/scudette/projects/rekall-test/ntfs/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - dt MFT_ENTRY
-else
-   less /home/scudette/projects/rekall-test/ntfs/output/TestDT
-fi
-exit 0
 {
-    "errors": {}, 
+    "time_used": 30.911001920700073, 
+    "output": [
+        "Hit in physical AS:", 
+        "    Offset    ||Matching part", 
+        "--------------||-------------", 
+        "0x0000000c7eed||2f55736572732f76626f782f74696e646572626f782f342e332d6d61632d72656c2f6f75742f64617277696e2e616d6436342f72656c656173652f6f626a2f56426f7856676142696f732f56426f7856676142696f732e73796d"
+    ], 
     "logging": [
-        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/ntfs.gz", 
-        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
         "DEBUG:rekall.1:Voting round with base: None", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: No base address space provided", 
@@ -42,7 +31,7 @@ exit 0
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Unable to open AFF4 volume", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
-        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01_info", 
+        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /home/scudette/projects/rekall-test/osx10.9.5/vmem.e01_info", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
         "DEBUG:rekall.1:Succeeded instantiating FileAddressSpace", 
         "DEBUG:rekall.1:Voting round with base: FileAddressSpace", 
@@ -56,7 +45,7 @@ exit 0
         "DEBUG:rekall.1:Succeeded instantiating EWFAddressSpace", 
         "DEBUG:rekall.1:Voting round with base: EWFAddressSpace", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
-        "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0x4e9052eb", 
+        "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0x0", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
         "DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Header signature invalid", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
@@ -91,54 +80,46 @@ exit 0
         "DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
         "INFO:rekall.1:Autodetected physical address space EWFAddressSpace", 
         "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/index.gz", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/ntfs.gz", 
-        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
-        "DEBUG:rekall.1:Running plugin (<class 'rekall.plugins.core.DT'>) with args (()) kwargs ({'profile': 'ntfs', 'address_space': None, 'target': 'MFT_ENTRY', 'offset': 0})"
+        "INFO:rekall.1:Detected fingerprinted image 7ce106426bb4230cbb927cee938266eb0a8626db", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/7ce106426bb4230cbb927cee938266eb0a8626db/profile.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/OSX/10.9.5_13F34.64bit.gz", 
+        "INFO:rekall.1:Loaded profile OSX/10.9.5_13F34.64bit from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
+        "DEBUG:rekall.1:Running plugin (<class 'rekall.plugins.darwin.sigscan.DarwinSigScan'>) with args (()) kwargs ({'profile': None, 'proc_regex': None, 'vm_kernel_slide': None, 'pid': None, 'scan_physical': True, 'scan_kernel': False, 'signature': ['2f55736572732f76626f782f74696e646572626f782f342e332d6d61632d72656c2f6f75742f64617277696e2e616d6436342f72656c656173652f6f626a2f56426f7856676142696f732f56426f7856676142696f732e73796d'], 'phys_proc': None, 'proc': None, 'method': None, 'first': None})", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/7ce106426bb4230cbb927cee938266eb0a8626db/dtb.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/7ce106426bb4230cbb927cee938266eb0a8626db/default_address_space.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/sessions/7ce106426bb4230cbb927cee938266eb0a8626db/vm_kernel_slide.gz", 
+        "Traceback (most recent call last):", 
+        "  File \"/usr/lib/python2.7/logging/__init__.py\", line 851, in emit", 
+        "    msg = self.format(record)", 
+        "  File \"/usr/lib/python2.7/logging/__init__.py\", line 724, in format", 
+        "    return fmt.format(record)", 
+        "  File \"/usr/lib/python2.7/logging/__init__.py\", line 464, in format", 
+        "    record.message = record.getMessage()", 
+        "  File \"/usr/lib/python2.7/logging/__init__.py\", line 328, in getMessage", 
+        "    msg = msg % self.args", 
+        "TypeError: not all arguments converted during string formatting", 
+        "Logged from file sigscan.py, line 196", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/.rekall_cache/sessions/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Flushed profile_obj in 0.00253987312317"
     ], 
-    "time_used": 1.5245020389556885, 
     "return_code": 0, 
-    "failures": {
-        "testCase (__main__.TestDT)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 19 != 25\n"
-    }, 
-    "output": [
-        "[MFT_ENTRY MFT_ENTRY] @ 0x000000000000 ", 
-        "Offset||            Field             ||Content", 
-        "------||------------------------------||-------", 
-        " || 0x0 ||magic                         || [String:magic]: ''", 
-        " || 0x4 ||fixup_offset                  || [unsigned short:fixup_offset]: <Unable to read 2 bytes from 4>", 
-        " || 0x6 ||fixup_count                   || [unsigned short:fixup_count]: <Unable to read 2 bytes from 6>", 
-        " || 0x8 ||logfile_sequence_number       || [unsigned long long:logfile_sequence_number]: <Unable to read 8 bytes from 8>", 
-        " ||0x10 ||sequence_value                || [unsigned short:sequence_value]: <Unable to read 2 bytes from 16>", 
-        " ||0x12 ||link_count                    || [unsigned short:link_count]: <Unable to read 2 bytes from 18>", 
-        " ||0x14 ||attribute_offset              || [unsigned short:attribute_offset]: <Unable to read 2 bytes from 20>", 
-        " ||0x16 ||flags                         || [Flags:flags]: <Unable to read 2 bytes from 22> ()", 
-        " ||0x18 ||mft_entry_size                || [unsigned short:mft_entry_size]: <Unable to read 2 bytes from 24>", 
-        " ||0x1c ||mft_entry_allocated           || [unsigned short:mft_entry_allocated]: <Unable to read 2 bytes from 28>", 
-        " ||0x20 ||base_record_reference         || [unsigned long long:base_record_reference]: <Unable to read 8 bytes from 32>", 
-        " ||0x28 ||next_attribute_id             || [unsigned short:next_attribute_id]: <Unable to read 2 bytes from 40>", 
-        " ||0x2c ||record_number                 || [unsigned long:record_number]: <Unable to read 4 bytes from 44>", 
-        " ||0xfff||_attributes                   ||<ListArray 0 x NTFS_ATTRIBUTE @ 0xFFFFFFFFFFFF>", 
-        " ||fffff||                              ||                                               ", 
-        " ||ffff ||                              ||                                               ", 
-        " ||0xfff||fixup_magic                   || [String:fixup_magic]: <Plugin not active>", 
-        " ||fffff||                              ||                                          ", 
-        " ||ffff ||                              ||                                          ", 
-        " ||0xfff||fixup_table                   ||<Array - x String @ 0xFFFFFFFFFFFF>", 
-        " ||fffff||                              ||                                   ", 
-        " ||ffff ||                              ||                                   "
-    ], 
     "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "--filename": "/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01", 
         "--format": "test", 
-        "commandline": "dt MFT_ENTRY", 
-        "tempdir": "/tmp/tmpuUzEry/TestDTThread-4", 
-        "test_class": "TestDT", 
-        "mft": 42, 
-        "--cache_dir": "/home/scudette/projects/rekall-test/ntfs/../profile_cache/", 
-        "executed_command": "rekall  -v --profile 'ntfs' --cache_dir '/home/scudette/projects/rekall-test/ntfs/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01' - dt MFT_ENTRY", 
-        "--profile": "ntfs", 
-        "path": "RAW/20076517123273.pdf", 
-        "testdir": "/home/scudette/projects/rekall-test/ntfs"
+        "commandline": "sigscan %(signature)s --scan_physical", 
+        "pid": 232, 
+        "test_class": "TestSigScanPhysical", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/", 
+        "signature": "2f55736572732f76626f782f74696e646572626f782f342e332d6d61632d72656c2f6f75742f64617277696e2e616d6436342f72656c656173652f6f626a2f56426f7856676142696f732f56426f7856676142696f732e73796d", 
+        "tempdir": "/tmp/tmpK1eAf9/TestSigScanPhysicalThread-2", 
+        "executed_command": "rekall  -v --cache_dir '/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - sigscan 2f55736572732f76626f782f74696e646572626f782f342e332d6d61632d72656c2f6f75742f64617277696e2e616d6436342f72656c656173652f6f626a2f56426f7856676142696f732f56426f7856676142696f732e73796d --scan_physical", 
+        "testdir": "/home/scudette/projects/rekall-test/osx10.9.5"
     }
 }
