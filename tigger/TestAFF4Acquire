@@ -1,7 +1,103 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestAFF4Acquire /home/scudette/projects/rekall-test/tigger/TestAFF4Acquire
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestAFF4Acquire /home/scudette/projects/rekall-test/tigger/TestAFF4Acquire
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestAFF4Acquire /home/scudette/projects/rekall-test/tigger/TestAFF4Acquire
+elif [ "$1" == "run" ]; then
+   rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - aff4acquire /tmp/tmpsgDcxq/TestAFF4AcquireThread-2/output_image.aff4
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestAFF4Acquire
+fi
+exit 0
 {
-    "time_used": 14.368135929107666, 
-    "output": [], 
+    "errors": {}, 
+    "logging": [
+        "DEBUG:rekall.1:Running plugin (aff4acquire) with args (()) kwargs ({'profile': None, 'also_pagefile': False, 'destination': '/tmp/tmpsgDcxq/TestAFF4AcquireThread-2/output_image.aff4', 'compression': 'snappy', 'also_files': False})", 
+        "DEBUG:rekall.1:Voting round with base: None", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: No base address space provided", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
+        "DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Must stack on another address space", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating VMemAddressSpace: No base address space provided", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating EWFAddressSpace: No base address space provided", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashBMP'> ", 
+        "DEBUG:rekall.1:Failed instantiating WindowsCrashBMP: Must stack on another address space", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.KCoreAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating KCoreAddressSpace: Must stack on another address space", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace32'> ", 
+        "DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace32: No base address space provided", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace64'> ", 
+        "DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace64: No base address space provided", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.Elf64CoreDump'> ", 
+        "DEBUG:rekall.1:Failed instantiating Elf64CoreDump: Must stack on another address space", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.lime.LimeAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating LimeAddressSpace: Must be layered on another address space.", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Unable to open AFF4 volume", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /home/scudette/projects/rekall-test/tigger/tigger.vmem.E01_info", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
+        "DEBUG:rekall.1:Succeeded instantiating FileAddressSpace", 
+        "DEBUG:rekall.1:Voting round with base: FileAddressSpace", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0x9465645", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
+        "DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Header signature invalid", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating VMemAddressSpace: Only VMEM files supported.", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
+        "DEBUG:rekall.1:Succeeded instantiating EWFAddressSpace", 
+        "DEBUG:rekall.1:Voting round with base: EWFAddressSpace", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0xf000ff53", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
+        "DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Header signature invalid", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating VMemAddressSpace: Only VMEM files supported.", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating EWFAddressSpace: EWF signature not present", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashBMP'> ", 
+        "DEBUG:rekall.1:Failed instantiating WindowsCrashBMP: Header signature invalid", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.KCoreAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating KCoreAddressSpace: Header signature invalid", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace32'> ", 
+        "DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace32: Header signature invalid", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace64'> ", 
+        "DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace64: Header signature invalid", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.Elf64CoreDump'> ", 
+        "DEBUG:rekall.1:Failed instantiating Elf64CoreDump: Header signature invalid", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.lime.LimeAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating LimeAddressSpace: Invalid Lime header signature", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Must stack on another address space", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: Must be mapped directly over a raw device.", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating FileAddressSpace: Must be first Address Space", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.mmap_address_space.MmapFileAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating MmapFileAddressSpace: Must be first Address Space", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.amd64.VTxPagedMemory'> ", 
+        "DEBUG:rekall.1:Failed instantiating VTxPagedMemory: No more EPTs specified", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.GlobalOffsetAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating GlobalOffsetAddressSpace: File offset not specified.", 
+        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pagefile.PagefilePhysicalAddressSpace'> ", 
+        "DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
+        "INFO:rekall.1:Autodetected physical address space EWFAddressSpace"
+    ], 
+    "time_used": 3.6946890354156494, 
     "return_code": 0, 
+    "failures": {
+        "testCase (rekall.plugins.tools.aff4acquire.TestAFF4Acquire)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 0 != 3\n"
+    }, 
+    "output": [
+        "Will use compression: https://github.com/google/snappy", 
+        "Imaging Physical Memory:", 
+        "Wrote 128 mb of Physical Memory to aff4://0f75b22b-ad06-40d7-9302-c095992fefc5/PhysicalMemory"
+    ], 
     "options": {
         "--name_resolution_strategies": [
             "Module", 
@@ -14,8 +110,9 @@
         "pid": 1724, 
         "test_class": "TestAFF4Acquire", 
         "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
-        "tempdir": "/tmp/tmp6gBK8J/TestAFF4AcquireThread-1", 
-        "executed_command": "rekall  --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - aff4acquire /tmp/tmp6gBK8J/TestAFF4AcquireThread-1/output_image.aff4", 
+        "--cache": "memory", 
+        "tempdir": "/tmp/tmpsgDcxq/TestAFF4AcquireThread-2", 
+        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - aff4acquire /tmp/tmpsgDcxq/TestAFF4AcquireThread-2/output_image.aff4", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }
