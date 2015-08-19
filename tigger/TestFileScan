@@ -14,6 +14,7 @@ exit 0
 {
     "errors": {}, 
     "logging": [
+        "DEBUG:rekall.1:Logging level set to 10", 
         "DEBUG:rekall.1:Voting round with base: None", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: No base address space provided", 
@@ -99,24 +100,6 @@ exit 0
         "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/ntfs.gz", 
         "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 86cc - RSDS", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 13dec - RSDS", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 58900 - RSDS", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 22188c - System\u0000\u0000", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 262275 - System\u0000\u0000", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 262301 - System\u0000\u0000", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 2bd994 - cmd.exe\u0000\u0000", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 2d41f4 - RSDS", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 2f9fdc - cmd.exe\u0000\u0000", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 38bd87 - System\u0000\u0000", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 3bd614 - RSDS", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 44e6d0 - RSDS", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 455178 - RSDS", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 45db6c - cmd.exe\u0000\u0000", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 488da4 - RSDS", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 4b5668 - System\u0000\u0000", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 4c7ef8 - RSDS", 
-        "INFO:rekall.1:guess_profile: autodetection hit @ 4e0508 - RSDS", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
         "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache", 
         "DEBUG:rekall.1:Found _EPROCESS @ 0x551B80 (DTB: 0x319000)", 
@@ -125,10 +108,10 @@ exit 0
         "DEBUG:rekall.1:Running plugin (filescan) with args (()) kwargs ({'profile': None, 'scan_in_kernel': False})", 
         "INFO:rekall.1:Detected kernel base at 0x804D7000"
     ], 
-    "time_used": 17.373291015625, 
+    "time_used": 17.988287925720215, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestFileScan)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u' ||0x00096ca0||     1||   0||R--r-d||-         ||-                   ||    -|| [truncated]... != u' ||0x00096ca0||     1||   0||R--r-d||-         ||-                   ||    -|| [truncated]...\n-  ||0x00096ca0||     1||   0||R--r-d||-         ||-                   ||    -||\\Documents and Settings\\Administrator\\Start Menu\\Programs\\Windows Media Player.lnk\n+  ||0x00096ca0||     1||   0||R--r-d||-         ||-                   ||    -||C:\\Documents and Settings\\Administrator\\Start Menu\\Programs\\Windows Media Player.lnk\n?                                                                               ++\n\n"
+        "testCase (__main__.TestFileScan)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 1279 != 1278\n"
     }, 
     "output": [
         "-||  Offset  || #Ptr ||#Hnd||Access||  Owner   ||        Name        || PID ||Name", 
@@ -1333,7 +1316,6 @@ exit 0
         " ||0x0651d748||     1||   0||R--r--||-         ||-                   ||    -||C:\\WINDOWS\\system32\\wzcdlg.dll", 
         " ||0x0651df28||     1||   0||R--r-d||-         ||-                   ||    -||C:\\WINDOWS\\system32\\rasmans.dll", 
         " ||0x0655f130||     1||   0||R--rwd||-         ||-                   ||    -||C:\\WINDOWS\\system32\\kernel32.dll", 
-        " ||0x0655f130||     1||   0||R--rwd||-         ||-                   ||    -||C:\\WINDOWS\\system32\\kernel32.dll", 
         " ||0x0655f258||     1||   1||RW-rw-||0x80fbf910||svchost.exe         || 1028||C:\\WINDOWS\\WindowsUpdate.log", 
         " ||0x0655f2f0||     1||   1||RW-rw-||0x80fbf910||svchost.exe         || 1028||C:\\WINDOWS\\WindowsUpdate.log", 
         " ||0x0655f388||     1||   1||RW-rw-||0x80fbf910||svchost.exe         || 1028||C:\\WINDOWS\\WindowsUpdate.log", 
@@ -1424,7 +1406,7 @@ exit 0
         "test_class": "TestFileScan", 
         "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
         "--cache": "memory", 
-        "tempdir": "/tmp/tmpsgDcxq/TestFileScanThread-4", 
+        "tempdir": "/tmp/tmpeHLrRf/TestFileScanThread-4", 
         "executed_command": "rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - filescan", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
