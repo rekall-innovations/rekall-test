@@ -1,0 +1,60 @@
+{
+    "time_used": 1.659337043762207, 
+    "output": [
+        "Launching live memory analysis"
+    ], 
+    "logging": [
+        "DEBUG:rekall.1:Logging level set to 10", 
+        "DEBUG:rekall.1:Running plugin (live) with args (()) kwargs ({'device': '/dev/pmem', 'driver_path': None})", 
+        "DEBUG:rekall.1:[Errno 2] No such file or directory: '/dev/pmem'", 
+        "INFO:rekall.1:Unpacking driver to /var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmp4YtnBO", 
+        "INFO:rekall.1:Loading driver from /var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmp4YtnBO/MacPmem.kext", 
+        "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmp4YtnBO/MacPmem.kext failed to load - (libkern/kext) not privileged; check the system/kernel logs for errors or try kextutil(8).", 
+        "CRITICAL:rekall.1:Traceback (most recent call last):", 
+        "  File \"/Users/scudette/projects/rekall/rekall-core/rekall/session.py\", line 706, in RunPlugin", 
+        "    result = plugin_obj.render(ui_renderer) or plugin_obj", 
+        "  File \"/Users/scudette/projects/rekall/rekall-core/rekall/plugins/tools/live_darwin.py\", line 127, in render", 
+        "    self.live()", 
+        "  File \"/Users/scudette/projects/rekall/rekall-core/rekall/plugins/tools/live_darwin.py\", line 92, in live", 
+        "    [\"kextload\", full_driver_path])", 
+        "  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py\", line 540, in check_call", 
+        "    raise CalledProcessError(retcode, cmd)", 
+        "CalledProcessError: Command '['kextload', '/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmp4YtnBO/MacPmem.kext']' returned non-zero exit status 77", 
+        "", 
+        "CRITICAL:root:Command '['kextload', '/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmp4YtnBO/MacPmem.kext']' returned non-zero exit status 77. Try --debug for more information.", 
+        "Traceback (most recent call last):", 
+        "  File \"/Users/scudette/Dev/bin/rekall\", line 9, in <module>", 
+        "    load_entry_point('rekall-core==1.4.0.post0.dev18', 'console_scripts', 'rekall')()", 
+        "  File \"/Users/scudette/projects/rekall/rekall-core/rekall/rekal.py\", line 95, in main", 
+        "    user_session.RunPlugin(plugin_cls, **config.RemoveGlobalOptions(flags))", 
+        "  File \"/Users/scudette/projects/rekall/rekall-core/rekall/session.py\", line 709, in RunPlugin", 
+        "    self._HandleRunPluginException(ui_renderer, e)", 
+        "  File \"/Users/scudette/projects/rekall/rekall-core/rekall/session.py\", line 706, in RunPlugin", 
+        "    result = plugin_obj.render(ui_renderer) or plugin_obj", 
+        "  File \"/Users/scudette/projects/rekall/rekall-core/rekall/plugins/tools/live_darwin.py\", line 127, in render", 
+        "    self.live()", 
+        "  File \"/Users/scudette/projects/rekall/rekall-core/rekall/plugins/tools/live_darwin.py\", line 92, in live", 
+        "    [\"kextload\", full_driver_path])", 
+        "  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py\", line 540, in check_call", 
+        "    raise CalledProcessError(retcode, cmd)", 
+        "subprocess.CalledProcessError: Command '['kextload', '/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmp4YtnBO/MacPmem.kext']' returned non-zero exit status 77"
+    ], 
+    "return_code": 1, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/Users/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "live", 
+        "pid": 1724, 
+        "test_class": "TestLive", 
+        "--cache_dir": "/Users/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "--cache": "memory", 
+        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpm5sLX0/TestLiveThread-5", 
+        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/Users/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - live", 
+        "testdir": "/Users/scudette/projects/rekall-test/tigger"
+    }
+}

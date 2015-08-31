@@ -1,0 +1,18 @@
+{
+    "time_used": 3.695487976074219e-05, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/Users/scudette/projects/rekall-test/osx10.9.5/vmem.e01", 
+        "--format": "test", 
+        "commandline": "", 
+        "pid": 232, 
+        "test_class": "SessionTest", 
+        "--cache_dir": "/Users/scudette/projects/rekall-test/osx10.9.5/../profile_cache/", 
+        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpIOJk2h/SessionTestThread-6", 
+        "testdir": "/Users/scudette/projects/rekall-test/osx10.9.5"
+    }
+}

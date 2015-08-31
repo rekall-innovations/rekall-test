@@ -1,0 +1,12 @@
+{
+    "time_used": 2.4080276489257812e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/Users/scudette/projects/rekall-test/unit/../profile_cache/", 
+        "--format": "test", 
+        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmplV7vg9/SessionTestThread-1", 
+        "commandline": "", 
+        "testdir": "/Users/scudette/projects/rekall-test/unit", 
+        "test_class": "SessionTest"
+    }
+}
