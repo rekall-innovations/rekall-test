@@ -1,0 +1,14 @@
+{
+    "time_used": 7.152557373046875e-06, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/xen/xen-guest.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "pid": 659, 
+        "test_class": "TestHookHeuristics", 
+        "--cache_dir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/xen/../profile_cache/", 
+        "tempdir": "/tmp/tmpmvcI5K/TestHookHeuristicsThread-1", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/xen"
+    }
+}

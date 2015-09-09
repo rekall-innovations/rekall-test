@@ -1,0 +1,14 @@
+{
+    "time_used": 1.5020370483398438e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/xen/xen-guest.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "pid": 659, 
+        "test_class": "EfilterIntegrationTest", 
+        "--cache_dir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/xen/../profile_cache/", 
+        "tempdir": "/tmp/tmpmvcI5K/EfilterIntegrationTestThread-12", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/xen"
+    }
+}

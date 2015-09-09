@@ -1,0 +1,14 @@
+{
+    "time_used": 1.0967254638671875e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/xen/xen-guest.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "pid": 659, 
+        "test_class": "JsonTest", 
+        "--cache_dir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/xen/../profile_cache/", 
+        "tempdir": "/tmp/tmpmvcI5K/JsonTestThread-10", 
+        "testdir": "/usr/local/google/home/jordisanchez/projects/rekall/rekall-test/xen"
+    }
+}
