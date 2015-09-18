@@ -1,0 +1,14 @@
+{
+    "time_used": 1.5974044799804688e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/Users/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "pid": 2362, 
+        "test_class": "SessionTest", 
+        "--cache_dir": "/Users/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
+        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpf359XE/SessionTestThread-7", 
+        "testdir": "/Users/scudette/projects/rekall-test/linux-3.2.0-PAE"
+    }
+}
