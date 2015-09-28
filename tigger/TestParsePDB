@@ -1,22 +1,32 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/rekall-test/tigger/output/TestParsePDB /home/scudette/projects/rekall-test/tigger/TestParsePDB
+   cp /Users/scudette/projects/rekall-test/tigger/output/TestParsePDB /Users/scudette/projects/rekall-test/tigger/TestParsePDB
 elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/rekall-test/tigger/output/TestParsePDB /home/scudette/projects/rekall-test/tigger/TestParsePDB
+   meld /Users/scudette/projects/rekall-test/tigger/output/TestParsePDB /Users/scudette/projects/rekall-test/tigger/TestParsePDB
 elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/rekall-test/tigger/output/TestParsePDB /home/scudette/projects/rekall-test/tigger/TestParsePDB
+   diff /Users/scudette/projects/rekall-test/tigger/output/TestParsePDB /Users/scudette/projects/rekall-test/tigger/TestParsePDB
 elif [ "$1" == "run" ]; then
-   rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - parse_pdb /home/scudette/projects/rekall-test/tigger/B5DDBBCD0BF24B2EA72E36AC4F1CBD002.pdb
+   rekall  -v --cache 'memory' --cache_dir '/Users/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - parse_pdb /Users/scudette/projects/rekall-test/tigger/B5DDBBCD0BF24B2EA72E36AC4F1CBD002.pdb
 else
-   less /home/scudette/projects/rekall-test/tigger/output/TestParsePDB
+   less /Users/scudette/projects/rekall-test/tigger/output/TestParsePDB
 fi
 exit 0
 {
     "errors": {}, 
-    "time_used": 24.977597951889038, 
+    "logging": [
+        "DEBUG:rekall.1:Logging level set to 10", 
+        "DEBUG:rekall.1:Running plugin (parse_pdb) with args (()) kwargs ({'windows_version': None, 'concise': False, 'output_filename': None, 'pdb_filename': '/Users/scudette/projects/rekall-test/tigger/B5DDBBCD0BF24B2EA72E36AC4F1CBD002.pdb', 'dump_dir': None, 'profile_class': None})", 
+        "DEBUG:rekall.1:Opened url https://raw.githubusercontent.com/google/rekall-profiles/master/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened url http://profiles.rekall-forensic.com/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/mspdb.gz", 
+        "INFO:rekall.1:Loaded profile mspdb from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.0194540023804 sec)"
+    ], 
+    "time_used": 67.54636788368225, 
     "return_code": 0, 
     "failures": {
-        "testCase (__main__.TestParsePDB)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 227, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall/testlib.py\", line 277, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'  \"ProfileClass\": \"B5ddbbcd0bf24b2ea72e36ac4f1cbd002\", ' != u'  \"ProfileClass\": \"BasicPEProfile\", '\n-   \"ProfileClass\": \"B5ddbbcd0bf24b2ea72e36ac4f1cbd002\", \n+   \"ProfileClass\": \"BasicPEProfile\", \n\n"
+        "testCase (__main__.TestParsePDB)": "Traceback (most recent call last):\n  File \"/Users/scudette/projects/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/Users/scudette/projects/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'  \"Timestamp\": \"2013-05-02 01:34:39+0000\", ' != u'  \"Timestamp\": \"2013-05-02 01:34:39Z\", '\n-   \"Timestamp\": \"2013-05-02 01:34:39+0000\", \n?                                    ^^^^^\n+   \"Timestamp\": \"2013-05-02 01:34:39Z\", \n?                                    ^\n\n"
     }, 
     "output": [
         "{", 
@@ -16935,7 +16945,7 @@ exit 0
         "  \"GUID_AGE\": \"B5DDBBCD0BF24B2EA72E36AC4F1CBD4\", ", 
         "  \"PDBFile\": \"B5DDBBCD0BF24B2EA72E36AC4F1CBD002.pdb\", ", 
         "  \"ProfileClass\": \"BasicPEProfile\", ", 
-        "  \"Timestamp\": \"2013-05-02 01:34:39+0000\", ", 
+        "  \"Timestamp\": \"2013-05-02 01:34:39Z\", ", 
         "  \"Type\": \"Profile\", ", 
         "  \"Version\": 20000404, ", 
         "  \"arch\": \"I386\"", 
@@ -33229,14 +33239,15 @@ exit 0
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
-        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
-        "commandline": "parse_pdb /home/scudette/projects/rekall-test/tigger/B5DDBBCD0BF24B2EA72E36AC4F1CBD002.pdb", 
+        "--filename": "/Users/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "parse_pdb /Users/scudette/projects/rekall-test/tigger/B5DDBBCD0BF24B2EA72E36AC4F1CBD002.pdb", 
         "pid": 1724, 
-        "--renderer": "test", 
         "test_class": "TestParsePDB", 
-        "tempdir": "/tmp/tmpycBUxu/TestParsePDBThread-2", 
-        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - parse_pdb /home/scudette/projects/rekall-test/tigger/B5DDBBCD0BF24B2EA72E36AC4F1CBD002.pdb", 
-        "testdir": "/home/scudette/projects/rekall-test/tigger"
+        "--cache_dir": "/Users/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "--cache": "memory", 
+        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpxodq6M/TestParsePDBThread-1", 
+        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/Users/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - parse_pdb /Users/scudette/projects/rekall-test/tigger/B5DDBBCD0BF24B2EA72E36AC4F1CBD002.pdb", 
+        "testdir": "/Users/scudette/projects/rekall-test/tigger"
     }
 }

@@ -1,0 +1,39 @@
+{
+    "time_used": 1.4407079219818115, 
+    "output": [], 
+    "logging": [
+        "DEBUG:rekall.1:Logging level set to 10", 
+        "usage: rekall [-v] [-q] [--debug] [--output_style {concise,full}]", 
+        "              [--logging_level {DEBUG,INFO,WARNING,ERROR,CRITICAL}]", 
+        "              [--pager PAGER] [--paging_limit PAGING_LIMIT]", 
+        "              [--colors {auto,yes,no}] [-F {text,json,wide,test,data}]", 
+        "              [--plugin [PLUGIN [PLUGIN ...]]] [-h]", 
+        "              [--cache {file,memory,timed}]", 
+        "              [--repository_path [REPOSITORY_PATH [REPOSITORY_PATH ...]]]", 
+        "              [-f FILENAME] [--buffer_size BUFFER_SIZE] [--output OUTPUT]", 
+        "              [--max_collector_cost MAX_COLLECTOR_COST] [--home HOME]", 
+        "              [--dtb DTB] [-o FILE_OFFSET] [--ept EPT [EPT ...]]", 
+        "              [--timezone TIMEZONE] [--cache_dir CACHE_DIR]", 
+        "              [--name_resolution_strategies [{Module,Symbol,Export} [{Module,Symbol,Export} ...]]]", 
+        "              [--autodetect_build_local_tracked [AUTODETECT_BUILD_LOCAL_TRACKED [AUTODETECT_BUILD_LOCAL_TRACKED ...]]]", 
+        "              [--pagefile [PAGEFILE [PAGEFILE ...]]]", 
+        "              [--autodetect {nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux} [{nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux} ...]]", 
+        "              [--autodetect_threshold AUTODETECT_THRESHOLD]", 
+        "              [--autodetect_build_local {full,basic,none}]", 
+        "              [--autodetect_scan_length AUTODETECT_SCAN_LENGTH] [--live]", 
+        "              [--version] [-] [-D DUMP_DIR] [--regex REGEX]", 
+        "              volume", 
+        "rekall: error: argument volume is required"
+    ], 
+    "return_code": 2, 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/Users/scudette/projects/rekall-test/unit/../profile_cache/", 
+        "--format": "test", 
+        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpGhL7zH/TestAFF4ExportThread-8", 
+        "executed_command": "rekall  -v --format 'test' --cache_dir '/Users/scudette/projects/rekall-test/unit/../profile_cache/' - aff4export", 
+        "commandline": "aff4export", 
+        "testdir": "/Users/scudette/projects/rekall-test/unit", 
+        "test_class": "TestAFF4Export"
+    }
+}

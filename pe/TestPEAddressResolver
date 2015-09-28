@@ -1,18 +1,6 @@
-#!/bin/bash
-if [ "$1" == "ok" ]; then
-   cp /Users/scudette/projects/rekall-test/tigger/output/TestImageInfo /Users/scudette/projects/rekall-test/tigger/TestImageInfo
-elif [ "$1" == "meld" ]; then
-   meld /Users/scudette/projects/rekall-test/tigger/output/TestImageInfo /Users/scudette/projects/rekall-test/tigger/TestImageInfo
-elif [ "$1" == "diff" ]; then
-   diff /Users/scudette/projects/rekall-test/tigger/output/TestImageInfo /Users/scudette/projects/rekall-test/tigger/TestImageInfo
-elif [ "$1" == "run" ]; then
-   rekall  -v --cache 'memory' --cache_dir '/Users/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - imageinfo
-else
-   less /Users/scudette/projects/rekall-test/tigger/output/TestImageInfo
-fi
-exit 0
 {
-    "errors": {}, 
+    "time_used": 1.4032881259918213, 
+    "output": [], 
     "logging": [
         "DEBUG:rekall.1:Logging level set to 10", 
         "DEBUG:rekall.1:Voting round with base: None", 
@@ -39,21 +27,12 @@ exit 0
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Unable to open AFF4 volume", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
-        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /Users/scudette/projects/rekall-test/tigger/tigger.vmem.E01_info", 
+        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /Users/scudette/projects/rekall-test/pe/ntoskrnl.exe_info", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
         "DEBUG:rekall.1:Succeeded instantiating FileAddressSpace", 
         "DEBUG:rekall.1:Voting round with base: FileAddressSpace", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
-        "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0x9465645", 
-        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
-        "DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Header signature invalid", 
-        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
-        "DEBUG:rekall.1:Failed instantiating VMemAddressSpace: Only VMEM files supported.", 
-        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
-        "DEBUG:rekall.1:Succeeded instantiating EWFAddressSpace", 
-        "DEBUG:rekall.1:Voting round with base: EWFAddressSpace", 
-        "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
-        "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0xf000ff53", 
+        "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0x905a4d", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
         "DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Header signature invalid", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
@@ -86,70 +65,39 @@ exit 0
         "DEBUG:rekall.1:Failed instantiating GlobalOffsetAddressSpace: File offset not specified.", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pagefile.PagefilePhysicalAddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
-        "INFO:rekall.1:Autodetected physical address space EWFAddressSpace", 
+        "INFO:rekall.1:Autodetected physical address space FileAddressSpace", 
+        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/index.gz", 
+        "DEBUG:rekall.1:Decoded in 0.0105400085449 sec.", 
         "DEBUG:rekall.1:Will detect profile using these Detectors: nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux", 
         "DEBUG:rekall.1:Opened url https://raw.githubusercontent.com/google/rekall-profiles/master/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened url http://profiles.rekall-forensic.com/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/nt/eprocess_index.gz", 
-        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.0227029323578 sec)", 
+        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.007728099823 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/nt/index.gz", 
-        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.0382449626923 sec)", 
+        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.0116059780121 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/OSX/index.gz", 
-        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.000867128372192 sec)", 
+        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.000500202178955 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/pe.gz", 
-        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.0417819023132 sec)", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/ntfs.gz", 
-        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.00258183479309 sec)", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
-        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.431702136993 sec)", 
-        "DEBUG:rekall.1:Found _EPROCESS @ 0x551B80 (DTB: 0x319000)", 
-        "INFO:rekall.1:Detected ntkrnlpa.pdb with GUID BD8F451F3E754ED8A34B50560CEB08E31", 
-        "DEBUG:rekall.1:Detection method rsds worked at offset 0x4e0508", 
-        "DEBUG:rekall.1:Running plugin (imageinfo) with args (()) kwargs ({'profile': None})", 
-        "INFO:rekall.1:Detected kernel base at 0x804D7000"
+        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.0187690258026 sec)", 
+        "INFO:rekall.1:Detection method pe yielded profile <AMD64 profile pe (PEProfile)>", 
+        "DEBUG:rekall.1:Running plugin (address_resolver) with args (()) kwargs ({'profile': None})"
     ], 
-    "time_used": 3.11124587059021, 
     "return_code": 0, 
-    "failures": {
-        "testCase (__main__.TestImageInfo)": "Traceback (most recent call last):\n  File \"/Users/scudette/projects/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/Users/scudette/projects/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'Time (UTC)          ||2010-08-15 19:26:50+0000      ' != u'Time (UTC)          ||2010-08-15 19:26:50Z          '\n- Time (UTC)          ||2010-08-15 19:26:50+0000      \n?                                          ^^^^^\n+ Time (UTC)          ||2010-08-15 19:26:50Z          \n?                                          ^^^^^\n\n"
-    }, 
-    "output": [
-        "        Fact        ||            Value             ", 
-        "--------------------||------------------------------", 
-        "Kernel DTB          ||0x319000                      ", 
-        "NT Build            ||2600.xpsp_sp2_rtm.040803-2158 ", 
-        "NT Build Ex         ||-                             ", 
-        "Signed Drivers      ||-                             ", 
-        "Time (UTC)          ||2010-08-15 19:26:50Z          ", 
-        "Time (Local)        ||2010-08-15 15:26:50-0400      ", 
-        "Sec Since Boot      ||371.90625                     ", 
-        "NtSystemRoot        ||C:\\WINDOWS                    ", 
-        "", 
-        "**************** Physical Layout ****************", 
-        "Phys Start|| Phys End ||Number of Pages", 
-        "----------||----------||---------------", 
-        "0x00001000||0x0009f000||158            ", 
-        "0x00100000||0x00fff000||3839           ", 
-        "0x01000000||0x07ef0000||28400          ", 
-        "0x07f00000||0x08000000||256            "
-    ], 
     "options": {
-        "--name_resolution_strategies": [
-            "Module", 
-            "Symbol"
-        ], 
         "executable": "rekall ", 
-        "--filename": "/Users/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--filename": "/Users/scudette/projects/rekall-test/pe/ntoskrnl.exe", 
         "--format": "test", 
-        "commandline": "imageinfo", 
-        "pid": 1724, 
-        "test_class": "TestImageInfo", 
-        "--cache_dir": "/Users/scudette/projects/rekall-test/tigger/../profile_cache/", 
-        "--cache": "memory", 
-        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpxodq6M/TestImageInfoThread-3", 
-        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/Users/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - imageinfo", 
-        "testdir": "/Users/scudette/projects/rekall-test/tigger"
+        "commandline": "address_resolver", 
+        "enabled": [
+            "TestPEInfo", 
+            "TestPEAddressResolver"
+        ], 
+        "test_class": "TestPEAddressResolver", 
+        "--cache_dir": "/Users/scudette/projects/rekall-test/pe/../profile_cache/", 
+        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmp8xEniD/TestPEAddressResolverThread-3", 
+        "executed_command": "rekall  -v --cache_dir '/Users/scudette/projects/rekall-test/pe/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/pe/ntoskrnl.exe' - address_resolver", 
+        "testdir": "/Users/scudette/projects/rekall-test/pe"
     }
 }

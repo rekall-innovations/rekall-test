@@ -1,0 +1,13 @@
+{
+    "time_used": 8.106231689453125e-06, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/Users/scudette/projects/rekall-test/pe/ntoskrnl.exe", 
+        "--format": "test", 
+        "commandline": "", 
+        "test_class": "EntityTest", 
+        "--cache_dir": "/Users/scudette/projects/rekall-test/pe/../profile_cache/", 
+        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmp0mE0eg/EntityTestThread-6", 
+        "testdir": "/Users/scudette/projects/rekall-test/pe"
+    }
+}
