@@ -1,0 +1,19 @@
+{
+    "time_used": 1.1920928955078125e-05, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/test/osx10.9.5/vmem.e01", 
+        "--format": "test", 
+        "commandline": null, 
+        "cache": "memory", 
+        "pid": 232, 
+        "test_class": "TestTypedProfileCommand", 
+        "--cache_dir": "/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmp8Oq4Au/TestTypedProfileCommandThread-1", 
+        "testdir": "/Users/adamsh/Projects/test/osx10.9.5"
+    }
+}
