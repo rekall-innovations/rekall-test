@@ -1,25 +1,9 @@
-#!/bin/bash
-if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/rekall-test/android/output/TestIfconfig /home/scudette/projects/rekall-test/android/TestIfconfig
-elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/rekall-test/android/output/TestIfconfig /home/scudette/projects/rekall-test/android/TestIfconfig
-elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/rekall-test/android/output/TestIfconfig /home/scudette/projects/rekall-test/android/TestIfconfig
-elif [ "$1" == "run" ]; then
-   rekall  -v --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - ifconfig
-else
-   less /home/scudette/projects/rekall-test/android/output/TestIfconfig
-fi
-exit 0
 {
-    "failours": {
-        "testCase (__main__.TestIfconfig)": {
-            "testCase (__main__.TestIfconfig)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 209, in assertListEqual\n    self.assertEqual(x, y)\nAssertionError: u'eth0            ||50.94.125.176       ||00:00:00:00:00:00 ||IFF_BROADCAST,     [truncated]... != u'eth0            ||50.94.125.176       ||38:E7:D8:67:0E:57 ||IFF_BROADCAST,     [truncated]...\n- eth0            ||50.94.125.176       ||00:00:00:00:00:00 ||IFF_BROADCAST,      \n?                                         ^^  ^ ^^^^^^^^^^^\n+ eth0            ||50.94.125.176       ||38:E7:D8:67:0E:57 ||IFF_BROADCAST,      \n?                                         ^^^^^^^^^^^  ^ ^^\n\n"
-        }
-    }, 
-    "errors": {
-        "testCase (__main__.TestIfconfig)": {}
-    }, 
+    "time_used": 4.147266149520874, 
+    "output": [
+        "            Plugin            ", 
+        "------------------------------"
+    ], 
     "logging": [
         "DEBUG:rekall.1:Logging level set to 10", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/android/Evo4G.json", 
@@ -105,33 +89,27 @@ exit 0
         "DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
         "INFO:rekall.1:Autodetected physical address space LimeAddressSpace", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/index.gz", 
-        "DEBUG:rekall.1:Decoded in 0.0535488128662 sec.", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/0cac07018d13ccd19d92414807eb493fc817337b/image_fingerprint.gz", 
-        "DEBUG:rekall.1:Decoded in 0.0201380252838 sec.", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000221014022827 sec.", 
-        "INFO:rekall.1:Detected fingerprinted image 0cac07018d13ccd19d92414807eb493fc817337b", 
+        "DEBUG:rekall.1:Decoded in 0.0088210105896 sec.", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/android/Evo4G.json", 
-        "DEBUG:rekall.1:Running plugin (ifconfig) with args (()) kwargs ({'profile': '/home/scudette/projects/rekall-test/android/Evo4G.json'})", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/0cac07018d13ccd19d92414807eb493fc817337b/dtb.gz", 
-        "DEBUG:rekall.1:Decoded in 8.9168548584e-05 sec.", 
+        "DEBUG:rekall.1:Running plugin (which_plugin) with args (()) kwargs ({'profile': '/home/scudette/projects/rekall-test/android/Evo4G.json', 'type_name': 'proc', 'producers_only': False})", 
+        "DEBUG:rekall.1:DTB not specified. Delegating to find_dtb.", 
+        "DEBUG:rekall.1:Unable to locate the kernel slide.", 
         "DEBUG:rekall.1:Detected ARM Linux.", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/0cac07018d13ccd19d92414807eb493fc817337b/default_address_space.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000272989273071 sec.", 
-        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/0cac07018d13ccd19d92414807eb493fc817337b/image_fingerprint.gz", 
-        "DEBUG:rekall.1:Decoded in 0.00029993057251 sec.", 
-        "DEBUG:rekall.1:Flushed profile_obj in 0.000943899154663"
+        "DEBUG:rekall.1:Listed 127 processes using InitTask", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/index.gz", 
+        "DEBUG:rekall.1:Decoded in 0.00026798248291 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000270128250122 sec.", 
+        "DEBUG:rekall.1:Flushed profile in 0.00262594223022", 
+        "DEBUG:rekall.1:Flushed default_address_space in 0.000994205474854", 
+        "DEBUG:rekall.1:Flushed image_fingerprint in 0.0118401050568", 
+        "DEBUG:rekall.1:Flushed dtb in 0.00074315071106", 
+        "DEBUG:rekall.1:Flushed profile_obj in 0.000993013381958", 
+        "DEBUG:rekall.1:Flushed linux_page_offset in 0.000648021697998", 
+        "DEBUG:rekall.1:Flushed pslist_cache in 0.00316190719604", 
+        "DEBUG:rekall.1:Flushed kernel_slide in 0.000647068023682"
     ], 
-    "time_used": 4.199280023574829, 
     "return_code": 0, 
-    "output": [
-        "   Interface    ||    Ipv4Address     ||       MAC        ||       Flags        ", 
-        "----------------||--------------------||------------------||--------------------", 
-        "lo              ||127.0.0.1           ||00:00:00:00:00:00 ||IFF_LOOPBACK, IFF_UP", 
-        "eth0            ||50.94.125.176       ||38:E7:D8:67:0E:57 ||IFF_BROADCAST,      ", 
-        "                ||                    ||                  ||IFF_MULTICAST,      ", 
-        "                ||                    ||                  ||IFF_UP              "
-    ], 
     "options": {
         "--name_resolution_strategies": [
             "Module", 
@@ -139,16 +117,17 @@ exit 0
         ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "struct": "proc", 
         "--format": "test", 
-        "commandline": "ifconfig", 
+        "commandline": "which_plugin %(struct)s", 
         "proc_name": "sh", 
         "pid": 1872, 
         "cache": "memory", 
-        "test_class": "TestIfconfig", 
-        "tempdir": "/tmp/tmp4hLfQA/TestIfconfigThread-2", 
+        "test_class": "TestWhichPlugin", 
+        "tempdir": "/tmp/tmp4hLfQA/TestWhichPluginThread-3", 
         "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
         "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
-        "executed_command": "rekall  -v --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - ifconfig", 
+        "executed_command": "rekall  -v --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - which_plugin proc", 
         "testdir": "/home/scudette/projects/rekall-test/android"
     }
 }
