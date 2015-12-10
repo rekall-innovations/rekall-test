@@ -1,0 +1,14 @@
+{
+    "time_used": 1.5020370483398438e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "pid": 2362, 
+        "test_class": "ProfileTest", 
+        "--cache_dir": "/Users/adamsh/Projects/test/linux-3.2.0-PAE/../profile_cache/", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpiq6OHo/ProfileTestThread-8", 
+        "testdir": "/Users/adamsh/Projects/test/linux-3.2.0-PAE"
+    }
+}

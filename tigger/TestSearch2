@@ -1,27 +1,22 @@
-#!/bin/bash
-if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/test/tigger/output/TestExplain /Users/adamsh/Projects/test/tigger/TestExplain
-elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/test/tigger/output/TestExplain /Users/adamsh/Projects/test/tigger/TestExplain
-elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/test/tigger/output/TestExplain /Users/adamsh/Projects/test/tigger/TestExplain
-elif [ "$1" == "run" ]; then
-   rekall  -v --cache 'memory' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - explain 'select * from pslist where _EPROCESS.pid == 4'
-else
-   less /Users/adamsh/Projects/test/tigger/output/TestExplain
-fi
-exit 0
 {
-    "failours": {
-        "testCase (rekall.plugins.common.search.TestExplain)": {
-            "testCase (rekall.plugins.common.search.TestExplain)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertListEqual(previous, current)\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 206, in assertListEqual\n    self.assertEqual(len(a), len(b))\nAssertionError: 17 != 30\n"
-        }
-    }, 
-    "errors": {
-        "testCase (rekall.plugins.common.search.TestExplain)": {}
-    }, 
+    "time_used": 31.62327814102173, 
+    "output": [
+        "path", 
+        "----", 
+        "\\Device\\HarddiskVolume1\\WINDOWS\\system32", 
+        "\\Device\\HarddiskVolume1\\WINDOWS\\WinSxS\\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2180_x-ww_a84f1ff9", 
+        "\\Device\\KsecDD", 
+        "\\Device\\HarddiskVolume1\\WINDOWS\\WinSxS\\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2180_x-ww_a84f1ff9", 
+        "\\Device\\NamedPipe\\net\\NtControlPipe11", 
+        "\\Device\\Tcp", 
+        "\\Device\\Tcp", 
+        "\\Device\\Ip", 
+        "\\Device\\Ip", 
+        "\\Device\\Ip"
+    ], 
     "logging": [
         "DEBUG:rekall.1:Logging level set to 10", 
+        "DEBUG:rekall.1:Running plugin (run) with args (()) kwargs ({'run': '/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpSYryCX/TestSearch2.script', 'script': \"print 'hello!'\"})", 
         "DEBUG:rekall.1:Voting round with base: None", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: No base address space provided", 
@@ -98,56 +93,32 @@ exit 0
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/profiles/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/nt/eprocess_index.gz", 
-        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0176389217377 sec)", 
+        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0157170295715 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/nt/index.gz", 
-        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0341529846191 sec)", 
+        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0256989002228 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/OSX/index.gz", 
-        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.000877141952515 sec)", 
+        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.00275111198425 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/pe.gz", 
-        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0253210067749 sec)", 
+        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0201652050018 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/ntfs.gz", 
-        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.00341892242432 sec)", 
+        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0022759437561 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
-        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.419285058975 sec)", 
+        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.233315229416 sec)", 
         "DEBUG:rekall.1:Found _EPROCESS @ 0x551B80 (DTB: 0x319000)", 
         "INFO:rekall.1:Detected ntkrnlpa.pdb with GUID BD8F451F3E754ED8A34B50560CEB08E31", 
         "DEBUG:rekall.1:Detection method rsds worked at offset 0x4e0508", 
-        "DEBUG:rekall.1:Running plugin (explain) with args (()) kwargs ({'profile': None, 'query': 'select * from pslist where _EPROCESS.pid == 4', 'query_parameters': []})"
+        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/help_doc.gz", 
+        "INFO:rekall.1:Loaded profile help_doc from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0208010673523 sec)", 
+        "DEBUG:rekall.1:Running plugin (search) with args (('select details AS path from handles where _EPROCESS.pid == 1968 and obj_type == \"File\"',)) kwargs ({})", 
+        "DEBUG:rekall.1:Running plugin (handles) with args (()) kwargs ({})", 
+        "INFO:rekall.1:Detected kernel base at 0x804D7000", 
+        "DEBUG:rekall.1:Listed 25 processes using PsActiveProcessHead", 
+        "DEBUG:rekall.1:Listed 22 processes using CSRSS", 
+        "DEBUG:rekall.1:Listed 25 processes using PspCidTable", 
+        "DEBUG:rekall.1:Listed 23 processes using Sessions", 
+        "DEBUG:rekall.1:Listed 24 processes using Handles"
     ], 
-    "time_used": 3.2330899238586426, 
     "return_code": 0, 
-    "output": [
-        "", 
-        "******************************************************* Query Analysis (As supplied) *******************************************************", 
-        "        (Return Type) Expression        ||                                              Subquery                                              ", 
-        "----------------------------------------||----------------------------------------------------------------------------------------------------", 
-        ".||(Plugin: pslist) <Filter>             ||select * from pslist where _EPROCESS.pid == 4", 
-        "..||(Plugin: pslist) <Var>               ||select * from pslist where _EPROCESS.pid == 4", 
-        "...||(str) <leaf: 'pslist'>              ||-", 
-        "..||(IBoolean) <Equivalence>             ||select * from pslist where _EPROCESS.pid == 4", 
-        "...||(AnyType) <Map>                     ||select * from pslist where _EPROCESS.pid == 4", 
-        "....||(AnyType) <Var>                    ||select * from pslist where _EPROCESS.pid == 4", 
-        ".....||(str) <leaf: '_EPROCESS'>         ||-", 
-        "....||(AnyType) <Var>                    ||select * from pslist where _EPROCESS.pid == 4", 
-        ".....||(str) <leaf: 'pid'>               ||-", 
-        "...||(int) <Literal>                     ||select * from pslist where _EPROCESS.pid == 4", 
-        "....||(int) <leaf: 4>                    ||-", 
-        "", 
-        "************************************************* Query Analysis (Using canonical syntax) *************************************************", 
-        "        (Return Type) Expression        ||                                              Subquery                                              ", 
-        "----------------------------------------||----------------------------------------------------------------------------------------------------", 
-        ".||(Plugin: pslist) <Filter>             ||filter(pslist, _EPROCESS.pid == 4)", 
-        "..||(Plugin: pslist) <Var>               ||filter(pslist, _EPROCESS.pid == 4)", 
-        "...||(str) <leaf: 'pslist'>              ||-", 
-        "..||(IBoolean) <Equivalence>             ||filter(pslist, _EPROCESS.pid == 4)", 
-        "...||(AnyType) <Map>                     ||filter(pslist, _EPROCESS.pid == 4)", 
-        "....||(AnyType) <Var>                    ||filter(pslist, _EPROCESS.pid == 4)", 
-        ".....||(str) <leaf: '_EPROCESS'>         ||-", 
-        "....||(AnyType) <Var>                    ||filter(pslist, _EPROCESS.pid == 4)", 
-        ".....||(str) <leaf: 'pid'>               ||-", 
-        "...||(int) <Literal>                     ||filter(pslist, _EPROCESS.pid == 4)", 
-        "....||(int) <leaf: 4>                    ||-"
-    ], 
     "options": {
         "--name_resolution_strategies": [
             "Module", 
@@ -156,14 +127,13 @@ exit 0
         "executable": "rekall ", 
         "--filename": "/Users/adamsh/Projects/test/tigger/tigger.vmem.E01", 
         "--format": "test", 
-        "commandline": "explain %(query)r", 
-        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - explain 'select * from pslist where _EPROCESS.pid == 4'", 
+        "commandline": "run --run /var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpSYryCX/TestSearch2.script", 
         "pid": 1724, 
-        "test_class": "TestExplain", 
+        "test_class": "TestSearch2", 
         "--cache_dir": "/Users/adamsh/Projects/test/tigger/../profile_cache/", 
         "--cache": "memory", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpaKn6u6/TestExplainThread-1", 
-        "query": "select * from pslist where _EPROCESS.pid == 4", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpSYryCX/TestSearch2Thread-7", 
+        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - run --run /var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpSYryCX/TestSearch2.script", 
         "testdir": "/Users/adamsh/Projects/test/tigger"
     }
 }

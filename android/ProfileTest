@@ -1,0 +1,21 @@
+{
+    "time_used": 1.0013580322265625e-05, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/Users/adamsh/Projects/test/android/Evo4GRodeo.aff4", 
+        "--format": "test", 
+        "commandline": "", 
+        "proc_name": "sh", 
+        "pid": 1872, 
+        "cache": "memory", 
+        "test_class": "ProfileTest", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmp4dAnRx/ProfileTestThread-2", 
+        "--cache_dir": "/Users/adamsh/Projects/test/android/../profile_cache/", 
+        "--profile": "/Users/adamsh/Projects/test/android/Evo4G.json", 
+        "testdir": "/Users/adamsh/Projects/test/android"
+    }
+}
