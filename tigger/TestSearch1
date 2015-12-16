@@ -1,15 +1,28 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /Users/adamsh/Projects/test/tigger/output/TestSearch1 /Users/adamsh/Projects/test/tigger/TestSearch1
+elif [ "$1" == "meld" ]; then
+   meld /Users/adamsh/Projects/test/tigger/output/TestSearch1 /Users/adamsh/Projects/test/tigger/TestSearch1
+elif [ "$1" == "diff" ]; then
+   diff /Users/adamsh/Projects/test/tigger/output/TestSearch1 /Users/adamsh/Projects/test/tigger/TestSearch1
+elif [ "$1" == "run" ]; then
+   rekall  -v --cache 'memory' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - run --run /var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpBFeLnt/TestSearch1.script
+else
+   less /Users/adamsh/Projects/test/tigger/output/TestSearch1
+fi
+exit 0
 {
-    "time_used": 4.149091005325317, 
-    "output": [
-        "_EPROCESS ||        Name        || PID || PPID || Thds ||  Hnds  || Sess ||Wow64 ||         Start          ||          Exit          ", 
-        "----------||--------------------||-----||------||------||--------||------||------||------------------------||------------------------", 
-        "0x810b1660||System              ||    4||     0||    61||     179||     -||False ||-                       ||-                       ", 
-        "0xff25a7e0||alg.exe             ||  216||   676||     7||     108||     0||False ||2010-08-11 06:06:39Z    ||-                       ", 
-        "0xff1b8b28||vmtoolsd.exe        || 1668||   676||     5||     218||     0||False ||2010-08-11 06:06:35Z    ||-                       "
-    ], 
+    "failours": {
+        "testCase (__main__.TestSearch1)": {
+            "testCase (__main__.TestSearch1)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertListEqual(previous, current)\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 209, in assertListEqual\n    self.assertEqual(x, y)\nAssertionError: u'-                  ||179         ||61          ||-         ||-                 [truncated]... != u'----------||--------------------||-----||------||------||--------||------||--- [truncated]...\n- -                  ||179         ||61          ||-         ||-                ||0x810b1660||System||    4||False||0   \n+ ----------||--------------------||-----||------||------||--------||------||------||------------------------||------------------------\n\n"
+        }
+    }, 
+    "errors": {
+        "testCase (__main__.TestSearch1)": {}
+    }, 
     "logging": [
         "DEBUG:rekall.1:Logging level set to 10", 
-        "DEBUG:rekall.1:Running plugin (run) with args (()) kwargs ({'run': '/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpSYryCX/TestSearch1.script', 'script': \"print 'hello!'\"})", 
+        "DEBUG:rekall.1:Running plugin (run) with args (()) kwargs ({'run': '/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpBFeLnt/TestSearch1.script', 'script': \"print 'hello!'\"})", 
         "DEBUG:rekall.1:Voting round with base: None", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: No base address space provided", 
@@ -86,22 +99,22 @@
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/profiles/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/nt/eprocess_index.gz", 
-        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0156760215759 sec)", 
+        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0148370265961 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/nt/index.gz", 
-        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0214838981628 sec)", 
+        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0219140052795 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/OSX/index.gz", 
-        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.000760078430176 sec)", 
+        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.000910997390747 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/pe.gz", 
-        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.019859790802 sec)", 
+        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0228099822998 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/ntfs.gz", 
-        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0020740032196 sec)", 
+        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0023250579834 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
-        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.244751930237 sec)", 
+        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.261780977249 sec)", 
         "DEBUG:rekall.1:Found _EPROCESS @ 0x551B80 (DTB: 0x319000)", 
         "INFO:rekall.1:Detected ntkrnlpa.pdb with GUID BD8F451F3E754ED8A34B50560CEB08E31", 
         "DEBUG:rekall.1:Detection method rsds worked at offset 0x4e0508", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/help_doc.gz", 
-        "INFO:rekall.1:Loaded profile help_doc from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0223090648651 sec)", 
+        "INFO:rekall.1:Loaded profile help_doc from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0222880840302 sec)", 
         "DEBUG:rekall.1:Running plugin (search) with args (('SELECT * FROM pslist WHERE (_EPROCESS.pid in [4, 216, 1668]) ORDER BY _EPROCESS.pid',)) kwargs ({})", 
         "DEBUG:rekall.1:Running plugin (pslist) with args (()) kwargs ({})", 
         "INFO:rekall.1:Detected kernel base at 0x804D7000", 
@@ -111,7 +124,15 @@
         "DEBUG:rekall.1:Listed 23 processes using Sessions", 
         "DEBUG:rekall.1:Listed 24 processes using Handles"
     ], 
+    "time_used": 4.106629848480225, 
     "return_code": 0, 
+    "output": [
+        "_EPROCESS ||        Name        || PID || PPID || Thds ||  Hnds  || Sess ||Wow64 ||         Start          ||          Exit          ", 
+        "----------||--------------------||-----||------||------||--------||------||------||------------------------||------------------------", 
+        "0x810b1660||System              ||    4||     0||    61||     179||     -||False ||-                       ||-                       ", 
+        "0xff25a7e0||alg.exe             ||  216||   676||     7||     108||     0||False ||2010-08-11 06:06:39Z    ||-                       ", 
+        "0xff1b8b28||vmtoolsd.exe        || 1668||   676||     5||     218||     0||False ||2010-08-11 06:06:35Z    ||-                       "
+    ], 
     "options": {
         "--name_resolution_strategies": [
             "Module", 
@@ -120,13 +141,13 @@
         "executable": "rekall ", 
         "--filename": "/Users/adamsh/Projects/test/tigger/tigger.vmem.E01", 
         "--format": "test", 
-        "commandline": "run --run /var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpSYryCX/TestSearch1.script", 
+        "commandline": "run --run /var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpBFeLnt/TestSearch1.script", 
         "pid": 1724, 
         "test_class": "TestSearch1", 
         "--cache_dir": "/Users/adamsh/Projects/test/tigger/../profile_cache/", 
         "--cache": "memory", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpSYryCX/TestSearch1Thread-6", 
-        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - run --run /var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpSYryCX/TestSearch1.script", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpBFeLnt/TestSearch1Thread-6", 
+        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - run --run /var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpBFeLnt/TestSearch1.script", 
         "testdir": "/Users/adamsh/Projects/test/tigger"
     }
 }

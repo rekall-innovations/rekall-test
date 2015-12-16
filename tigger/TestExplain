@@ -14,7 +14,7 @@ exit 0
 {
     "failours": {
         "testCase (rekall.plugins.common.search.TestExplain)": {
-            "testCase (rekall.plugins.common.search.TestExplain)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertListEqual(previous, current)\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 206, in assertListEqual\n    self.assertEqual(len(a), len(b))\nAssertionError: 17 != 30\n"
+            "testCase (rekall.plugins.common.search.TestExplain)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertListEqual(previous, current)\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 206, in assertListEqual\n    self.assertEqual(len(a), len(b))\nAssertionError: 30 != 35\n"
         }
     }, 
     "errors": {
@@ -98,37 +98,42 @@ exit 0
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/profiles/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/nt/eprocess_index.gz", 
-        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0176389217377 sec)", 
+        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0435950756073 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/nt/index.gz", 
-        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0341529846191 sec)", 
+        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0296080112457 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/OSX/index.gz", 
-        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.000877141952515 sec)", 
+        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.000982999801636 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/pe.gz", 
-        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0253210067749 sec)", 
+        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0450708866119 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/ntfs.gz", 
-        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.00341892242432 sec)", 
+        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.00536298751831 sec)", 
         "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
-        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.419285058975 sec)", 
+        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.513609170914 sec)", 
         "DEBUG:rekall.1:Found _EPROCESS @ 0x551B80 (DTB: 0x319000)", 
         "INFO:rekall.1:Detected ntkrnlpa.pdb with GUID BD8F451F3E754ED8A34B50560CEB08E31", 
         "DEBUG:rekall.1:Detection method rsds worked at offset 0x4e0508", 
         "DEBUG:rekall.1:Running plugin (explain) with args (()) kwargs ({'profile': None, 'query': 'select * from pslist where _EPROCESS.pid == 4', 'query_parameters': []})"
     ], 
-    "time_used": 3.2330899238586426, 
+    "time_used": 3.603855848312378, 
     "return_code": 0, 
     "output": [
         "", 
-        "******************************************************* Query Analysis (As supplied) *******************************************************", 
+        "************************************************************** Type Analysis **************************************************************", 
+        "                            Name                            ||                  Type                  ", 
+        "------------------------------------------------------------||----------------------------------------", 
+        ".||select * from pslist where _EPROCESS.pid == 4             ||Plugin: pslist                          ", 
+        "", 
+        "************************************************************** Query Analysis **************************************************************", 
         "        (Return Type) Expression        ||                                              Subquery                                              ", 
         "----------------------------------------||----------------------------------------------------------------------------------------------------", 
         ".||(Plugin: pslist) <Filter>             ||select * from pslist where _EPROCESS.pid == 4", 
         "..||(Plugin: pslist) <Var>               ||select * from pslist where _EPROCESS.pid == 4", 
         "...||(str) <leaf: 'pslist'>              ||-", 
         "..||(IBoolean) <Equivalence>             ||select * from pslist where _EPROCESS.pid == 4", 
-        "...||(AnyType) <Map>                     ||select * from pslist where _EPROCESS.pid == 4", 
+        "...||(AnyType) <Resolve>                 ||select * from pslist where _EPROCESS.pid == 4", 
         "....||(AnyType) <Var>                    ||select * from pslist where _EPROCESS.pid == 4", 
         ".....||(str) <leaf: '_EPROCESS'>         ||-", 
-        "....||(AnyType) <Var>                    ||select * from pslist where _EPROCESS.pid == 4", 
+        "....||(str) <Literal>                    ||select * from pslist where _EPROCESS.pid == 4", 
         ".....||(str) <leaf: 'pid'>               ||-", 
         "...||(int) <Literal>                     ||select * from pslist where _EPROCESS.pid == 4", 
         "....||(int) <leaf: 4>                    ||-", 
@@ -140,10 +145,10 @@ exit 0
         "..||(Plugin: pslist) <Var>               ||filter(pslist, _EPROCESS.pid == 4)", 
         "...||(str) <leaf: 'pslist'>              ||-", 
         "..||(IBoolean) <Equivalence>             ||filter(pslist, _EPROCESS.pid == 4)", 
-        "...||(AnyType) <Map>                     ||filter(pslist, _EPROCESS.pid == 4)", 
+        "...||(AnyType) <Resolve>                 ||filter(pslist, _EPROCESS.pid == 4)", 
         "....||(AnyType) <Var>                    ||filter(pslist, _EPROCESS.pid == 4)", 
         ".....||(str) <leaf: '_EPROCESS'>         ||-", 
-        "....||(AnyType) <Var>                    ||filter(pslist, _EPROCESS.pid == 4)", 
+        "....||(str) <Literal>                    ||filter(pslist, _EPROCESS.pid == 4)", 
         ".....||(str) <leaf: 'pid'>               ||-", 
         "...||(int) <Literal>                     ||filter(pslist, _EPROCESS.pid == 4)", 
         "....||(int) <leaf: 4>                    ||-"
@@ -162,7 +167,7 @@ exit 0
         "test_class": "TestExplain", 
         "--cache_dir": "/Users/adamsh/Projects/test/tigger/../profile_cache/", 
         "--cache": "memory", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpaKn6u6/TestExplainThread-1", 
+        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpBFeLnt/TestExplainThread-6", 
         "query": "select * from pslist where _EPROCESS.pid == 4", 
         "testdir": "/Users/adamsh/Projects/test/tigger"
     }
