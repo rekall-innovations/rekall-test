@@ -1,0 +1,16 @@
+{
+    "time_used": 8.821487426757812e-06, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "tempdir": "/tmp/tmpYxQj6W/TestDynamicProfileThread-1", 
+        "test_class": "TestDynamicProfile", 
+        "mft": 42, 
+        "--cache_dir": "/home/scudette/projects/rekall-test/ntfs/../profile_cache/", 
+        "--profile": "ntfs", 
+        "path": "RAW/20076517123273.pdf", 
+        "testdir": "/home/scudette/projects/rekall-test/ntfs"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "time_used": 1.0967254638671875e-05, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01", 
+        "--format": "test", 
+        "commandline": "", 
+        "cache": "memory", 
+        "pid": 232, 
+        "test_class": "TestDynamicProfile", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/", 
+        "tempdir": "/tmp/tmpUQMw04/TestDynamicProfileThread-4", 
+        "testdir": "/home/scudette/projects/rekall-test/osx10.9.5"
+    }
+}

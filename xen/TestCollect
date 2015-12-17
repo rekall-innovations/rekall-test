@@ -1,9 +1,25 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/xen/output/TestCollect /home/scudette/projects/rekall-test/xen/TestCollect
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/xen/output/TestCollect /home/scudette/projects/rekall-test/xen/TestCollect
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/xen/output/TestCollect /home/scudette/projects/rekall-test/xen/TestCollect
+elif [ "$1" == "run" ]; then
+   rekall  -v --cache_dir '/home/scudette/projects/rekall-test/xen/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/xen/xen-guest.E01' - collect proc
+else
+   less /home/scudette/projects/rekall-test/xen/output/TestCollect
+fi
+exit 0
 {
-    "time_used": 2.9060699939727783, 
-    "output": [
-        "   Process    ||        Name        || PID ||Producers", 
-        "--------------||--------------------||-----||---------"
-    ], 
+    "failours": {
+        "testCase (rekall.plugins.common.search.TestCollect)": {
+            "testCase (rekall.plugins.common.search.TestCollect)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 209, in assertListEqual\n    self.assertEqual(x, y)\nAssertionError: u'   Process    ||        Name        || PID ||Producers' != u'     proc     ||        Name        || PID ||Producers'\n-    Process    ||        Name        || PID ||Producers\n?    ^   ^^^\n+      proc     ||        Name        || PID ||Producers\n?    ^^^   ^\n\n"
+        }
+    }, 
+    "errors": {
+        "testCase (rekall.plugins.common.search.TestCollect)": {}
+    }, 
     "logging": [
         "DEBUG:rekall.1:Logging level set to 10", 
         "DEBUG:rekall.1:Voting round with base: None", 
@@ -79,26 +95,31 @@
         "DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
         "INFO:rekall.1:Autodetected physical address space EWFAddressSpace", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/index.gz", 
-        "DEBUG:rekall.1:Decoded in 0.0179359912872 sec.", 
+        "DEBUG:rekall.1:Decoded in 0.0599920749664 sec.", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/profile.gz", 
         "DEBUG:rekall.1:Decoded in 9.89437103271e-05 sec.", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/image_fingerprint.gz", 
-        "DEBUG:rekall.1:Decoded in 0.00370001792908 sec.", 
+        "DEBUG:rekall.1:Decoded in 0.00788998603821 sec.", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Decoded in 0.00166082382202 sec.", 
+        "DEBUG:rekall.1:Decoded in 0.000192165374756 sec.", 
         "INFO:rekall.1:Detected fingerprinted image f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/profile.gz", 
-        "DEBUG:rekall.1:Decoded in 5.69820404053e-05 sec.", 
+        "DEBUG:rekall.1:Decoded in 6.19888305664e-05 sec.", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/Ubuntu/3.2.0-75-generic.gz", 
-        "INFO:rekall.1:Loaded profile Ubuntu/3.2.0-75-generic from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.990816116333 sec)", 
+        "INFO:rekall.1:Loaded profile Ubuntu/3.2.0-75-generic from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 1.1801609993 sec)", 
         "DEBUG:rekall.1:Running plugin (collect) with args (()) kwargs ({'profile': None, 'type_name': 'proc'})", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/image_fingerprint.gz", 
         "DEBUG:rekall.1:Decoded in 0.000174999237061 sec.", 
-        "DEBUG:rekall.1:Flushed profile_obj in 0.00116205215454"
+        "DEBUG:rekall.1:Flushed profile_obj in 0.000850200653076"
     ], 
+    "time_used": 3.1585910320281982, 
     "return_code": 0, 
+    "output": [
+        "     proc     ||        Name        || PID ||Producers", 
+        "--------------||--------------------||-----||---------"
+    ], 
     "options": {
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/xen/xen-guest.E01", 
@@ -109,7 +130,7 @@
         "pid": 659, 
         "test_class": "TestCollect", 
         "--cache_dir": "/home/scudette/projects/rekall-test/xen/../profile_cache/", 
-        "tempdir": "/tmp/tmpzeZRGq/TestCollectThread-4", 
+        "tempdir": "/tmp/tmpZ5qcrT/TestCollectThread-3", 
         "executed_command": "rekall  -v --cache_dir '/home/scudette/projects/rekall-test/xen/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/xen/xen-guest.E01' - collect proc", 
         "testdir": "/home/scudette/projects/rekall-test/xen"
     }

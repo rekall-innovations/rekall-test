@@ -1,0 +1,19 @@
+{
+    "time_used": 1.3113021850585938e-05, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "pid": 1724, 
+        "test_class": "TestDynamicProfile", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "--cache": "memory", 
+        "tempdir": "/tmp/tmpWlqioy/TestDynamicProfileThread-3", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}

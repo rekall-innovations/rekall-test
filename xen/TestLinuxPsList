@@ -1,20 +1,20 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/scudette/projects/rekall-test/xen/output/TestLinuxPsList /Users/scudette/projects/rekall-test/xen/TestLinuxPsList
+   cp /home/scudette/projects/rekall-test/xen/output/TestLinuxPsList /home/scudette/projects/rekall-test/xen/TestLinuxPsList
 elif [ "$1" == "meld" ]; then
-   meld /Users/scudette/projects/rekall-test/xen/output/TestLinuxPsList /Users/scudette/projects/rekall-test/xen/TestLinuxPsList
+   meld /home/scudette/projects/rekall-test/xen/output/TestLinuxPsList /home/scudette/projects/rekall-test/xen/TestLinuxPsList
 elif [ "$1" == "diff" ]; then
-   diff /Users/scudette/projects/rekall-test/xen/output/TestLinuxPsList /Users/scudette/projects/rekall-test/xen/TestLinuxPsList
+   diff /home/scudette/projects/rekall-test/xen/output/TestLinuxPsList /home/scudette/projects/rekall-test/xen/TestLinuxPsList
 elif [ "$1" == "run" ]; then
-   rekall  -v --cache_dir '/Users/scudette/projects/rekall-test/xen/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/xen/xen-guest.E01' - pslist
+   rekall  -v --cache_dir '/home/scudette/projects/rekall-test/xen/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/xen/xen-guest.E01' - pslist
 else
-   less /Users/scudette/projects/rekall-test/xen/output/TestLinuxPsList
+   less /home/scudette/projects/rekall-test/xen/output/TestLinuxPsList
 fi
 exit 0
 {
     "failours": {
         "testCase (__main__.TestLinuxPsList)": {
-            "testCase (__main__.TestLinuxPsList)": "Traceback (most recent call last):\n  File \"/Users/scudette/projects/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/Users/scudette/projects/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: u'  Offset (V)  ||        Name        || PID  || PPID || UID  || GID  ||     DTB [truncated]... != u'  Offset (V)  ||        Name        || PID  || PPID || UID  || GID  ||     DTB [truncated]...\n-   Offset (V)  ||        Name        || PID  || PPID || UID  || GID  ||     DTB      ||       Start Time       \n+   Offset (V)  ||        Name        || PID  || PPID || UID  || GID  ||     DTB      ||       Start Time       ||Binary\n?                                                                                                               ++++++++\n\n"
+            "testCase (__main__.TestLinuxPsList)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 209, in assertListEqual\n    self.assertEqual(x, y)\nAssertionError: u'  Offset (V)  ||        Name        || PID  || PPID || UID  || GID  ||     DTB [truncated]... != u' task_struct  ||        Name        || PID  || PPID || UID  || GID  ||     DTB [truncated]...\n-   Offset (V)  ||        Name        || PID  || PPID || UID  || GID  ||     DTB      ||       Start Time       ||Binary\n?  ^^^^ ^ ^^^^\n+  task_struct  ||        Name        || PID  || PPID || UID  || GID  ||     DTB      ||       Start Time       ||Binary\n?  ^^ ^^^ ^^^^\n\n"
         }
     }, 
     "errors": {
@@ -46,7 +46,7 @@ exit 0
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Unable to open AFF4 volume", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
-        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /Users/scudette/projects/rekall-test/xen/xen-guest.E01_info", 
+        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /home/scudette/projects/rekall-test/xen/xen-guest.E01_info", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
         "DEBUG:rekall.1:Succeeded instantiating FileAddressSpace", 
         "DEBUG:rekall.1:Voting round with base: FileAddressSpace", 
@@ -94,46 +94,44 @@ exit 0
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pagefile.PagefilePhysicalAddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
         "INFO:rekall.1:Autodetected physical address space EWFAddressSpace", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/index.gz", 
-        "DEBUG:rekall.1:Decoded in 0.0287258625031 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/profile.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000112056732178 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/image_fingerprint.gz", 
-        "DEBUG:rekall.1:Decoded in 0.00601577758789 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000249147415161 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/index.gz", 
+        "DEBUG:rekall.1:Decoded in 0.0387930870056 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/profile.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000110149383545 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/image_fingerprint.gz", 
+        "DEBUG:rekall.1:Decoded in 0.00490307807922 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000231027603149 sec.", 
         "INFO:rekall.1:Detected fingerprinted image f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/profile.gz", 
-        "DEBUG:rekall.1:Decoded in 8.20159912109e-05 sec.", 
-        "DEBUG:rekall.1:Opened url https://raw.githubusercontent.com/google/rekall-profiles/master/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened url http://profiles.rekall-forensic.com/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/Ubuntu/3.2.0-75-generic.gz", 
-        "INFO:rekall.1:Loaded profile Ubuntu/3.2.0-75-generic from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.85710811615 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/profile.gz", 
+        "DEBUG:rekall.1:Decoded in 7.10487365723e-05 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/Ubuntu/3.2.0-75-generic.gz", 
+        "INFO:rekall.1:Loaded profile Ubuntu/3.2.0-75-generic from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 1.04913806915 sec)", 
         "DEBUG:rekall.1:Running plugin (pslist) with args (()) kwargs ({'profile': None, 'proc_regex': None, 'task': None, 'pid': None, 'task_head': None, 'phys_task': None, 'method': ['InitTask']})", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/dtb.gz", 
-        "DEBUG:rekall.1:Decoded in 7.60555267334e-05 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/linux_page_offset.gz", 
-        "DEBUG:rekall.1:Decoded in 5.60283660889e-05 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/kernel_slide.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/dtb.gz", 
+        "DEBUG:rekall.1:Decoded in 7.5101852417e-05 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/linux_page_offset.gz", 
         "DEBUG:rekall.1:Decoded in 5.19752502441e-05 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/kernel_slide.gz", 
+        "DEBUG:rekall.1:Decoded in 4.6968460083e-05 sec.", 
         "DEBUG:rekall.1:Detected paravirtualized XEN guest", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/default_address_space.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000328063964844 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/pslist_cache.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000148057937622 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/m2p_mapping.gz", 
-        "DEBUG:rekall.1:Decoded in 0.0346219539642 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/default_address_space.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000804901123047 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/pslist_cache.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000133037567139 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/m2p_mapping.gz", 
+        "DEBUG:rekall.1:Decoded in 0.0210840702057 sec.", 
         "DEBUG:rekall.1:Listed 56 processes using InitTask", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/image_fingerprint.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000144004821777 sec.", 
-        "DEBUG:rekall.1:Flushed profile_obj in 0.000744104385376"
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/f3d63b1d57a23b2a29db4b25ca50f39fbcd6449b/image_fingerprint.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000123977661133 sec.", 
+        "DEBUG:rekall.1:Flushed profile_obj in 0.000705003738403"
     ], 
-    "time_used": 3.1619231700897217, 
+    "time_used": 3.4788320064544678, 
     "return_code": 0, 
     "output": [
-        "  Offset (V)  ||        Name        || PID  || PPID || UID  || GID  ||     DTB      ||       Start Time       ||Binary", 
+        " task_struct  ||        Name        || PID  || PPID || UID  || GID  ||     DTB      ||       Start Time       ||Binary", 
         "--------------||--------------------||------||------||------||------||--------------||------------------------||------", 
         "0x88000ef10000||init                ||     1||     0||     0||     0||0x00000ba56000||    2015-01-30 12:10:24Z||/sbin/init", 
         "0x88000ef11700||kthreadd            ||     2||     0||     0||     0||-             ||    2015-01-30 12:10:24Z||      ", 
@@ -194,15 +192,15 @@ exit 0
     ], 
     "options": {
         "executable": "rekall ", 
-        "--filename": "/Users/scudette/projects/rekall-test/xen/xen-guest.E01", 
+        "--filename": "/home/scudette/projects/rekall-test/xen/xen-guest.E01", 
         "--format": "test", 
         "commandline": "pslist", 
         "cache": "memory", 
         "pid": 659, 
         "test_class": "TestLinuxPsList", 
-        "--cache_dir": "/Users/scudette/projects/rekall-test/xen/../profile_cache/", 
-        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpyyn3II/TestLinuxPsListThread-8", 
-        "executed_command": "rekall  -v --cache_dir '/Users/scudette/projects/rekall-test/xen/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/xen/xen-guest.E01' - pslist", 
-        "testdir": "/Users/scudette/projects/rekall-test/xen"
+        "--cache_dir": "/home/scudette/projects/rekall-test/xen/../profile_cache/", 
+        "tempdir": "/tmp/tmpZ5qcrT/TestLinuxPsListThread-1", 
+        "executed_command": "rekall  -v --cache_dir '/home/scudette/projects/rekall-test/xen/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/xen/xen-guest.E01' - pslist", 
+        "testdir": "/home/scudette/projects/rekall-test/xen"
     }
 }

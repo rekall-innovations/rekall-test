@@ -1,20 +1,20 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/adamsh/Projects/test/osx10.9.5/output/TestSearch /Users/adamsh/Projects/test/osx10.9.5/TestSearch
+   cp /home/scudette/projects/rekall-test/osx10.9.5/output/TestSearch /home/scudette/projects/rekall-test/osx10.9.5/TestSearch
 elif [ "$1" == "meld" ]; then
-   meld /Users/adamsh/Projects/test/osx10.9.5/output/TestSearch /Users/adamsh/Projects/test/osx10.9.5/TestSearch
+   meld /home/scudette/projects/rekall-test/osx10.9.5/output/TestSearch /home/scudette/projects/rekall-test/osx10.9.5/TestSearch
 elif [ "$1" == "diff" ]; then
-   diff /Users/adamsh/Projects/test/osx10.9.5/output/TestSearch /Users/adamsh/Projects/test/osx10.9.5/TestSearch
+   diff /home/scudette/projects/rekall-test/osx10.9.5/output/TestSearch /home/scudette/projects/rekall-test/osx10.9.5/TestSearch
 elif [ "$1" == "run" ]; then
-   rekall  -v --cache_dir '/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - search 'find pslist where (proc.pid == 1)'
+   rekall  -v --cache_dir '/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - search 'select * from pslist where (proc.pid == 1)'
 else
-   less /Users/adamsh/Projects/test/osx10.9.5/output/TestSearch
+   less /home/scudette/projects/rekall-test/osx10.9.5/output/TestSearch
 fi
 exit 0
 {
     "failours": {
         "testCase (rekall.plugins.common.search.TestSearch)": {
-            "testCase (rekall.plugins.common.search.TestSearch)": "Traceback (most recent call last):\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/Users/adamsh/Projects/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 0 != 3\n"
+            "testCase (rekall.plugins.common.search.TestSearch)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 209, in assertListEqual\n    self.assertEqual(x, y)\nAssertionError: u'   Process    ||        Name        || PID || Alive  || PPID || UID  ||64-bit| [truncated]... != u'     proc     ||        Name        || PID || Alive  || PPID || UID  ||64-bit| [truncated]...\n-    Process    ||        Name        || PID || Alive  || PPID || UID  ||64-bit||          Start Time          ||      CR3      \n?    ^   ^^^\n+      proc     ||        Name        || PID || Alive  || PPID || UID  ||64-bit||          Start Time          ||      CR3      \n?    ^^^   ^\n\n"
         }
     }, 
     "errors": {
@@ -46,7 +46,7 @@ exit 0
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Unable to open AFF4 volume", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
-        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /Users/adamsh/Projects/test/osx10.9.5/vmem.e01_info", 
+        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /home/scudette/projects/rekall-test/osx10.9.5/vmem.e01_info", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
         "DEBUG:rekall.1:Succeeded instantiating FileAddressSpace", 
         "DEBUG:rekall.1:Voting round with base: FileAddressSpace", 
@@ -94,49 +94,46 @@ exit 0
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pagefile.PagefilePhysicalAddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
         "INFO:rekall.1:Autodetected physical address space EWFAddressSpace", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/sessions/index.gz", 
-        "DEBUG:rekall.1:Decoded in 0.0241670608521 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/profile.gz", 
-        "DEBUG:rekall.1:Decoded in 8.98838043213e-05 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/image_fingerprint.gz", 
-        "DEBUG:rekall.1:Decoded in 0.0105400085449 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000248193740845 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/index.gz", 
+        "DEBUG:rekall.1:Decoded in 0.0312740802765 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/profile.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000111103057861 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/image_fingerprint.gz", 
+        "DEBUG:rekall.1:Decoded in 0.00802421569824 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000220060348511 sec.", 
         "INFO:rekall.1:Detected fingerprinted image 2774ac25ccb23220963f9ba7da8d631dafacba02", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/profile.gz", 
-        "DEBUG:rekall.1:Decoded in 6.91413879395e-05 sec.", 
-        "DEBUG:rekall.1:Opened url https://raw.githubusercontent.com/google/rekall-profiles/master/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened url http://profiles.rekall-forensic.com/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/OSX/10.9.5_13F34.64bit.gz", 
-        "INFO:rekall.1:Loaded profile OSX/10.9.5_13F34.64bit from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 1.05066180229 sec)", 
-        "DEBUG:rekall.1:Running plugin (search) with args (()) kwargs ({'profile': None, 'query': 'find pslist where (proc.pid == 1)', 'silent': False, 'query_parameters': []})", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/dtb.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000118017196655 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/default_address_space.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000383853912354 sec.", 
-        "DEBUG:rekall.1:Running plugin (pslist) with args (()) kwargs ({})", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/pidhash.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000172853469849 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/tasks.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000167846679688 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/pgrphash.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000155925750732 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/dead_procs.gz", 
-        "DEBUG:rekall.1:Decoded in 9.98973846436e-05 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/allproc.gz", 
-        "DEBUG:rekall.1:Decoded in 0.0025839805603 sec.", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/image_fingerprint.gz", 
-        "DEBUG:rekall.1:Decoded in 0.000218152999878 sec.", 
-        "DEBUG:rekall.1:Flushed profile_obj in 0.00110721588135"
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/profile.gz", 
+        "DEBUG:rekall.1:Decoded in 7.41481781006e-05 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/OSX/10.9.5_13F34.64bit.gz", 
+        "INFO:rekall.1:Loaded profile OSX/10.9.5_13F34.64bit from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 1.04214286804 sec)", 
+        "DEBUG:rekall.1:Running plugin (search) with args (()) kwargs ({'profile': None, 'query': 'select * from pslist where (proc.pid == 1)', 'silent': False, 'query_parameters': []})", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/dtb.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000112056732178 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/default_address_space.gz", 
+        "DEBUG:rekall.1:Decoded in 0.00227403640747 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/pidhash.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000175952911377 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/tasks.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000170946121216 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/pgrphash.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000282049179077 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/dead_procs.gz", 
+        "DEBUG:rekall.1:Decoded in 0.0001220703125 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/allproc.gz", 
+        "DEBUG:rekall.1:Decoded in 0.00257301330566 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/2774ac25ccb23220963f9ba7da8d631dafacba02/image_fingerprint.gz", 
+        "DEBUG:rekall.1:Decoded in 0.000320911407471 sec.", 
+        "DEBUG:rekall.1:Flushed profile_obj in 0.00127911567688"
     ], 
-    "time_used": 3.196370840072632, 
+    "time_used": 3.8429369926452637, 
     "return_code": 0, 
     "output": [
-        "   Process    ||        Name        || PID || Alive  || PPID || UID  ||64-bit||          Start Time          ||      CR3      ", 
+        "     proc     ||        Name        || PID || Alive  || PPID || UID  ||64-bit||          Start Time          ||      CR3      ", 
         "--------------||--------------------||-----||--------||------||------||------||------------------------------||---------------", 
-        "0xff800c518a80||      launchd       ||    1||True    ||0     ||0     ||True  ||2014-12-05 18:53:22+0000      ||     0xa4e5000 "
+        "0xff800c518a80||launchd             ||    1||True    ||0     ||0     ||True  ||2014-12-05 18:53:22+0000      ||     0xa4e5000 "
     ], 
     "options": {
         "--name_resolution_strategies": [
@@ -144,16 +141,16 @@ exit 0
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/test/osx10.9.5/vmem.e01", 
+        "--filename": "/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01", 
         "--format": "test", 
         "commandline": "search %(query)r", 
         "cache": "memory", 
         "pid": 232, 
         "test_class": "TestSearch", 
-        "--cache_dir": "/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/", 
-        "executed_command": "rekall  -v --cache_dir '/Users/adamsh/Projects/test/osx10.9.5/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - search 'find pslist where (proc.pid == 1)'", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmpKFX8Qo/TestSearchThread-6", 
-        "query": "find pslist where (proc.pid == 1)", 
-        "testdir": "/Users/adamsh/Projects/test/osx10.9.5"
+        "--cache_dir": "/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/", 
+        "executed_command": "rekall  -v --cache_dir '/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - search 'select * from pslist where (proc.pid == 1)'", 
+        "tempdir": "/tmp/tmpUgzjA1/TestSearchThread-1", 
+        "query": "select * from pslist where (proc.pid == 1)", 
+        "testdir": "/home/scudette/projects/rekall-test/osx10.9.5"
     }
 }
