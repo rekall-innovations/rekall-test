@@ -14,7 +14,7 @@ exit 0
 {
     "failours": {
         "testCase (__main__.TestMalfind)": {
-            "testCase (__main__.TestMalfind)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 209, in assertListEqual\n    self.assertEqual(x, y)\nAssertionError: u' ||0x33470058||      0x58||f0                  ||db 0xf0                       [truncated]... != u' ||0x33470058||      0x58||f0                  ||.byte 0xf0                    [truncated]...\n-  ||0x33470058||      0x58||f0                  ||db 0xf0                                 ||       \n?                                                  ^                                    ---\n+  ||0x33470058||      0x58||f0                  ||.byte 0xf0                              ||       \n?                                                  ^ +++\n\n"
+            "testCase (__main__.TestMalfind)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 209, in assertListEqual\n    self.assertEqual(x, y)\nAssertionError: u' ||0x793e0044||      0x44||a8be                ||test al, -0x42                [truncated]... != u' ||0x793e0044||      0x44||a8be                ||test al, 0xbe                 [truncated]...\n-  ||0x793e0044||      0x44||a8be                ||test al, -0x42                          ||       \n?                                                           -  ^^\n+  ||0x793e0044||      0x44||a8be                ||test al, 0xbe                           ||       \n?                                                             ^^^\n\n"
         }
     }, 
     "errors": {
@@ -98,17 +98,17 @@ exit 0
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/eprocess_index.gz", 
-        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0271501541138 sec)", 
+        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0118479728699 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/index.gz", 
-        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0366048812866 sec)", 
+        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0171279907227 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/OSX/index.gz", 
-        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.00110793113708 sec)", 
+        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.000661134719849 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/pe.gz", 
-        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0317900180817 sec)", 
+        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0129630565643 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/ntfs.gz", 
-        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.00248408317566 sec)", 
+        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.00112199783325 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
-        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.275791168213 sec)", 
+        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.167825937271 sec)", 
         "DEBUG:rekall.1:Found _EPROCESS @ 0x551B80 (DTB: 0x319000)", 
         "INFO:rekall.1:Detected ntkrnlpa.pdb with GUID BD8F451F3E754ED8A34B50560CEB08E31", 
         "DEBUG:rekall.1:Detection method rsds worked at offset 0x4e0508", 
@@ -190,7 +190,7 @@ exit 0
         "DEBUG:rekall.1:Switching to process context: TPAutoConnSvc.e (Pid 1968@0xff143b28)", 
         "DEBUG:rekall.1:Switching to Kernel context"
     ], 
-    "time_used": 15.225582838058472, 
+    "time_used": 7.353276014328003, 
     "return_code": 0, 
     "output": [
         "**************************************************", 
@@ -694,7 +694,7 @@ exit 0
         " ||0x793e003e||      0x3e||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x793e0040||      0x40||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x793e0042||      0x42||0000                ||add byte ptr [eax], al                  ||       ", 
-        " ||0x793e0044||      0x44||a8be                ||test al, -0x42                          ||       ", 
+        " ||0x793e0044||      0x44||a8be                ||test al, 0xbe                           ||       ", 
         " ||0x793e0046||      0x46||0501a8be05          ||add eax, 0x5bea801                      ||       ", 
         " ||0x793e004b||      0x4b||0100                ||add dword ptr [eax], eax                ||       ", 
         " ||0x793e004d||      0x4d||0000                ||add byte ptr [eax], al                  ||       ", 
@@ -739,7 +739,7 @@ exit 0
         "test_class": "TestMalfind", 
         "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
         "--cache": "memory", 
-        "tempdir": "/tmp/tmpJPvIO4/TestMalfindThread-3", 
+        "tempdir": "/tmp/tmpgTYtbH/TestMalfindThread-1", 
         "executed_command": "rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - malfind", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
