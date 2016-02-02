@@ -1,0 +1,38 @@
+{
+    "time_used": 2.5787880420684814, 
+    "output": [], 
+    "logging": [
+        "DEBUG:rekall.1:Logging level set to 10", 
+        "usage: rekall [-v] [-q] [--debug] [--output_style {concise,full}] [--logging_level {DEBUG,INFO,WARNING,ERROR,CRITICAL}] [--pager PAGER]", 
+        "              [--paging_limit PAGING_LIMIT] [--colors {auto,yes,no}] [-F {text,json,wide,xls,test,data}] [--plugin [PLUGIN [PLUGIN ...]]] [-h]", 
+        "              [--cache {file,memory,timed}] [--repository_path [REPOSITORY_PATH [REPOSITORY_PATH ...]]] [-f FILENAME] [--buffer_size BUFFER_SIZE] [--output OUTPUT]", 
+        "              [--max_collector_cost MAX_COLLECTOR_COST] [--home HOME] [--dtb DTB] [-o FILE_OFFSET] [--ept EPT [EPT ...]] [--timezone TIMEZONE]", 
+        "              [--cache_dir CACHE_DIR] [--name_resolution_strategies [{Module,Symbol,Export} [{Module,Symbol,Export} ...]]]", 
+        "              [--autodetect_build_local_tracked [AUTODETECT_BUILD_LOCAL_TRACKED [AUTODETECT_BUILD_LOCAL_TRACKED ...]]] [--pagefile [PAGEFILE [PAGEFILE ...]]]", 
+        "              [--autodetect {nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux} [{nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux} ...]]", 
+        "              [--autodetect_threshold AUTODETECT_THRESHOLD] [--autodetect_build_local {full,basic,none}] [--autodetect_scan_length AUTODETECT_SCAN_LENGTH] [--live]", 
+        "              [--version] [-]", 
+        "              [path_to_repository]", 
+        "rekall: error: unrecognized arguments: --profile"
+    ], 
+    "return_code": 2, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--format": "test", 
+        "commandline": "manage_repo", 
+        "proc_name": "sh", 
+        "pid": 1872, 
+        "cache": "memory", 
+        "test_class": "TestManageRepository", 
+        "tempdir": "/tmp/tmpTHOd3b/TestManageRepositoryThread-2", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  -v --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - manage_repo", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

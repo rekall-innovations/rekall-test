@@ -1,35 +1,28 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/pe/output/TestDisassemble /home/scudette/projects/rekall-test/pe/TestDisassemble
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/pe/output/TestDisassemble /home/scudette/projects/rekall-test/pe/TestDisassemble
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/pe/output/TestDisassemble /home/scudette/projects/rekall-test/pe/TestDisassemble
+elif [ "$1" == "run" ]; then
+   rekall  -v --cache_dir '/home/scudette/projects/rekall-test/pe/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/pe/ntoskrnl.exe' - dis -l 20 pe!MmGetPhysicalMemoryRanges --name_resolution_strategies Export
+else
+   less /home/scudette/projects/rekall-test/pe/output/TestDisassemble
+fi
+exit 0
 {
-    "time_used": 2.466809034347534, 
-    "output": [
-        "Address||     Rel      ||      Op Codes      ||         Instruction          ||Comment", 
-        "-------||--------------||--------------------||------------------------------||-------", 
-        "------ PAGE!MmGetPhysicalMemoryRanges ------", 
-        " ||   0x14047a660||           0x0||488bc4              ||MOV RAX, RSP                  ||       ", 
-        " ||   0x14047a663||           0x3||48895808            ||MOV [RAX+0x8], RBX            ||       ", 
-        " ||   0x14047a667||           0x7||48896810            ||MOV [RAX+0x10], RBP           ||       ", 
-        " ||   0x14047a66b||           0xb||48897018            ||MOV [RAX+0x18], RSI           ||       ", 
-        " ||   0x14047a66f||           0xf||48897820            ||MOV [RAX+0x20], RDI           ||       ", 
-        " ||   0x14047a673||          0x13||4154                ||PUSH R12                      ||       ", 
-        " ||   0x14047a675||          0x15||4155                ||PUSH R13                      ||       ", 
-        " ||   0x14047a677||          0x17||4157                ||PUSH R15                      ||       ", 
-        " ||   0x14047a679||          0x19||4883ec20            ||SUB RSP, 0x20                 ||       ", 
-        " ||   0x14047a67d||          0x1d||65488b1c2588010000  ||MOV RBX, [GS:0x188]           ||       ", 
-        " ||   0x14047a686||          0x26||41bf11000000        ||MOV R15D, 0x11                ||       ", 
-        " ||   0x14047a68c||          0x2c||4533e4              ||XOR R12D, R12D                ||       ", 
-        " ||   0x14047a68f||          0x2f||f6835104000020      ||TEST BYTE [RBX+0x451], 0x20   ||       ", 
-        " ||   0x14047a696||          0x36||458d6ff0            ||LEA R13D, [R15-0x10]          ||       ", 
-        " ||   0x14047a69a||          0x3a||7405                ||JZ 0x14047a6a1                ||PAGE!MmGetPhysicalMemoryRanges+0x41", 
-        " ||   0x14047a69c||          0x3c||418bfc              ||MOV EDI, R12D                 ||       ", 
-        " ||   0x14047a69f||          0x3f||eb2a                ||JMP 0x14047a6cb               ||PAGE!MmGetPhysicalMemoryRanges+0x6b", 
-        " ||   0x14047a6a1||          0x41||66ff8bc6010000      ||DEC WORD [RBX+0x1c6]          ||       ", 
-        " ||   0x14047a6a8||          0x48||33c0                ||XOR EAX, EAX                  ||       ", 
-        " ||   0x14047a6aa||          0x4a||f04c0fb13d15bddcff  ||LOCK CMPXCHG [RIP-0x2342eb],  ||0x0    ", 
-        " ||              ||              ||                    ||R15                           ||       ", 
-        " ||   0x14047a6b3||          0x53||740c                ||JZ 0x14047a6c1                ||PAGE!MmGetPhysicalMemoryRanges+0x61"
-    ], 
+    "failours": {
+        "testCase (rekall.plugins.tools.disassembler.TestDisassemble)": {
+            "testCase (rekall.plugins.tools.disassembler.TestDisassemble)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 252, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 302, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 224, in assertListEqual\n    self.assertEqual(len(a), len(b))\nAssertionError: 25 != 24\n"
+        }
+    }, 
+    "errors": {
+        "testCase (rekall.plugins.tools.disassembler.TestDisassemble)": {}
+    }, 
     "logging": [
         "DEBUG:rekall.1:Logging level set to 10", 
-        "DEBUG:rekall.1:Running plugin (dis) with args (()) kwargs ({'suppress_headers': False, 'end': None, 'address_space': None, 'length': 20, 'mode': 'auto', 'branch': False, 'offset': 'pe!MmGetPhysicalMemoryRanges'})", 
+        "DEBUG:rekall.1:Running plugin (dis) with args (()) kwargs ({'suppress_headers': False, 'end': None, 'address_space': None, 'length': 20, 'mode': 'auto', 'branch': False, 'offset': 'pe!MmGetPhysicalMemoryRanges', 'canonical': False})", 
         "DEBUG:rekall.1:Voting round with base: None", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: No base address space provided", 
@@ -54,7 +47,7 @@
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Unable to open AFF4 volume", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
-        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /Users/scudette/projects/rekall-test/pe/ntoskrnl.exe_info", 
+        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /home/scudette/projects/rekall-test/pe/ntoskrnl.exe_info", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
         "DEBUG:rekall.1:Succeeded instantiating FileAddressSpace", 
         "DEBUG:rekall.1:Voting round with base: FileAddressSpace", 
@@ -93,27 +86,52 @@
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pagefile.PagefilePhysicalAddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
         "INFO:rekall.1:Autodetected physical address space FileAddressSpace", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/index.gz", 
-        "DEBUG:rekall.1:Decoded in 0.0108439922333 sec.", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/sessions/v1.0/sessions/index.gz", 
+        "DEBUG:rekall.1:Decoded in 0.0396268367767 sec.", 
         "DEBUG:rekall.1:Will detect profile using these Detectors: nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux", 
-        "DEBUG:rekall.1:Opened url https://raw.githubusercontent.com/google/rekall-profiles/master/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened url http://profiles.rekall-forensic.com/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/nt/eprocess_index.gz", 
-        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.0090548992157 sec)", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/nt/index.gz", 
-        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.013710975647 sec)", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/OSX/index.gz", 
-        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.000602006912231 sec)", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/pe.gz", 
-        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.021360874176 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/eprocess_index.gz", 
+        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0144600868225 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/index.gz", 
+        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0195400714874 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/OSX/index.gz", 
+        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.000759840011597 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/pe.gz", 
+        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0165748596191 sec)", 
         "INFO:rekall.1:Detection method pe yielded profile <AMD64 profile pe (PEProfile)>"
     ], 
+    "time_used": 2.460843086242676, 
     "return_code": 0, 
+    "output": [
+        "Address||     Rel      ||      Op Codes      ||              Instruction               ||Comment", 
+        "-------||--------------||--------------------||----------------------------------------||-------", 
+        "------ PAGE!MmGetPhysicalMemoryRanges ------", 
+        " ||   0x14047a660||           0x0||488bc4              ||mov rax, rsp                            ||       ", 
+        " ||   0x14047a663||           0x3||48895808            ||mov qword ptr [rax + 8], rbx            ||       ", 
+        " ||   0x14047a667||           0x7||48896810            ||mov qword ptr [rax + 0x10], rbp         ||       ", 
+        " ||   0x14047a66b||           0xb||48897018            ||mov qword ptr [rax + 0x18], rsi         ||       ", 
+        " ||   0x14047a66f||           0xf||48897820            ||mov qword ptr [rax + 0x20], rdi         ||       ", 
+        " ||   0x14047a673||          0x13||4154                ||push r12                                ||       ", 
+        " ||   0x14047a675||          0x15||4155                ||push r13                                ||       ", 
+        " ||   0x14047a677||          0x17||4157                ||push r15                                ||       ", 
+        " ||   0x14047a679||          0x19||4883ec20            ||sub rsp, 0x20                           ||       ", 
+        " ||   0x14047a67d||          0x1d||65488b1c2588010000  ||mov rbx, qword ptr gs:[0x188]           ||0x0    ", 
+        " ||   0x14047a686||          0x26||41bf11000000        ||mov r15d, 0x11                          ||       ", 
+        " ||   0x14047a68c||          0x2c||4533e4              ||xor r12d, r12d                          ||       ", 
+        " ||   0x14047a68f||          0x2f||f6835104000020      ||test byte ptr [rbx + 0x451], 0x20       ||       ", 
+        " ||   0x14047a696||          0x36||458d6ff0            ||lea r13d, dword ptr [r15 - 0x10]        ||       ", 
+        " ||   0x14047a69a||          0x3a||7405                ||je 0x14047a6a1                          ||PAGE!MmGetPhysicalMemoryRanges+0x41", 
+        " ||   0x14047a69c||          0x3c||418bfc              ||mov edi, r12d                           ||       ", 
+        " ||   0x14047a69f||          0x3f||eb2a                ||jmp 0x14047a6cb                         ||PAGE!MmGetPhysicalMemoryRanges+0x6b", 
+        " ||   0x14047a6a1||          0x41||66ff8bc6010000      ||dec word ptr [rbx + 0x1c6]              ||       ", 
+        " ||   0x14047a6a8||          0x48||33c0                ||xor eax, eax                            ||       ", 
+        " ||   0x14047a6aa||          0x4a||f04c0fb13d15bddcff  ||lock cmpxchg qword ptr [rip - 0x2342eb],||0x0    ", 
+        " ||              ||              ||                    ||r15                                     ||       "
+    ], 
     "options": {
         "executable": "rekall ", 
-        "--filename": "/Users/scudette/projects/rekall-test/pe/ntoskrnl.exe", 
+        "--filename": "/home/scudette/projects/rekall-test/pe/ntoskrnl.exe", 
         "func": "pe!MmGetPhysicalMemoryRanges", 
         "--format": "test", 
         "commandline": "dis -l %(length)s %(func)s --name_resolution_strategies Export", 
@@ -124,9 +142,9 @@
         ], 
         "length": 20, 
         "test_class": "TestDisassemble", 
-        "--cache_dir": "/Users/scudette/projects/rekall-test/pe/../profile_cache/", 
-        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmp05jGsI/TestDisassembleThread-1", 
-        "executed_command": "rekall  -v --cache_dir '/Users/scudette/projects/rekall-test/pe/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/pe/ntoskrnl.exe' - dis -l 20 pe!MmGetPhysicalMemoryRanges --name_resolution_strategies Export", 
-        "testdir": "/Users/scudette/projects/rekall-test/pe"
+        "--cache_dir": "/home/scudette/projects/rekall-test/pe/../profile_cache/", 
+        "tempdir": "/tmp/tmpOUIVBF/TestDisassembleThread-1", 
+        "executed_command": "rekall  -v --cache_dir '/home/scudette/projects/rekall-test/pe/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/pe/ntoskrnl.exe' - dis -l 20 pe!MmGetPhysicalMemoryRanges --name_resolution_strategies Export", 
+        "testdir": "/home/scudette/projects/rekall-test/pe"
     }
 }

@@ -1,9 +1,25 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestWhichPlugin /home/scudette/projects/rekall-test/tigger/TestWhichPlugin
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestWhichPlugin /home/scudette/projects/rekall-test/tigger/TestWhichPlugin
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestWhichPlugin /home/scudette/projects/rekall-test/tigger/TestWhichPlugin
+elif [ "$1" == "run" ]; then
+   rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - which_plugin _EPROCESS
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestWhichPlugin
+fi
+exit 0
 {
-    "time_used": 2.8357460498809814, 
-    "output": [
-        "            Plugin            ", 
-        "------------------------------"
-    ], 
+    "failours": {
+        "testCase (rekall.plugins.common.search.TestWhichPlugin)": {
+            "testCase (rekall.plugins.common.search.TestWhichPlugin)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 252, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 302, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 224, in assertListEqual\n    self.assertEqual(len(a), len(b))\nAssertionError: 2 != 3\n"
+        }
+    }, 
+    "errors": {
+        "testCase (rekall.plugins.common.search.TestWhichPlugin)": {}
+    }, 
     "logging": [
         "DEBUG:rekall.1:Logging level set to 10", 
         "DEBUG:rekall.1:Voting round with base: None", 
@@ -30,7 +46,7 @@
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
         "DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Unable to open AFF4 volume", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
-        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /Users/adamsh/Projects/test/tigger/tigger.vmem.E01_info", 
+        "DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /home/scudette/projects/rekall-test/tigger/tigger.vmem.E01_info", 
         "DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
         "DEBUG:rekall.1:Succeeded instantiating FileAddressSpace", 
         "DEBUG:rekall.1:Voting round with base: FileAddressSpace", 
@@ -79,44 +95,49 @@
         "DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
         "INFO:rekall.1:Autodetected physical address space EWFAddressSpace", 
         "DEBUG:rekall.1:Will detect profile using these Detectors: nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux", 
-        "DEBUG:rekall.1:Opened url https://raw.githubusercontent.com/google/rekall-profiles/master/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened url http://profiles.rekall-forensic.com/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/nt/eprocess_index.gz", 
-        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0147762298584 sec)", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/nt/index.gz", 
-        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0212469100952 sec)", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/OSX/index.gz", 
-        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.000850915908813 sec)", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/pe.gz", 
-        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.0321500301361 sec)", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/ntfs.gz", 
-        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.00215005874634 sec)", 
-        "DEBUG:rekall.1:Opened local file /Users/adamsh/Projects/test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
-        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/Users/adamsh/Projects/test/profile_cache (in 0.424713850021 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/eprocess_index.gz", 
+        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0180459022522 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/index.gz", 
+        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0224530696869 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/OSX/index.gz", 
+        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.000798940658569 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/pe.gz", 
+        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.016853094101 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/ntfs.gz", 
+        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.00203394889832 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
+        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.252182006836 sec)", 
         "DEBUG:rekall.1:Found _EPROCESS @ 0x551B80 (DTB: 0x319000)", 
         "INFO:rekall.1:Detected ntkrnlpa.pdb with GUID BD8F451F3E754ED8A34B50560CEB08E31", 
         "DEBUG:rekall.1:Detection method rsds worked at offset 0x4e0508", 
-        "DEBUG:rekall.1:Running plugin (which_plugin) with args (()) kwargs ({'profile': None, 'type_name': 'proc', 'producers_only': False})"
+        "DEBUG:rekall.1:Running plugin (which_plugin) with args (()) kwargs ({'profile': None, 'type_name': '_EPROCESS', 'producers_only': False})"
     ], 
+    "time_used": 2.9987659454345703, 
     "return_code": 0, 
+    "output": [
+        "            Plugin            ", 
+        "------------------------------", 
+        "privileges                    "
+    ], 
     "options": {
         "--name_resolution_strategies": [
             "Module", 
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/Users/adamsh/Projects/test/tigger/tigger.vmem.E01", 
-        "struct": "proc", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "struct": "_EPROCESS", 
         "--format": "test", 
         "commandline": "which_plugin %(struct)s", 
+        "script": "search('select details AS path from handles where _EPROCESS.pid == 1968 and obj_type == \"File\"')", 
         "pid": 1724, 
         "test_class": "TestWhichPlugin", 
-        "--cache_dir": "/Users/adamsh/Projects/test/tigger/../profile_cache/", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
         "--cache": "memory", 
-        "tempdir": "/var/folders/00/1pjr0000h01000cxqpysvccm006t70/T/tmplzfev0/TestWhichPluginThread-1", 
-        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/Users/adamsh/Projects/test/tigger/../profile_cache/' --format 'test' --filename '/Users/adamsh/Projects/test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - which_plugin proc", 
-        "testdir": "/Users/adamsh/Projects/test/tigger"
+        "tempdir": "/tmp/tmpBPa4RT/TestWhichPluginThread-2", 
+        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - which_plugin _EPROCESS", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }

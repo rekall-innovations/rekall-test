@@ -1,0 +1,14 @@
+{
+    "time_used": 7.152557373046875e-06, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "pid": 2362, 
+        "test_class": "IOManagerTest", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
+        "tempdir": "/tmp/tmpPMsuRz/IOManagerTestThread-1", 
+        "testdir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE"
+    }
+}

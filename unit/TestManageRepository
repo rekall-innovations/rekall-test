@@ -1,0 +1,19 @@
+{
+    "time_used": 1.5048649311065674, 
+    "output": [], 
+    "logging": [
+        "DEBUG:rekall.1:Logging level set to 10", 
+        "DEBUG:rekall.1:Running plugin (manage_repo) with args (()) kwargs ({'path_to_repository': '.'})"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/unit/../profile_cache/", 
+        "--format": "test", 
+        "tempdir": "/tmp/tmppm15Qc/TestManageRepositoryThread-2", 
+        "executed_command": "rekall  -v --format 'test' --cache_dir '/home/scudette/projects/rekall-test/unit/../profile_cache/' - manage_repo", 
+        "commandline": "manage_repo", 
+        "testdir": "/home/scudette/projects/rekall-test/unit", 
+        "test_class": "TestManageRepository"
+    }
+}

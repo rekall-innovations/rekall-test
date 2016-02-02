@@ -14,7 +14,7 @@ exit 0
 {
     "failours": {
         "testCase (__main__.TestMalfind)": {
-            "testCase (__main__.TestMalfind)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 209, in assertListEqual\n    self.assertEqual(x, y)\nAssertionError: u' ||0x793e0044||      0x44||a8be                ||test al, -0x42                [truncated]... != u' ||0x793e0044||      0x44||a8be                ||test al, 0xbe                 [truncated]...\n-  ||0x793e0044||      0x44||a8be                ||test al, -0x42                          ||       \n?                                                           -  ^^\n+  ||0x793e0044||      0x44||a8be                ||test al, 0xbe                           ||       \n?                                                             ^^^\n\n"
+            "testCase (__main__.TestMalfind)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 251, in run\n    try:\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 301, in testCase\n    # Compare the entire table\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 223, in assertListEqual\n    b = list(b)\nAssertionError: 532 != 525\n"
         }
     }, 
     "errors": {
@@ -98,17 +98,19 @@ exit 0
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/eprocess_index.gz", 
-        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0118479728699 sec)", 
+        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0362961292267 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/index.gz", 
-        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0171279907227 sec)", 
+        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0528001785278 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/OSX/index.gz", 
-        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.000661134719849 sec)", 
+        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.000830888748169 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/pe.gz", 
-        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0129630565643 sec)", 
+        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0419940948486 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/ntfs.gz", 
-        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.00112199783325 sec)", 
+        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.00206089019775 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
-        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.167825937271 sec)", 
+        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.333519935608 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/nt/undocumented.gz", 
+        "INFO:rekall.1:Loaded profile nt/undocumented from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.00210618972778 sec)", 
         "DEBUG:rekall.1:Found _EPROCESS @ 0x551B80 (DTB: 0x319000)", 
         "INFO:rekall.1:Detected ntkrnlpa.pdb with GUID BD8F451F3E754ED8A34B50560CEB08E31", 
         "DEBUG:rekall.1:Detection method rsds worked at offset 0x4e0508", 
@@ -116,7 +118,7 @@ exit 0
         "INFO:rekall.1:Detected kernel base at 0x804D7000", 
         "DEBUG:rekall.1:Listed 25 processes using PsActiveProcessHead", 
         "DEBUG:rekall.1:Listed 22 processes using CSRSS", 
-        "DEBUG:rekall.1:Listed 25 processes using PspCidTable", 
+        "DEBUG:rekall.1:Listed 0 processes using PspCidTable", 
         "DEBUG:rekall.1:Listed 23 processes using Sessions", 
         "DEBUG:rekall.1:Listed 24 processes using Handles", 
         "DEBUG:rekall.1:Switching to process context: System (Pid 4@0x810b1660)", 
@@ -190,7 +192,7 @@ exit 0
         "DEBUG:rekall.1:Switching to process context: TPAutoConnSvc.e (Pid 1968@0xff143b28)", 
         "DEBUG:rekall.1:Switching to Kernel context"
     ], 
-    "time_used": 7.353276014328003, 
+    "time_used": 16.784838914871216, 
     "return_code": 0, 
     "output": [
         "**************************************************", 
@@ -268,7 +270,6 @@ exit 0
         " ||0x7f6f0077||      0x77||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x7f6f0079||      0x79||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x7f6f007b||      0x7b||0000                ||add byte ptr [eax], al                  ||       ", 
-        " ||0x7f6f007d||      0x7d||0000                ||add byte ptr [eax], al                  ||       ", 
         "**************************************************", 
         "Process: winlogon.exe Pid: 632 Address: 0x2c930000", 
         "Vad Tag: VadS Protection: EXECUTE_READWRITE", 
@@ -344,7 +345,6 @@ exit 0
         " ||0x2c93008b||      0x8b||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x2c93008d||      0x8d||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x2c93008f||      0x8f||0000                ||add byte ptr [eax], al                  ||       ", 
-        " ||0x2c930091||      0x91||0000                ||add byte ptr [eax], al                  ||       ", 
         "**************************************************", 
         "Process: winlogon.exe Pid: 632 Address: 0x37ec0000", 
         "Vad Tag: VadS Protection: EXECUTE_READWRITE", 
@@ -420,7 +420,6 @@ exit 0
         " ||0x37ec0086||      0x86||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x37ec0088||      0x88||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x37ec008a||      0x8a||0000                ||add byte ptr [eax], al                  ||       ", 
-        " ||0x37ec008c||      0x8c||0000                ||add byte ptr [eax], al                  ||       ", 
         "**************************************************", 
         "Process: winlogon.exe Pid: 632 Address: 0x33470000", 
         "Vad Tag: VadS Protection: EXECUTE_READWRITE", 
@@ -496,7 +495,6 @@ exit 0
         " ||0x33470082||      0x82||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x33470084||      0x84||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x33470086||      0x86||0000                ||add byte ptr [eax], al                  ||       ", 
-        " ||0x33470088||      0x88||0000                ||add byte ptr [eax], al                  ||       ", 
         "**************************************************", 
         "Process: winlogon.exe Pid: 632 Address: 0x71ee0000", 
         "Vad Tag: VadS Protection: EXECUTE_READWRITE", 
@@ -572,7 +570,6 @@ exit 0
         " ||0x71ee0086||      0x86||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x71ee0088||      0x88||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x71ee008a||      0x8a||0000                ||add byte ptr [eax], al                  ||       ", 
-        " ||0x71ee008c||      0x8c||0000                ||add byte ptr [eax], al                  ||       ", 
         "**************************************************", 
         "Process: winlogon.exe Pid: 632 Address: 0x78850000", 
         "Vad Tag: VadS Protection: EXECUTE_READWRITE", 
@@ -648,7 +645,6 @@ exit 0
         " ||0x78850083||      0x83||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x78850085||      0x85||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x78850087||      0x87||0000                ||add byte ptr [eax], al                  ||       ", 
-        " ||0x78850089||      0x89||0000                ||add byte ptr [eax], al                  ||       ", 
         "**************************************************", 
         "Process: winlogon.exe Pid: 632 Address: 0x793e0000", 
         "Vad Tag: VadS Protection: EXECUTE_READWRITE", 
@@ -723,8 +719,7 @@ exit 0
         " ||0x793e0087||      0x87||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x793e0089||      0x89||0000                ||add byte ptr [eax], al                  ||       ", 
         " ||0x793e008b||      0x8b||0000                ||add byte ptr [eax], al                  ||       ", 
-        " ||0x793e008d||      0x8d||0000                ||add byte ptr [eax], al                  ||       ", 
-        " ||0x793e008f||      0x8f||0000                ||add byte ptr [eax], al                  ||       "
+        " ||0x793e008d||      0x8d||0000                ||add byte ptr [eax], al                  ||       "
     ], 
     "options": {
         "--name_resolution_strategies": [
@@ -735,11 +730,12 @@ exit 0
         "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "--format": "test", 
         "commandline": "malfind", 
+        "script": "search('select details AS path from handles where _EPROCESS.pid == 1968 and obj_type == \"File\"')", 
         "pid": 1724, 
         "test_class": "TestMalfind", 
         "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
         "--cache": "memory", 
-        "tempdir": "/tmp/tmpgTYtbH/TestMalfindThread-1", 
+        "tempdir": "/tmp/tmp32RHQh/TestMalfindThread-4", 
         "executed_command": "rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - malfind", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }

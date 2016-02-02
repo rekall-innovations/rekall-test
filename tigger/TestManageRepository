@@ -1,0 +1,27 @@
+{
+    "time_used": 1.8099241256713867, 
+    "output": [], 
+    "logging": [
+        "DEBUG:rekall.1:Logging level set to 10", 
+        "DEBUG:rekall.1:Running plugin (manage_repo) with args (()) kwargs ({'path_to_repository': '.'})"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "manage_repo", 
+        "script": "search('select details AS path from handles where _EPROCESS.pid == 1968 and obj_type == \"File\"')", 
+        "pid": 1724, 
+        "test_class": "TestManageRepository", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "--cache": "memory", 
+        "tempdir": "/tmp/tmp32RHQh/TestManageRepositoryThread-2", 
+        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - manage_repo", 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}

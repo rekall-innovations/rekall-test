@@ -1,0 +1,15 @@
+{
+    "time_used": 7.152557373046875e-06, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/xen/xen-guest.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "cache": "memory", 
+        "pid": 659, 
+        "test_class": "IOManagerTest", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/xen/../profile_cache/", 
+        "tempdir": "/tmp/tmpjKQ5gi/IOManagerTestThread-1", 
+        "testdir": "/home/scudette/projects/rekall-test/xen"
+    }
+}

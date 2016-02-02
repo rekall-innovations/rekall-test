@@ -1,0 +1,16 @@
+{
+    "time_used": 6.9141387939453125e-06, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "tempdir": "/tmp/tmpVcm6Je/IOManagerTestThread-1", 
+        "test_class": "IOManagerTest", 
+        "mft": 42, 
+        "--cache_dir": "/home/scudette/projects/rekall-test/ntfs/../profile_cache/", 
+        "--profile": "ntfs", 
+        "path": "RAW/20076517123273.pdf", 
+        "testdir": "/home/scudette/projects/rekall-test/ntfs"
+    }
+}

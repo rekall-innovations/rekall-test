@@ -1,0 +1,12 @@
+{
+    "time_used": 6.9141387939453125e-06, 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/unit/../profile_cache/", 
+        "--format": "test", 
+        "tempdir": "/tmp/tmppm15Qc/TestDynamicProfileThread-1", 
+        "commandline": "", 
+        "testdir": "/home/scudette/projects/rekall-test/unit", 
+        "test_class": "TestDynamicProfile"
+    }
+}

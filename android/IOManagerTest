@@ -1,0 +1,21 @@
+{
+    "time_used": 7.152557373046875e-06, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--format": "test", 
+        "commandline": "", 
+        "proc_name": "sh", 
+        "pid": 1872, 
+        "cache": "memory", 
+        "test_class": "IOManagerTest", 
+        "tempdir": "/tmp/tmpTHOd3b/IOManagerTestThread-1", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}

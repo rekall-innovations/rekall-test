@@ -1,0 +1,12 @@
+{
+    "time_used": 1.0967254638671875e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/unit/../profile_cache/", 
+        "--format": "test", 
+        "tempdir": "/tmp/tmpdS6MdX/IOManagerTestThread-1", 
+        "commandline": "", 
+        "testdir": "/home/scudette/projects/rekall-test/unit", 
+        "test_class": "IOManagerTest"
+    }
+}

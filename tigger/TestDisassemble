@@ -14,7 +14,7 @@ exit 0
 {
     "failours": {
         "testCase (rekall.plugins.tools.disassembler.TestDisassemble)": {
-            "testCase (rekall.plugins.tools.disassembler.TestDisassemble)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 209, in assertListEqual\n    self.assertEqual(x, y)\nAssertionError: u' ||0x8063f386||       0x0||8bff                ||MOV EDI, EDI                  [truncated]... != u' ||0x8063f386||       0x0||8bff                ||mov edi, edi                  [truncated]...\n-  ||0x8063f386||       0x0||8bff                ||MOV EDI, EDI                  ||       \n?                                                  ^^^^^^^  ^^^\n+  ||0x8063f386||       0x0||8bff                ||mov edi, edi                            ||       \n?                                                  ^^^^^^^  ^^^^^^^^^^^^^\n\n"
+            "testCase (rekall.plugins.tools.disassembler.TestDisassemble)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 251, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 301, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 223, in assertListEqual\n    self.assertEqual(len(a), len(b))\nAssertionError: 54 != 53\n"
         }
     }, 
     "errors": {
@@ -99,17 +99,19 @@ exit 0
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/eprocess_index.gz", 
-        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0154268741608 sec)", 
+        "INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0102860927582 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/index.gz", 
-        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0213758945465 sec)", 
+        "INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0196678638458 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/OSX/index.gz", 
-        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.000744104385376 sec)", 
+        "INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.000797033309937 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/pe.gz", 
-        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0192911624908 sec)", 
+        "INFO:rekall.1:Loaded profile pe from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0218660831451 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/ntfs.gz", 
-        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.00186514854431 sec)", 
+        "INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.00208401679993 sec)", 
         "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
-        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.259316205978 sec)", 
+        "INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.215317964554 sec)", 
+        "DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/nt/undocumented.gz", 
+        "INFO:rekall.1:Loaded profile nt/undocumented from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.00249195098877 sec)", 
         "DEBUG:rekall.1:Found _EPROCESS @ 0x551B80 (DTB: 0x319000)", 
         "INFO:rekall.1:Detected ntkrnlpa.pdb with GUID BD8F451F3E754ED8A34B50560CEB08E31", 
         "DEBUG:rekall.1:Detection method rsds worked at offset 0x4e0508", 
@@ -117,7 +119,7 @@ exit 0
         "DEBUG:rekall.1:Skipped profile hal/GUID/861E03E9E71D469BB4E544F22FD14C821 from /home/scudette/projects/rekall-profiles/ (Not in inventory)", 
         "DEBUG:rekall.1:Building profile from PE Exports for hal"
     ], 
-    "time_used": 7.806039094924927, 
+    "time_used": 6.285703182220459, 
     "return_code": 0, 
     "output": [
         "Address||   Rel    ||      Op Codes      ||              Instruction               ||Comment", 
@@ -172,8 +174,7 @@ exit 0
         " ||0x8063f40a||      0x84||3b38                ||cmp edi, dword ptr [eax]                ||       ", 
         " ||0x8063f40c||      0x86||72d3                ||jb 0x8063f3e1                           ||nt!MmGetPhysicalMemoryRanges+0x5b", 
         " ||0x8063f40e||      0x88||8a4dff              ||mov cl, byte ptr [ebp - 1]              ||       ", 
-        " ||0x8063f411||      0x8b||891e                ||mov dword ptr [esi], ebx                ||       ", 
-        " ||0x8063f413||      0x8d||895e04              ||mov dword ptr [esi + 4], ebx            ||       "
+        " ||0x8063f411||      0x8b||891e                ||mov dword ptr [esi], ebx                ||       "
     ], 
     "options": {
         "--name_resolution_strategies": [
@@ -185,12 +186,13 @@ exit 0
         "func": "nt!MmGetPhysicalMemoryRanges", 
         "--format": "test", 
         "commandline": "dis -l %(length)s %(func)s --name_resolution_strategies Export", 
+        "script": "search('select details AS path from handles where _EPROCESS.pid == 1968 and obj_type == \"File\"')", 
         "pid": 1724, 
         "length": 50, 
         "test_class": "TestDisassemble", 
         "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
         "--cache": "memory", 
-        "tempdir": "/tmp/tmpJPvIO4/TestDisassembleThread-4", 
+        "tempdir": "/tmp/tmp32RHQh/TestDisassembleThread-2", 
         "executed_command": "rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - dis -l 50 nt!MmGetPhysicalMemoryRanges --name_resolution_strategies Export", 
         "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
