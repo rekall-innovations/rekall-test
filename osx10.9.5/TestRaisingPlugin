@@ -1,0 +1,47 @@
+{
+    "time_used": 1.120474100112915, 
+    "output": [], 
+    "logging": [
+        "2016-02-12 11:59:51,466:DEBUG:rekall.1:Logging level set to 10", 
+        "2016-02-12 11:59:51,468:DEBUG:rekall.1:Running plugin (raise) with args (()) kwargs ({'exception_class': None, 'exception_text': None})", 
+        "2016-02-12 11:59:51,469:CRITICAL:rekall.1:Traceback (most recent call last):", 
+        "  File \"/home/adam/src/rekall/rekall-core/rekall/session.py\", line 782, in RunPlugin", 
+        "    result = plugin_obj.render(ui_renderer) or plugin_obj", 
+        "  File \"/home/adam/src/rekall/rekall-core/rekall/plugins/core.py\", line 1197, in render", 
+        "    raise exc_cls(self.exception_text)", 
+        "ValueError: Default exception", 
+        "", 
+        "2016-02-12 11:59:51,469:CRITICAL:root:Default exception. Try --debug for more information.", 
+        "Traceback (most recent call last):", 
+        "  File \"/home/adam/src/rekall/rekall-core/py27/bin/rekall\", line 9, in <module>", 
+        "    load_entry_point('rekall-core', 'console_scripts', 'rekall')()", 
+        "  File \"/home/adam/src/rekall/rekall-core/rekall/rekal.py\", line 108, in main", 
+        "    user_session.RunPlugin(plugin_cls, **config.RemoveGlobalOptions(flags))", 
+        "  File \"/home/adam/src/rekall/rekall-core/rekall/session.py\", line 785, in RunPlugin", 
+        "    self._HandleRunPluginException(ui_renderer, e)", 
+        "  File \"/home/adam/src/rekall/rekall-core/rekall/session.py\", line 782, in RunPlugin", 
+        "    result = plugin_obj.render(ui_renderer) or plugin_obj", 
+        "  File \"/home/adam/src/rekall/rekall-core/rekall/plugins/core.py\", line 1197, in render", 
+        "    raise exc_cls(self.exception_text)", 
+        "ValueError: Default exception"
+    ], 
+    "return_code": 1, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/adam/src/rekall-test/osx10.9.5/vmem.e01", 
+        "--format": "test", 
+        "commandline": "raise", 
+        "cache": "memory", 
+        "pid": 232, 
+        "script": "search('select socket, (select proc from pslist where proc.pid == socket.last_pid)[\"proc\"] as proc from netstat where lower(socket.human_type) =~ \"tcp.*\"')", 
+        "test_class": "TestRaisingPlugin", 
+        "--cache_dir": "/home/adam/src/rekall-test/osx10.9.5/../profile_cache/", 
+        "tempdir": "/tmp/tmpKAfurc/TestRaisingPluginThread-6", 
+        "executed_command": "rekall  -v --cache_dir '/home/adam/src/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/adam/src/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - raise", 
+        "testdir": "/home/adam/src/rekall-test/osx10.9.5"
+    }
+}
