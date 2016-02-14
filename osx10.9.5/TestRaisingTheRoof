@@ -1,0 +1,47 @@
+{
+    "time_used": 1.0631799697875977, 
+    "output": [], 
+    "logging": [
+        "2016-02-14 17:04:07,599:DEBUG:rekall.1:Logging level set to 10", 
+        "2016-02-14 17:04:07,601:DEBUG:rekall.1:Running plugin (raise_the_roof) with args (()) kwargs ({'exception_class': None, 'exception_text': None})", 
+        "2016-02-14 17:04:07,601:CRITICAL:rekall.1:Traceback (most recent call last):", 
+        "  File \"/home/adam/src/rekall/rekall-core/rekall/session.py\", line 794, in RunPlugin", 
+        "    result = plugin_obj.render(ui_renderer) or plugin_obj", 
+        "  File \"/home/adam/src/rekall/rekall-core/rekall/plugins/core.py\", line 1198, in render", 
+        "    raise exc_cls(self.exception_text)", 
+        "ValueError: Default exception", 
+        "", 
+        "2016-02-14 17:04:07,601:CRITICAL:root:Default exception. Try --debug for more information.", 
+        "Traceback (most recent call last):", 
+        "  File \"/home/adam/src/rekall/rekall-core/py27/bin/rekall\", line 9, in <module>", 
+        "    load_entry_point('rekall-core', 'console_scripts', 'rekall')()", 
+        "  File \"/home/adam/src/rekall/rekall-core/rekall/rekal.py\", line 108, in main", 
+        "    user_session.RunPlugin(plugin_cls, **config.RemoveGlobalOptions(flags))", 
+        "  File \"/home/adam/src/rekall/rekall-core/rekall/session.py\", line 797, in RunPlugin", 
+        "    self._HandleRunPluginException(ui_renderer, e)", 
+        "  File \"/home/adam/src/rekall/rekall-core/rekall/session.py\", line 794, in RunPlugin", 
+        "    result = plugin_obj.render(ui_renderer) or plugin_obj", 
+        "  File \"/home/adam/src/rekall/rekall-core/rekall/plugins/core.py\", line 1198, in render", 
+        "    raise exc_cls(self.exception_text)", 
+        "ValueError: Default exception"
+    ], 
+    "return_code": 1, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/adam/src/rekall-test/osx10.9.5/vmem.e01", 
+        "--format": "test", 
+        "commandline": "raise_the_roof", 
+        "cache": "memory", 
+        "pid": 232, 
+        "script": "search('(SELECT proc.p_fd.fd_ofiles[4].vnode.full_path AS path FROM pslist WHERE proc.command == \"Finder\" LIMIT 1) == (SELECT proc.p_fd.fd_ofiles[4].human_name AS path FROM pslist WHERE proc.command == \"Finder\" LIMIT 1)')", 
+        "test_class": "TestRaisingTheRoof", 
+        "--cache_dir": "/home/adam/src/rekall-test/osx10.9.5/../profile_cache/", 
+        "tempdir": "/tmp/tmpgALE9F/TestRaisingTheRoofThread-4", 
+        "executed_command": "rekall  -v --cache_dir '/home/adam/src/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/adam/src/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - raise_the_roof", 
+        "testdir": "/home/adam/src/rekall-test/osx10.9.5"
+    }
+}

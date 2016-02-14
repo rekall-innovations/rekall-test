@@ -1,0 +1,20 @@
+{
+    "time_used": 7.867813110351562e-06, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/adam/src/rekall-test/osx10.11.3/vmem.elf", 
+        "--format": "test", 
+        "commandline": "", 
+        "cache": "memory", 
+        "pid": 232, 
+        "script": "search('(SELECT proc.p_fd.fd_ofiles[4].vnode.full_path AS path FROM pslist WHERE proc.command == \"Finder\" LIMIT 1) == (SELECT proc.p_fd.fd_ofiles[4].human_name AS path FROM pslist WHERE proc.command == \"Finder\" LIMIT 1)')", 
+        "test_class": "IOManagerTest", 
+        "--cache_dir": "/home/adam/src/rekall-test/osx10.11.3/../profile_cache/", 
+        "tempdir": "/tmp/tmpszb6f5/IOManagerTestThread-7", 
+        "testdir": "/home/adam/src/rekall-test/osx10.11.3"
+    }
+}
