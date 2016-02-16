@@ -1,0 +1,39 @@
+{
+    "time_used": 1.6729209423065186, 
+    "output": [], 
+    "logging": [
+        "2016-02-14 23:08:50,067:DEBUG:rekall.1:Logging level set to 10", 
+        "2016-02-14 23:08:50,069:DEBUG:rekall.1:Running plugin (raise_the_roof) with args (()) kwargs ({'exception_class': None, 'exception_text': None})", 
+        "2016-02-14 23:08:50,069:CRITICAL:rekall.1:Traceback (most recent call last):", 
+        "  File \"/home/scudette/rekall/rekall-core/rekall/session.py\", line 807, in RunPlugin", 
+        "    result = plugin_obj.render(ui_renderer) or plugin_obj", 
+        "  File \"/home/scudette/rekall/rekall-core/rekall/plugins/core.py\", line 1198, in render", 
+        "    raise exc_cls(self.exception_text)", 
+        "ValueError: Default exception", 
+        "", 
+        "2016-02-14 23:08:50,069:CRITICAL:root:Default exception. Try --debug for more information.", 
+        "Traceback (most recent call last):", 
+        "  File \"/home/scudette/Dev/bin/rekall\", line 9, in <module>", 
+        "    load_entry_point('rekall-core', 'console_scripts', 'rekall')()", 
+        "  File \"/home/scudette/rekall/rekall-core/rekall/rekal.py\", line 102, in main", 
+        "    user_session.RunPlugin(plugin_cls, **config.RemoveGlobalOptions(flags))", 
+        "  File \"/home/scudette/rekall/rekall-core/rekall/session.py\", line 810, in RunPlugin", 
+        "    self._HandleRunPluginException(ui_renderer, e)", 
+        "  File \"/home/scudette/rekall/rekall-core/rekall/session.py\", line 807, in RunPlugin", 
+        "    result = plugin_obj.render(ui_renderer) or plugin_obj", 
+        "  File \"/home/scudette/rekall/rekall-core/rekall/plugins/core.py\", line 1198, in render", 
+        "    raise exc_cls(self.exception_text)", 
+        "ValueError: Default exception"
+    ], 
+    "return_code": 1, 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/unit/../profile_cache/", 
+        "--format": "test", 
+        "tempdir": "/tmp/tmpRovU45/TestRaisingTheRoofThread-1", 
+        "executed_command": "rekall  -v --format 'test' --cache_dir '/home/scudette/projects/rekall-test/unit/../profile_cache/' - raise_the_roof", 
+        "commandline": "raise_the_roof", 
+        "testdir": "/home/scudette/projects/rekall-test/unit", 
+        "test_class": "TestRaisingTheRoof"
+    }
+}
