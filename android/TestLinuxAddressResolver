@@ -1,7 +1,121 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/android/output/TestLinuxAddressResolver /home/scudette/projects/rekall-test/android/TestLinuxAddressResolver
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/android/output/TestLinuxAddressResolver /home/scudette/projects/rekall-test/android/TestLinuxAddressResolver
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/android/output/TestLinuxAddressResolver /home/scudette/projects/rekall-test/android/TestLinuxAddressResolver
+elif [ "$1" == "run" ]; then
+   rekall  -v --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - address_resolver
+else
+   less /home/scudette/projects/rekall-test/android/output/TestLinuxAddressResolver
+fi
+exit 0
 {
-    "time_used": 9.09877610206604, 
-    "output": [], 
+    "failours": {
+        "testCase (__main__.TestLinuxAddressResolver)": {
+            "testCase (__main__.TestLinuxAddressResolver)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 252, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 302, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 224, in assertListEqual\n    self.assertEqual(len(a), len(b))\nAssertionError: 0 != 2\n"
+        }
+    }, 
+    "errors": {
+        "testCase (__main__.TestLinuxAddressResolver)": {}
+    }, 
+    "logging": [
+        "2016-05-02 16:13:18,906:DEBUG:rekall.1:Logging level set to 10", 
+        "2016-05-02 16:13:18,907:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "2016-05-02 16:13:19,409:DEBUG:rekall.1:Voting round with base: None", 
+        "2016-05-02 16:13:19,409:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
+        "2016-05-02 16:13:19,410:DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: No base address space provided", 
+        "2016-05-02 16:13:19,410:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
+        "2016-05-02 16:13:19,410:DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Must stack on another address space", 
+        "2016-05-02 16:13:19,410:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
+        "2016-05-02 16:13:19,410:DEBUG:rekall.1:Failed instantiating VMemAddressSpace: No base address space provided", 
+        "2016-05-02 16:13:19,410:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
+        "2016-05-02 16:13:19,411:DEBUG:rekall.1:Failed instantiating EWFAddressSpace: No base address space provided", 
+        "2016-05-02 16:13:19,411:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashBMP'> ", 
+        "2016-05-02 16:13:19,412:DEBUG:rekall.1:Failed instantiating WindowsCrashBMP: Must stack on another address space", 
+        "2016-05-02 16:13:19,412:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.KCoreAddressSpace'> ", 
+        "2016-05-02 16:13:19,412:DEBUG:rekall.1:Failed instantiating KCoreAddressSpace: Must stack on another address space", 
+        "2016-05-02 16:13:19,412:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace32'> ", 
+        "2016-05-02 16:13:19,412:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace32: No base address space provided", 
+        "2016-05-02 16:13:19,412:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace64'> ", 
+        "2016-05-02 16:13:19,413:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace64: No base address space provided", 
+        "2016-05-02 16:13:19,413:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.Elf64CoreDump'> ", 
+        "2016-05-02 16:13:19,413:DEBUG:rekall.1:Failed instantiating Elf64CoreDump: Must stack on another address space", 
+        "2016-05-02 16:13:19,413:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.lime.LimeAddressSpace'> ", 
+        "2016-05-02 16:13:19,413:DEBUG:rekall.1:Failed instantiating LimeAddressSpace: Must be layered on another address space.", 
+        "2016-05-02 16:13:19,414:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
+        "2016-05-02 16:13:19,430:INFO:rekall.1:Added aff4://ad86fa73-d406-4014-9d30-257814b88af3/home/scudette/images/android/Evo4GRodeo.lime as physical memory", 
+        "2016-05-02 16:13:19,431:DEBUG:rekall.1:Succeeded instantiating AFF4AddressSpace", 
+        "2016-05-02 16:13:19,432:DEBUG:rekall.1:Voting round with base: AFF4AddressSpace", 
+        "2016-05-02 16:13:19,432:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
+        "2016-05-02 16:13:19,436:DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0x4c694d45", 
+        "2016-05-02 16:13:19,436:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
+        "2016-05-02 16:13:19,437:DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Header signature invalid", 
+        "2016-05-02 16:13:19,437:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
+        "2016-05-02 16:13:19,437:DEBUG:rekall.1:Failed instantiating VMemAddressSpace: Only VMEM files supported.", 
+        "2016-05-02 16:13:19,437:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
+        "2016-05-02 16:13:19,438:DEBUG:rekall.1:Failed instantiating EWFAddressSpace: EWF signature not present", 
+        "2016-05-02 16:13:19,438:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashBMP'> ", 
+        "2016-05-02 16:13:19,438:DEBUG:rekall.1:Failed instantiating WindowsCrashBMP: Header signature invalid", 
+        "2016-05-02 16:13:19,438:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.KCoreAddressSpace'> ", 
+        "2016-05-02 16:13:19,438:DEBUG:rekall.1:Failed instantiating KCoreAddressSpace: Header signature invalid", 
+        "2016-05-02 16:13:19,438:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace32'> ", 
+        "2016-05-02 16:13:19,439:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace32: Header signature invalid", 
+        "2016-05-02 16:13:19,439:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace64'> ", 
+        "2016-05-02 16:13:19,439:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace64: Header signature invalid", 
+        "2016-05-02 16:13:19,439:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.Elf64CoreDump'> ", 
+        "2016-05-02 16:13:19,439:DEBUG:rekall.1:Failed instantiating Elf64CoreDump: Header signature invalid", 
+        "2016-05-02 16:13:19,439:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.lime.LimeAddressSpace'> ", 
+        "2016-05-02 16:13:19,448:DEBUG:rekall.1:Succeeded instantiating LimeAddressSpace", 
+        "2016-05-02 16:13:19,449:DEBUG:rekall.1:Voting round with base: LimeAddressSpace", 
+        "2016-05-02 16:13:19,449:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
+        "2016-05-02 16:13:19,451:DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0x0", 
+        "2016-05-02 16:13:19,451:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
+        "2016-05-02 16:13:19,451:DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Header signature invalid", 
+        "2016-05-02 16:13:19,451:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
+        "2016-05-02 16:13:19,451:DEBUG:rekall.1:Failed instantiating VMemAddressSpace: Only VMEM files supported.", 
+        "2016-05-02 16:13:19,451:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
+        "2016-05-02 16:13:19,452:DEBUG:rekall.1:Failed instantiating EWFAddressSpace: EWF signature not present", 
+        "2016-05-02 16:13:19,452:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashBMP'> ", 
+        "2016-05-02 16:13:19,452:DEBUG:rekall.1:Failed instantiating WindowsCrashBMP: Header signature invalid", 
+        "2016-05-02 16:13:19,452:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.KCoreAddressSpace'> ", 
+        "2016-05-02 16:13:19,453:DEBUG:rekall.1:Failed instantiating KCoreAddressSpace: Header signature invalid", 
+        "2016-05-02 16:13:19,453:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace32'> ", 
+        "2016-05-02 16:13:19,453:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace32: Header signature invalid", 
+        "2016-05-02 16:13:19,453:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace64'> ", 
+        "2016-05-02 16:13:19,454:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace64: Header signature invalid", 
+        "2016-05-02 16:13:19,454:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.Elf64CoreDump'> ", 
+        "2016-05-02 16:13:19,454:DEBUG:rekall.1:Failed instantiating Elf64CoreDump: Header signature invalid", 
+        "2016-05-02 16:13:19,454:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.lime.LimeAddressSpace'> ", 
+        "2016-05-02 16:13:19,454:DEBUG:rekall.1:Failed instantiating LimeAddressSpace: Invalid Lime header signature", 
+        "2016-05-02 16:13:19,454:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
+        "2016-05-02 16:13:19,455:DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Must stack on another address space", 
+        "2016-05-02 16:13:19,455:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
+        "2016-05-02 16:13:19,455:DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: Must be mapped directly over a raw device.", 
+        "2016-05-02 16:13:19,455:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
+        "2016-05-02 16:13:19,456:DEBUG:rekall.1:Failed instantiating FileAddressSpace: Must be first Address Space", 
+        "2016-05-02 16:13:19,456:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.mmap_address_space.MmapFileAddressSpace'> ", 
+        "2016-05-02 16:13:19,456:DEBUG:rekall.1:Failed instantiating MmapFileAddressSpace: Must be first Address Space", 
+        "2016-05-02 16:13:19,456:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.amd64.VTxPagedMemory'> ", 
+        "2016-05-02 16:13:19,457:DEBUG:rekall.1:Failed instantiating VTxPagedMemory: No more EPTs specified", 
+        "2016-05-02 16:13:19,457:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.GlobalOffsetAddressSpace'> ", 
+        "2016-05-02 16:13:19,458:DEBUG:rekall.1:Failed instantiating GlobalOffsetAddressSpace: File offset not specified.", 
+        "2016-05-02 16:13:19,458:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pagefile.PagefilePhysicalAddressSpace'> ", 
+        "2016-05-02 16:13:19,458:DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
+        "2016-05-02 16:13:19,458:INFO:rekall.1:Autodetected physical address space LimeAddressSpace", 
+        "2016-05-02 16:13:19,459:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "2016-05-02 16:13:19,852:DEBUG:rekall.1:Running plugin (address_resolver) with args (()) kwargs ({'profile': '/home/scudette/projects/rekall-test/android/Evo4G.json', 'symbol': []})", 
+        "2016-05-02 16:13:19,853:DEBUG:rekall.1:DTB not specified. Delegating to find_dtb.", 
+        "2016-05-02 16:13:19,854:DEBUG:rekall.1:Calculating page offset...", 
+        "2016-05-02 16:13:19,854:DEBUG:rekall.1:Detected ARM Linux."
+    ], 
+    "time_used": 3.0509698390960693, 
     "return_code": 0, 
+    "output": [
+        "       Symbol       ||       Offset       ", 
+        "--------------------||--------------------"
+    ], 
     "options": {
         "--name_resolution_strategies": [
             "Module", 
@@ -9,14 +123,16 @@
         ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
-        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "--format": "test", 
         "commandline": "address_resolver", 
+        "proc_name": "sh", 
         "pid": 1872, 
-        "--renderer": "test", 
-        "tempdir": "/tmp/tmpLK4HON/TestLinuxAddressResolverThread-1", 
+        "tempdir": "/tmp/tmp2kF5mm/TestLinuxAddressResolverThread-2", 
         "test_class": "TestLinuxAddressResolver", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "--cache": "memory", 
         "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
-        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - address_resolver", 
+        "executed_command": "rekall  -v --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - address_resolver", 
         "testdir": "/home/scudette/projects/rekall-test/android"
     }
 }
