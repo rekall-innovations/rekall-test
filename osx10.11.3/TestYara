@@ -1,25 +1,87 @@
-#!/bin/bash
-if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/rekall-test/osx10.11.3/output/TestYara /home/scudette/projects/rekall-test/osx10.11.3/TestYara
-elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/rekall-test/osx10.11.3/output/TestYara /home/scudette/projects/rekall-test/osx10.11.3/TestYara
-elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/rekall-test/osx10.11.3/output/TestYara /home/scudette/projects/rekall-test/osx10.11.3/TestYara
-elif [ "$1" == "run" ]; then
-   rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/osx10.11.3/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/osx10.11.3/10.11.3.aff4' --name_resolution_strategies 'Module' 'Symbol' - yarascan --string talagent --hits 10
-else
-   less /home/scudette/projects/rekall-test/osx10.11.3/output/TestYara
-fi
-exit 0
 {
-    "failours": {
-        "testCase (rekall.plugins.yarascanner.TestYara)": {
-            "testCase (rekall.plugins.yarascanner.TestYara)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 252, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 302, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 224, in assertListEqual\n    self.assertEqual(len(a), len(b))\nAssertionError: 80 != 38\n"
-        }
-    }, 
-    "errors": {
-        "testCase (rekall.plugins.yarascanner.TestYara)": {}
-    }, 
+    "time_used": 4.905757904052734, 
+    "output": [
+        "Rule: r1", 
+        "Owner: Unknown", 
+        "    Offset    ||                      Hex                       ||      Data      ", 
+        "--------------||------------------------------------------------||----------------", 
+        "0xfeb042278755||74 61 6c 61 67 65 6e 74 00 73 69 6f 6e 2e 62 75 ||talagent.sion.bu", 
+        "0xfeb042278765||6e 64 6c 27 cc 04 00 00 00 00 00 83 00 00 00 9e ||ndl'............", 
+        "0xfeb042278775||cc 04 00 28 00 0f 00 04 54 68 65 72 6d 61 6c 54 ||...(....ThermalT", 
+        "0xfeb042278785||72 61 70 2e 61 70 70 00 69 73 74 9e cc 04 00 00 ||rap.app.ist.....", 
+        "Rule: r1", 
+        "Owner: Unknown", 
+        "    Offset    ||                      Hex                       ||      Data      ", 
+        "--------------||------------------------------------------------||----------------", 
+        "0xfeb042714039||74 61 6c 61 67 65 6e 74 57 69 6e 64 6f 77 44 69 ||talagentWindowDi", 
+        "0xfeb042714049||63 74 69 6f 6e 61 72 79 00 73 65 74 54 61 6c 61 ||ctionary.setTala", 
+        "0xfeb042714059||67 65 6e 74 57 69 6e 64 6f 77 44 69 63 74 69 6f ||gentWindowDictio", 
+        "0xfeb042714069||6e 61 72 79 3a 00 73 65 74 4c 61 73 74 4d 69 6e ||nary:.setLastMin", 
+        "Rule: r1", 
+        "Owner: Unknown", 
+        "    Offset    ||                      Hex                       ||      Data      ", 
+        "--------------||------------------------------------------------||----------------", 
+        "0xfeb0427140af||74 61 6c 61 67 65 6e 74 57 69 6e 64 6f 77 54 72 ||talagentWindowTr", 
+        "0xfeb0427140bf||61 6e 73 66 65 72 72 65 64 4f 77 6e 65 72 73 68 ||ansferredOwnersh", 
+        "0xfeb0427140cf||69 70 00 72 65 73 74 6f 72 65 64 57 69 6e 64 6f ||ip.restoredWindo", 
+        "0xfeb0427140df||77 50 69 6e 6e 65 64 00 72 65 73 74 6f 72 61 74 ||wPinned.restorat", 
+        "Rule: r1", 
+        "Owner: Unknown", 
+        "    Offset    ||                      Hex                       ||      Data      ", 
+        "--------------||------------------------------------------------||----------------", 
+        "0xfeb042715ed9||74 61 6c 61 67 65 6e 74 57 69 6e 64 6f 77 00 75 ||talagentWindow.u", 
+        "0xfeb042715ee9||6e 70 69 6e 52 65 73 74 6f 72 65 64 57 69 6e 64 ||npinRestoredWind", 
+        "0xfeb042715ef9||6f 77 46 72 6f 6d 54 61 6c 61 67 65 6e 74 57 69 ||owFromTalagentWi", 
+        "0xfeb042715f09||6e 64 6f 77 00 61 63 71 75 69 72 65 54 61 6c 61 ||ndow.acquireTala", 
+        "Rule: r1", 
+        "Owner: Unknown", 
+        "    Offset    ||                      Hex                       ||      Data      ", 
+        "--------------||------------------------------------------------||----------------", 
+        "0xfeb042715fac||74 61 6c 61 67 65 6e 74 57 69 6e 64 6f 77 42 65 ||talagentWindowBe", 
+        "0xfeb042715fbc||63 61 6d 65 52 65 61 6c 57 69 6e 64 6f 77 00 74 ||cameRealWindow.t", 
+        "0xfeb042715fcc||61 6c 61 67 65 6e 74 57 69 6e 64 6f 77 42 65 63 ||alagentWindowBec", 
+        "0xfeb042715fdc||61 6d 65 4f 74 68 65 72 57 69 6e 64 6f 77 00 72 ||ameOtherWindow.r", 
+        "Rule: r1", 
+        "Owner: Unknown", 
+        "    Offset    ||                      Hex                       ||      Data      ", 
+        "--------------||------------------------------------------------||----------------", 
+        "0xfeb042715fcb||74 61 6c 61 67 65 6e 74 57 69 6e 64 6f 77 42 65 ||talagentWindowBe", 
+        "0xfeb042715fdb||63 61 6d 65 4f 74 68 65 72 57 69 6e 64 6f 77 00 ||cameOtherWindow.", 
+        "0xfeb042715feb||72 65 6d 6f 76 65 53 75 72 66 61 63 65 00 64 69 ||removeSurface.di", 
+        "0xfeb042715ffb||73 70 6f 73 65 67 72 61 6c 69 7a 65 3a 00 61 6e ||sposegralize:.an", 
+        "Rule: r1", 
+        "Owner: Unknown", 
+        "    Offset    ||                      Hex                       ||      Data      ", 
+        "--------------||------------------------------------------------||----------------", 
+        "0xfeb04b46ebdd||74 61 6c 61 67 65 6e 74 2e 2e 43 2e 2e 00 00 00 ||talagent..C.....", 
+        "0xfeb04b46ebed||00 00 00 a0 10 b4 05 ff 07 00 b0 64 1f b4 05 ff ||...........d....", 
+        "0xfeb04b46ebfd||07 00 70 18 97 ff 71 ff 7f 00 00 8c 07 00 00 01 ||..p...q.........", 
+        "0xfeb04b46ec0d||00 00 00 1b 4e 55 63 6f 6d 2e 61 70 70 6c 65 2e ||....NUcom.apple.", 
+        "Rule: r1", 
+        "Owner: Unknown", 
+        "    Offset    ||                      Hex                       ||      Data      ", 
+        "--------------||------------------------------------------------||----------------", 
+        "0xfeb04bbc4831||74 61 6c 61 67 65 6e 74 00 74 61 6c 61 67 65 6e ||talagent.talagen", 
+        "0xfeb04bbc4841||74 20 6f 70 74 65 64 20 6f 75 74 20 64 75 65 20 ||t.opted.out.due.", 
+        "0xfeb04bbc4851||74 6f 20 74 68 72 65 61 64 2d 73 61 66 65 74 79 ||to.thread-safety", 
+        "0xfeb04bbc4861||20 69 73 73 75 65 73 20 77 69 74 68 20 65 76 65 ||.issues.with.eve", 
+        "Rule: r1", 
+        "Owner: Unknown", 
+        "    Offset    ||                      Hex                       ||      Data      ", 
+        "--------------||------------------------------------------------||----------------", 
+        "0xfeb04bbc483a||74 61 6c 61 67 65 6e 74 20 6f 70 74 65 64 20 6f ||talagent.opted.o", 
+        "0xfeb04bbc484a||75 74 20 64 75 65 20 74 6f 20 74 68 72 65 61 64 ||ut.due.to.thread", 
+        "0xfeb04bbc485a||2d 73 61 66 65 74 79 20 69 73 73 75 65 73 20 77 ||-safety.issues.w", 
+        "0xfeb04bbc486a||69 74 68 20 65 76 65 6e 74 20 66 65 74 63 68 69 ||ith.event.fetchi", 
+        "Rule: r1", 
+        "Owner: Unknown", 
+        "    Offset    ||                      Hex                       ||      Data      ", 
+        "--------------||------------------------------------------------||----------------", 
+        "0xfeb04cbaf8d7||74 61 6c 61 67 65 6e 74 2e 70 6c 69 73 74 00 00 ||talagent.plist..", 
+        "0xfeb04cbaf8e7||00 00 00 e3 02 01 00 00 00 00 00 00 00 00 00 00 ||................", 
+        "0xfeb04cbaf8f7||00 30 45 67 12 bd 7f 00 00 9f bb 98 ed 42 80 ff ||.0Eg.........B..", 
+        "0xfeb04cbaf907||ff 40 8d a2 01 01 00 00 00 40 a3 a2 01 01 00 00 ||.@.......@......"
+    ], 
     "logging": [
         "2016-05-02 15:56:21,340:DEBUG:rekall.1:Logging level set to 10", 
         "2016-05-02 15:56:21,341:DEBUG:rekall.1:Voting round with base: None", 
@@ -164,28 +226,17 @@ exit 0
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/rekall-test/osx10.11.3/10.11.3.aff4", 
+        "--filename": "/home/adam/src/rekall-test/osx10.11.3/vmem.elf", 
         "string": "talagent", 
         "--format": "test", 
-        "enabled": [
-            "TestSearch1", 
-            "TestSearch2", 
-            "TestSearch3", 
-            "TestSearchSubselect", 
-            "TestVtoP", 
-            "TestPas2Vas", 
-            "TestSigScanPhysical", 
-            "TestSigScanKernel", 
-            "TestYara"
-        ], 
         "commandline": "yarascan --string %(string)s --hits 10", 
-        "script": "search('(SELECT proc.p_fd.fd_ofiles[4].vnode.full_path AS path FROM pslist WHERE proc.command == \"Finder\" LIMIT 1) == (SELECT proc.p_fd.fd_ofiles[4].human_name AS path FROM pslist WHERE proc.command == \"Finder\" LIMIT 1)')", 
+        "cache": "memory", 
         "pid": 232, 
+        "script": "search('(SELECT proc.p_fd.fd_ofiles[4].vnode.full_path AS path FROM pslist WHERE proc.command == \"Finder\" LIMIT 1) == (SELECT proc.p_fd.fd_ofiles[4].human_name AS path FROM pslist WHERE proc.command == \"Finder\" LIMIT 1)')", 
         "test_class": "TestYara", 
-        "--cache_dir": "/home/scudette/projects/rekall-test/osx10.11.3/../profile_cache/", 
-        "--cache": "memory", 
-        "tempdir": "/tmp/tmpJ7r_Do/TestYaraThread-1", 
-        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/osx10.11.3/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/osx10.11.3/10.11.3.aff4' --name_resolution_strategies 'Module' 'Symbol' - yarascan --string talagent --hits 10", 
-        "testdir": "/home/scudette/projects/rekall-test/osx10.11.3"
+        "--cache_dir": "/home/adam/src/rekall-test/osx10.11.3/../profile_cache/", 
+        "tempdir": "/tmp/tmpszb6f5/TestYaraThread-3", 
+        "executed_command": "rekall  -v --cache_dir '/home/adam/src/rekall-test/osx10.11.3/../profile_cache/' --format 'test' --filename '/home/adam/src/rekall-test/osx10.11.3/vmem.elf' --name_resolution_strategies 'Module' 'Symbol' - yarascan --string talagent --hits 10", 
+        "testdir": "/home/adam/src/rekall-test/osx10.11.3"
     }
 }

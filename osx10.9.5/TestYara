@@ -1,21 +1,19 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/rekall-test/osx10.9.5/output/TestYara /home/scudette/projects/rekall-test/osx10.9.5/TestYara
+   cp /Users/scudette/projects/rekall-test/osx10.9.5/output/TestYara /Users/scudette/projects/rekall-test/osx10.9.5/TestYara
 elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/rekall-test/osx10.9.5/output/TestYara /home/scudette/projects/rekall-test/osx10.9.5/TestYara
+   meld /Users/scudette/projects/rekall-test/osx10.9.5/output/TestYara /Users/scudette/projects/rekall-test/osx10.9.5/TestYara
 elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/rekall-test/osx10.9.5/output/TestYara /home/scudette/projects/rekall-test/osx10.9.5/TestYara
+   diff /Users/scudette/projects/rekall-test/osx10.9.5/output/TestYara /Users/scudette/projects/rekall-test/osx10.9.5/TestYara
 elif [ "$1" == "run" ]; then
-   rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - yarascan --string talagent --hits 10
+   rekall  -v --cache_dir '/Users/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - yarascan --string talagent
 else
-   less /home/scudette/projects/rekall-test/osx10.9.5/output/TestYara
+   less /Users/scudette/projects/rekall-test/osx10.9.5/output/TestYara
 fi
 exit 0
 {
     "failours": {
-        "testCase (rekall.plugins.yarascanner.TestYara)": {
-            "testCase (rekall.plugins.yarascanner.TestYara)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 252, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 302, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 224, in assertListEqual\n    self.assertEqual(len(a), len(b))\nAssertionError: 80 != 38\n"
-        }
+        "testCase (rekall.plugins.yarascanner.TestYara)": {}
     }, 
     "errors": {
         "testCase (rekall.plugins.yarascanner.TestYara)": {}
@@ -176,17 +174,16 @@ exit 0
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01", 
+        "--filename": "/Users/scudette/projects/rekall-test/osx10.9.5/vmem.e01", 
         "string": "talagent", 
         "--format": "test", 
-        "commandline": "yarascan --string %(string)s --hits 10", 
-        "script": "search('(SELECT proc.p_fd.fd_ofiles[4].vnode.full_path AS path FROM pslist WHERE proc.command == \"Finder\" LIMIT 1) == (SELECT proc.p_fd.fd_ofiles[4].human_name AS path FROM pslist WHERE proc.command == \"Finder\" LIMIT 1)')", 
+        "scan_physical": 1, 
+        "commandline": "yarascan --string %(string)s", 
         "pid": 232, 
         "test_class": "TestYara", 
-        "--cache_dir": "/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/", 
-        "--cache": "memory", 
-        "tempdir": "/tmp/tmp9crH7h/TestYaraThread-1", 
-        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - yarascan --string talagent --hits 10", 
-        "testdir": "/home/scudette/projects/rekall-test/osx10.9.5"
+        "--cache_dir": "/Users/scudette/projects/rekall-test/osx10.9.5/../profile_cache/", 
+        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpNV7C0t/TestYaraThread-2", 
+        "executed_command": "rekall  -v --cache_dir '/Users/scudette/projects/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - yarascan --string talagent", 
+        "testdir": "/Users/scudette/projects/rekall-test/osx10.9.5"
     }
 }

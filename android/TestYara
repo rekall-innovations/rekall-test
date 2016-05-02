@@ -1,20 +1,20 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /home/scudette/projects/rekall-test/android/output/TestYara /home/scudette/projects/rekall-test/android/TestYara
+   cp /Users/scudette/projects/rekall-test/android/output/TestYara /Users/scudette/projects/rekall-test/android/TestYara
 elif [ "$1" == "meld" ]; then
-   meld /home/scudette/projects/rekall-test/android/output/TestYara /home/scudette/projects/rekall-test/android/TestYara
+   meld /Users/scudette/projects/rekall-test/android/output/TestYara /Users/scudette/projects/rekall-test/android/TestYara
 elif [ "$1" == "diff" ]; then
-   diff /home/scudette/projects/rekall-test/android/output/TestYara /home/scudette/projects/rekall-test/android/TestYara
+   diff /Users/scudette/projects/rekall-test/android/output/TestYara /Users/scudette/projects/rekall-test/android/TestYara
 elif [ "$1" == "run" ]; then
-   rekall  -v --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - yarascan --string lime --hits 10
+   rekall  -v --profile '/Users/scudette/projects/rekall-test/android/Evo4G.json' --cache_dir '/Users/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - yarascan --string lime --hits 10
 else
-   less /home/scudette/projects/rekall-test/android/output/TestYara
+   less /Users/scudette/projects/rekall-test/android/output/TestYara
 fi
 exit 0
 {
     "failours": {
         "testCase (rekall.plugins.yarascanner.TestYara)": {
-            "testCase (rekall.plugins.yarascanner.TestYara)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 252, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 302, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 224, in assertListEqual\n    self.assertEqual(len(a), len(b))\nAssertionError: 80 != 38\n"
+            "testCase (rekall.plugins.yarascanner.TestYara)": "Traceback (most recent call last):\n  File \"/Users/scudette/projects/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/Users/scudette/projects/rekall/rekall-core/rekall/testlib.py\", line 284, in testCase\n    self.assertEqual(previous, current)\nAssertionError: 63296 != 80\n"
         }
     }, 
     "errors": {
@@ -110,7 +110,7 @@ exit 0
         "2016-05-02 16:12:54,017:DEBUG:rekall.1:Calculating page offset...", 
         "2016-05-02 16:12:54,017:DEBUG:rekall.1:Detected ARM Linux."
     ], 
-    "time_used": 3.4463560581207275, 
+    "time_used": 2.5017099380493164, 
     "return_code": 0, 
     "output": [
         "       Owner        ||   Rule   ||    Offset    ||                             HexDump                             ||Symbol", 
@@ -158,18 +158,18 @@ exit 0
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--filename": "/Users/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
         "string": "lime", 
         "--format": "test", 
         "commandline": "yarascan --string %(string)s --hits 10", 
         "proc_name": "sh", 
         "pid": 1872, 
-        "tempdir": "/tmp/tmp2kF5mm/TestYaraThread-3", 
+        "cache": "memory", 
         "test_class": "TestYara", 
-        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
-        "--cache": "memory", 
-        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
-        "executed_command": "rekall  -v --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - yarascan --string lime --hits 10", 
-        "testdir": "/home/scudette/projects/rekall-test/android"
+        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpjAt85e/TestYaraThread-1", 
+        "--cache_dir": "/Users/scudette/projects/rekall-test/android/../profile_cache/", 
+        "--profile": "/Users/scudette/projects/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  -v --profile '/Users/scudette/projects/rekall-test/android/Evo4G.json' --cache_dir '/Users/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - yarascan --string lime --hits 10", 
+        "testdir": "/Users/scudette/projects/rekall-test/android"
     }
 }
