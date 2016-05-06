@@ -1,0 +1,23 @@
+{
+    "time_used": 2.719650983810425, 
+    "output": [], 
+    "logging": "CRITICAL:rekall.1:No signature given.\n", 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/www-data/rekall-test/osx10.9.5/vmem.e01", 
+        "--format": "test", 
+        "commandline": "sigscan %(signature)s --scan_kernel", 
+        "pid": 232, 
+        "test_class": "TestLinuxSigScanKernel", 
+        "--cache_dir": "/home/www-data/rekall-test/osx10.9.5/../profile_cache/", 
+        "signature": "", 
+        "tempdir": "/tmp/tmpPMGU9b/TestLinuxSigScanKernelThread-1", 
+        "executed_command": "rekall  --cache_dir '/home/www-data/rekall-test/osx10.9.5/../profile_cache/' --format 'test' --filename '/home/www-data/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - sigscan  --scan_kernel", 
+        "testdir": "/home/www-data/rekall-test/osx10.9.5"
+    }
+}

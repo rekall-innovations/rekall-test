@@ -1,0 +1,38 @@
+{
+    "time_used": 0.9608631134033203, 
+    "output": [
+        "usage: rekall [-v] [-q] [--debug] [--pager PAGER]", 
+        "              [--paging_limit PAGING_LIMIT] [--colors {auto,yes,no}]", 
+        "              [--renderer {text,json,wide,test,data}]", 
+        "              [--plugin [PLUGIN [PLUGIN ...]]] [-h]", 
+        "              [--repository_path [REPOSITORY_PATH [REPOSITORY_PATH ...]]]", 
+        "              [-f FILENAME] [--buffer_size BUFFER_SIZE] [--output OUTPUT]", 
+        "              [--max_collector_cost MAX_COLLECTOR_COST] [--dtb DTB]", 
+        "              [-o FILE_OFFSET] [--ept EPT [EPT ...]] [--timezone TIMEZONE]", 
+        "              [--cache_dir CACHE_DIR]", 
+        "              [--name_resolution_strategies [{Module,Symbol,Export} [{Module,Symbol,Export} ...]]]", 
+        "              [--pagefile [PAGEFILE [PAGEFILE ...]]]", 
+        "              [--autodetect {nt_index,osx,pe,rsds,ntfs,linux} [{nt_index,osx,pe,rsds,ntfs,linux} ...]]", 
+        "              [--autodetect_threshold AUTODETECT_THRESHOLD]", 
+        "              [--autodetect_build_local {full,basic,none}]", 
+        "              [--autodetect_scan_length AUTODETECT_SCAN_LENGTH] [-r RUN]", 
+        "              [-s SESSION_FILENAME] [-]", 
+        "              module_name [guid]", 
+        "rekall: error: unrecognized arguments: --profile"
+    ], 
+    "return_code": 2, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/www-data/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "--cache_dir": "/home/www-data/rekall-test/ntfs/../profile_cache/", 
+        "commandline": "build_local_profile", 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpsG1aQM/TestBuildProfileLocallyThread-4", 
+        "test_class": "TestBuildProfileLocally", 
+        "mft": 42, 
+        "executed_command": "rekall  --profile 'ntfs' --renderer 'test' --cache_dir '/home/www-data/rekall-test/ntfs/../profile_cache/' --filename '/home/www-data/rekall-test/ntfs/ntfs1-gen1.E01' - build_local_profile", 
+        "--profile": "ntfs", 
+        "path": "RAW/20076517123273.pdf", 
+        "testdir": "/home/www-data/rekall-test/ntfs"
+    }
+}

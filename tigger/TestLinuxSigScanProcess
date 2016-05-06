@@ -1,0 +1,24 @@
+{
+    "time_used": 2.1318259239196777, 
+    "output": [], 
+    "logging": "CRITICAL:rekall.1:No signature given.\n", 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "proc_regex": ".", 
+        "--filename": "/home/www-data/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "sigscan %(signature)s --proc_regex %(proc_regex)s", 
+        "pid": 1724, 
+        "executable": "rekall ", 
+        "test_class": "TestLinuxSigScanProcess", 
+        "--cache_dir": "/home/www-data/rekall-test/tigger/../profile_cache/", 
+        "signature": "", 
+        "tempdir": "/tmp/tmp3RPGMQ/TestLinuxSigScanProcessThread-3", 
+        "executed_command": "rekall  --cache_dir '/home/www-data/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/www-data/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - sigscan  --proc_regex .", 
+        "testdir": "/home/www-data/rekall-test/tigger"
+    }
+}

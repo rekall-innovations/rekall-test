@@ -1,0 +1,26 @@
+{
+    "time_used": 10.531479835510254, 
+    "output": [], 
+    "logging": "CRITICAL:rekall.1:No signature given.\n", 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "proc_regex": ".", 
+        "--filename": "/home/www-data/rekall-test/android/Evo4GRodeo.aff4", 
+        "--format": "test", 
+        "commandline": "sigscan %(signature)s --proc_regex %(proc_regex)s", 
+        "proc_name": "sh", 
+        "pid": 1872, 
+        "executable": "rekall ", 
+        "tempdir": "/tmp/tmpQWSnwo/TestWinSigScanProcessThread-4", 
+        "test_class": "TestWinSigScanProcess", 
+        "--cache_dir": "/home/www-data/rekall-test/android/../profile_cache/", 
+        "signature": "", 
+        "--profile": "/home/www-data/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/www-data/rekall-test/android/Evo4G.json' --cache_dir '/home/www-data/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/www-data/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - sigscan  --proc_regex .", 
+        "testdir": "/home/www-data/rekall-test/android"
+    }
+}

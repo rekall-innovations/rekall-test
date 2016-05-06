@@ -1,0 +1,23 @@
+{
+    "time_used": 1.8414208889007568, 
+    "output": [], 
+    "logging": "CRITICAL:rekall.1:No signature given.\n", 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/www-data/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "sigscan %(signature)s --scan_physical", 
+        "pid": 1724, 
+        "test_class": "TestLinuxSigScanPhysical", 
+        "--cache_dir": "/home/www-data/rekall-test/tigger/../profile_cache/", 
+        "signature": "", 
+        "tempdir": "/tmp/tmp3RPGMQ/TestLinuxSigScanPhysicalThread-2", 
+        "executed_command": "rekall  --cache_dir '/home/www-data/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/www-data/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - sigscan  --scan_physical", 
+        "testdir": "/home/www-data/rekall-test/tigger"
+    }
+}

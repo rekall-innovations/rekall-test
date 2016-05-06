@@ -1,0 +1,47 @@
+{
+    "time_used": 1.305318832397461, 
+    "output": [], 
+    "logging": [
+        "2016-02-13 18:58:03,568:DEBUG:rekall.1:Logging level set to 10", 
+        "2016-02-13 18:58:03,569:DEBUG:rekall.1:Running plugin (raise_the_roof) with args (()) kwargs ({'exception_class': None, 'exception_text': None})", 
+        "2016-02-13 18:58:03,569:CRITICAL:rekall.1:Traceback (most recent call last):", 
+        "  File \"/home/www-data/Test/local/lib/python2.7/site-packages/rekall_core-1.4.1.post0.dev45-py2.7.egg/rekall/session.py\", line 794, in RunPlugin", 
+        "    result = plugin_obj.render(ui_renderer) or plugin_obj", 
+        "  File \"/home/www-data/Test/local/lib/python2.7/site-packages/rekall_core-1.4.1.post0.dev45-py2.7.egg/rekall/plugins/core.py\", line 1198, in render", 
+        "    raise exc_cls(self.exception_text)", 
+        "ValueError: Default exception", 
+        "", 
+        "2016-02-13 18:58:03,570:CRITICAL:root:Default exception. Try --debug for more information.", 
+        "Traceback (most recent call last):", 
+        "  File \"/home/www-data/Test/bin/rekall\", line 9, in <module>", 
+        "    load_entry_point('rekall-core==1.4.1.post0.dev45', 'console_scripts', 'rekall')()", 
+        "  File \"/home/www-data/Test/local/lib/python2.7/site-packages/rekall_core-1.4.1.post0.dev45-py2.7.egg/rekall/rekal.py\", line 108, in main", 
+        "    user_session.RunPlugin(plugin_cls, **config.RemoveGlobalOptions(flags))", 
+        "  File \"/home/www-data/Test/local/lib/python2.7/site-packages/rekall_core-1.4.1.post0.dev45-py2.7.egg/rekall/session.py\", line 797, in RunPlugin", 
+        "    self._HandleRunPluginException(ui_renderer, e)", 
+        "  File \"/home/www-data/Test/local/lib/python2.7/site-packages/rekall_core-1.4.1.post0.dev45-py2.7.egg/rekall/session.py\", line 794, in RunPlugin", 
+        "    result = plugin_obj.render(ui_renderer) or plugin_obj", 
+        "  File \"/home/www-data/Test/local/lib/python2.7/site-packages/rekall_core-1.4.1.post0.dev45-py2.7.egg/rekall/plugins/core.py\", line 1198, in render", 
+        "    raise exc_cls(self.exception_text)", 
+        "ValueError: Default exception"
+    ], 
+    "return_code": 1, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/www-data/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "raise_the_roof", 
+        "script": "search('select details AS path from handles where _EPROCESS.pid == 1968 and obj_type == \"File\"')", 
+        "pid": 1724, 
+        "test_class": "TestRaisingTheRoof", 
+        "--cache_dir": "/home/www-data/rekall-test/tigger/../profile_cache/", 
+        "--cache": "memory", 
+        "tempdir": "/tmp/tmpdQOoK3/TestRaisingTheRoofThread-4", 
+        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/home/www-data/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/www-data/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - raise_the_roof", 
+        "testdir": "/home/www-data/rekall-test/tigger"
+    }
+}

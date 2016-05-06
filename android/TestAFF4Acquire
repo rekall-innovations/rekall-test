@@ -1,0 +1,34 @@
+{
+    "time_used": 1.6823861598968506, 
+    "output": [
+        "usage: rekall [-v] [-q] [--debug] [--pager PAGER] [--paging_limit PAGING_LIMIT] [--colors {auto,yes,no}] [--renderer {text,json,wide,test,data}]", 
+        "              [--plugin [PLUGIN [PLUGIN ...]]] [-h] [--repository_path [REPOSITORY_PATH [REPOSITORY_PATH ...]]] [-f FILENAME] [--buffer_size BUFFER_SIZE]", 
+        "              [--output OUTPUT] [--max_collector_cost MAX_COLLECTOR_COST] [--dtb DTB] [-o FILE_OFFSET] [--ept EPT [EPT ...]] [--timezone TIMEZONE]", 
+        "              [--cache_dir CACHE_DIR] [--name_resolution_strategies [{Module,Symbol,Export} [{Module,Symbol,Export} ...]]]", 
+        "              [--autodetect_build_local_tracked [AUTODETECT_BUILD_LOCAL_TRACKED [AUTODETECT_BUILD_LOCAL_TRACKED ...]]] [--pagefile [PAGEFILE [PAGEFILE ...]]]", 
+        "              [--autodetect {nt_index,osx,pe,rsds,ntfs,linux} [{nt_index,osx,pe,rsds,ntfs,linux} ...]] [--autodetect_threshold AUTODETECT_THRESHOLD]", 
+        "              [--autodetect_build_local {full,basic,none}] [--autodetect_scan_length AUTODETECT_SCAN_LENGTH] [-r RUN] [-s SESSION_FILENAME] [-]", 
+        "              [--compression {snappy,stored,zlib}]", 
+        "              [destination]", 
+        "rekall: error: unrecognized arguments: --profile"
+    ], 
+    "return_code": 2, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/www-data/rekall-test/android/Evo4GRodeo.aff4", 
+        "--cache_dir": "/home/www-data/rekall-test/android/../profile_cache/", 
+        "commandline": "aff4acquire", 
+        "proc_name": "sh", 
+        "pid": 1872, 
+        "--renderer": "test", 
+        "tempdir": "/tmp/tmpJg_Vki/TestAFF4AcquireThread-3", 
+        "test_class": "TestAFF4Acquire", 
+        "--profile": "/home/www-data/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/www-data/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/www-data/rekall-test/android/../profile_cache/' --filename '/home/www-data/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - aff4acquire", 
+        "testdir": "/home/www-data/rekall-test/android"
+    }
+}

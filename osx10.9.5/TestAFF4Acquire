@@ -1,0 +1,20 @@
+{
+    "time_used": 164.25780200958252, 
+    "output": [], 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/www-data/rekall-test/osx10.9.5/vmem.e01", 
+        "--cache_dir": "/home/www-data/rekall-test/osx10.9.5/../profile_cache/", 
+        "commandline": "aff4acquire", 
+        "--renderer": "test", 
+        "test_class": "TestAFF4Acquire", 
+        "tempdir": "/tmp/tmpiivVNO/TestAFF4AcquireThread-3", 
+        "executed_command": "rekall  --renderer 'test' --cache_dir '/home/www-data/rekall-test/osx10.9.5/../profile_cache/' --filename '/home/www-data/rekall-test/osx10.9.5/vmem.e01' --name_resolution_strategies 'Module' 'Symbol' - aff4acquire", 
+        "testdir": "/home/www-data/rekall-test/osx10.9.5"
+    }
+}

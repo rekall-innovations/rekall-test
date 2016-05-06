@@ -1,0 +1,37 @@
+{
+    "time_used": 1.2563738822937012, 
+    "output": [], 
+    "logging": [
+        "2016-02-10 23:06:53,648:DEBUG:rekall.1:Logging level set to 10", 
+        "usage: rekall [-v] [-q] [--debug] [--output_style {concise,full}] [--logging_level {DEBUG,INFO,WARNING,ERROR,CRITICAL}] [--pager PAGER]", 
+        "              [--paging_limit PAGING_LIMIT] [--colors {auto,yes,no}] [-F {text,json,wide,test,data}] [--plugin [PLUGIN [PLUGIN ...]]] [-h]", 
+        "              [--cache {file,memory,timed}] [--repository_path [REPOSITORY_PATH [REPOSITORY_PATH ...]]] [-f FILENAME] [--buffer_size BUFFER_SIZE] [--output OUTPUT]", 
+        "              [--max_collector_cost MAX_COLLECTOR_COST] [--home HOME] [--logging_format LOGGING_FORMAT] [--dtb DTB] [-o FILE_OFFSET] [--ept EPT [EPT ...]]", 
+        "              [--timezone TIMEZONE] [--cache_dir CACHE_DIR] [--name_resolution_strategies [{Module,Symbol,Export} [{Module,Symbol,Export} ...]]]", 
+        "              [--autodetect_build_local_tracked [AUTODETECT_BUILD_LOCAL_TRACKED [AUTODETECT_BUILD_LOCAL_TRACKED ...]]] [--pagefile [PAGEFILE [PAGEFILE ...]]]", 
+        "              [--autodetect {linux_index,nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux} [{linux_index,nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux} ...]]", 
+        "              [--autodetect_threshold AUTODETECT_THRESHOLD] [--autodetect_build_local {full,basic,none}] [--autodetect_scan_length AUTODETECT_SCAN_LENGTH] [--live]", 
+        "              [--version] [-] [--exception_class EXCEPTION_CLASS] [--exception_text EXCEPTION_TEXT]", 
+        "rekall: error: unrecognized arguments: --profile /home/www-data/rekall-test/android/Evo4G.json"
+    ], 
+    "return_code": 2, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/www-data/rekall-test/android/Evo4GRodeo.aff4", 
+        "--format": "test", 
+        "commandline": "raise", 
+        "proc_name": "sh", 
+        "pid": 1872, 
+        "cache": "memory", 
+        "test_class": "TestRaisingPlugin", 
+        "tempdir": "/tmp/tmpMPP1oO/TestRaisingPluginThread-4", 
+        "--cache_dir": "/home/www-data/rekall-test/android/../profile_cache/", 
+        "--profile": "/home/www-data/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  -v --profile '/home/www-data/rekall-test/android/Evo4G.json' --cache_dir '/home/www-data/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/www-data/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - raise", 
+        "testdir": "/home/www-data/rekall-test/android"
+    }
+}

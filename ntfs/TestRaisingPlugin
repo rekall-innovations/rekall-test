@@ -1,0 +1,32 @@
+{
+    "time_used": 1.2709150314331055, 
+    "output": [], 
+    "logging": [
+        "2016-02-10 23:04:10,679:DEBUG:rekall.1:Logging level set to 10", 
+        "usage: rekall [-v] [-q] [--debug] [--output_style {concise,full}] [--logging_level {DEBUG,INFO,WARNING,ERROR,CRITICAL}] [--pager PAGER]", 
+        "              [--paging_limit PAGING_LIMIT] [--colors {auto,yes,no}] [-F {text,json,wide,test,data}] [--plugin [PLUGIN [PLUGIN ...]]] [-h]", 
+        "              [--cache {file,memory,timed}] [--repository_path [REPOSITORY_PATH [REPOSITORY_PATH ...]]] [-f FILENAME] [--buffer_size BUFFER_SIZE] [--output OUTPUT]", 
+        "              [--max_collector_cost MAX_COLLECTOR_COST] [--home HOME] [--logging_format LOGGING_FORMAT] [--dtb DTB] [-o FILE_OFFSET] [--ept EPT [EPT ...]]", 
+        "              [--timezone TIMEZONE] [--cache_dir CACHE_DIR] [--name_resolution_strategies [{Module,Symbol,Export} [{Module,Symbol,Export} ...]]]", 
+        "              [--autodetect_build_local_tracked [AUTODETECT_BUILD_LOCAL_TRACKED [AUTODETECT_BUILD_LOCAL_TRACKED ...]]] [--pagefile [PAGEFILE [PAGEFILE ...]]]", 
+        "              [--autodetect {linux_index,nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux} [{linux_index,nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux} ...]]", 
+        "              [--autodetect_threshold AUTODETECT_THRESHOLD] [--autodetect_build_local {full,basic,none}] [--autodetect_scan_length AUTODETECT_SCAN_LENGTH] [--live]", 
+        "              [--version] [-] [--exception_class EXCEPTION_CLASS] [--exception_text EXCEPTION_TEXT]", 
+        "rekall: error: unrecognized arguments: --profile ntfs"
+    ], 
+    "return_code": 2, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/www-data/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "--format": "test", 
+        "commandline": "raise", 
+        "tempdir": "/tmp/tmp9Pe3iU/TestRaisingPluginThread-3", 
+        "test_class": "TestRaisingPlugin", 
+        "mft": 42, 
+        "--cache_dir": "/home/www-data/rekall-test/ntfs/../profile_cache/", 
+        "executed_command": "rekall  -v --profile 'ntfs' --cache_dir '/home/www-data/rekall-test/ntfs/../profile_cache/' --format 'test' --filename '/home/www-data/rekall-test/ntfs/ntfs1-gen1.E01' - raise", 
+        "--profile": "ntfs", 
+        "path": "RAW/20076517123273.pdf", 
+        "testdir": "/home/www-data/rekall-test/ntfs"
+    }
+}

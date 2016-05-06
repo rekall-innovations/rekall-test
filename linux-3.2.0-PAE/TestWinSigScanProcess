@@ -1,0 +1,20 @@
+{
+    "time_used": 3.5291378498077393, 
+    "output": [], 
+    "logging": "CRITICAL:rekall.1:No signature given.\n", 
+    "return_code": 0, 
+    "options": {
+        "proc_regex": ".", 
+        "--filename": "/home/www-data/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "--format": "test", 
+        "commandline": "sigscan %(signature)s --proc_regex %(proc_regex)s", 
+        "pid": 2362, 
+        "executable": "rekall ", 
+        "test_class": "TestWinSigScanProcess", 
+        "--cache_dir": "/home/www-data/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
+        "signature": "", 
+        "tempdir": "/tmp/tmpO1f8rG/TestWinSigScanProcessThread-1", 
+        "executed_command": "rekall  --cache_dir '/home/www-data/rekall-test/linux-3.2.0-PAE/../profile_cache/' --format 'test' --filename '/home/www-data/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - sigscan  --proc_regex .", 
+        "testdir": "/home/www-data/rekall-test/linux-3.2.0-PAE"
+    }
+}
