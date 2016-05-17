@@ -2,3 +2,7 @@ output
 profile_cache/*
 runs
 images
+*BACKUP*
+*LOCAL*
+*BASE*
+*REMOTE*
