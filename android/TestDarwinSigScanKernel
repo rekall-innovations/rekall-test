@@ -1,0 +1,25 @@
+{
+    "time_used": 3.1356770992279053, 
+    "output": [], 
+    "logging": "CRITICAL:rekall.1:No signature given.\n", 
+    "return_code": 0, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/www-data/rekall-test/android/Evo4GRodeo.aff4", 
+        "--format": "test", 
+        "commandline": "sigscan %(signature)s --scan_kernel", 
+        "proc_name": "sh", 
+        "pid": 1872, 
+        "tempdir": "/tmp/tmpQWSnwo/TestDarwinSigScanKernelThread-3", 
+        "test_class": "TestDarwinSigScanKernel", 
+        "--cache_dir": "/home/www-data/rekall-test/android/../profile_cache/", 
+        "signature": "", 
+        "--profile": "/home/www-data/rekall-test/android/Evo4G.json", 
+        "executed_command": "rekall  --profile '/home/www-data/rekall-test/android/Evo4G.json' --cache_dir '/home/www-data/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/www-data/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - sigscan  --scan_kernel", 
+        "testdir": "/home/www-data/rekall-test/android"
+    }
+}

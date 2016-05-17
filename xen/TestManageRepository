@@ -1,0 +1,22 @@
+{
+    "time_used": 1.2857179641723633, 
+    "output": [], 
+    "logging": [
+        "DEBUG:rekall.1:Logging level set to 10", 
+        "DEBUG:rekall.1:Running plugin (manage_repo) with args (()) kwargs ({'path_to_repository': '.'})"
+    ], 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/www-data/rekall-test/xen/xen-guest.E01", 
+        "--format": "test", 
+        "commandline": "manage_repo", 
+        "cache": "memory", 
+        "pid": 659, 
+        "test_class": "TestManageRepository", 
+        "--cache_dir": "/home/www-data/rekall-test/xen/../profile_cache/", 
+        "tempdir": "/tmp/tmpsp8Uy3/TestManageRepositoryThread-2", 
+        "executed_command": "rekall  -v --cache_dir '/home/www-data/rekall-test/xen/../profile_cache/' --format 'test' --filename '/home/www-data/rekall-test/xen/xen-guest.E01' - manage_repo", 
+        "testdir": "/home/www-data/rekall-test/xen"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "time_used": 3.475764036178589, 
+    "output": [], 
+    "logging": "CRITICAL:rekall.1:No signature given.\n", 
+    "return_code": 0, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/www-data/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "--format": "test", 
+        "commandline": "sigscan %(signature)s --scan_physical", 
+        "pid": 2362, 
+        "test_class": "TestDarwinSigScanPhysical", 
+        "--cache_dir": "/home/www-data/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
+        "signature": "", 
+        "tempdir": "/tmp/tmpO1f8rG/TestDarwinSigScanPhysicalThread-2", 
+        "executed_command": "rekall  --cache_dir '/home/www-data/rekall-test/linux-3.2.0-PAE/../profile_cache/' --format 'test' --filename '/home/www-data/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' - sigscan  --scan_physical", 
+        "testdir": "/home/www-data/rekall-test/linux-3.2.0-PAE"
+    }
+}
