@@ -1,0 +1,44 @@
+{
+    "logging": [
+        "2016-06-28 16:11:16,498:DEBUG:rekall.1:Logging level set to 10", 
+        "usage: rekall [-v] [-q] [--debug] [--output_style {concise,full}] [--logging_level {DEBUG,INFO,WARNING,ERROR,CRITICAL}]", 
+        "              [--log_domain [{PageTranslation} [{PageTranslation} ...]]] [--pager PAGER] [--paging_limit PAGING_LIMIT]", 
+        "              [--colors {auto,yes,no}] [-F {text,json,wide,test,data}] [--plugin [PLUGIN [PLUGIN ...]]] [-h]", 
+        "              [--cache {file,memory,timed}] [--repository_path [REPOSITORY_PATH [REPOSITORY_PATH ...]]] [-f FILENAME]", 
+        "              [--buffer_size BUFFER_SIZE] [--output OUTPUT] [--max_collector_cost MAX_COLLECTOR_COST] [--home HOME]", 
+        "              [--logging_format LOGGING_FORMAT] [--performance {normal,fast,thorough}] [--dtb DTB] [-o FILE_OFFSET]", 
+        "              [--ept EPT [EPT ...]] [--timezone TIMEZONE] [--cache_dir CACHE_DIR]", 
+        "              [--name_resolution_strategies [{Module,Symbol,Export} [{Module,Symbol,Export} ...]]]", 
+        "              [--autodetect_build_local_tracked [AUTODETECT_BUILD_LOCAL_TRACKED [AUTODETECT_BUILD_LOCAL_TRACKED ...]]]", 
+        "              [--pagefile [PAGEFILE [PAGEFILE ...]]]", 
+        "              [--autodetect {linux_index,nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux} [{linux_index,nt_index,osx,pe,windows_kernel_file,rsds,ntfs,linux} ...]]", 
+        "              [--autodetect_threshold AUTODETECT_THRESHOLD] [--autodetect_build_local {full,basic,none}]", 
+        "              [--autodetect_scan_length AUTODETECT_SCAN_LENGTH] [--live] [--version] [-]", 
+        "              [--artifact_files [ARTIFACT_FILES [ARTIFACT_FILES ...]]] [--definitions [DEFINITIONS [DEFINITIONS ...]]]", 
+        "              artifacts [artifacts ...]", 
+        "rekall: error: unrecognized arguments: --profile"
+    ], 
+    "time_used": 2.0235438346862793, 
+    "return_code": 2, 
+    "output": [], 
+    "executed_command": "rekall  -v --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - artifact_collector", 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--format": "test", 
+        "commandline": "artifact_collector", 
+        "proc_name": "sh", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "test_class": "TestArtifactsCollector", 
+        "tempdir": "/tmp/tmpo0BXrg/TestArtifactsCollectorThread-1", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "--cache": "memory", 
+        "debug": false, 
+        "pids": 1872, 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}
