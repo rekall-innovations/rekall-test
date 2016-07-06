@@ -1,41 +1,43 @@
 #!/bin/bash
 if [ "$1" == "ok" ]; then
-   cp /Users/scudette/projects/rekall-test/tigger/output/TestBuildProfileLocally /Users/scudette/projects/rekall-test/tigger/TestBuildProfileLocally
+   cp /home/scudette/projects/rekall-test/tigger/output/TestBuildProfileLocally /home/scudette/projects/rekall-test/tigger/TestBuildProfileLocally
 elif [ "$1" == "meld" ]; then
-   meld /Users/scudette/projects/rekall-test/tigger/output/TestBuildProfileLocally /Users/scudette/projects/rekall-test/tigger/TestBuildProfileLocally
+   meld /home/scudette/projects/rekall-test/tigger/output/TestBuildProfileLocally /home/scudette/projects/rekall-test/tigger/TestBuildProfileLocally
 elif [ "$1" == "diff" ]; then
-   diff /Users/scudette/projects/rekall-test/tigger/output/TestBuildProfileLocally /Users/scudette/projects/rekall-test/tigger/TestBuildProfileLocally
+   diff /home/scudette/projects/rekall-test/tigger/output/TestBuildProfileLocally /home/scudette/projects/rekall-test/tigger/TestBuildProfileLocally
 elif [ "$1" == "run" ]; then
-   rekall  -v --cache 'memory' --cache_dir '/Users/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - build_local_profile ntkrnlpa BD8F451F3E754ED8A34B50560CEB08E31 --dumpfile /var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpxodq6M/TestBuildProfileLocallyThread-3/output
+   rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - build_local_profile --module_name=ntkrnlpa --guid=BD8F451F3E754ED8A34B50560CEB08E31 --dumpfile /tmp/tmpt9zMur/TestBuildProfileLocallyThread-1/output
 else
-   less /Users/scudette/projects/rekall-test/tigger/output/TestBuildProfileLocally
+   less /home/scudette/projects/rekall-test/tigger/output/TestBuildProfileLocally
 fi
 exit 0
 {
-    "errors": {}, 
-    "logging": [
-        "DEBUG:rekall.1:Logging level set to 10", 
-        "DEBUG:rekall.1:Running plugin (build_local_profile) with args (()) kwargs ({'dumpfile': '/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpxodq6M/TestBuildProfileLocallyThread-3/output', 'module_name': 'ntkrnlpa', 'guid': 'BD8F451F3E754ED8A34B50560CEB08E31'})", 
-        "DEBUG:rekall.1:Opened url https://raw.githubusercontent.com/google/rekall-profiles/master/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened url http://profiles.rekall-forensic.com/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
-        "DEBUG:rekall.1:Opened local file /Users/scudette/projects/rekall-test/profile_cache/v1.0/mspdb.gz", 
-        "INFO:rekall.1:Loaded profile mspdb from Local Cache Directory:/Users/scudette/projects/rekall-test/profile_cache (in 0.0231709480286 sec)"
-    ], 
-    "time_used": 24.530571937561035, 
-    "return_code": 0, 
-    "failures": {
-        "testCase (rekall.plugins.tools.profile_tool.TestBuildProfileLocally)": "Traceback (most recent call last):\n  File \"/Users/scudette/projects/rekall/rekall-core/rekall/testlib.py\", line 234, in run\n    testMethod()\n  File \"/Users/scudette/projects/rekall/rekall-core/rekall/testlib.py\", line 331, in testCase\n    self.assertEqual(self.baseline['hashes'], self.current['hashes'])\nAssertionError: {u'output': u'9478e5d2704aa513b1fefa4fd2d3e807'} != {'output': 'bc178d3df9cd5276ec7c6d0646983d87'}\n- {u'output': u'9478e5d2704aa513b1fefa4fd2d3e807'}\n+ {'output': 'bc178d3df9cd5276ec7c6d0646983d87'}\n"
+    "failours": {
+        "testCase (rekall.plugins.tools.profile_tool.TestBuildProfileLocally)": {
+            "testCase (rekall.plugins.tools.profile_tool.TestBuildProfileLocally)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 300, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 417, in testCase\n    self.assertEqual(self.baseline['hashes'], self.current['hashes'])\nAssertionError: {u'output': u'bc178d3df9cd5276ec7c6d0646983d87'} != {'output': 'd5e123e065a0ebc88cc4e44323bb428b'}\n- {u'output': u'bc178d3df9cd5276ec7c6d0646983d87'}\n+ {'output': 'd5e123e065a0ebc88cc4e44323bb428b'}\n"
+        }
     }, 
-    "output": [
-        "Extracting cabinet: /var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpGjqC19/ntkrnlpa.pd_", 
+    "errors": {
+        "testCase (rekall.plugins.tools.profile_tool.TestBuildProfileLocally)": {}
+    }, 
+    "logging": [
+        "2016-07-06 09:37:50,909:DEBUG:rekall.1:Logging level set to 10", 
+        "2016-07-06 09:37:50,910:DEBUG:rekall.1:Running plugin (build_local_profile) with args (()) kwargs ({'dumpfile': '/tmp/tmpt9zMur/TestBuildProfileLocallyThread-1/output', 'module_name': 'ntkrnlpa', 'guid': 'BD8F451F3E754ED8A34B50560CEB08E31'})", 
+        "2016-07-06 09:37:50,910:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
+        "2016-07-06 09:37:50,918:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
+        "Extracting cabinet: /tmp/tmpRebUzm/ntkrnlpa.pd_", 
         "  extracting ntkrnlpa.pdb", 
         "", 
-        "All done, no errors."
+        "All done, no errors.", 
+        "2016-07-06 09:37:51,503:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/mspdb.gz", 
+        "2016-07-06 09:37:51,514:INFO:rekall.1:Loaded profile mspdb from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0116970539093 sec)"
     ], 
+    "time_used": 9.216413974761963, 
+    "return_code": 0, 
+    "output": [], 
+    "executed_command": "rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - build_local_profile --module_name=ntkrnlpa --guid=BD8F451F3E754ED8A34B50560CEB08E31 --dumpfile /tmp/tmpt9zMur/TestBuildProfileLocallyThread-1/output", 
     "hashes": {
-        "output": "bc178d3df9cd5276ec7c6d0646983d87"
+        "output": "d5e123e065a0ebc88cc4e44323bb428b"
     }, 
     "options": {
         "--name_resolution_strategies": [
@@ -43,17 +45,17 @@ exit 0
             "Symbol"
         ], 
         "executable": "rekall ", 
-        "--filename": "/Users/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
         "--format": "test", 
+        "commandline": "build_local_profile --module_name=%(pdb_name)s --guid=%(guid)s --dumpfile %(tempdir)s/output", 
         "pdb_name": "ntkrnlpa", 
-        "commandline": "build_local_profile %(pdb_name)s %(guid)s --dumpfile %(tempdir)s/output", 
-        "pid": 1724, 
+        "tempdir": "/tmp/tmpt9zMur/TestBuildProfileLocallyThread-1", 
         "test_class": "TestBuildProfileLocally", 
-        "--cache_dir": "/Users/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
         "--cache": "memory", 
-        "tempdir": "/var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpxodq6M/TestBuildProfileLocallyThread-3", 
-        "executed_command": "rekall  -v --cache 'memory' --cache_dir '/Users/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/Users/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - build_local_profile ntkrnlpa BD8F451F3E754ED8A34B50560CEB08E31 --dumpfile /var/folders/y8/670pn1dx55x01z5fs_6r2gnh003jp1/T/tmpxodq6M/TestBuildProfileLocallyThread-3/output", 
+        "debug": true, 
+        "pids": 1724, 
         "guid": "BD8F451F3E754ED8A34B50560CEB08E31", 
-        "testdir": "/Users/scudette/projects/rekall-test/tigger"
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }
