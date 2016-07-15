@@ -1,0 +1,20 @@
+{
+    "time_used": 1.4066696166992188e-05, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "tempdir": "/tmp/tmpz9aknV/TestYaraParserThread-2", 
+        "test_class": "TestYaraParser", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "--cache": "memory", 
+        "debug": false, 
+        "pids": 1724, 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
+    }
+}

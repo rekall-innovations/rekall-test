@@ -1,0 +1,16 @@
+{
+    "time_used": 1.3113021850585938e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/xen/xen-guest.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "tempdir": "/tmp/tmpd0LEdI/TestYaraParserThread-3", 
+        "test_class": "TestYaraParser", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/xen/../profile_cache/", 
+        "--cache": "memory", 
+        "debug": false, 
+        "pids": 659, 
+        "testdir": "/home/scudette/projects/rekall-test/xen"
+    }
+}
