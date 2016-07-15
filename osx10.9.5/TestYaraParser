@@ -1,0 +1,20 @@
+{
+    "time_used": 9.059906005859375e-06, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/osx10.9.5/vmem.e01", 
+        "--format": "test", 
+        "commandline": "", 
+        "tempdir": "/tmp/tmpXnZmAy/TestYaraParserThread-4", 
+        "test_class": "TestYaraParser", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/osx10.9.5/../profile_cache/", 
+        "--cache": "memory", 
+        "debug": false, 
+        "pids": 232, 
+        "testdir": "/home/scudette/projects/rekall-test/osx10.9.5"
+    }
+}
