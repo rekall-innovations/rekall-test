@@ -1,0 +1,18 @@
+{
+    "time_used": 1.0967254638671875e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/ntfs/ntfs1-gen1.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "--profile": "ntfs", 
+        "test_class": "TestYaraParser", 
+        "mft": 42, 
+        "tempdir": "/tmp/tmpBG7cAN/TestYaraParserThread-3", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/ntfs/../profile_cache/", 
+        "--cache": "memory", 
+        "debug": false, 
+        "path": "RAW/20076517123273.pdf", 
+        "testdir": "/home/scudette/projects/rekall-test/ntfs"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "time_used": 1.1920928955078125e-05, 
+    "options": {
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01", 
+        "--format": "test", 
+        "commandline": "", 
+        "tempdir": "/tmp/tmpDdYJnC/TestYaraParserThread-4", 
+        "test_class": "TestYaraParser", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/", 
+        "--cache": "memory", 
+        "debug": false, 
+        "pids": 2362, 
+        "testdir": "/home/scudette/projects/rekall-test/linux-3.2.0-PAE"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "time_used": 1.5020370483398438e-05, 
+    "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
+        "executable": "rekall ", 
+        "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
+        "--format": "test", 
+        "commandline": "", 
+        "proc_name": "sh", 
+        "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "test_class": "TestYaraParser", 
+        "tempdir": "/tmp/tmp3D3cW8/TestYaraParserThread-1", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "--cache": "memory", 
+        "debug": false, 
+        "pids": 1872, 
+        "testdir": "/home/scudette/projects/rekall-test/android"
+    }
+}
