@@ -1,12 +1,130 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/android/output/TestBanner /home/scudette/projects/rekall-test/android/TestBanner
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/android/output/TestBanner /home/scudette/projects/rekall-test/android/TestBanner
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/android/output/TestBanner /home/scudette/projects/rekall-test/android/TestBanner
+elif [ "$1" == "run" ]; then
+   rekall  -v --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - banner
+else
+   less /home/scudette/projects/rekall-test/android/output/TestBanner
+fi
+exit 0
 {
-    "time_used": 2.98506498336792, 
+    "failours": {
+        "testCase (__main__.TestBanner)": {
+            "testCase (__main__.TestBanner)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 300, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 354, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 275, in assertListEqual\n    self.assertEqual(x, y)\nAssertionError: u'                                     Banner                                    [truncated]... != u'                                     banner                                    [truncated]...\n-                                      Banner                                     \n?                                      ^\n+                                      banner                                     \n?                                      ^\n\n"
+        }
+    }, 
+    "errors": {
+        "testCase (__main__.TestBanner)": {}
+    }, 
+    "logging": [
+        "2016-10-20 11:21:22,526:DEBUG:rekall.1:Logging level set to 10", 
+        "2016-10-20 11:21:22,527:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "2016-10-20 11:21:23,111:DEBUG:rekall.1:Voting round with base: None", 
+        "2016-10-20 11:21:23,111:DEBUG:rekall.1:Trying <class 'rekall.plugins.response.common.APIDummyPhysicalAddressSpace'> ", 
+        "2016-10-20 11:21:23,112:DEBUG:rekall.1:Failed instantiating APIDummyPhysicalAddressSpace: Instantiation failed for unspecified reason", 
+        "2016-10-20 11:21:23,112:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
+        "2016-10-20 11:21:23,112:DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: No base address space provided", 
+        "2016-10-20 11:21:23,112:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
+        "2016-10-20 11:21:23,112:DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Must stack on another address space", 
+        "2016-10-20 11:21:23,112:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
+        "2016-10-20 11:21:23,113:DEBUG:rekall.1:Failed instantiating VMemAddressSpace: No base address space provided", 
+        "2016-10-20 11:21:23,113:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
+        "2016-10-20 11:21:23,114:DEBUG:rekall.1:Failed instantiating EWFAddressSpace: No base address space provided", 
+        "2016-10-20 11:21:23,114:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashBMP'> ", 
+        "2016-10-20 11:21:23,114:DEBUG:rekall.1:Failed instantiating WindowsCrashBMP: Must stack on another address space", 
+        "2016-10-20 11:21:23,114:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.KCoreAddressSpace'> ", 
+        "2016-10-20 11:21:23,114:DEBUG:rekall.1:Failed instantiating KCoreAddressSpace: Must stack on another address space", 
+        "2016-10-20 11:21:23,115:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace32'> ", 
+        "2016-10-20 11:21:23,115:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace32: No base address space provided", 
+        "2016-10-20 11:21:23,115:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace64'> ", 
+        "2016-10-20 11:21:23,115:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace64: No base address space provided", 
+        "2016-10-20 11:21:23,115:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.Elf64CoreDump'> ", 
+        "2016-10-20 11:21:23,115:DEBUG:rekall.1:Failed instantiating Elf64CoreDump: Must stack on another address space", 
+        "2016-10-20 11:21:23,116:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.lime.LimeAddressSpace'> ", 
+        "2016-10-20 11:21:23,116:DEBUG:rekall.1:Failed instantiating LimeAddressSpace: Must be layered on another address space.", 
+        "2016-10-20 11:21:23,116:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
+        "2016-10-20 11:21:23,130:INFO:rekall.1:Added aff4://ad86fa73-d406-4014-9d30-257814b88af3/home/scudette/images/android/Evo4GRodeo.lime as physical memory", 
+        "2016-10-20 11:21:23,131:DEBUG:rekall.1:Succeeded instantiating AFF4AddressSpace", 
+        "2016-10-20 11:21:23,132:DEBUG:rekall.1:Voting round with base: AFF4AddressSpace", 
+        "2016-10-20 11:21:23,132:DEBUG:rekall.1:Trying <class 'rekall.plugins.response.common.APIDummyPhysicalAddressSpace'> ", 
+        "2016-10-20 11:21:23,132:DEBUG:rekall.1:Failed instantiating APIDummyPhysicalAddressSpace: Instantiation failed for unspecified reason", 
+        "2016-10-20 11:21:23,132:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
+        "2016-10-20 11:21:23,137:DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0x4c694d45", 
+        "2016-10-20 11:21:23,137:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
+        "2016-10-20 11:21:23,137:DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Header signature invalid", 
+        "2016-10-20 11:21:23,137:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
+        "2016-10-20 11:21:23,137:DEBUG:rekall.1:Failed instantiating VMemAddressSpace: Only VMEM files supported.", 
+        "2016-10-20 11:21:23,137:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
+        "2016-10-20 11:21:23,138:DEBUG:rekall.1:Failed instantiating EWFAddressSpace: EWF signature not present", 
+        "2016-10-20 11:21:23,138:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashBMP'> ", 
+        "2016-10-20 11:21:23,139:DEBUG:rekall.1:Failed instantiating WindowsCrashBMP: Header signature invalid", 
+        "2016-10-20 11:21:23,139:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.KCoreAddressSpace'> ", 
+        "2016-10-20 11:21:23,139:DEBUG:rekall.1:Failed instantiating KCoreAddressSpace: Header signature invalid", 
+        "2016-10-20 11:21:23,139:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace32'> ", 
+        "2016-10-20 11:21:23,139:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace32: Header signature invalid", 
+        "2016-10-20 11:21:23,139:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace64'> ", 
+        "2016-10-20 11:21:23,140:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace64: Header signature invalid", 
+        "2016-10-20 11:21:23,140:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.Elf64CoreDump'> ", 
+        "2016-10-20 11:21:23,140:DEBUG:rekall.1:Failed instantiating Elf64CoreDump: Header signature invalid", 
+        "2016-10-20 11:21:23,140:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.lime.LimeAddressSpace'> ", 
+        "2016-10-20 11:21:23,146:DEBUG:rekall.1:Succeeded instantiating LimeAddressSpace", 
+        "2016-10-20 11:21:23,147:DEBUG:rekall.1:Voting round with base: LimeAddressSpace", 
+        "2016-10-20 11:21:23,147:DEBUG:rekall.1:Trying <class 'rekall.plugins.response.common.APIDummyPhysicalAddressSpace'> ", 
+        "2016-10-20 11:21:23,147:DEBUG:rekall.1:Failed instantiating APIDummyPhysicalAddressSpace: Instantiation failed for unspecified reason", 
+        "2016-10-20 11:21:23,147:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
+        "2016-10-20 11:21:23,149:DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0x0", 
+        "2016-10-20 11:21:23,149:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
+        "2016-10-20 11:21:23,149:DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Header signature invalid", 
+        "2016-10-20 11:21:23,149:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
+        "2016-10-20 11:21:23,149:DEBUG:rekall.1:Failed instantiating VMemAddressSpace: Only VMEM files supported.", 
+        "2016-10-20 11:21:23,149:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
+        "2016-10-20 11:21:23,150:DEBUG:rekall.1:Failed instantiating EWFAddressSpace: EWF signature not present", 
+        "2016-10-20 11:21:23,150:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashBMP'> ", 
+        "2016-10-20 11:21:23,150:DEBUG:rekall.1:Failed instantiating WindowsCrashBMP: Header signature invalid", 
+        "2016-10-20 11:21:23,150:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.KCoreAddressSpace'> ", 
+        "2016-10-20 11:21:23,151:DEBUG:rekall.1:Failed instantiating KCoreAddressSpace: Header signature invalid", 
+        "2016-10-20 11:21:23,151:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace32'> ", 
+        "2016-10-20 11:21:23,151:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace32: Header signature invalid", 
+        "2016-10-20 11:21:23,151:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace64'> ", 
+        "2016-10-20 11:21:23,153:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace64: Header signature invalid", 
+        "2016-10-20 11:21:23,154:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.Elf64CoreDump'> ", 
+        "2016-10-20 11:21:23,154:DEBUG:rekall.1:Failed instantiating Elf64CoreDump: Header signature invalid", 
+        "2016-10-20 11:21:23,154:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.lime.LimeAddressSpace'> ", 
+        "2016-10-20 11:21:23,154:DEBUG:rekall.1:Failed instantiating LimeAddressSpace: Invalid Lime header signature", 
+        "2016-10-20 11:21:23,154:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
+        "2016-10-20 11:21:23,155:DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Must stack on another address space", 
+        "2016-10-20 11:21:23,155:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
+        "2016-10-20 11:21:23,155:DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: Must be mapped directly over a raw device.", 
+        "2016-10-20 11:21:23,155:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
+        "2016-10-20 11:21:23,155:DEBUG:rekall.1:Failed instantiating FileAddressSpace: Must be first Address Space", 
+        "2016-10-20 11:21:23,156:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.mmap_address_space.MmapFileAddressSpace'> ", 
+        "2016-10-20 11:21:23,156:DEBUG:rekall.1:Failed instantiating MmapFileAddressSpace: Must be first Address Space", 
+        "2016-10-20 11:21:23,156:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.amd64.VTxPagedMemory'> ", 
+        "2016-10-20 11:21:23,157:DEBUG:rekall.1:Failed instantiating VTxPagedMemory: No more EPTs specified", 
+        "2016-10-20 11:21:23,157:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.GlobalOffsetAddressSpace'> ", 
+        "2016-10-20 11:21:23,157:DEBUG:rekall.1:Failed instantiating GlobalOffsetAddressSpace: File offset not specified.", 
+        "2016-10-20 11:21:23,158:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pagefile.PagefilePhysicalAddressSpace'> ", 
+        "2016-10-20 11:21:23,158:DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
+        "2016-10-20 11:21:23,158:INFO:rekall.1:Autodetected physical address space LimeAddressSpace", 
+        "2016-10-20 11:21:23,158:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/android/Evo4G.json", 
+        "2016-10-20 11:21:23,759:DEBUG:rekall.1:Running plugin (banner) with args (()) kwargs ({'profile': '/home/scudette/projects/rekall-test/android/Evo4G.json', 'verbosity': 1})", 
+        "2016-10-20 11:21:23,760:DEBUG:rekall.1:DTB not specified. Delegating to find_dtb.", 
+        "2016-10-20 11:21:23,761:DEBUG:rekall.1:Calculating page offset...", 
+        "2016-10-20 11:21:23,761:DEBUG:rekall.1:Detected ARM Linux."
+    ], 
+    "time_used": 4.766906976699829, 
+    "return_code": 0, 
     "output": [
-        "                                     Banner                                     ", 
+        "                                     banner                                     ", 
         "--------------------------------------------------------------------------------", 
         "Linux version 2.6.35.10-gc0a661b (joe@zuul) (gcc version 4.4.3 (GCC) ) #2       ", 
         "PREEMPT Sat Aug 4 12:26:50 CDT 2012                                             "
     ], 
-    "return_code": 0, 
+    "executed_command": "rekall  -v --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - banner", 
     "options": {
         "--name_resolution_strategies": [
             "Module", 
@@ -14,14 +132,16 @@
         ], 
         "executable": "rekall ", 
         "--filename": "/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4", 
-        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "--format": "test", 
         "commandline": "banner", 
-        "pid": 1872, 
-        "--renderer": "test", 
-        "tempdir": "/tmp/tmpLK4HON/TestBannerThread-3", 
-        "test_class": "TestBanner", 
+        "proc_name": "sh", 
         "--profile": "/home/scudette/projects/rekall-test/android/Evo4G.json", 
-        "executed_command": "rekall  --profile '/home/scudette/projects/rekall-test/android/Evo4G.json' --renderer 'test' --cache_dir '/home/scudette/projects/rekall-test/android/../profile_cache/' --filename '/home/scudette/projects/rekall-test/android/Evo4GRodeo.aff4' --name_resolution_strategies 'Module' 'Symbol' - banner", 
+        "test_class": "TestBanner", 
+        "tempdir": "/tmp/tmpSutmp0/TestBannerThread-4", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/android/../profile_cache/", 
+        "--cache": "memory", 
+        "debug": false, 
+        "pids": 1872, 
         "testdir": "/home/scudette/projects/rekall-test/android"
     }
 }

@@ -1,18 +1,160 @@
+#!/bin/bash
+if [ "$1" == "ok" ]; then
+   cp /home/scudette/projects/rekall-test/tigger/output/TestPoolTracker /home/scudette/projects/rekall-test/tigger/TestPoolTracker
+elif [ "$1" == "meld" ]; then
+   meld /home/scudette/projects/rekall-test/tigger/output/TestPoolTracker /home/scudette/projects/rekall-test/tigger/TestPoolTracker
+elif [ "$1" == "diff" ]; then
+   diff /home/scudette/projects/rekall-test/tigger/output/TestPoolTracker /home/scudette/projects/rekall-test/tigger/TestPoolTracker
+elif [ "$1" == "run" ]; then
+   rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - pool_tracker
+else
+   less /home/scudette/projects/rekall-test/tigger/output/TestPoolTracker
+fi
+exit 0
 {
-    "time_used": 1.91935396194458, 
-    "output": [
-        "Tag ||      NP Alloc      || NP Bytes ||      P Alloc       || P Bytes  ", 
-        "----||--------------------||----------||--------------------||----------"
+    "failours": {
+        "testCase (__main__.TestPoolTracker)": {
+            "testCase (__main__.TestPoolTracker)": "Traceback (most recent call last):\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 300, in run\n    testMethod()\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 354, in testCase\n    self.assertListEqual(previous, current)\n  File \"/home/scudette/rekall/rekall-core/rekall/testlib.py\", line 275, in assertListEqual\n    self.assertEqual(x, y)\nAssertionError: u'----||--------------------||----------||--------------------||----------' != u'----||--------------------||--------------||--------------------||-----------' [truncated]...\n- ----||--------------------||----------||--------------------||----------\n+ ----||--------------------||--------------||--------------------||-----------\n?                             ++++                                            +\n\n"
+        }
+    }, 
+    "errors": {
+        "testCase (__main__.TestPoolTracker)": {}
+    }, 
+    "logging": [
+        "2016-10-19 19:53:36,236:DEBUG:rekall.1:Logging level set to 10", 
+        "2016-10-19 19:53:36,237:DEBUG:rekall.1:Voting round with base: None", 
+        "2016-10-19 19:53:36,237:DEBUG:rekall.1:Trying <class 'rekall.plugins.response.common.APIDummyPhysicalAddressSpace'> ", 
+        "2016-10-19 19:53:36,238:DEBUG:rekall.1:Failed instantiating APIDummyPhysicalAddressSpace: Instantiation failed for unspecified reason", 
+        "2016-10-19 19:53:36,238:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
+        "2016-10-19 19:53:36,238:DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: No base address space provided", 
+        "2016-10-19 19:53:36,238:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
+        "2016-10-19 19:53:36,238:DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Must stack on another address space", 
+        "2016-10-19 19:53:36,238:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
+        "2016-10-19 19:53:36,239:DEBUG:rekall.1:Failed instantiating VMemAddressSpace: No base address space provided", 
+        "2016-10-19 19:53:36,239:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
+        "2016-10-19 19:53:36,240:DEBUG:rekall.1:Failed instantiating EWFAddressSpace: No base address space provided", 
+        "2016-10-19 19:53:36,240:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashBMP'> ", 
+        "2016-10-19 19:53:36,240:DEBUG:rekall.1:Failed instantiating WindowsCrashBMP: Must stack on another address space", 
+        "2016-10-19 19:53:36,240:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.KCoreAddressSpace'> ", 
+        "2016-10-19 19:53:36,240:DEBUG:rekall.1:Failed instantiating KCoreAddressSpace: Must stack on another address space", 
+        "2016-10-19 19:53:36,240:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace32'> ", 
+        "2016-10-19 19:53:36,240:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace32: No base address space provided", 
+        "2016-10-19 19:53:36,240:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace64'> ", 
+        "2016-10-19 19:53:36,241:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace64: No base address space provided", 
+        "2016-10-19 19:53:36,241:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.Elf64CoreDump'> ", 
+        "2016-10-19 19:53:36,241:DEBUG:rekall.1:Failed instantiating Elf64CoreDump: Must stack on another address space", 
+        "2016-10-19 19:53:36,241:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.lime.LimeAddressSpace'> ", 
+        "2016-10-19 19:53:36,241:DEBUG:rekall.1:Failed instantiating LimeAddressSpace: Must be layered on another address space.", 
+        "2016-10-19 19:53:36,241:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
+        "2016-10-19 19:53:36,242:DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Unable to open AFF4 volume: No physical memory categories found.", 
+        "2016-10-19 19:53:36,242:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
+        "2016-10-19 19:53:36,243:DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: MacPmem would declare a YML device at /home/scudette/projects/rekall-test/tigger/tigger.vmem.E01_info", 
+        "2016-10-19 19:53:36,243:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
+        "2016-10-19 19:53:36,243:DEBUG:rekall.1:Succeeded instantiating FileAddressSpace", 
+        "2016-10-19 19:53:36,243:DEBUG:rekall.1:Voting round with base: FileAddressSpace", 
+        "2016-10-19 19:53:36,243:DEBUG:rekall.1:Trying <class 'rekall.plugins.response.common.APIDummyPhysicalAddressSpace'> ", 
+        "2016-10-19 19:53:36,243:DEBUG:rekall.1:Failed instantiating APIDummyPhysicalAddressSpace: Instantiation failed for unspecified reason", 
+        "2016-10-19 19:53:36,243:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
+        "2016-10-19 19:53:36,244:DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0x9465645", 
+        "2016-10-19 19:53:36,244:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
+        "2016-10-19 19:53:36,244:DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Header signature invalid", 
+        "2016-10-19 19:53:36,244:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
+        "2016-10-19 19:53:36,244:DEBUG:rekall.1:Failed instantiating VMemAddressSpace: Only VMEM files supported.", 
+        "2016-10-19 19:53:36,245:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
+        "2016-10-19 19:53:36,249:DEBUG:rekall.1:Succeeded instantiating EWFAddressSpace", 
+        "2016-10-19 19:53:36,249:DEBUG:rekall.1:Voting round with base: EWFAddressSpace", 
+        "2016-10-19 19:53:36,249:DEBUG:rekall.1:Trying <class 'rekall.plugins.response.common.APIDummyPhysicalAddressSpace'> ", 
+        "2016-10-19 19:53:36,249:DEBUG:rekall.1:Failed instantiating APIDummyPhysicalAddressSpace: Instantiation failed for unspecified reason", 
+        "2016-10-19 19:53:36,250:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMSSAddressSpace'> ", 
+        "2016-10-19 19:53:36,251:DEBUG:rekall.1:Failed instantiating VMSSAddressSpace: Invalid VMware signature: 0xf000ff53", 
+        "2016-10-19 19:53:36,251:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.macho.MACHOCoreDump'> ", 
+        "2016-10-19 19:53:36,252:DEBUG:rekall.1:Failed instantiating MACHOCoreDump: Header signature invalid", 
+        "2016-10-19 19:53:36,252:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.vmem.VMemAddressSpace'> ", 
+        "2016-10-19 19:53:36,252:DEBUG:rekall.1:Failed instantiating VMemAddressSpace: Only VMEM files supported.", 
+        "2016-10-19 19:53:36,252:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.ewf.EWFAddressSpace'> ", 
+        "2016-10-19 19:53:36,253:DEBUG:rekall.1:Failed instantiating EWFAddressSpace: EWF signature not present", 
+        "2016-10-19 19:53:36,253:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashBMP'> ", 
+        "2016-10-19 19:53:36,253:DEBUG:rekall.1:Failed instantiating WindowsCrashBMP: Header signature invalid", 
+        "2016-10-19 19:53:36,253:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.KCoreAddressSpace'> ", 
+        "2016-10-19 19:53:36,253:DEBUG:rekall.1:Failed instantiating KCoreAddressSpace: Header signature invalid", 
+        "2016-10-19 19:53:36,253:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace32'> ", 
+        "2016-10-19 19:53:36,254:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace32: Header signature invalid", 
+        "2016-10-19 19:53:36,254:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.crash.WindowsCrashDumpSpace64'> ", 
+        "2016-10-19 19:53:36,254:DEBUG:rekall.1:Failed instantiating WindowsCrashDumpSpace64: Header signature invalid", 
+        "2016-10-19 19:53:36,254:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.elfcore.Elf64CoreDump'> ", 
+        "2016-10-19 19:53:36,254:DEBUG:rekall.1:Failed instantiating Elf64CoreDump: Header signature invalid", 
+        "2016-10-19 19:53:36,255:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.lime.LimeAddressSpace'> ", 
+        "2016-10-19 19:53:36,255:DEBUG:rekall.1:Failed instantiating LimeAddressSpace: Invalid Lime header signature", 
+        "2016-10-19 19:53:36,255:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.aff4.AFF4AddressSpace'> ", 
+        "2016-10-19 19:53:36,255:DEBUG:rekall.1:Failed instantiating AFF4AddressSpace: Must stack on another address space", 
+        "2016-10-19 19:53:36,255:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pmem.MacPmemAddressSpace'> ", 
+        "2016-10-19 19:53:36,255:DEBUG:rekall.1:Failed instantiating MacPmemAddressSpace: Must be mapped directly over a raw device.", 
+        "2016-10-19 19:53:36,255:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.FileAddressSpace'> ", 
+        "2016-10-19 19:53:36,256:DEBUG:rekall.1:Failed instantiating FileAddressSpace: Must be first Address Space", 
+        "2016-10-19 19:53:36,256:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.mmap_address_space.MmapFileAddressSpace'> ", 
+        "2016-10-19 19:53:36,256:DEBUG:rekall.1:Failed instantiating MmapFileAddressSpace: Must be first Address Space", 
+        "2016-10-19 19:53:36,256:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.amd64.VTxPagedMemory'> ", 
+        "2016-10-19 19:53:36,256:DEBUG:rekall.1:Failed instantiating VTxPagedMemory: No more EPTs specified", 
+        "2016-10-19 19:53:36,257:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.standard.GlobalOffsetAddressSpace'> ", 
+        "2016-10-19 19:53:36,257:DEBUG:rekall.1:Failed instantiating GlobalOffsetAddressSpace: File offset not specified.", 
+        "2016-10-19 19:53:36,257:DEBUG:rekall.1:Trying <class 'rekall.plugins.addrspaces.pagefile.PagefilePhysicalAddressSpace'> ", 
+        "2016-10-19 19:53:36,257:DEBUG:rekall.1:Failed instantiating PagefilePhysicalAddressSpace: Pagefile not specified", 
+        "2016-10-19 19:53:36,257:INFO:rekall.1:Autodetected physical address space EWFAddressSpace", 
+        "2016-10-19 19:53:36,257:DEBUG:rekall.1:Will detect profile using these Detectors: linux_index,nt_index,tsk,osx,pe,windows_kernel_file,rsds,ntfs,linux", 
+        "2016-10-19 19:53:36,258:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-profiles/v1.0/inventory.gz", 
+        "2016-10-19 19:53:36,271:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
+        "2016-10-19 19:53:36,769:DEBUG:rekall.1:Opened url https://github.com/google/rekall-profiles/raw/master//v1.0/inventory.gz", 
+        "2016-10-19 19:53:36,833:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/inventory.gz", 
+        "2016-10-19 19:53:36,833:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/Linux/index.gz", 
+        "2016-10-19 19:53:36,845:INFO:rekall.1:Loaded profile Linux/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0117819309235 sec)", 
+        "2016-10-19 19:53:36,845:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/eprocess_index.gz", 
+        "2016-10-19 19:53:36,881:INFO:rekall.1:Loaded profile nt/eprocess_index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0357739925385 sec)", 
+        "2016-10-19 19:53:36,881:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/index.gz", 
+        "2016-10-19 19:53:36,978:INFO:rekall.1:Loaded profile nt/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0963799953461 sec)", 
+        "2016-10-19 19:53:36,978:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/OSX/index.gz", 
+        "2016-10-19 19:53:36,978:INFO:rekall.1:Loaded profile OSX/index from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.000490188598633 sec)", 
+        "2016-10-19 19:53:36,979:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/pe.gz", 
+        "2016-10-19 19:53:36,989:INFO:rekall.1:Loaded profile pe from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.0102519989014 sec)", 
+        "2016-10-19 19:53:36,989:DEBUG:rekall.1:Trying method pe, offset 0", 
+        "2016-10-19 19:53:36,991:DEBUG:rekall.1:Trying method windows_kernel_file, offset 0", 
+        "2016-10-19 19:53:36,991:DEBUG:rekall.1:Trying method rsds, offset 0", 
+        "2016-10-19 19:53:36,991:DEBUG:rekall.1:Trying method linux_index, offset 0", 
+        "2016-10-19 19:53:36,991:DEBUG:rekall.1:LinuxIndexDetector:DetectFromHit(0) = None", 
+        "2016-10-19 19:53:36,991:DEBUG:rekall.1:Trying method nt_index, offset 0", 
+        "2016-10-19 19:53:36,991:DEBUG:rekall.1:Trying method tsk, offset 0", 
+        "2016-10-19 19:53:36,994:DEBUG:rekall.1:Trying method ntfs, offset 0", 
+        "2016-10-19 19:53:36,994:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/ntfs.gz", 
+        "2016-10-19 19:53:36,995:INFO:rekall.1:Loaded profile ntfs from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.00111079216003 sec)", 
+        "2016-10-19 19:53:37,210:DEBUG:rekall.1:Opened local file /home/scudette/projects/rekall-test/profile_cache/v1.0/nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31.gz", 
+        "2016-10-19 19:53:37,312:INFO:rekall.1:Loaded profile nt/GUID/BD8F451F3E754ED8A34B50560CEB08E31 from Local Cache Directory:/home/scudette/projects/rekall-test/profile_cache (in 0.101178884506 sec)", 
+        "2016-10-19 19:53:37,456:DEBUG:rekall.1:Found _EPROCESS @ 0x551B80 (DTB: 0x319000)", 
+        "2016-10-19 19:53:37,461:INFO:rekall.1:Detected ntkrnlpa.pdb with GUID BD8F451F3E754ED8A34B50560CEB08E31", 
+        "2016-10-19 19:53:37,461:DEBUG:rekall.1:Detection method rsds worked at offset 0x4e0508", 
+        "2016-10-19 19:53:37,463:DEBUG:rekall.1:Running plugin (pool_tracker) with args (()) kwargs ({'profile': None, 'verbosity': 1})", 
+        "2016-10-19 19:53:37,641:INFO:rekall.1:Detected kernel base at 0x804D7000"
     ], 
+    "time_used": 3.0512969493865967, 
+    "return_code": 0, 
+    "output": [
+        "tag ||      nonpaged      ||nonpaged_bytes||       paged        ||paged_bytes", 
+        "----||--------------------||--------------||--------------------||-----------"
+    ], 
+    "executed_command": "rekall  -v --cache 'memory' --cache_dir '/home/scudette/projects/rekall-test/tigger/../profile_cache/' --format 'test' --filename '/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01' --name_resolution_strategies 'Module' 'Symbol' - pool_tracker", 
     "options": {
+        "--name_resolution_strategies": [
+            "Module", 
+            "Symbol"
+        ], 
         "executable": "rekall ", 
-        "--filename": "/home/scudette/projects/test_data/tigger/tigger.vmem", 
+        "--filename": "/home/scudette/projects/rekall-test/tigger/tigger.vmem.E01", 
+        "--format": "test", 
         "commandline": "pool_tracker", 
-        "pid": "1724", 
-        "--renderer": "test", 
+        "tempdir": "/tmp/tmp2VS0wP/TestPoolTrackerThread-1", 
         "test_class": "TestPoolTracker", 
-        "tempdir": "/tmp/tmpjCWx0x/TestPoolTrackerThread-3", 
-        "executed_command": "rekall  --renderer 'test' --filename '/home/scudette/projects/test_data/tigger/tigger.vmem' pool_tracker", 
-        "testdir": "/home/scudette/projects/test_data/tigger"
+        "--cache_dir": "/home/scudette/projects/rekall-test/tigger/../profile_cache/", 
+        "--cache": "memory", 
+        "debug": false, 
+        "pids": 1724, 
+        "testdir": "/home/scudette/projects/rekall-test/tigger"
     }
 }
