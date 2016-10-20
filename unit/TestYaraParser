@@ -1,0 +1,13 @@
+{
+    "time_used": 9.059906005859375e-06, 
+    "options": {
+        "executable": "rekall ", 
+        "--cache_dir": "/home/scudette/projects/rekall-test/unit/../profile_cache/", 
+        "--format": "test", 
+        "commandline": "", 
+        "tempdir": "/tmp/tmpzf7ZBw/TestYaraParserThread-3", 
+        "test_class": "TestYaraParser", 
+        "debug": false, 
+        "testdir": "/home/scudette/projects/rekall-test/unit"
+    }
+}
