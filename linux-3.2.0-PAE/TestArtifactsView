@@ -1,0 +1,35 @@
+{
+    "executed_command": "rekall  -v --filename '/home/mic/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01' --cache_dir '/home/mic/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/' --format 'test' --cache 'memory' - artifact_view",
+    "logging": [
+        "2017-10-21 02:29:53,021:DEBUG:rekall.1:Logging level set to 10",
+        "2017-10-21 02:29:53,022:DEBUG:rekall.1:Running plugin (artifact_view) with args (()) kwargs ({'artifacts': [], 'verbosity': 1})",
+        "2017-10-21 02:29:53,260:DEBUG:rekall.1:Opened url https://github.com/google/rekall-profiles/raw/master/v1.0/inventory.gz",
+        "2017-10-21 02:29:53,701:DEBUG:rekall.1:Opened local file /home/mic/projects/rekall-test/profile_cache/v1.0/inventory.gz",
+        "2017-10-21 02:29:53,736:DEBUG:rekall.1:Opened url http://profiles.rekall-forensic.com/v1.0/inventory.gz",
+        "2017-10-21 02:29:54,114:DEBUG:rekall.1:Opened local file /home/mic/projects/rekall-test/profile_cache/v1.0/inventory.gz",
+        "2017-10-21 02:29:54,114:DEBUG:rekall.1:Opened local file /home/mic/projects/rekall-test/profile_cache/v1.0/artifacts.gz",
+        "2017-10-21 02:29:54,115:ERROR:rekall.1:Cannot parse profile artifacts because of decoding error 'Invalid control character at: line 28 column 87 (char 622)'.",
+        "2017-10-21 02:29:55,584:DEBUG:rekall.1:Opened url https://github.com/google/rekall-profiles/raw/master/v1.0/artifacts.gz",
+        "2017-10-21 02:29:55,615:DEBUG:rekall.1:Adding artifacts to local cache.",
+        "2017-10-21 02:29:55,618:INFO:rekall.1:Loaded profile artifacts from Local Cache Directory:/home/mic/projects/rekall-test/profile_cache (in 1.5034358501434326 sec)"
+    ],
+    "options": {
+        "--cache": "memory",
+        "--cache_dir": "/home/mic/projects/rekall-test/linux-3.2.0-PAE/../profile_cache/",
+        "--filename": "/home/mic/projects/rekall-test/linux-3.2.0-PAE/Linux-3.2.0-4-686-pae.E01",
+        "--format": "test",
+        "commandline": "artifact_view",
+        "debug": false,
+        "executable": "rekall ",
+        "pids": 2362,
+        "tempdir": "/tmp/tmpaeem8ooa/TestArtifactsViewThread-3",
+        "test_class": "TestArtifactsView",
+        "testdir": "/home/mic/projects/rekall-test/linux-3.2.0-PAE"
+    },
+    "output": [
+        " ||Message",
+        " ||-------"
+    ],
+    "return_code": 0,
+    "time_used": 4.532273292541504
+}

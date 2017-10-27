@@ -1,0 +1,36 @@
+{
+    "executed_command": "rekall  -v --cache_dir '/home/mic/projects/rekall-test/ntfs/../profile_cache/' --format 'test' --profile 'ntfs' --filename '/home/mic/projects/rekall-test/ntfs/ntfs1-gen1.E01' --cache 'memory' - session_api",
+    "logging": [
+        "2017-10-24 10:56:49,427:DEBUG:rekall.1:Logging level set to 10",
+        "usage: rekall [-v] [-q] [--debug] [--output_style {concise,full}] [--logging_level {DEBUG,INFO,WARNING,ERROR,CRITICAL}]",
+        "              [--log_domain [{PageTranslation} [{PageTranslation} ...]]] [--pager PAGER] [--paging_limit PAGING_LIMIT] [--colors {auto,yes,no}] [-F FORMAT]",
+        "              [--plugin [PLUGIN [PLUGIN ...]]] [-h] [--cache CACHE] [--repository_path [REPOSITORY_PATH [REPOSITORY_PATH ...]]] [-f FILENAME] [--buffer_size BUFFER_SIZE]",
+        "              [--output OUTPUT] [--max_collector_cost MAX_COLLECTOR_COST] [--home HOME] [--logging_format LOGGING_FORMAT] [--performance {normal,fast,thorough}] [--live LIVE]",
+        "              [--cpu_quota CPU_QUOTA] [--load_quota LOAD_QUOTA] [--dtb DTB] [-o FILE_OFFSET] [--ept EPT [EPT ...]] [--timezone TIMEZONE] [--cache_dir CACHE_DIR]",
+        "              [--highlighting_style {algol,fruity,autumn,manni,paraiso-light,bw,abap,pastie,borland,trac,lovelace,native,tango,algol_nu,monokai,igor,perldoc,vs,paraiso-dark,default,rrt,rainbow_dash,xcode,friendly,vim,colorful,murphy,emacs,arduino}]",
+        "              [--name_resolution_strategies [{Module,Symbol,Export} [{Module,Symbol,Export} ...]]]",
+        "              [--autodetect_build_local_tracked [AUTODETECT_BUILD_LOCAL_TRACKED [AUTODETECT_BUILD_LOCAL_TRACKED ...]]] [--pagefile [PAGEFILE [PAGEFILE ...]]]",
+        "              [--autodetect {linux_index,osx,nt_index,ntfs,rsds,tsk,linux,windows_kernel_file,pe} [{linux_index,osx,nt_index,ntfs,rsds,tsk,linux,windows_kernel_file,pe} ...]]",
+        "              [--autodetect_threshold AUTODETECT_THRESHOLD] [--autodetect_build_local {full,basic,none}] [--autodetect_scan_length AUTODETECT_SCAN_LENGTH]",
+        "              [--agent_configuration AGENT_CONFIGURATION] [--version] [-] [--output_file OUTPUT_FILE] [--verbosity VERBOSITY]",
+        "rekall: error: unrecognized arguments: --profile ntfs"
+    ],
+    "options": {
+        "--cache": "memory",
+        "--cache_dir": "/home/mic/projects/rekall-test/ntfs/../profile_cache/",
+        "--filename": "/home/mic/projects/rekall-test/ntfs/ntfs1-gen1.E01",
+        "--format": "test",
+        "--profile": "ntfs",
+        "commandline": "session_api",
+        "debug": false,
+        "executable": "rekall ",
+        "mft": 42,
+        "path": "RAW/20076517123273.pdf",
+        "tempdir": "/tmp/tmpsmtuzaig/TestAPISessionGeneratorThread-2",
+        "test_class": "TestAPISessionGenerator",
+        "testdir": "/home/mic/projects/rekall-test/ntfs"
+    },
+    "output": [],
+    "return_code": 2,
+    "time_used": 1.6124515533447266
+}

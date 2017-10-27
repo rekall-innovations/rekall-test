@@ -1,0 +1,39 @@
+{
+    "executed_command": "rekall  -v --cache 'memory' --filename '/home/mic/projects/rekall-test/osx10.9.5/vmem.e01' --format 'test' --cache_dir '/home/mic/projects/rekall-test/osx10.9.5/../profile_cache/' --name_resolution_strategies 'Module' 'Symbol' - artifact_view",
+    "logging": [
+        "2017-10-24 13:35:49,684:DEBUG:rekall.1:Logging level set to 10",
+        "2017-10-24 13:35:49,688:DEBUG:rekall.1:Running plugin (artifact_view) with args (()) kwargs ({'verbosity': 1, 'artifacts': []})",
+        "2017-10-24 13:35:50,088:DEBUG:rekall.1:Opened url https://github.com/google/rekall-profiles/raw/master/v1.0/inventory.gz",
+        "2017-10-24 13:35:50,319:DEBUG:rekall.1:Opened local file /home/mic/projects/rekall-test/profile_cache/v1.0/inventory.gz",
+        "2017-10-24 13:35:50,428:DEBUG:rekall.1:Opened url http://profiles.rekall-forensic.com/v1.0/inventory.gz",
+        "2017-10-24 13:35:50,480:DEBUG:rekall.1:Opened local file /home/mic/projects/rekall-test/profile_cache/v1.0/inventory.gz",
+        "2017-10-24 13:35:50,480:DEBUG:rekall.1:Opened local file /home/mic/projects/rekall-test/profile_cache/v1.0/artifacts.gz",
+        "2017-10-24 13:35:50,510:ERROR:rekall.1:Cannot parse profile artifacts because of decoding error 'Invalid control character at: line 28 column 87 (char 622)'.",
+        "2017-10-24 13:35:51,006:DEBUG:rekall.1:Opened url https://github.com/google/rekall-profiles/raw/master/v1.0/artifacts.gz",
+        "2017-10-24 13:35:51,049:DEBUG:rekall.1:Adding artifacts to local cache.",
+        "2017-10-24 13:35:51,052:INFO:rekall.1:Loaded profile artifacts from Local Cache Directory:/home/mic/projects/rekall-test/profile_cache (in 0.5716955661773682 sec)"
+    ],
+    "options": {
+        "--cache": "memory",
+        "--cache_dir": "/home/mic/projects/rekall-test/osx10.9.5/../profile_cache/",
+        "--filename": "/home/mic/projects/rekall-test/osx10.9.5/vmem.e01",
+        "--format": "test",
+        "--name_resolution_strategies": [
+            "Module",
+            "Symbol"
+        ],
+        "commandline": "artifact_view",
+        "debug": false,
+        "executable": "rekall ",
+        "pids": 232,
+        "tempdir": "/tmp/tmp1nelsfvu/TestArtifactsViewThread-3",
+        "test_class": "TestArtifactsView",
+        "testdir": "/home/mic/projects/rekall-test/osx10.9.5"
+    },
+    "output": [
+        " ||Message",
+        " ||-------"
+    ],
+    "return_code": 0,
+    "time_used": 4.124696969985962
+}

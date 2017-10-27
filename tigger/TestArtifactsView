@@ -1,0 +1,37 @@
+{
+    "output": [
+        " ||Message",
+        " ||-------"
+    ],
+    "options": {
+        "commandline": "artifact_view",
+        "--name_resolution_strategies": [
+            "Module",
+            "Symbol"
+        ],
+        "--format": "test",
+        "tempdir": "/tmp/tmpjgj87gfc/TestArtifactsViewThread-4",
+        "--cache_dir": "/home/mic/projects/rekall-test/tigger/../profile_cache/",
+        "debug": false,
+        "--filename": "/home/mic/projects/rekall-test/tigger/tigger.vmem.E01",
+        "pids": 1724,
+        "--cache": "memory",
+        "test_class": "TestArtifactsView",
+        "executable": "rekall ",
+        "testdir": "/home/mic/projects/rekall-test/tigger"
+    },
+    "time_used": 2.726221799850464,
+    "executed_command": "rekall  -v --cache 'memory' --filename '/home/mic/projects/rekall-test/tigger/tigger.vmem.E01' --cache_dir '/home/mic/projects/rekall-test/tigger/../profile_cache/' --format 'test' --name_resolution_strategies 'Module' 'Symbol' - artifact_view",
+    "logging": [
+        "2017-10-01 12:24:04,992:DEBUG:rekall.1:Logging level set to 10",
+        "2017-10-01 12:24:04,993:DEBUG:rekall.1:Running plugin (artifact_view) with args (()) kwargs ({'artifacts': [], 'verbosity': 1})",
+        "2017-10-01 12:24:05,207:DEBUG:rekall.1:Opened url https://github.com/google/rekall-profiles/raw/master/v1.0/inventory.gz",
+        "2017-10-01 12:24:05,492:DEBUG:rekall.1:Opened local file /home/mic/projects/rekall-test/profile_cache/v1.0/inventory.gz",
+        "2017-10-01 12:24:05,538:DEBUG:rekall.1:Opened url http://profiles.rekall-forensic.com/v1.0/inventory.gz",
+        "2017-10-01 12:24:05,761:DEBUG:rekall.1:Opened local file /home/mic/projects/rekall-test/profile_cache/v1.0/inventory.gz",
+        "2017-10-01 12:24:06,073:DEBUG:rekall.1:Opened url https://github.com/google/rekall-profiles/raw/master/v1.0/artifacts.gz",
+        "2017-10-01 12:24:06,108:DEBUG:rekall.1:Adding artifacts to local cache.",
+        "2017-10-01 12:24:06,110:INFO:rekall.1:Loaded profile artifacts from Local Cache Directory:/home/mic/projects/rekall-test/profile_cache (in 0.34876298904418945 sec)"
+    ],
+    "return_code": 0
+}
